@@ -104,9 +104,16 @@ address { font-style: normal; }
   --shadow-xl:   0 16px 40px rgba(0,0,0,0.16);
   --shadow-card: 0 2px 8px rgba(0,0,0,0.06);
 
+  /* — Tinted Card Backgrounds — */
+  --color-card-tint-1:       rgba(26, 43, 60, 0.08);
+  --color-card-tint-2:       rgba(15, 30, 45, 0.06);
+  --color-card-tint-3:       rgba(6, 182, 212, 0.09);
+  --color-card-tint-neutral: rgba(245, 247, 250, 1);
+
   /* — Typography — */
   --font-heading:   'Oswald', system-ui, sans-serif;
   --font-body:      'Lato', system-ui, sans-serif;
+  --font-accent:    'Caveat', cursive;
   --font-size-xs:   0.75rem;
   --font-size-sm:   0.875rem;
   --font-size-base: 1rem;
@@ -404,6 +411,7 @@ section { position: relative; }
 }
 .has-dropdown:hover .nav-dropdown,
 .has-dropdown:focus-within .nav-dropdown {
+  display: block !important;
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
@@ -797,4 +805,133 @@ section { position: relative; }
   .back-to-top { bottom: 80px; right: var(--space-lg); }
   .footer-grid { grid-template-columns: 1fr; gap: var(--space-2xl); }
   .footer-bottom-inner { flex-direction: column; align-items: flex-start; gap: var(--space-sm); }
+}
+
+/* ─── 15. Accent Font Utilities ──────────────────────────────────── */
+.text-accent {
+  font-family: var(--font-accent);
+  font-style: italic;
+  color: var(--color-accent);
+}
+.section-subtitle {
+  font-family: var(--font-accent);
+  font-size: var(--font-size-lg);
+  color: var(--color-accent);
+  margin-bottom: var(--space-xs);
+}
+
+/* ─── 16. Tinted Card Utilities ──────────────────────────────────── */
+.card-tint-1       { background: var(--color-card-tint-1); }
+.card-tint-2       { background: var(--color-card-tint-2); }
+.card-tint-3       { background: var(--color-card-tint-3); }
+.card-tint-neutral { background: var(--color-card-tint-neutral); }
+
+/* ─── 17. Cookie Banner ──────────────────────────────────────────── */
+.cookie-banner {
+  position: fixed;
+  bottom: 76px;
+  left: var(--space-lg);
+  right: var(--space-lg);
+  z-index: 997;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  background: var(--color-primary-dark);
+  color: rgba(255,255,255,0.85);
+  padding: var(--space-md) var(--space-xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+  pointer-events: none;
+}
+.cookie-banner.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.cookie-banner__text {
+  color: rgba(255,255,255,0.85);
+  flex: 1;
+}
+.cookie-banner__text a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+.cookie-banner__dismiss {
+  flex-shrink: 0;
+  background: var(--color-accent);
+  color: var(--color-primary-dark);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: var(--space-sm) var(--space-xl);
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.cookie-banner__dismiss:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+@media (max-width: 767px) {
+  .cookie-banner {
+    bottom: 70px;
+    left: var(--space-md);
+    right: var(--space-md);
+    flex-direction: column;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    text-align: center;
+  }
+  .cookie-banner__dismiss { width: 100%; }
+}
+
+/* ─── 18. Legal Page Styles ──────────────────────────────────────── */
+.legal-prose {
+  max-width: 65ch;
+  margin-inline: auto;
+  padding: var(--space-3xl) var(--space-lg);
+}
+.hero--legal {
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* ─── 19. TCPA Consent Checkbox ──────────────────────────────────── */
+.form-field--checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+.form-field--checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  flex-shrink: 0;
+  accent-color: var(--color-accent);
+  cursor: pointer;
+}
+.form-field--checkbox label {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--color-text-light);
+  cursor: pointer;
+}
+.form-field--checkbox.tcpa-consent {
+  background: rgba(0,0,0,0.02);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(var(--color-primary-rgb), 0.1);
 }

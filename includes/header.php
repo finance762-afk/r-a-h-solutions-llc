@@ -47,7 +47,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
                aria-expanded="false">
               Services <span class="nav-chevron" aria-hidden="true">&#8964;</span>
             </a>
-            <ul class="nav-dropdown" role="list" aria-label="Services submenu">
+            <ul class="nav-dropdown" role="list" aria-label="Services submenu" style="display:none">
               <?php foreach ($navServices as $svc): ?>
               <li>
                 <a href="/services/<?php echo htmlspecialchars($svc['slug'], ENT_QUOTES, 'UTF-8'); ?>"

@@ -148,8 +148,8 @@ $localBusinessJson = json_encode($localBusinessSchema, JSON_UNESCAPED_SLASHES | 
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://db.pageone.cloud">
 
-  <!-- Google Fonts: Oswald (headings) + Lato (body) — font-display: swap -->
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Google Fonts: Oswald (headings) + Lato (body) + Caveat (accent) — font-display: swap -->
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
 
 <?php if (!empty($heroPreload)): ?>
   <!-- LCP hero image preload -->
@@ -161,8 +161,8 @@ $localBusinessJson = json_encode($localBusinessSchema, JSON_UNESCAPED_SLASHES | 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 <?php endif; ?>
 
-  <!-- Shared stylesheet -->
-  <link rel="stylesheet" href="/assets/css/framework.css">
+  <!-- Shared stylesheet (cache-busted) -->
+  <link rel="stylesheet" href="/assets/css/framework.css?v=<?php echo $cssVersion ?? '1'; ?>">
 
   <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">

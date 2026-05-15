@@ -7,7 +7,7 @@
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 
 $pageTitle       = 'Landscaping Services in Edgerton, WI';
-$pageDescription = 'R.A.H. Solutions: 17 landscaping services in Edgerton, WI — lawn care, hardscaping, concrete, tree pruning & snow removal. Family-owned. Free estimates.';
+$pageDescription = 'R.A.H. Solutions: 15 landscaping services in Edgerton, WI — lawn care, hardscaping, concrete, shrub trimming & snow removal. Family-owned. Free estimates.';
 $canonicalUrl    = 'https://rahsolutionsllc.com/services';
 // SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
 $ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963874866-f077by-471177305_122202492170208320_1592970065814584229_n.jpg';
@@ -21,7 +21,7 @@ $pageFaqs = [
         'name'           => 'What landscaping services does R.A.H. Solutions offer in Edgerton, WI?',
         'acceptedAnswer' => [
             '@type' => 'Answer',
-            'text'  => 'R.A.H. Solutions provides 17 professional services in Edgerton, WI: lawn maintenance, landscape design, landscape installation, hardscaping, concrete services, tree pruning, shrub trimming, garden maintenance, mulching, sod installation, lawn restoration, spring yard cleanup, fall yard cleanup, snow removal, excavating, residential lawn care, and commercial lawn care.',
+            'text'  => 'R.A.H. Solutions provides 15 professional services in Edgerton, WI: lawn maintenance, landscape installation, hardscaping, concrete services, shrub trimming, garden maintenance, mulching, sod installation, lawn restoration, spring yard cleanup, fall yard cleanup, snow removal, excavating, residential lawn care, and commercial lawn care.',
         ],
     ],
     [
@@ -76,7 +76,7 @@ $schemaMarkup = json_encode([
             '@id'             => 'https://rahsolutionsllc.com/services#list',
             'name'            => 'Landscaping Services — R.A.H. Solutions',
             'description'     => 'Complete list of landscaping, lawn care, hardscaping, and seasonal services offered by R.A.H. Solutions, LLC in Edgerton, WI.',
-            'numberOfItems'   => 17,
+            'numberOfItems'   => count($services),
             'itemListElement' => array_map(function($svc, $i) {
                 return [
                     '@type'    => 'ListItem',
@@ -739,7 +739,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="si-hero-inner" data-animate="fade-up">
       <span class="si-hero-eyebrow">
         <i data-lucide="layers"></i>
-        17 Professional Services
+        15 Professional Services
       </span>
       <h1>All Landscaping Services in Edgerton, WI</h1>
       <p class="si-hero-sub">
@@ -780,8 +780,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="si-ticker-track">
       <?php
       $tickerItems = [
-        'Lawn Maintenance', 'Landscape Design', 'Hardscaping', 'Concrete Services',
-        'Tree Pruning', 'Snow Removal', 'Sod Installation', 'Spring Cleanup',
+        'Lawn Maintenance', 'Landscape Installation', 'Hardscaping', 'Concrete Services',
+        'Shrub Trimming', 'Snow Removal', 'Sod Installation', 'Spring Cleanup',
         'Fall Cleanup', 'Commercial Lawn Care', 'Mulching', 'Excavating',
         'Free Estimates', 'Licensed & Insured', 'Rock County WI',
       ];
@@ -808,7 +808,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="si-section-head" data-animate="fade-up">
         <span class="si-eyebrow">Everything We Do</span>
-        <h2>Browse All 17 Services</h2>
+        <h2>Browse All 15 Services</h2>
         <p>Whether you need a one-time cleanup or a full seasonal contract, R.A.H. Solutions handles it. Select any service below for full details, pricing guidance, and FAQs.</p>
       </div>
 
@@ -816,11 +816,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       // Icon mapping per service slug
       $serviceIcons = [
         'lawn-maintenance'       => 'scissors',
-        'landscape-design'       => 'pen-tool',
         'landscape-installation' => 'sprout',
-        'hardscaping-services'   => 'brick-wall',
+        'hardscaping-services'   => 'hammer',
         'concrete-services'      => 'layers',
-        'tree-pruning'           => 'tree-pine',
         'shrub-trimming'         => 'scissors',
         'garden-maintenance'     => 'flower-2',
         'mulching-services'      => 'leaf',
@@ -899,12 +897,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <div class="si-category-block">
           <div class="si-cat-header">
             <div class="si-cat-icon"><i data-lucide="sprout"></i></div>
-            <div class="si-cat-title">Landscape Design &amp; Plants</div>
+            <div class="si-cat-title">Landscape Installation &amp; Plants</div>
           </div>
           <ul class="si-cat-list">
-            <li><a href="/services/landscape-design"><i data-lucide="chevron-right"></i> Landscape Design</a></li>
             <li><a href="/services/landscape-installation"><i data-lucide="chevron-right"></i> Landscape Installation</a></li>
-            <li><a href="/services/tree-pruning"><i data-lucide="chevron-right"></i> Tree Pruning</a></li>
             <li><a href="/services/shrub-trimming"><i data-lucide="chevron-right"></i> Shrub Trimming</a></li>
             <li><a href="/services/garden-maintenance"><i data-lucide="chevron-right"></i> Garden Maintenance</a></li>
             <li><a href="/services/mulching-services"><i data-lucide="chevron-right"></i> Mulching Services</a></li>

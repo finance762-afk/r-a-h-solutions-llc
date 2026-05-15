@@ -17,7 +17,7 @@ $useSwiper       = true;
 $homepageFaqs = [
   [
     'q' => 'What landscaping services does R.A.H. Solutions offer in Edgerton, WI?',
-    'a' => 'R.A.H. Solutions provides comprehensive landscaping in Edgerton, WI including landscape design, hardscaping (patios, retaining walls, walkways), lawn maintenance, concrete services, tree pruning, shrub trimming, mulching, sod installation, spring and fall yard cleanup, and year-round snow removal for residential and commercial properties.',
+    'a' => 'R.A.H. Solutions provides comprehensive landscaping in Edgerton, WI including landscape installation, hardscaping (patios, retaining walls, walkways), lawn maintenance, concrete services, shrub trimming, mulching, sod installation, spring and fall yard cleanup, year-round snow removal, and excavating services for residential and commercial properties.',
   ],
   [
     'q' => 'What areas of Southern Wisconsin does R.A.H. Solutions serve?',
@@ -910,6 +910,106 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   color: var(--color-text-light);
 }
 
+/* ─── Photo Gallery Section ──────────────────────────────────── */
+.gallery-section {
+  padding: var(--space-4xl) 0;
+  background: var(--color-bg-alt);
+}
+.gallery-filters {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: var(--space-2xl);
+}
+.gallery-filter-btn {
+  padding: 9px var(--space-lg);
+  border-radius: 999px;
+  border: 2px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-light);
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+}
+.gallery-filter-btn:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+.gallery-filter-btn.active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-primary-dark);
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+}
+.gallery-item {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  cursor: pointer;
+  transition: opacity var(--transition-base), transform var(--transition-base);
+}
+.gallery-item.gallery-hidden {
+  display: none;
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+.gallery-item:hover img {
+  transform: scale(1.07);
+}
+.gallery-item-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15,30,45,0.78) 0%, transparent 55%);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-md);
+}
+.gallery-item:hover .gallery-item-overlay {
+  opacity: 1;
+}
+.gallery-item-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.gallery-item-label [data-lucide] { color: var(--color-accent); flex-shrink: 0; }
+.gallery-cta-row {
+  text-align: center;
+  margin-top: var(--space-2xl);
+}
+@media (max-width: 1023px) {
+  .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 767px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-filters { gap: var(--space-xs); }
+  .gallery-filter-btn { font-size: 0.68rem; padding: 7px var(--space-md); }
+}
+
 /* ─── C9.2 Closing CTA ─────────────────────────────────────────── */
 .closing-cta {
   background: var(--color-primary);
@@ -1064,7 +1164,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <span class="ticker-sep">✦</span>
         <span class="ticker-item"><i data-lucide="map-pin" style="width:14px;height:14px;"></i> Edgerton, WI</span>
         <span class="ticker-sep">✦</span>
-        <span class="ticker-item"><i data-lucide="tree-pine" style="width:14px;height:14px;"></i> Landscape Design &amp; Installation</span>
+        <span class="ticker-item"><i data-lucide="leaf" style="width:14px;height:14px;"></i> Landscape Installation</span>
         <span class="ticker-sep">✦</span>
         <span class="ticker-item"><i data-lucide="snowflake" style="width:14px;height:14px;"></i> Snow Removal</span>
         <span class="ticker-sep">✦</span>
@@ -1085,7 +1185,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <span class="ticker-sep">✦</span>
         <span class="ticker-item"><i data-lucide="map-pin" style="width:14px;height:14px;"></i> Edgerton, WI</span>
         <span class="ticker-sep">✦</span>
-        <span class="ticker-item"><i data-lucide="tree-pine" style="width:14px;height:14px;"></i> Landscape Design &amp; Installation</span>
+        <span class="ticker-item"><i data-lucide="leaf" style="width:14px;height:14px;"></i> Landscape Installation</span>
         <span class="ticker-sep">✦</span>
         <span class="ticker-item"><i data-lucide="snowflake" style="width:14px;height:14px;"></i> Snow Removal</span>
         <span class="ticker-sep">✦</span>
@@ -1126,33 +1226,33 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
       <div class="services-grid" data-stagger>
 
-        <!-- Featured: Landscape Design -->
+        <!-- Featured: Landscape Installation -->
         <div class="service-card-featured" data-animate="fade-right">
           <div class="featured-content">
             <div class="featured-icon">
-              <i data-lucide="layers" style="width:28px;height:28px;" aria-hidden="true"></i>
+              <i data-lucide="shovel" style="width:28px;height:28px;" aria-hidden="true"></i>
             </div>
-            <h3>Landscape Design</h3>
-            <p>Custom outdoor design tailored to your property's shape, soil, and Southern Wisconsin's climate — not a one-size template.</p>
+            <h3>Landscape Installation</h3>
+            <p>Full outdoor transformations — plants, beds, grading, and features installed with precision. We bring the vision to life and leave nothing half-finished.</p>
             <ul class="featured-checklist">
               <li>
                 <i data-lucide="check" style="width:14px;height:14px;" aria-hidden="true"></i>
-                Site assessment &amp; soil analysis
+                Plant &amp; tree installation for WI hardiness zones
               </li>
               <li>
                 <i data-lucide="check" style="width:14px;height:14px;" aria-hidden="true"></i>
-                Plant &amp; material selection for WI hardiness zones
+                Grading, drainage &amp; soil preparation
               </li>
               <li>
                 <i data-lucide="check" style="width:14px;height:14px;" aria-hidden="true"></i>
-                Grading, drainage &amp; irrigation planning
+                Mulch beds, edging &amp; landscape borders
               </li>
               <li>
                 <i data-lucide="check" style="width:14px;height:14px;" aria-hidden="true"></i>
-                Full design-to-installation handoff
+                Residential &amp; commercial properties
               </li>
             </ul>
-            <a href="/services/landscape-design" class="featured-cta">
+            <a href="/services/landscape-installation" class="featured-cta">
               Learn More
               <i data-lucide="arrow-right" style="width:16px;height:16px;" aria-hidden="true"></i>
             </a>
@@ -1211,14 +1311,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           </a>
         </div>
 
-        <!-- Tree Pruning -->
+        <!-- Shrub Trimming -->
         <div class="service-card-std" data-animate="fade-up" data-tilt>
           <div class="card-icon">
-            <i data-lucide="tree-pine" style="width:22px;height:22px;" aria-hidden="true"></i>
+            <i data-lucide="scissors" style="width:22px;height:22px;" aria-hidden="true"></i>
           </div>
-          <h3>Tree Pruning</h3>
-          <p>Proper pruning technique that promotes healthy growth, removes hazard limbs, and keeps your trees looking their best for years.</p>
-          <a href="/services/tree-pruning" class="card-link">
+          <h3>Shrub Trimming</h3>
+          <p>Expert shaping and trimming that keeps your shrubs healthy, structured, and looking sharp — part of any well-maintained Southern Wisconsin property.</p>
+          <a href="/services/shrub-trimming" class="card-link">
             Learn More
             <i data-lucide="arrow-right" style="width:14px;height:14px;" aria-hidden="true"></i>
           </a>
@@ -1242,7 +1342,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div style="text-align:center;" data-animate="fade-up">
         <a href="/services" class="btn-secondary">
           <i data-lucide="grid-3x3" style="width:16px;height:16px;" aria-hidden="true"></i>
-          View All 17 Services
+          View All 15 Services
         </a>
       </div>
 
@@ -1586,13 +1686,233 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   </div>
 
   <!-- ════════════════════════════════════════════════════════════
+       PHOTO GALLERY — Our Work
+  ════════════════════════════════════════════════════════════ -->
+  <section class="gallery-section" id="gallery" aria-label="R.A.H. Solutions project photo gallery">
+    <div class="container">
+
+      <div class="section-header" data-animate="fade-up">
+        <div class="section-num-label" data-num="04 /"> Our Work</div>
+        <h2>Real Projects From Edgerton &amp; Surrounding Communities</h2>
+        <p class="prose">Browse completed work across Southern Wisconsin — from lawn transformations to hardscaping and concrete installations.</p>
+      </div>
+
+      <!-- Filter buttons -->
+      <div class="gallery-filters" role="group" aria-label="Filter gallery by category" data-animate="fade-up">
+        <button class="gallery-filter-btn active" data-filter="all" type="button">All Projects</button>
+        <button class="gallery-filter-btn" data-filter="lawn" type="button">Lawn Care</button>
+        <button class="gallery-filter-btn" data-filter="hardscaping" type="button">Hardscaping</button>
+        <button class="gallery-filter-btn" data-filter="concrete" type="button">Concrete</button>
+        <button class="gallery-filter-btn" data-filter="seasonal" type="button">Seasonal Cleanup</button>
+        <button class="gallery-filter-btn" data-filter="snow" type="button">Snow Removal</button>
+      </div>
+
+      <!-- Gallery grid -->
+      <div class="gallery-grid" id="gallery-grid" data-stagger>
+
+        <div class="gallery-item" data-cat="lawn" data-animate="fade-up">
+          <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963874866-f077by-471177305_122202492170208320_1592970065814584229_n.jpg"
+               alt="Professional landscaping and lawn care Edgerton WI — R.A.H. Solutions" width="600" height="450" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-label">
+              <i data-lucide="scissors" style="width:14px;height:14px;" aria-hidden="true"></i>
+              Lawn Care
+            </span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-cat="lawn" data-animate="fade-up">
+          <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963876972-9uvcid-474456407_122209245674208320_3275147450913393227_n.jpg"
+               alt="Landscape installation outdoor transformation Edgerton Wisconsin" width="600" height="450" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-label">
+              <i data-lucide="leaf" style="width:14px;height:14px;" aria-hidden="true"></i>
+              Landscape Installation
+            </span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-cat="hardscaping" data-animate="fade-up">
+          <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963878224-9yylmf-474790582_122209560278208320_5110498035873152787_n.jpg"
+               alt="Hardscaping patio installation Edgerton WI" width="600" height="450" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-label">
+              <i data-lucide="hammer" style="width:14px;height:14px;" aria-hidden="true"></i>
+              Hardscaping
+            </span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-cat="lawn" data-animate="fade-up">
+          <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963879670-etljhr-474465615_122209560308208320_6377695377545475044_n.jpg"
+               alt="Lawn maintenance services Edgerton Wisconsin" width="600" height="450" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-label">
+              <i data-lucide="scissors" style="width:14px;height:14px;" aria-hidden="true"></i>
+              Lawn Maintenance
+            </span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-cat="lawn" data-animate="fade-up">
+          <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963882024-ohn2g8-474446326_122209560260208320_53140490767559634_n.jpg"
+               alt="Mulching and garden bed maintenance Edgerton Wisconsin" width="600" height="450" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-label">
+              <i data-lucide="leaf" style="width:14px;height:14px;" aria-hidden="true"></i>
+              Mulching &amp; Garden Beds
+            </span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-cat="concrete" data-animate="fade-up">
+          <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785402115-conrete.webp"
+               alt="Concrete services driveway installation Edgerton WI" width="600" height="450" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-label">
+              <i data-lucide="layers" style="width:14px;height:14px;" aria-hidden="true"></i>
+              Concrete Services
+            </span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-cat="seasonal" data-animate="fade-up">
+          <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963886495-agh3u2-475671791_122211163124208320_6715996363556920497_n.jpg"
+               alt="Spring yard cleanup services Edgerton Wisconsin" width="600" height="450" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-label">
+              <i data-lucide="sun" style="width:14px;height:14px;" aria-hidden="true"></i>
+              Spring Cleanup
+            </span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-cat="hardscaping" data-animate="fade-up">
+          <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963889584-ala069-486653046_122226629198208320_4781171488771186863_n.jpg"
+               alt="Retaining wall hardscaping installation Edgerton Wisconsin" width="600" height="450" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-label">
+              <i data-lucide="hammer" style="width:14px;height:14px;" aria-hidden="true"></i>
+              Retaining Wall
+            </span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-cat="snow" data-animate="fade-up">
+          <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785163845-o__2_.jpg"
+               alt="Snow removal services Edgerton Wisconsin winter maintenance" width="600" height="450" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-label">
+              <i data-lucide="snowflake" style="width:14px;height:14px;" aria-hidden="true"></i>
+              Snow Removal
+            </span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-cat="seasonal" data-animate="fade-up">
+          <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963895295-85rqf1-495734161_122236025852208320_5435639759042997660_n.jpg"
+               alt="Fall yard cleanup leaf removal Edgerton WI" width="600" height="450" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-label">
+              <i data-lucide="wind" style="width:14px;height:14px;" aria-hidden="true"></i>
+              Fall Cleanup
+            </span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-cat="lawn" data-animate="fade-up">
+          <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963896244-0unq77-495336544_122236025864208320_4129821399527851126_n.jpg"
+               alt="Shrub trimming and pruning services Edgerton Wisconsin" width="600" height="450" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-label">
+              <i data-lucide="scissors" style="width:14px;height:14px;" aria-hidden="true"></i>
+              Shrub Trimming
+            </span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-cat="hardscaping" data-animate="fade-up">
+          <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785335181-patio.webp"
+               alt="Patio hardscape outdoor living space Edgerton Wisconsin" width="600" height="450" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-label">
+              <i data-lucide="hammer" style="width:14px;height:14px;" aria-hidden="true"></i>
+              Patio Installation
+            </span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-cat="concrete" data-animate="fade-up">
+          <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785225437-driveway.webp"
+               alt="Concrete driveway installation Edgerton WI R.A.H. Solutions" width="600" height="450" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-label">
+              <i data-lucide="layers" style="width:14px;height:14px;" aria-hidden="true"></i>
+              Concrete Driveway
+            </span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-cat="snow" data-animate="fade-up">
+          <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785308901-snow.webp"
+               alt="Snow plowing winter services Edgerton WI R.A.H. Solutions" width="600" height="450" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-label">
+              <i data-lucide="snowflake" style="width:14px;height:14px;" aria-hidden="true"></i>
+              Snow Removal
+            </span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-cat="lawn" data-animate="fade-up">
+          <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785464766-unnamed.webp"
+               alt="Landscape installation complete yard transformation Edgerton WI" width="600" height="450" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-label">
+              <i data-lucide="leaf" style="width:14px;height:14px;" aria-hidden="true"></i>
+              Landscape Installation
+            </span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-cat="lawn" data-animate="fade-up">
+          <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963887692-btgk52-490023562_122226629156208320_4857034073232372127_n.jpg"
+               alt="Commercial lawn care Edgerton WI R.A.H. Solutions" width="600" height="450" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-label">
+              <i data-lucide="building-2" style="width:14px;height:14px;" aria-hidden="true"></i>
+              Commercial Lawn Care
+            </span>
+          </div>
+        </div>
+
+      </div><!-- /#gallery-grid -->
+
+      <div class="gallery-cta-row" data-animate="fade-up">
+        <a href="/contact" class="btn-primary">
+          <i data-lucide="clipboard-list" style="width:16px;height:16px;" aria-hidden="true"></i>
+          Get a Free Estimate for Your Project
+        </a>
+      </div>
+
+    </div><!-- /.container -->
+  </section>
+
+  <!-- C3 Divider: Diagonal (bg-alt → bg) -->
+  <div class="divider-diagonal" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
+      <polygon fill="#ffffff" points="0,60 1200,0 1200,60"/>
+    </svg>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════════
        FAQ SECTION (numbered 04)
   ════════════════════════════════════════════════════════════ -->
   <section class="faq-section" id="faq">
     <div class="container">
 
       <div class="section-header prose-centered" style="text-align:center;" data-animate="fade-up">
-        <div class="section-num-label" data-num="04 /">FAQ</div>
+        <div class="section-num-label" data-num="05 /">FAQ</div>
         <h2>Common Questions About Our Landscaping Services</h2>
         <p>Honest answers about what we do, where we work, and how we price.</p>
       </div>
@@ -1667,6 +1987,30 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>
 
 <script>
+// ── Gallery Filter ───────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function () {
+  var filterBtns = document.querySelectorAll('.gallery-filter-btn');
+  var galleryItems = document.querySelectorAll('.gallery-item');
+
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      // Update active state
+      filterBtns.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+
+      var filter = btn.dataset.filter;
+
+      galleryItems.forEach(function (item) {
+        if (filter === 'all' || item.dataset.cat === filter) {
+          item.classList.remove('gallery-hidden');
+        } else {
+          item.classList.add('gallery-hidden');
+        }
+      });
+    });
+  });
+});
+
 // ── Swiper: Reviews Carousel ─────────────────────────────────────
 document.addEventListener('DOMContentLoaded', function () {
   if (typeof Swiper === 'undefined') return;

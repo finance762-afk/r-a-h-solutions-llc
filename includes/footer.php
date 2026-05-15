@@ -202,7 +202,7 @@ $servicesCol2 = array_slice($services, 9);
           serving Edgerton, Stoughton, Madison, and Janesville, WI.
           With <?php echo $yearsInBusiness; ?> years of experience,
           <?php echo htmlspecialchars($siteName, ENT_QUOTES, 'UTF-8'); ?> specializes in
-          landscape design, lawn care, hardscaping, concrete services, and snow removal.
+          landscape installation, lawn care, hardscaping, concrete services, and snow removal.
           Contact: <a href="tel:<?php echo $phone; ?>" itemprop="telephone"><?php echo htmlspecialchars($phoneFormatted, ENT_QUOTES, 'UTF-8'); ?></a>
           | <a href="mailto:<?php echo htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?>" itemprop="email"><?php echo htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?></a>
           | <a href="<?php echo htmlspecialchars($canonicalBase, ENT_QUOTES, 'UTF-8'); ?>" itemprop="url"><?php echo htmlspecialchars($domain, ENT_QUOTES, 'UTF-8'); ?></a>.
@@ -256,8 +256,9 @@ $servicesCol2 = array_slice($services, 9);
        SCRIPTS
   ================================================================ -->
 
-  <!-- Lucide Icons CDN -->
-  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <!-- Lucide Icons CDN (synchronous — must init before deferred scripts) -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>lucide.createIcons();</script>
 
   <!-- VanillaTilt (loaded when .card elements with tilt exist) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" defer></script>
@@ -276,11 +277,6 @@ $servicesCol2 = array_slice($services, 9);
   <script>
     // Wait for DOM + deferred scripts
     document.addEventListener('DOMContentLoaded', function () {
-
-      // ── Lucide icons ────────────────────────────────────
-      if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-      }
 
       // ── Back to top ──────────────────────────────────────
       const btt = document.getElementById('back-to-top');
@@ -392,6 +388,37 @@ $servicesCol2 = array_slice($services, 9);
       });
 
     }); // DOMContentLoaded
+  </script>
+
+  <!-- ── Cookie Banner ─────────────────────────────────────── -->
+  <div class="cookie-banner" id="cookie-banner" role="region" aria-label="Cookie notice">
+    <p class="cookie-banner__text">
+      We use cookies to improve your experience and analyze site usage. By continuing, you agree to our use of cookies.
+      <a href="/cookie-policy/">Learn more</a>.
+    </p>
+    <button type="button" class="cookie-banner__dismiss" id="cookie-banner-dismiss" aria-label="Dismiss cookie notice">Got it</button>
+  </div>
+
+  <script>
+    (function () {
+      var banner = document.getElementById('cookie-banner');
+      var dismissBtn = document.getElementById('cookie-banner-dismiss');
+      if (!banner || !dismissBtn) return;
+
+      var storageKey = 'cookieBannerDismissed_v1';
+      var dismissed = false;
+      try { dismissed = localStorage.getItem(storageKey) === 'true'; } catch (e) {}
+
+      if (dismissed) return;
+
+      setTimeout(function () { banner.classList.add('is-visible'); }, 800);
+
+      dismissBtn.addEventListener('click', function () {
+        banner.classList.remove('is-visible');
+        setTimeout(function () { banner.remove(); }, 500);
+        try { localStorage.setItem(storageKey, 'true'); } catch (e) {}
+      });
+    })();
   </script>
 
 </body>

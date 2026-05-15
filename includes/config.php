@@ -44,10 +44,10 @@ $defaultDescription = 'R.A.H. Solutions LLC delivers professional landscaping, l
 $secondaryKeywords = [
     'lawn care edgerton wi',
     'landscaping company edgerton',
-    'landscape design edgerton wisconsin',
+    'landscape installation edgerton wisconsin',
     'concrete services edgerton wi',
     'hardscaping edgerton wi',
-    'tree pruning edgerton wisconsin',
+    'shrub trimming edgerton wisconsin',
     'lawn maintenance near me',
     'landscaping services near me',
     'commercial lawn care edgerton',
@@ -63,12 +63,6 @@ $services = [
         'slug'        => 'lawn-maintenance',
         'description' => 'Comprehensive lawn maintenance services including mowing, edging, and seasonal care. Regular maintenance programs keep your lawn healthy and beautiful year-round.',
         'keywords'    => ['lawn maintenance Edgerton WI', 'lawn care Wisconsin', 'grass maintenance Edgerton', 'lawn service programs'],
-    ],
-    [
-        'name'        => 'Landscape Design',
-        'slug'        => 'landscape-design',
-        'description' => 'Custom landscape design services that create beautiful, functional outdoor spaces tailored to your property. Expert planning for residential and commercial properties.',
-        'keywords'    => ['landscape design Edgerton WI', 'landscaping design Wisconsin', 'landscape architect Edgerton', 'custom landscaping design'],
     ],
     [
         'name'        => 'Landscape Installation',
@@ -87,12 +81,6 @@ $services = [
         'slug'        => 'concrete-services',
         'description' => 'Professional concrete installation and repair services for driveways, walkways, and patios. Transform your outdoor spaces with durable, high-quality concrete solutions.',
         'keywords'    => ['concrete services Edgerton WI', 'concrete installation Edgerton', 'driveway concrete Wisconsin', 'concrete contractor Edgerton'],
-    ],
-    [
-        'name'        => 'Tree Pruning',
-        'slug'        => 'tree-pruning',
-        'description' => 'Professional tree pruning services that promote healthy growth and safety while maintaining your trees\' natural beauty. Proper pruning techniques for long-term tree health.',
-        'keywords'    => ['tree pruning Edgerton WI', 'tree trimming Wisconsin', 'arborist services Edgerton', 'tree care Edgerton'],
     ],
     [
         'name'        => 'Shrub Trimming',
@@ -166,13 +154,13 @@ $services = [
 $navServices = array_filter($services, function($s) {
     return in_array($s['slug'], [
         'lawn-maintenance',
-        'landscape-design',
         'landscape-installation',
         'hardscaping-services',
         'concrete-services',
-        'tree-pruning',
+        'shrub-trimming',
         'snow-removal',
         'spring-yard-cleanup',
+        'excavating-services',
     ]);
 });
 $navServices = array_values($navServices);
@@ -234,6 +222,7 @@ $colors = [
 $fonts = [
     'heading' => 'Oswald',
     'body'    => 'Lato',
+    'accent'  => 'Caveat',
 ];
 
 // ─── Business Details ─────────────────────────────────────────
@@ -256,7 +245,7 @@ $differentiators = [
 $faqs = [
     [
         'q' => 'What landscaping services do you offer?',
-        'a' => 'R.A.H. Solutions provides comprehensive landscaping services including landscape design, hardscape installation, lawn care and maintenance, seasonal plantings, mulch and soil services, tree trimming, and outdoor living space creation.',
+        'a' => 'R.A.H. Solutions provides comprehensive landscaping services including landscape installation, hardscaping (patios, retaining walls, walkways), lawn care and maintenance, shrub trimming, seasonal plantings, mulch and soil services, and outdoor living space creation.',
     ],
     [
         'q' => 'Do you offer seasonal services for Wisconsin winters?',
@@ -425,7 +414,7 @@ $clientImages = [
     [
         'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963905145-cbpw70-470661025_122202491588208320_8070705476773582033_n.jpg',
         'context' => 'residential',
-        'alt'     => 'Residential landscape design Edgerton WI outdoor spaces',
+        'alt'     => 'Residential landscape installation Edgerton WI outdoor spaces',
     ],
     [
         'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963907325-0lw8ac-470717235_122202491672208320_1286182138053082297_n.jpg',

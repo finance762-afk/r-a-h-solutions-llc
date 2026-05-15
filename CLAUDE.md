@@ -468,7 +468,8 @@ QA validates these by class name. Builds missing these classes auto-fail.
   <div class="container">
     <div class="section-title reveal-up">
       <span class="eyebrow-label">What We Do</span>
-      <h2>{Service count} Services. <span class="text-accent">One Standard.</span></h2>
+      <h2>{Question-format heading specific to the business}</h2>
+      <p class="hero-answer">{40-60 word direct answer paragraph that answers the H2}</p>
       <span class="section-subtitle">{tagline phrase}</span>
       <p class="prose">{1-2 sentence description of the company's service mix}</p>
     </div>
@@ -518,7 +519,12 @@ Each card's icon must be different from adjacent cards.
 **Copy rules:**
 - Card title: just the service name (no qualifiers like "Premium" or "Affordable")
 - Description: 1 sentence, max 14 words, says what it actually is — not what it does for the customer's emotions
-- Section heading: format "{Number} Services. <span class='text-accent'>One Standard.</span>" — keep the two-tone treatment
+- Section heading: phrase as a CONVERSATIONAL QUESTION using customer-search language. Examples:
+  - "What construction services does {company name} offer?"
+  - "Which roofing services are available in {city}?"
+  - "How does {company name} handle commercial HVAC needs?"
+  - DO NOT use generic "Our Services" / "What We Do" / "Services Overview" — these are banned by aeo-content-schema.md §1.1
+  - Two-tone treatment: highlight 1-3 keywords with <span class="text-accent">...</span> within the question
 - Section eyebrow: "What We Do" (literal, do not vary)
 
 **Required CSS variables (add to `:root` in styles.css):**
