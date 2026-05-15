@@ -9,7 +9,7 @@ $pageDescription = 'Concrete driveways, patios & walkways in Edgerton, WI — pr
 $canonicalUrl    = 'https://rahsolutionsllc.com/services/concrete-services';
 // SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
 $ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963885204-c6dam2-475409956_122211163172208320_2104516663902467885_n.jpg';
-$currentPage     = 'services';
+$currentPage     = 'service-concrete-services';
 $heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963885204-c6dam2-475409956_122211163172208320_2104516663902467885_n.jpg';
 
 $pageFaqs = [
@@ -949,7 +949,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="split-grid">
       <div class="split-content">
         <span class="section-eyebrow">What We Do</span>
-        <h2>Concrete Work That Holds Up to Wisconsin Winters</h2>
+        <h2>What Concrete Work Holds Up to Wisconsin Winters?</h2>
         <div class="detail-price-tag">
           <i data-lucide="tag" style="width:14px;height:14px;"></i>
           Driveways typically run $6–$12 per sq ft installed — final pricing at free estimate
@@ -1009,7 +1009,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container">
     <div class="section-header">
       <div class="eyebrow">Why R.A.H. Solutions</div>
-      <h2>Four Reasons Edgerton Homeowners Choose Us for Concrete</h2>
+      <h2>Why Do Edgerton Homeowners Choose Us for Concrete?</h2>
     </div>
     <div class="benefit-cards-grid">
       <div class="benefit-card" data-animate="fade-up">
@@ -1097,7 +1097,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container">
     <div class="section-header">
       <div class="eyebrow">How It Works</div>
-      <h2>Our Concrete Installation Process</h2>
+      <h2>What Is Our Concrete Installation Process?</h2>
     </div>
     <div class="process-steps">
       <div class="process-step">
@@ -1134,7 +1134,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container">
     <div class="section-header">
       <div class="eyebrow">Common Questions</div>
-      <h2>Concrete Services FAQ</h2>
+      <h2>What Are Frequently Asked Questions About Concrete Services?</h2>
     </div>
     <div class="faq-list">
       <?php foreach ($pageFaqs as $faq): ?>
@@ -1151,7 +1151,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="closing-cta" data-animate="fade-up">
   <div class="container">
     <div class="eyebrow">Get Started Today</div>
-    <h2>Stop Patching a Failing Driveway — Replace It Right</h2>
+    <h2>Why Should You Stop Patching and Replace Your Driveway Right?</h2>
     <p>Free estimates for concrete driveways, patios, walkways, and steps anywhere in Edgerton, Stoughton, Janesville, or Madison. Same-week scheduling on most projects.</p>
     <div class="closing-cta-actions">
       <a href="tel:6085015123" class="closing-phone">

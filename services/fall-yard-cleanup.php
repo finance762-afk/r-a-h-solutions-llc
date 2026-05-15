@@ -1102,7 +1102,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <section class="fyc-cta-mid" aria-label="Schedule fall cleanup">
     <div class="container">
       <p class="fyc-cta-eyebrow">October Fills Up Fast — Book Before Leaves Peak</p>
-      <h2>Get Your Lawn Into Winter Without the Mold Risk</h2>
+      <h2>How Do You Get Your Lawn Into Winter Without the Mold Risk?</h2>
       <p>Matted leaves on Wisconsin turf over winter means snow mold in spring. Schedule your fall cleanup before October slots close — R.A.H. Solutions serves Edgerton, Stoughton, Madison &amp; Janesville.</p>
       <div class="fyc-cta-actions">
         <a href="tel:6085015123" class="fyc-btn-phone">
@@ -1126,7 +1126,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="fyc-why-header">
         <span class="section-eyebrow">Why R.A.H. Solutions</span>
-        <h2>Fall Cleanup That Protects What You've Already Invested In</h2>
+        <h2>How Does Fall Cleanup Protect What You've Invested In?</h2>
         <p class="sub">Good fall prep isn't just cosmetic — it directly affects how your lawn and beds perform next spring. Here's how we do it differently.</p>
       </div>
       <div class="fyc-why-cards">
@@ -1174,7 +1174,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="fyc-process-header">
         <span class="section-eyebrow">How It Works</span>
-        <h2>Fall Cleanup Start to Finish — 4 Steps</h2>
+        <h2>What Are the 4 Steps for Fall Cleanup Start to Finish?</h2>
         <p class="sub">From your first call to a fully winterized property, here's how R.A.H. Solutions handles fall cleanup in Rock County.</p>
       </div>
       <div class="fyc-steps">
@@ -1214,7 +1214,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="fyc-faq-header">
         <span class="section-eyebrow">Common Questions</span>
-        <h2>Fall Cleanup Questions — Answered Straight</h2>
+        <h2>What Are Your Fall Cleanup Questions?</h2>
         <p class="sub">Timing, perennial cutback, and what the fall visit actually covers — direct answers for Edgerton homeowners.</p>
       </div>
       <div class="fyc-faq-list">
@@ -1257,7 +1257,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <section class="fyc-closing" data-animate="fade-up">
     <div class="container">
       <span class="section-eyebrow" style="justify-content:center;">Before First Freeze</span>
-      <h2>Protect Your Lawn Before Wisconsin Winter Sets In</h2>
+      <h2>How Do You Protect Your Lawn Before Wisconsin Winter Sets In?</h2>
       <p>October spots fill quickly across Rock County. Call now or get a free estimate online — R.A.H. Solutions has been handling Edgerton fall cleanups since 2023.</p>
       <div class="fyc-closing-actions">
         <a href="tel:6085015123" class="fyc-btn-closing-primary">

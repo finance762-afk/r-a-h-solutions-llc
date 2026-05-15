@@ -4,45 +4,53 @@
   <!-- ── Homepage ─────────────────────────────────────────── -->
   <url>
     <loc>https://rahsolutionsllc.com/</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <!-- ── Services Hub ─────────────────────────────────────── -->
+  <url>
+    <loc>https://rahsolutionsllc.com/services</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- ── Primary Service Pages ────────────────────────────── -->
   <url>
     <loc>https://rahsolutionsllc.com/services/lawn-maintenance</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://rahsolutionsllc.com/services/landscape-design</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://rahsolutionsllc.com/services/landscape-installation</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://rahsolutionsllc.com/services/hardscaping-services</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://rahsolutionsllc.com/services/concrete-services</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://rahsolutionsllc.com/services/snow-removal</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -50,75 +58,67 @@
   <!-- ── Secondary Service Pages ──────────────────────────── -->
   <url>
     <loc>https://rahsolutionsllc.com/services/tree-pruning</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rahsolutionsllc.com/services/shrub-trimming</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rahsolutionsllc.com/services/garden-maintenance</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rahsolutionsllc.com/services/mulching-services</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rahsolutionsllc.com/services/sod-installation</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rahsolutionsllc.com/services/lawn-restoration</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rahsolutionsllc.com/services/spring-yard-cleanup</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rahsolutionsllc.com/services/fall-yard-cleanup</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rahsolutionsllc.com/services/excavating-services</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rahsolutionsllc.com/services/residential-lawn-care</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rahsolutionsllc.com/services/commercial-lawn-care</loc>
-    <lastmod>2026-04-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- ── Services Hub ─────────────────────────────────────── -->
-  <url>
-    <loc>https://rahsolutionsllc.com/services</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -126,7 +126,7 @@
   <!-- ── Service Area ─────────────────────────────────────── -->
   <url>
     <loc>https://rahsolutionsllc.com/service-area</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -134,7 +134,7 @@
   <!-- ── About ────────────────────────────────────────────── -->
   <url>
     <loc>https://rahsolutionsllc.com/about</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -142,7 +142,7 @@
   <!-- ── Contact ──────────────────────────────────────────── -->
   <url>
     <loc>https://rahsolutionsllc.com/contact</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -150,25 +150,25 @@
   <!-- ── Legal Pages ──────────────────────────────────────── -->
   <url>
     <loc>https://rahsolutionsllc.com/privacy-policy/</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://rahsolutionsllc.com/terms/</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://rahsolutionsllc.com/cookie-policy/</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://rahsolutionsllc.com/accessibility/</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

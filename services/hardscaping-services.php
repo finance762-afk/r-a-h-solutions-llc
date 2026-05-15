@@ -986,7 +986,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="hs-detail-grid">
         <div class="hs-detail-content">
           <span class="hs-section-eyebrow">What We Build</span>
-          <h2>Hardscaping That Holds Through Wisconsin Winters — Not Just the First Summer</h2>
+          <h2>What Hardscaping Holds Through Wisconsin Winters?</h2>
 
           <p>Paver patio installation in Edgerton starts at $3,000 for a 200–250 sq ft area using standard concrete pavers. Natural stone and premium paver materials increase costs by 30–60% depending on material selection. Retaining walls run $50–$120 per linear foot installed, based on wall height and materials. Every project includes a free site evaluation and written estimate — no guesswork on price.</p>
 
@@ -1090,7 +1090,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="hs-why-header">
         <span class="hs-section-eyebrow">Why R.A.H. Solutions</span>
-        <h2>Base Preparation Is Where Hardscaping Succeeds or Fails</h2>
+        <h2>Why Is Base Preparation Where Hardscaping Succeeds or Fails?</h2>
         <p class="sub">Every crew can lay pavers. Fewer crews know how to prepare the sub-base correctly for Wisconsin's soil conditions and freeze-thaw pressure.</p>
       </div>
       <div class="hs-why-cards">
@@ -1138,7 +1138,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="hs-process-header">
         <span class="hs-section-eyebrow">How We Work</span>
-        <h2>From First Consultation to Final Stone — Four Steps</h2>
+        <h2>What Are the Four Steps from First Consultation to Final Stone?</h2>
         <p class="sub">A straightforward process that protects your property and delivers results that last through Wisconsin winters.</p>
       </div>
       <div class="hs-process-steps">
@@ -1178,7 +1178,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="hs-faq-header">
         <span class="hs-section-eyebrow">Common Questions</span>
-        <h2>Hardscaping Questions Edgerton Homeowners Ask</h2>
+        <h2>What Are Hardscaping Questions Edgerton Homeowners Ask?</h2>
         <p class="sub">Straight answers on cost, durability, and what makes Wisconsin hardscaping different from warmer climates.</p>
       </div>
       <div class="hs-faq-list">
@@ -1221,7 +1221,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <section class="hs-closing" data-animate="fade-up">
     <div class="container">
       <span class="hs-section-eyebrow" style="justify-content:center;">Get Your Hardscape Estimate</span>
-      <h2>A Free Site Visit — No Pressure, No Surprises</h2>
+      <h2>How Do You Get a Free Site Visit with No Pressure?</h2>
       <p>Call R.A.H. Solutions to schedule a free on-site evaluation. We'll assess your yard, discuss material options, and deliver a written estimate within 48 hours.</p>
       <div class="hs-closing-actions">
         <a href="tel:6085015123" class="hs-btn-closing-phone">

@@ -1094,7 +1094,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <!-- Content (left) -->
         <div class="svc-detail-content">
           <span class="section-eyebrow">What We Do</span>
-          <h2>Precision Lawn Care Designed for Wisconsin's Growing Season</h2>
+          <h2>What Precision Lawn Care Is Designed for Wisconsin's Growing Season?</h2>
 
           <p>Lawn maintenance in Edgerton starts at $40–$80 per visit depending on property size, and covers mowing, string trimming, edging along driveways and beds, and blowing clippings off all paved surfaces. Every visit is performed by the same crew on a consistent schedule so your lawn never looks neglected between visits.</p>
 
@@ -1176,7 +1176,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <section class="cta-mid" aria-label="Contact R.A.H. Solutions">
     <div class="container">
       <p class="cta-eyebrow">Free Estimates · No Obligation</p>
-      <h2>Stop Watching Your Lawn Fall Behind</h2>
+      <h2>Why Should You Stop Watching Your Lawn Fall Behind?</h2>
       <p>Get on a consistent maintenance schedule this season. R.A.H. Solutions serves Edgerton, Stoughton, Madison &amp; Janesville — same-crew visits, every time.</p>
       <div class="cta-actions">
         <a href="tel:6085015123" class="btn-cta-phone">
@@ -1200,7 +1200,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="why-choose-header">
         <span class="section-eyebrow">Why R.A.H. Solutions</span>
-        <h2>Built Around How Wisconsin Lawns Actually Grow</h2>
+        <h2>How Is Our Service Built Around How Wisconsin Lawns Grow?</h2>
         <p class="sub">Local crews who know Rock County's soil and seasonal patterns — not a franchise operation running the same playbook coast to coast.</p>
       </div>
       <div class="why-cards">
@@ -1248,7 +1248,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="process-section-header">
         <span class="section-eyebrow">How It Works</span>
-        <h2>From First Call to First Cut — 4 Steps</h2>
+        <h2>What Are the 4 Steps from First Call to First Cut?</h2>
         <p class="sub">No complicated contracts. No guesswork. We make getting on a maintenance program straightforward.</p>
       </div>
       <div class="process-steps">
@@ -1288,7 +1288,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="faq-section-header">
         <span class="section-eyebrow">Common Questions</span>
-        <h2>Lawn Maintenance Questions — Answered Straight</h2>
+        <h2>What Are Your Lawn Maintenance Questions?</h2>
         <p class="sub">Real answers about what our programs include and how we work in Edgerton and surrounding communities.</p>
       </div>
       <div class="faq-list">
@@ -1331,7 +1331,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <section class="closing-cta" data-animate="fade-up">
     <div class="container">
       <span class="section-eyebrow" style="justify-content:center;">Start This Season Right</span>
-      <h2>Get Your First Lawn Maintenance Visit Scheduled</h2>
+      <h2>How Do You Get Your First Lawn Maintenance Visit Scheduled?</h2>
       <p>Programs fill up fast in spring. Call now or request a free estimate online — R.A.H. Solutions has been keeping Edgerton properties looking sharp since 2023.</p>
       <div class="closing-cta-actions">
         <a href="tel:6085015123" class="btn-closing-phone">

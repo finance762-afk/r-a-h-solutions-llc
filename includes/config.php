@@ -65,6 +65,12 @@ $services = [
         'keywords'    => ['lawn maintenance Edgerton WI', 'lawn care Wisconsin', 'grass maintenance Edgerton', 'lawn service programs'],
     ],
     [
+        'name'        => 'Landscape Design',
+        'slug'        => 'landscape-design',
+        'description' => 'Custom landscape design services that create beautiful, functional outdoor spaces tailored to your property. Expert planning and design for residential and commercial properties.',
+        'keywords'    => ['landscape design Edgerton WI', 'landscaping design Wisconsin', 'landscape architect Edgerton', 'custom landscaping design'],
+    ],
+    [
         'name'        => 'Landscape Installation',
         'slug'        => 'landscape-installation',
         'description' => 'Professional landscape installation services bringing your outdoor vision to life. From plants and trees to hardscaping elements, we handle complete landscape transformations.',
@@ -154,6 +160,7 @@ $services = [
 $navServices = array_filter($services, function($s) {
     return in_array($s['slug'], [
         'lawn-maintenance',
+        'landscape-design',
         'landscape-installation',
         'hardscaping-services',
         'concrete-services',

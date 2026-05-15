@@ -2,7 +2,7 @@
 // ============================================================
 // About — R.A.H. Solutions, LLC
 // ============================================================
-$pageTitle       = 'Family-Owned Landscaping Edgerton WI';
+$pageTitle       = 'About R.A.H. Solutions | Landscaping Edgerton, WI';
 $pageDescription = 'Meet R.A.H. Solutions, LLC — Robert Harried\'s family-owned landscaping company serving Edgerton, Stoughton, Madison & Janesville since 2023. Licensed & insured.';
 $canonicalUrl    = 'https://rahsolutionsllc.com/about';
 // SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
@@ -998,7 +998,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <!-- Content Left -->
         <div>
           <span class="ab-section-eyebrow">Our Story</span>
-          <h2>Built from a Genuine Love of Outdoor Spaces</h2>
+          <h2>Why Was R.A.H. Solutions Built from a Love of Outdoor Spaces?</h2>
           <p>Robert Harried founded R.A.H. Solutions in 2023 with a clear focus: bring honest, professional landscaping to Edgerton and the surrounding Rock County communities without the corporate detachment of larger franchise operations. What started as a residential mowing and cleanup operation has grown into a comprehensive outdoor services company handling everything from <a href="/services" style="color:var(--color-accent);font-weight:600;">landscape design and hardscaping</a> to concrete work and winter snow removal.</p>
           <p>The foundation of the business is straightforward — show up, do the work right, and treat every property with the same care you'd give your own. After 3 years of operations, that approach has built a 4.9-star reputation across 47 reviews and earned consistent repeat business from homeowners and commercial clients throughout <a href="/service-area" style="color:var(--color-accent);font-weight:600;">Edgerton, Stoughton, Madison, and Janesville</a>.</p>
           <p>Operating out of 262 County Road W in Edgerton, our crew understands the local landscape in a literal sense. Rock County clay soils, USDA Zone 5b winter conditions, and the region's distinct spring freeze-thaw cycles all shape how we approach every job — from grading decisions on hardscape projects to mowing height recommendations for Kentucky bluegrass lawns.</p>
@@ -1038,7 +1038,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="ab-values-header">
         <span class="ab-section-eyebrow" style="justify-content:center; margin-bottom: var(--space-sm);">What Drives Us</span>
-        <h2>Three Commitments That Don't Change</h2>
+        <h2>What Are the Three Commitments That Don't Change?</h2>
         <p class="ab-values-sub">These aren't aspirational statements — they're the day-to-day operating principles Robert built the company on.</p>
       </div>
       <div class="ab-values-grid">
@@ -1111,7 +1111,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="ab-trust-header">
         <span class="ab-section-eyebrow" style="justify-content:center; margin-bottom: var(--space-sm);">Why We're the Right Fit</span>
-        <h2>What You Get When You Work With R.A.H. Solutions</h2>
+        <h2>What Do You Get When You Work With R.A.H. Solutions?</h2>
       </div>
       <div class="ab-trust-strip">
         <div class="ab-trust-badge">
@@ -1173,7 +1173,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="ab-faq-header">
         <span class="ab-section-eyebrow" style="justify-content:center; margin-bottom: var(--space-sm);">Common Questions</span>
-        <h2>Questions About R.A.H. Solutions</h2>
+        <h2>What Are Common Questions About R.A.H. Solutions?</h2>
         <p class="ab-faq-sub">Straightforward answers about who we are, where we work, and how we operate.</p>
       </div>
       <div class="ab-faq-list">
@@ -1216,7 +1216,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <section class="ab-closing" data-animate="fade-up">
     <div class="container">
       <span class="ab-section-eyebrow" style="justify-content:center;">Work With Us</span>
-      <h2>Get a Free Estimate From R.A.H. Solutions</h2>
+      <h2>How Do You Get a Free Estimate From R.A.H. Solutions?</h2>
       <p>Whether it's a first mow, a complete landscape overhaul, or snow removal for this winter — call Robert directly or request an estimate online. We respond the same business day.</p>
       <div class="ab-closing-actions">
         <a href="tel:6085015123" class="ab-btn-closing-phone">

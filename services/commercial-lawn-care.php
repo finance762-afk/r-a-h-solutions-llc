@@ -581,7 +581,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
         <div class="clc-detail-content">
           <span class="section-eyebrow">What Commercial Clients Get</span>
-          <h2>Your Grounds Reflect Your Business Before Customers Walk In</h2>
+          <h2>Why Do Your Grounds Reflect Your Business Before Customers Walk In?</h2>
 
           <p>Commercial lawn care from R.A.H. Solutions means scheduled programs with reliable crews and monthly invoicing — not calling around for someone every spring. Our commercial programs cover mowing, edging, debris removal, seasonal bed maintenance, and optional snow removal add-ons, structured as per-season contracts billed monthly for predictable budget management.</p>
 
@@ -662,7 +662,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <section class="clc-cta-mid" aria-label="Request commercial lawn care quote">
     <div class="container">
       <p class="clc-cta-eyebrow">Free Commercial Estimates — No Obligation</p>
-      <h2>Your Business Exterior Speaks Before You Do</h2>
+      <h2>Why Does Your Business Exterior Speak Before You Do?</h2>
       <p>A well-maintained property signals professionalism to everyone who arrives. Get a seasonal contract quote for your Edgerton or Rock County commercial property — R.A.H. Solutions serves storefronts, offices, apartments, and more.</p>
       <div class="clc-cta-actions">
         <a href="tel:6085015123" class="clc-btn-phone">
@@ -686,7 +686,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="clc-why-header">
         <span class="section-eyebrow">Why R.A.H. Solutions</span>
-        <h2>Commercial Grounds Maintenance Done Right — Not Just Adequate</h2>
+        <h2>What Is Commercial Grounds Maintenance Done Right?</h2>
         <p class="sub">Businesses need reliability above everything. Here's how we structure commercial programs so your grounds are never a concern again.</p>
       </div>
       <div class="clc-why-cards">
@@ -734,7 +734,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="clc-process-header">
         <span class="section-eyebrow">How It Works</span>
-        <h2>From First Call to Full-Season Contract — 4 Steps</h2>
+        <h2>How Do You Go from First Call to Full-Season Contract?</h2>
         <p class="sub">Setting up commercial service with R.A.H. Solutions is straightforward — one walkthrough, one proposal, and your grounds are handled for the season.</p>
       </div>
       <div class="clc-steps">
@@ -774,7 +774,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="clc-faq-header">
         <span class="section-eyebrow">Common Questions</span>
-        <h2>Commercial Lawn Care Questions — Answered Straight</h2>
+        <h2>What Are Commercial Lawn Care Questions You Have?</h2>
         <p class="sub">Contracts, pricing, property types, and year-round programs — direct answers for Edgerton business owners and property managers.</p>
       </div>
       <div class="clc-faq-list">
@@ -817,7 +817,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <section class="clc-closing" data-animate="fade-up">
     <div class="container">
       <span class="section-eyebrow" style="justify-content:center;">Ready to Talk About Your Property</span>
-      <h2>Get a Commercial Grounds Maintenance Quote for Your Business</h2>
+      <h2>How Do You Get a Commercial Grounds Maintenance Quote?</h2>
       <p>One walkthrough, one proposal, one vendor for the full season. Call now or request a free estimate — R.A.H. Solutions has been serving Rock County businesses since 2023.</p>
       <div class="clc-closing-actions">
         <a href="tel:6085015123" class="clc-btn-closing-primary">

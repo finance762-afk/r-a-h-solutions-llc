@@ -986,7 +986,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="gm-detail-grid">
         <div class="gm-detail-content">
           <span class="gm-section-eyebrow">What We Do</span>
-          <h2>Garden Bed Care That Keeps Up With Wisconsin's Growing Season</h2>
+          <h2>What Garden Bed Care Keeps Up With Wisconsin's Growing Season?</h2>
 
           <p>Garden maintenance in Edgerton starts at $60/hour, with monthly program visits typically running 1–3 hours depending on bed size and plant complexity. Monthly programs run April through October. Every visit includes weeding, deadheading spent blooms, bed edge sharpening against lawn borders, and a visual check for pest and disease symptoms that need early attention.</p>
 
@@ -1066,7 +1066,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <section class="gm-cta-mid" aria-label="Start a garden maintenance program">
     <div class="container">
       <p class="gm-cta-eyebrow">Monthly Programs · Free First Assessment</p>
-      <h2>Beds That Looked Good in June Shouldn't Look Abandoned by August</h2>
+      <h2>Why Shouldn't Beds That Look Good in June Look Abandoned by August?</h2>
       <p>Consistent monthly visits prevent the weed pressure and plant decline that make gardens a chore. R.A.H. Solutions handles Edgerton garden beds all season — you just enjoy the results.</p>
       <div class="gm-cta-actions">
         <a href="tel:6085015123" class="gm-btn-cta-phone">
@@ -1090,7 +1090,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="gm-why-header">
         <span class="gm-section-eyebrow">Why R.A.H. Solutions</span>
-        <h2>Garden Care That Goes Beyond Pulling Weeds</h2>
+        <h2>What Is Garden Care That Goes Beyond Pulling Weeds?</h2>
         <p class="sub">We treat your beds as a plant community — managing for long-term health, not just making things look tidy on the day of the visit.</p>
       </div>
       <div class="gm-why-cards">
@@ -1138,7 +1138,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="gm-process-header">
         <span class="gm-section-eyebrow">How It Works</span>
-        <h2>From First Visit to Full-Season Coverage — Four Steps</h2>
+        <h2>What Are the Four Steps from First Visit to Full-Season Coverage?</h2>
         <p class="sub">Starting a garden maintenance program is simple — a quick assessment, a clear plan, and consistent visits that keep your beds in top shape.</p>
       </div>
       <div class="gm-process-steps">
@@ -1178,7 +1178,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="gm-faq-header">
         <span class="gm-section-eyebrow">Common Questions</span>
-        <h2>Garden Maintenance Questions Edgerton Homeowners Ask</h2>
+        <h2>What Are Garden Maintenance Questions Edgerton Homeowners Ask?</h2>
         <p class="sub">What's included, how often to schedule visits, and what to expect from a professional garden maintenance program.</p>
       </div>
       <div class="gm-faq-list">
@@ -1221,7 +1221,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <section class="gm-closing" data-animate="fade-up">
     <div class="container">
       <span class="gm-section-eyebrow" style="justify-content:center;">Start Your Garden Program</span>
-      <h2>Your Beds Deserve More Than a Once-a-Season Cleanup</h2>
+      <h2>Why Do Your Beds Deserve More Than a Once-a-Season Cleanup?</h2>
       <p>Call R.A.H. Solutions to schedule a free garden assessment. We'll walk your beds, document what's there, and put together a monthly program that actually works for your yard and schedule.</p>
       <div class="gm-closing-actions">
         <a href="tel:6085015123" class="gm-btn-closing-phone">

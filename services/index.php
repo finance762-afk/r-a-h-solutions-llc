@@ -7,7 +7,7 @@
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 
 $pageTitle       = 'Landscaping Services in Edgerton, WI';
-$pageDescription = 'R.A.H. Solutions: 15 landscaping services in Edgerton, WI — lawn care, hardscaping, concrete, shrub trimming & snow removal. Family-owned. Free estimates.';
+$pageDescription = 'R.A.H. Solutions offers 17 landscaping services in Edgerton, WI — lawn care, hardscaping, concrete, design & snow removal. Free estimates. (608) 501-5123.';
 $canonicalUrl    = 'https://rahsolutionsllc.com/services';
 // SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
 $ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963874866-f077by-471177305_122202492170208320_1592970065814584229_n.jpg';
@@ -808,7 +808,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="si-section-head" data-animate="fade-up">
         <span class="si-eyebrow">Everything We Do</span>
-        <h2>Browse All 15 Services</h2>
+        <h2>What Are All the Services We Offer?</h2>
         <p>Whether you need a one-time cleanup or a full seasonal contract, R.A.H. Solutions handles it. Select any service below for full details, pricing guidance, and FAQs.</p>
       </div>
 
@@ -872,7 +872,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="si-section-head" data-animate="fade-up">
         <span class="si-eyebrow">Browse by Category</span>
-        <h2 id="si-cat-heading">Find the Right Service for Your Property</h2>
+        <h2 id="si-cat-heading">How Do You Find the Right Service for Your Property?</h2>
         <p>Not sure where to start? Explore by category to match your current need — from ongoing lawn maintenance to one-time seasonal projects.</p>
       </div>
 
@@ -978,7 +978,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
         <div class="si-faq-lead" data-animate="fade-up">
           <span class="si-eyebrow">Common Questions</span>
-          <h2 id="si-faq-heading">What You're Probably Wondering</h2>
+          <h2 id="si-faq-heading">What Are You Probably Wondering?</h2>
           <p>Quick answers to the questions we hear most from Edgerton homeowners and business owners before they call.</p>
           <a href="/contact" class="si-faq-cta-inline">
             <i data-lucide="message-square"></i>
@@ -1013,7 +1013,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="si-cta-close-inner" data-animate="fade-up">
         <span class="si-eyebrow">Edgerton, WI &amp; Rock County</span>
-        <h2>Your Property Handled — Start to Finish</h2>
+        <h2>How Is Your Property Handled from Start to Finish?</h2>
         <p>R.A.H. Solutions handles lawn care, hardscaping, seasonal cleanup, and snow removal across Rock County. One call gets you a free on-site estimate from Robert and his crew — typically scheduled within 2–3 business days.</p>
         <a href="tel:6085015123" class="si-cta-close-phone">(608) 501-5123</a>
         <div class="si-cta-close-actions">

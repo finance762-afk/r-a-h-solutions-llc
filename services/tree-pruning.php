@@ -4,12 +4,12 @@
 // Service: Tree Pruning  |  Standard Tier
 // ============================================================
 
-$pageTitle       = 'Tree Pruning & Trimming Edgerton WI';
+$pageTitle       = 'Tree Pruning & Trimming in Edgerton, WI';
 $pageDescription = 'Tree pruning in Edgerton, WI — crown thinning, deadwood removal & storm limb cleanup. Timed to Wisconsin seasons. Free estimates. Call (608) 501-5123.';
 $canonicalUrl    = 'https://rahsolutionsllc.com/services/tree-pruning';
 // SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
 $ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963883232-jst9wv-475547624_122211163226208320_5983283941194375535_n.jpg';
-$currentPage     = 'services';
+$currentPage     = 'service-tree-pruning';
 $heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963883232-jst9wv-475547624_122211163226208320_5983283941194375535_n.jpg';
 
 $pageFaqs = [

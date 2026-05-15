@@ -986,7 +986,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="st-detail-grid">
         <div class="st-detail-content">
           <span class="st-section-eyebrow">How We Work</span>
-          <h2>The Right Cut at the Right Time — How Shrub Pruning Actually Works in Wisconsin</h2>
+          <h2>How Does Shrub Pruning Actually Work in Wisconsin?</h2>
 
           <p>Shrub trimming in Edgerton starts at $75/hour, with most residential properties completed in 2–4 hours depending on shrub count, size, and access. We remove all clippings from your property the same day. No debris left to break down on your lawn or wash into your beds.</p>
 
@@ -1068,7 +1068,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <section class="st-cta-mid" aria-label="Schedule a shrub trimming visit">
     <div class="container">
       <p class="st-cta-eyebrow">Free Estimates · Same-Day Debris Removal</p>
-      <h2>Overgrown Shrubs Don't Fix Themselves — Spring Books Fast</h2>
+      <h2>Why Don't Overgrown Shrubs Fix Themselves?</h2>
       <p>Don't let another season pass on overgrown beds. R.A.H. Solutions handles the timing, technique, and cleanup — leaving your property looking finished, not just cut.</p>
       <div class="st-cta-actions">
         <a href="tel:6085015123" class="st-btn-cta-phone">
@@ -1092,7 +1092,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="st-why-header">
         <span class="st-section-eyebrow">Why R.A.H. Solutions</span>
-        <h2>Shrub Care That Matches How Each Species Actually Grows</h2>
+        <h2>What Shrub Care Matches How Each Species Actually Grows?</h2>
         <p class="sub">Generic trimming crews cut everything the same way on the same schedule. We adapt technique and timing to what each shrub needs to stay healthy in Wisconsin's climate.</p>
       </div>
       <div class="st-why-cards">
@@ -1140,7 +1140,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="st-process-header">
         <span class="st-section-eyebrow">How It Works</span>
-        <h2>Four Steps from Scheduling to Clean Property</h2>
+        <h2>What Are the Four Steps from Scheduling to Clean Property?</h2>
         <p class="sub">Simple, fast, and thorough — shrub trimming that gets done right and leaves your property ready to enjoy.</p>
       </div>
       <div class="st-process-steps">
@@ -1180,7 +1180,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="st-faq-header">
         <span class="st-section-eyebrow">Common Questions</span>
-        <h2>Shrub Trimming Questions Edgerton Homeowners Ask</h2>
+        <h2>What Are Shrub Trimming Questions Edgerton Homeowners Ask?</h2>
         <p class="sub">Straight answers on timing, technique, and what to expect from a professional shrub trim service.</p>
       </div>
       <div class="st-faq-list">
@@ -1223,7 +1223,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <section class="st-closing" data-animate="fade-up">
     <div class="container">
       <span class="st-section-eyebrow" style="justify-content:center;">Book Your Shrub Trim</span>
-      <h2>Sharp Beds Start with a Phone Call</h2>
+      <h2>How Do Sharp Beds Start with a Phone Call?</h2>
       <p>Spring and fall trimming slots book quickly around Edgerton. Call R.A.H. Solutions to schedule your visit — same-day debris removal, no mess left behind.</p>
       <div class="st-closing-actions">
         <a href="tel:6085015123" class="st-btn-closing-phone">

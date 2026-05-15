@@ -8,7 +8,7 @@ $pageDescription = 'Residential lawn care in Edgerton, WI — mowing, edging, tr
 $canonicalUrl    = 'https://rahsolutionsllc.com/services/residential-lawn-care';
 // SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
 $ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963892391-3enmm5-486843500_122226629396208320_6857620022192748149_n.jpg';
-$currentPage     = 'services';
+$currentPage     = 'service-residential-lawn-care';
 $heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963892391-3enmm5-486843500_122226629396208320_6857620022192748149_n.jpg';
 
 $pageServiceName = 'Residential Lawn Care';
@@ -933,7 +933,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="before-after" data-animate="fade-up" aria-label="Residential lawn care before and after">
   <div class="container">
     <p class="section-eyebrow">The Difference It Makes</p>
-    <h2 class="section-title">Consistent Lawn Care vs. Letting It Go</h2>
+    <h2 class="section-title">What Is Consistent Lawn Care vs. Letting It Go?</h2>
     <div class="ba-split">
       <div class="ba-panel ba-panel--before">
         <div class="ba-panel__label" aria-label="Without regular lawn care">Without Regular Service</div>
@@ -998,7 +998,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       </div>
       <div>
         <p class="section-eyebrow">Flexible Scheduling</p>
-        <h2 class="section-title">Programs That Fit Your Life, Not Just Your Lot</h2>
+        <h2 class="section-title">What Programs Fit Your Life, Not Just Your Lot?</h2>
         <p class="prose">
           Your lawn care program is yours to customize. Add mulching in spring, skip a week when you're on vacation, or switch from weekly to bi-weekly mid-season. We adjust without drama.
         </p>
@@ -1046,7 +1046,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="why-section" data-animate="fade-up">
   <div class="container">
     <p class="section-eyebrow">Why Homeowners Choose R.A.H.</p>
-    <h2 class="section-title">The Difference Between Reliable and Just Whoever Shows Up</h2>
+    <h2 class="section-title">What Is the Difference Between Reliable and Just Whoever Shows Up?</h2>
     <div class="why-cards">
       <div class="why-card" data-animate="fade-up">
         <div class="why-card__icon">
@@ -1123,7 +1123,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="cta-banner" aria-label="Get a residential lawn care estimate">
   <div class="container">
     <p class="section-eyebrow" style="color:var(--color-accent);">No-Commitment Estimate</p>
-    <h2 class="cta-banner__title">Stop Thinking About It — Schedule Your Free Yard Walkthrough</h2>
+    <h2 class="cta-banner__title">Why Should You Stop Thinking and Schedule Your Free Yard Walkthrough?</h2>
     <p class="cta-banner__sub">
       Most Edgerton homeowners get their first quote within 2 business days of calling. Programs start as early as the following week.
     </p>
@@ -1143,7 +1143,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="faq-section" data-animate="fade-up">
   <div class="container">
     <p class="section-eyebrow">Common Questions</p>
-    <h2 class="section-title">Residential Lawn Care — Frequently Asked</h2>
+    <h2 class="section-title">What Is Frequently Asked About Residential Lawn Care?</h2>
     <div class="faq-grid">
       <?php foreach ($faqs as $faq): ?>
       <div class="faq-item" data-animate="fade-up">
@@ -1163,7 +1163,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="closing-cta" data-animate="fade-up">
   <div class="container">
     <p class="section-eyebrow">Your Yard, Our Program</p>
-    <h2 class="closing-cta__title">Start Your Residential Lawn Care Program This Season</h2>
+    <h2 class="closing-cta__title">How Do You Start Your Residential Lawn Care Program This Season?</h2>
     <p class="closing-cta__sub">
       R.A.H. Solutions serves homeowners throughout Edgerton, Stoughton, Janesville, and Madison. Licensed, insured, and built around consistent, reliable service.
     </p>

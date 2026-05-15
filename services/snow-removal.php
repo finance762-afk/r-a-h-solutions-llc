@@ -642,7 +642,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
         <div class="sr-detail-content">
           <span class="section-eyebrow">What We Provide</span>
-          <h2>Snow Removal Built for Rock County's Winter Reality — Not Just Light Dustings</h2>
+          <h2>What Snow Removal Is Built for Rock County's Winter Reality?</h2>
 
           <p>R.A.H. Solutions provides residential and commercial snow removal throughout Edgerton and Rock County — including driveway and parking lot plowing, sidewalk shoveling, de-icing and salting, and push-back service for heavy accumulation events. We monitor weather and dispatch during active storms so service happens when properties need it cleared, not the next morning.</p>
 
@@ -747,7 +747,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="sr-why-header">
         <span class="section-eyebrow">Why R.A.H. Solutions</span>
-        <h2>Snow Removal That Actually Shows Up When It Matters</h2>
+        <h2>What Snow Removal Actually Shows Up When It Matters?</h2>
         <p class="sub">Reliability during a Wisconsin winter storm is the only metric that counts. Here's how we deliver it for Edgerton and Rock County properties.</p>
       </div>
       <div class="sr-why-cards">
@@ -795,7 +795,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="sr-process-header">
         <span class="section-eyebrow">How It Works</span>
-        <h2>From Property Walkthrough to Storm-Ready — 4 Steps</h2>
+        <h2>What Are the 4 Steps from Property Walkthrough to Storm-Ready?</h2>
         <p class="sub">Simple setup. Reliable execution when the storms hit. No scrambling last-minute to find a plow.</p>
       </div>
       <div class="sr-steps">
@@ -835,7 +835,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="sr-faq-header">
         <span class="section-eyebrow">Common Questions</span>
-        <h2>Snow Removal Questions — Answered Straight</h2>
+        <h2>What Are Your Snow Removal Questions?</h2>
         <p class="sub">Contracts, response times, commercial coverage, and what de-icing costs — direct answers for Edgerton property owners and business managers.</p>
       </div>
       <div class="sr-faq-list">

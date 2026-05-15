@@ -2,7 +2,7 @@
 // ============================================================
 // Contact — R.A.H. Solutions, LLC
 // ============================================================
-$pageTitle       = 'Contact — Free Landscaping Estimate';
+$pageTitle       = 'Contact R.A.H. Solutions | Edgerton, WI';
 $pageDescription = 'Get a free landscaping estimate from R.A.H. Solutions in Edgerton, WI. Call (608) 501-5123 or fill out our form. Serving Southern Wisconsin since 2023.';
 $canonicalUrl    = 'https://rahsolutionsllc.com/contact';
 // SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
@@ -829,7 +829,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <div class="ct-form-container">
             <div class="ct-form-header">
               <span class="ct-form-eyebrow">Free Estimate Request</span>
-              <h2>Tell Us About Your Project</h2>
+              <h2>What Can We Help You With?</h2>
               <p>We'll review your request and follow up within a few hours during business hours to discuss your project and schedule a free site visit.</p>
             </div>
             <div class="ct-form-body">
@@ -962,7 +962,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <!-- RIGHT: Contact Info -->
         <div class="ct-info">
           <span class="ct-info-eyebrow">Direct Contact</span>
-          <h2>Reach Us Directly</h2>
+          <h2>How Can You Reach Us Directly?</h2>
 
           <a href="tel:6085015123" class="ct-phone-block" aria-label="Call R.A.H. Solutions at (608) 501-5123">
             <div class="ct-phone-icon">
@@ -1061,7 +1061,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <!-- ── Map Placeholder ────────────────────────────────────── -->
   <section class="ct-map-section">
     <div class="container">
-      <h2>Serving Edgerton &amp; Southern Wisconsin</h2>
+      <h2>Where Do We Serve in Southern Wisconsin?</h2>
       <div class="ct-map-placeholder" role="img" aria-label="Service area coverage map for R.A.H. Solutions">
         <svg class="ct-map-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
@@ -1103,7 +1103,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="ct-faq-header">
         <span class="ct-faq-eyebrow" style="justify-content:center; margin-bottom: var(--space-sm);">Before You Reach Out</span>
-        <h2>Common Questions About Contacting Us</h2>
+        <h2>What Are Common Questions About Contacting Us?</h2>
         <p class="ct-faq-sub">Quick answers so you know what to expect.</p>
       </div>
       <div class="ct-faq-list">

@@ -1001,7 +1001,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="li-detail-grid">
         <div class="li-detail-content">
           <span class="li-section-eyebrow">What's Included</span>
-          <h2>From Grading to Planted Beds — We Handle the Full Scope</h2>
+          <h2>What Is the Full Scope from Grading to Planted Beds?</h2>
 
           <p>Landscape installation in Edgerton starts at $2,500 for smaller bed installations and scales based on yard size, plant count, and grading complexity. Every project includes soil assessment and amendment, proper grading and drainage planning before a single plant goes in the ground, and a full mulch finish to lock in moisture and suppress weeds. You get a transformed yard — not just a plant delivery.</p>
 
@@ -1081,7 +1081,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <section class="li-cta-mid" aria-label="Get a landscape installation estimate">
     <div class="container">
       <p class="li-cta-eyebrow">Free Estimates · Spring &amp; Fall Booking Available</p>
-      <h2>This Season's Install Spots Are Filling Fast</h2>
+      <h2>Are This Season's Install Spots Filling Fast?</h2>
       <p>Spring and fall are our busiest install windows. Lock in your project date before the schedule fills — call R.A.H. Solutions for a free site assessment and written estimate.</p>
       <div class="li-cta-actions">
         <a href="tel:6085015123" class="li-btn-cta-phone">
@@ -1105,7 +1105,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="li-why-header">
         <span class="li-section-eyebrow">Why R.A.H. Solutions</span>
-        <h2>Installs Built to Survive Wisconsin — Not Just Look Good on Day One</h2>
+        <h2>What Installs Are Built to Survive Wisconsin?</h2>
         <p class="sub">The difference between a landscape that thrives for 10 years and one that declines in two is almost always in what happens before the plants go in the ground.</p>
       </div>
       <div class="li-why-cards">
@@ -1153,7 +1153,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="li-process-header">
         <span class="li-section-eyebrow">How We Work</span>
-        <h2>Four Steps from Site Visit to Finished Landscape</h2>
+        <h2>What Are the Four Steps from Site Visit to Finished Landscape?</h2>
         <p class="sub">A clear, predictable process that keeps your project on schedule and your property protected throughout installation.</p>
       </div>
       <div class="li-process-steps">
@@ -1193,7 +1193,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="li-faq-header">
         <span class="li-section-eyebrow">Common Questions</span>
-        <h2>Landscape Installation Questions — Answered Directly</h2>
+        <h2>What Are Your Landscape Installation Questions?</h2>
         <p class="sub">What Edgerton homeowners ask before booking a landscape install project.</p>
       </div>
       <div class="li-faq-list">
@@ -1236,7 +1236,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <section class="li-closing" data-animate="fade-up">
     <div class="container">
       <span class="li-section-eyebrow" style="justify-content:center;">Book Your Install This Season</span>
-      <h2>Get a Free Estimate for Your Landscape Project</h2>
+      <h2>How Do You Get a Free Estimate for Your Landscape Project?</h2>
       <p>Spring and fall slots book up fast. Call R.A.H. Solutions for a free site visit — we'll assess your yard, walk through options, and deliver a written estimate with no pressure.</p>
       <div class="li-closing-actions">
         <a href="tel:6085015123" class="li-btn-closing-phone">

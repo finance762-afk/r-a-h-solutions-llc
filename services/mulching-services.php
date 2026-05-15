@@ -986,7 +986,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="ms-detail-grid">
         <div class="ms-detail-content">
           <span class="ms-section-eyebrow">What We Do</span>
-          <h2>Mulch Applied at the Right Depth — Protecting Your Beds All Season Long</h2>
+          <h2>What Is Mulch Applied at the Right Depth to Protect Your Beds?</h2>
 
           <p>Mulch installation in Edgerton starts at $65 per yard installed, which includes delivery and spreading — no separate delivery charge, no drop-and-go bags left for you to spread. A typical residential property with 400–600 sq ft of bed area needs 4–6 yards, totaling $260–$390 for the full install. We measure your beds during the estimate visit and calculate the exact quantity needed.</p>
 
@@ -1068,7 +1068,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <section class="ms-cta-mid" aria-label="Schedule mulch installation">
     <div class="container">
       <p class="ms-cta-eyebrow">Spring Installs · Delivery + Spreading Same Day</p>
-      <h2>Spring Mulch Season Fills Up Quickly Around Edgerton</h2>
+      <h2>Why Does Spring Mulch Season Fill Up Quickly Around Edgerton?</h2>
       <p>Don't wait until late May when spring schedules are maxed out. Book your mulch installation now — R.A.H. Solutions handles delivery and spreading in a single visit so your beds are done right and ready for the season.</p>
       <div class="ms-cta-actions">
         <a href="tel:6085015123" class="ms-btn-cta-phone">
@@ -1092,7 +1092,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="ms-why-header">
         <span class="ms-section-eyebrow">Why R.A.H. Solutions</span>
-        <h2>Depth, Material, and Method — All Three Done Correctly</h2>
+        <h2>How Are Depth, Material, and Method All Done Correctly?</h2>
         <p class="sub">Most mulch jobs fail on depth or technique. We bring all three factors to every install so your beds get the full protection mulch is supposed to provide.</p>
       </div>
       <div class="ms-why-cards">
@@ -1140,7 +1140,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="ms-process-header">
         <span class="ms-section-eyebrow">How It Works</span>
-        <h2>Measured, Delivered, Spread, and Done — Four Steps</h2>
+        <h2>What Are the Four Steps: Measured, Delivered, Spread, and Done?</h2>
         <p class="sub">A fast, clean process that gets your beds mulched correctly and your property looking sharp — typically completed in a single visit.</p>
       </div>
       <div class="ms-process-steps">
@@ -1180,7 +1180,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="ms-faq-header">
         <span class="ms-section-eyebrow">Common Questions</span>
-        <h2>Mulching Questions Edgerton Homeowners Ask</h2>
+        <h2>What Are Mulching Questions Edgerton Homeowners Ask?</h2>
         <p class="sub">Straight answers on quantity, material selection, timing, and what actually works in Wisconsin landscape beds.</p>
       </div>
       <div class="ms-faq-list">
@@ -1223,7 +1223,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <section class="ms-closing" data-animate="fade-up">
     <div class="container">
       <span class="ms-section-eyebrow" style="justify-content:center;">Book Your Spring Mulch Install</span>
-      <h2>Fresh Mulch, Correct Depth, Done Right the First Time</h2>
+      <h2>How Do You Get Fresh Mulch at Correct Depth Done Right?</h2>
       <p>Spring mulch slots fill up fast in Edgerton and Rock County. Call R.A.H. Solutions now — we'll measure your beds, give you a written estimate, and get you on the schedule before peak spring books out.</p>
       <div class="ms-closing-actions">
         <a href="tel:6085015123" class="ms-btn-closing-phone">

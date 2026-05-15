@@ -9,7 +9,7 @@ $pageDescription = 'Lawn restoration in Edgerton, WI — core aeration, overseed
 $canonicalUrl    = 'https://rahsolutionsllc.com/services/lawn-restoration';
 // SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
 $ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963897215-2h4a0d-512659884_122253684104208320_1892119159010734985_n.jpg';
-$currentPage     = 'services';
+$currentPage     = 'service-lawn-restoration';
 $heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963897215-2h4a0d-512659884_122253684104208320_1892119159010734985_n.jpg';
 
 $pageFaqs = [
@@ -783,7 +783,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <i data-lucide="clipboard-list" style="width:14px;height:14px;" aria-hidden="true"></i>
         What We Address
       </div>
-      <h2 id="rest-detail-heading" class="rest-heading">When Your Lawn Needs More Than Mowing</h2>
+      <h2 id="rest-detail-heading" class="rest-heading">When Does Your Lawn Need More Than Mowing?</h2>
       <p class="rest-text">A lawn with bare spots, thinning coverage, or heavy thatch isn't a cosmetic problem — it's a sign the root zone is failing. In the Edgerton area, compacted clay soil, grub cycles, and Wisconsin's harsh winters combine to stress lawns in ways that routine mowing can't fix. Lawn restoration targets the underlying cause: compaction, poor seed-to-soil contact, or soil nutrient deficiency.</p>
       <p class="rest-text">Core aeration paired with overseeding — the most effective combination for most Southern Wisconsin lawns — runs <strong>$250–$600 for a typical residential lot</strong>. That includes aeration, starter fertilizer, and seed selected to match your existing lawn species so the repair blends seamlessly.</p>
       <ul class="rest-services-list" role="list">
@@ -842,7 +842,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="rest-cta-mid__inner">
     <div class="rest-cta-mid__text-col">
       <div class="rest-cta-mid__eyebrow">Fall Restoration Window — August–September</div>
-      <h2 id="rest-cta-mid-heading" class="rest-cta-mid__heading">Miss the Fall Window and Wait Another Year</h2>
+      <h2 id="rest-cta-mid-heading" class="rest-cta-mid__heading">Why Does Missing the Fall Window Mean Waiting Another Year?</h2>
       <p class="rest-cta-mid__sub">Wisconsin's best overseeding window closes by mid-September. Book now to lock in your restoration before soil temps drop and germination becomes unreliable.</p>
     </div>
     <div class="rest-cta-mid__action-col">
@@ -865,7 +865,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <i data-lucide="award" style="width:14px;height:14px;" aria-hidden="true"></i>
         Why R.A.H. Solutions
       </div>
-      <h2 id="rest-why-heading" class="rest-why__heading">Restoration Timed to Wisconsin's Growing Season</h2>
+      <h2 id="rest-why-heading" class="rest-why__heading">How Is Restoration Timed to Wisconsin's Growing Season?</h2>
       <p class="rest-why__sub">Generic lawn restoration misses the timing that makes all the difference in Wisconsin. Here's what sets our approach apart.</p>
     </header>
     <div class="rest-why__cards">
@@ -914,7 +914,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <i data-lucide="list-ordered" style="width:14px;height:14px;" aria-hidden="true"></i>
         Our Process
       </div>
-      <h2 id="rest-process-heading" class="rest-process__heading">Lawn Restoration — How It Works</h2>
+      <h2 id="rest-process-heading" class="rest-process__heading">How Does Lawn Restoration Work?</h2>
     </header>
     <div class="rest-process__grid">
       <div class="rest-process__step" data-animate="fade-up">
@@ -950,7 +950,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="rest-faq" aria-labelledby="rest-faq-heading">
   <div class="rest-faq__inner">
     <div class="rest-faq__eyebrow">Common Questions</div>
-    <h2 id="rest-faq-heading" class="rest-faq__heading">Lawn Restoration FAQ — Edgerton, WI</h2>
+    <h2 id="rest-faq-heading" class="rest-faq__heading">What Are Lawn Restoration FAQs in Edgerton, WI?</h2>
     <?php foreach ($pageFaqs as $faq): ?>
     <div class="rest-faq__item" data-animate="fade-up">
       <h3 class="rest-faq__q"><?php echo htmlspecialchars($faq['q']); ?></h3>
@@ -968,7 +968,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <!-- ── Closing CTA ────────────────────────────────────────── -->
 <section class="rest-cta-close" aria-labelledby="rest-close-heading">
   <div class="rest-cta-close__inner" data-animate="fade-up">
-    <h2 id="rest-close-heading" class="rest-cta-close__heading">Stop Staring at Dead Patches — Get Your Lawn Back</h2>
+    <h2 id="rest-close-heading" class="rest-cta-close__heading">How Do You Stop Staring at Dead Patches and Get Your Lawn Back?</h2>
     <p class="rest-cta-close__text">R.A.H. Solutions restores lawns across Edgerton, Stoughton, Janesville, and Madison. Don't wait — the fall restoration window is short, and there's no good second option until next year.</p>
     <div class="rest-cta-close__actions">
       <a href="/contact" class="btn-primary" style="font-size:1.05rem;">Get a Free Lawn Assessment</a>

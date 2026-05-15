@@ -8,7 +8,7 @@ $pageDescription = 'Excavating in Edgerton, WI — site grading, drainage, pond 
 $canonicalUrl    = 'https://rahsolutionsllc.com/services/excavating-services';
 // SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
 $ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963890974-0j1sut-486971190_122226629348208320_8096727509961542480_n.jpg';
-$currentPage     = 'services';
+$currentPage     = 'service-excavating-services';
 $heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963890974-0j1sut-486971190_122226629348208320_8096727509961542480_n.jpg';
 
 $pageServiceName = 'Excavating Services';
@@ -897,7 +897,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="split-layout">
     <div class="split-content">
       <p class="section-eyebrow">Full Service Scope</p>
-      <h2 class="section-title">Excavating Services We Provide Near Edgerton</h2>
+      <h2 class="section-title">What Excavating Services Do We Provide Near Edgerton?</h2>
       <p class="prose">
         From single-afternoon drainage fixes to multi-day site preparation projects, our excavating work is scoped properly before equipment rolls. We assess soil conditions, set grade benchmarks, and review any permit requirements specific to your municipality in Rock or Dane County.
       </p>
@@ -957,7 +957,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="why-choose" data-animate="fade-up">
   <div class="container">
     <p class="section-eyebrow">Why R.A.H. Solutions</p>
-    <h2 class="section-title">Excavating Done Right for Wisconsin Properties</h2>
+    <h2 class="section-title">How Is Excavating Done Right for Wisconsin Properties?</h2>
     <p class="prose" style="color:rgba(255,255,255,0.72);">
       Hiring the right excavating contractor in Rock County means finding someone who understands Wisconsin soil, local drainage requirements, and how to protect your landscaping investment during the process.
     </p>
@@ -1058,7 +1058,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="faq-section" data-animate="fade-up">
   <div class="container">
     <p class="section-eyebrow">Common Questions</p>
-    <h2 class="section-title">Frequently Asked About Excavating in Edgerton</h2>
+    <h2 class="section-title">What Is Frequently Asked About Excavating in Edgerton?</h2>
     <div class="faq-grid">
       <?php foreach ($faqs as $faq): ?>
       <div class="faq-item" data-animate="fade-up">
@@ -1079,7 +1079,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="closing-cta" data-animate="fade-up">
   <div class="container">
     <p class="section-eyebrow">Ready to Start?</p>
-    <h2 class="closing-cta__title">Schedule a Site Walk for Your Excavating Project</h2>
+    <h2 class="closing-cta__title">How Do You Schedule a Site Walk for Your Excavating Project?</h2>
     <p class="closing-cta__sub">
       R.A.H. Solutions serves Edgerton, Stoughton, Janesville, and Madison with professional excavating and site preparation. We're licensed, insured, and ready to solve your drainage or earthmoving challenge.
     </p>

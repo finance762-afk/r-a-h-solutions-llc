@@ -9,7 +9,7 @@ $pageDescription = 'Sod installation in Edgerton, WI — Kentucky bluegrass & fe
 $canonicalUrl    = 'https://rahsolutionsllc.com/services/sod-installation';
 // SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
 $ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963884244-pe5czp-475493043_122211163190208320_5361770049466921459_n.jpg';
-$currentPage     = 'services';
+$currentPage     = 'service-sod-installation';
 $heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963884244-pe5czp-475493043_122211163190208320_5361770049466921459_n.jpg';
 
 $pageFaqs = [
@@ -945,7 +945,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="sod-faq" aria-labelledby="sod-faq-heading">
   <div class="sod-faq__inner">
     <div class="sod-faq__eyebrow">Common Questions</div>
-    <h2 id="sod-faq-heading" class="sod-faq__heading">Sod Installation FAQ — Edgerton, WI</h2>
+    <h2 id="sod-faq-heading" class="sod-faq__heading">What Are Sod Installation FAQs in Edgerton, WI?</h2>
 
     <?php foreach ($pageFaqs as $idx => $faq): ?>
     <div class="sod-faq__item" data-animate="fade-up">

@@ -1254,7 +1254,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="syc-faq-header">
         <span class="section-eyebrow">Common Questions</span>
-        <h2>Spring Cleanup Questions — Answered Straight</h2>
+        <h2>What Are Your Spring Cleanup Questions?</h2>
         <p class="sub">Direct answers about timing, pricing, and what our spring cleanup covers in Edgerton and Rock County.</p>
       </div>
       <div class="syc-faq-list">

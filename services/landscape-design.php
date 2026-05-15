@@ -1030,7 +1030,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <!-- Content (right) -->
         <div class="design-detail-content">
           <span class="section-eyebrow">What We Do</span>
-          <h2>Landscape Plans Built for Southern Wisconsin's Climate, Not Catalog Photos</h2>
+          <h2>What Landscape Plans Are Built for Southern Wisconsin's Climate?</h2>
 
           <p>Landscape design at R.A.H. Solutions begins with a site consultation and typically involves either a standalone design plan ($150–$400 for residential properties) or design work rolled into your installation project at no separate charge. Every plan comes with a scaled site drawing, plant species list, placement guide, and a plant care document written specifically for what we're installing — not generic care sheets.</p>
 
@@ -1108,7 +1108,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="why-choose-header">
         <span class="section-eyebrow">Why R.A.H. Solutions</span>
-        <h2>Landscape Design That Performs in Wisconsin Winters</h2>
+        <h2>What Landscape Design Performs in Wisconsin Winters?</h2>
         <p class="sub">Every design decision we make is filtered through Zone 5b reality — not what looks good in a catalog from a warmer climate.</p>
       </div>
       <div class="why-cards">
@@ -1156,7 +1156,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="process-section-header">
         <span class="section-eyebrow">How It Works</span>
-        <h2>From Initial Consultation to Installation-Ready Plan</h2>
+        <h2>What Are the Steps from Initial Consultation to Installation-Ready Plan?</h2>
         <p class="sub">A clear, collaborative process — you're involved at every stage so the finished design reflects your vision, not just ours.</p>
       </div>
       <div class="process-alternating">
@@ -1204,7 +1204,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="faq-section-header">
         <span class="section-eyebrow">Common Questions</span>
-        <h2>What Edgerton Homeowners Ask About Landscape Design</h2>
+        <h2>What Do Edgerton Homeowners Ask About Landscape Design?</h2>
         <p class="sub">Direct answers about what the design process looks like and what you get at the end of it.</p>
       </div>
       <div class="faq-list">
@@ -1247,7 +1247,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <section class="closing-cta" data-animate="fade-up">
     <div class="container">
       <span class="section-eyebrow" style="justify-content:center;">Your Outdoor Space, Transformed</span>
-      <h2>Start With a Consultation — See What's Possible</h2>
+      <h2>How Do You Start With a Consultation to See What's Possible?</h2>
       <p>Design consultations start at $150 for residential properties. Installation clients get design included. Call now or fill out our estimate form — R.A.H. Solutions has availability throughout Rock &amp; Dane County.</p>
       <div class="closing-cta-actions">
         <a href="tel:6085015123" class="btn-closing-phone">

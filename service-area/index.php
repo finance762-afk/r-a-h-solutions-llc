@@ -686,7 +686,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   <div class="container">
     <div class="section-title reveal-up">
       <span class="eyebrow-label">Our Communities</span>
-      <h2>Communities Across Southern Wisconsin</h2>
+      <h2>Which Communities Do We Serve Across Southern Wisconsin?</h2>
       <span class="section-subtitle">Locally rooted, regionally trusted</span>
     </div>
 
@@ -812,7 +812,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
       <div class="sa-map__text reveal-left">
         <span class="eyebrow-label">Coverage Area</span>
-        <h2>50-Mile Service Radius From Edgerton</h2>
+        <h2>What Is Our 50-Mile Service Radius From Edgerton?</h2>
         <span class="section-subtitle">Rock County &amp; Dane County</span>
         <p>
           Our crews are on the road daily across Southern Wisconsin. Based on County Road W in Edgerton, we reach most of Rock County and southern Dane County within 30 minutes — which means less travel overhead and faster response when weather or timing matters.
@@ -864,7 +864,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   <div class="container">
     <div class="section-title reveal-up">
       <span class="eyebrow-label" style="color:var(--color-accent);">Full-Service Coverage</span>
-      <h2>Every Service, Every Community</h2>
+      <h2>Do We Offer Every Service in Every Community?</h2>
       <span class="section-subtitle">All 17 services available across our entire coverage area</span>
     </div>
 

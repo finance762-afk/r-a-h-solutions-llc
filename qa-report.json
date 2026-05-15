@@ -7,16 +7,16 @@
   },
   "site": "r-a-h-solutions-llc",
   "expected_slug": "r-a-h-solutions-llc",
-  "passed": true,
-  "grade": "A",
-  "score_pct": 98,
+  "passed": false,
+  "grade": "F",
+  "score_pct": 94,
   "summary": {
-    "total": 147,
-    "passed": 140,
-    "failed": 4,
-    "warn": 3,
-    "blockers_failed": 0,
-    "warnings_failed": 7
+    "total": 165,
+    "passed": 145,
+    "failed": 15,
+    "warn": 5,
+    "blockers_failed": 2,
+    "warnings_failed": 14
   },
   "techniques_detected": [
     {
@@ -27,7 +27,7 @@
     {
       "name": "keyframe_animation",
       "description": "Custom keyframe animations",
-      "matches": 43
+      "matches": 42
     },
     {
       "name": "clip_path_shape",
@@ -42,12 +42,12 @@
     {
       "name": "text_wrap_balance",
       "description": "Modern text wrapping",
-      "matches": 223
+      "matches": 215
     },
     {
       "name": "logical_properties",
       "description": "Logical properties (inline/block)",
-      "matches": 58
+      "matches": 61
     }
   ],
   "checks": [
@@ -177,7 +177,7 @@
       "check": "Directory: assets/images/",
       "detail": "",
       "file": "",
-      "severity": "blocker",
+      "severity": "info",
       "expected": null,
       "actual": null,
       "fix_hint": "",
@@ -230,22 +230,22 @@
     {
       "status": "pass",
       "check": "Inline <style> block",
-      "detail": "703 CSS lines in 1 block(s)",
+      "detail": "705 CSS lines in 1 block(s)",
       "file": "contact.php",
       "severity": "blocker",
       "expected": null,
-      "actual": "703",
+      "actual": "705",
       "fix_hint": "",
       "section": "PHP STANDARDS"
     },
     {
       "status": "pass",
       "check": "Inline <style> block",
-      "detail": "887 CSS lines in 1 block(s)",
+      "detail": "986 CSS lines in 1 block(s)",
       "file": "index.php",
       "severity": "blocker",
       "expected": null,
-      "actual": "887",
+      "actual": "986",
       "fix_hint": "",
       "section": "PHP STANDARDS"
     },
@@ -274,17 +274,6 @@
     {
       "status": "pass",
       "check": "Inline <style> block",
-      "detail": "726 CSS lines in 1 block(s)",
-      "file": "service-area.php",
-      "severity": "blocker",
-      "expected": null,
-      "actual": "726",
-      "fix_hint": "",
-      "section": "PHP STANDARDS"
-    },
-    {
-      "status": "pass",
-      "check": "Inline <style> block",
       "detail": "779 CSS lines in 1 block(s)",
       "file": "about.php",
       "severity": "blocker",
@@ -296,22 +285,22 @@
     {
       "status": "pass",
       "check": "Inline <style> block",
-      "detail": "73 CSS lines in 1 block(s)",
+      "detail": "79 CSS lines in 1 block(s)",
       "file": "privacy-policy/index.php",
       "severity": "blocker",
       "expected": null,
-      "actual": "73",
+      "actual": "79",
       "fix_hint": "",
       "section": "PHP STANDARDS"
     },
     {
       "status": "pass",
       "check": "Inline <style> block",
-      "detail": "51 CSS lines in 1 block(s)",
+      "detail": "53 CSS lines in 1 block(s)",
       "file": "terms/index.php",
       "severity": "blocker",
       "expected": null,
-      "actual": "51",
+      "actual": "53",
       "fix_hint": "",
       "section": "PHP STANDARDS"
     },
@@ -516,55 +505,77 @@
     {
       "status": "pass",
       "check": "Inline <style> block",
-      "detail": "72 CSS lines in 1 block(s)",
+      "detail": "74 CSS lines in 1 block(s)",
       "file": "cookie-policy/index.php",
       "severity": "blocker",
       "expected": null,
-      "actual": "72",
+      "actual": "74",
       "fix_hint": "",
       "section": "PHP STANDARDS"
     },
     {
       "status": "pass",
       "check": "Inline <style> block",
-      "detail": "64 CSS lines in 1 block(s)",
+      "detail": "66 CSS lines in 1 block(s)",
       "file": "accessibility/index.php",
       "severity": "blocker",
       "expected": null,
-      "actual": "64",
+      "actual": "66",
+      "fix_hint": "",
+      "section": "PHP STANDARDS"
+    },
+    {
+      "status": "pass",
+      "check": "Inline <style> block",
+      "detail": "565 CSS lines in 1 block(s)",
+      "file": "service-area/index.php",
+      "severity": "blocker",
+      "expected": null,
+      "actual": "565",
       "fix_hint": "",
       "section": "PHP STANDARDS"
     },
     {
       "status": "pass",
       "check": "Standard tier CSS bar",
-      "detail": "887 lines (need \u2265200)",
+      "detail": "1878 lines (986 inline + 892 external, need \u2265200)",
       "file": "index.php",
       "severity": "blocker",
       "expected": "200",
-      "actual": "887",
+      "actual": "1878",
       "fix_hint": "",
       "section": "PHP STANDARDS"
     },
     {
       "status": "pass",
       "check": "Standard tier CSS bar",
-      "detail": "779 lines (need \u2265200)",
+      "detail": "1671 lines (779 inline + 892 external, need \u2265200)",
       "file": "about.php",
       "severity": "blocker",
       "expected": "200",
-      "actual": "779",
+      "actual": "1671",
       "fix_hint": "",
       "section": "PHP STANDARDS"
     },
     {
       "status": "pass",
       "check": "Standard tier CSS bar",
-      "detail": "703 lines (need \u2265200)",
+      "detail": "1503 lines (611 inline + 892 external, need \u2265200)",
+      "file": "services/index.php",
+      "severity": "blocker",
+      "expected": "200",
+      "actual": "1503",
+      "fix_hint": "",
+      "section": "PHP STANDARDS"
+    },
+    {
+      "status": "pass",
+      "check": "Standard tier CSS bar",
+      "detail": "1597 lines (705 inline + 892 external, need \u2265200)",
       "file": "contact.php",
       "severity": "blocker",
       "expected": "200",
-      "actual": "703",
+      "actual": "1597",
       "fix_hint": "",
       "section": "PHP STANDARDS"
     },
@@ -649,39 +660,6 @@
       "status": "pass",
       "check": "Single H1",
       "detail": "",
-      "file": "service-area.php",
-      "severity": "blocker",
-      "expected": null,
-      "actual": null,
-      "fix_hint": "",
-      "section": "SEO COMPLIANCE"
-    },
-    {
-      "status": "pass",
-      "check": "JSON-LD schema",
-      "detail": "",
-      "file": "service-area.php",
-      "severity": "blocker",
-      "expected": null,
-      "actual": null,
-      "fix_hint": "",
-      "section": "SEO COMPLIANCE"
-    },
-    {
-      "status": "pass",
-      "check": "Canonical tag",
-      "detail": "",
-      "file": "service-area.php",
-      "severity": "blocker",
-      "expected": null,
-      "actual": null,
-      "fix_hint": "",
-      "section": "SEO COMPLIANCE"
-    },
-    {
-      "status": "pass",
-      "check": "Single H1",
-      "detail": "",
       "file": "about.php",
       "severity": "blocker",
       "expected": null,
@@ -1431,6 +1409,39 @@
       "check": "Canonical tag",
       "detail": "",
       "file": "accessibility/index.php",
+      "severity": "blocker",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "",
+      "section": "SEO COMPLIANCE"
+    },
+    {
+      "status": "pass",
+      "check": "Single H1",
+      "detail": "",
+      "file": "service-area/index.php",
+      "severity": "blocker",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "",
+      "section": "SEO COMPLIANCE"
+    },
+    {
+      "status": "pass",
+      "check": "JSON-LD schema",
+      "detail": "",
+      "file": "service-area/index.php",
+      "severity": "blocker",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "",
+      "section": "SEO COMPLIANCE"
+    },
+    {
+      "status": "pass",
+      "check": "Canonical tag",
+      "detail": "",
+      "file": "service-area/index.php",
       "severity": "blocker",
       "expected": null,
       "actual": null,
@@ -1517,7 +1528,7 @@
     {
       "status": "pass",
       "check": "SVG section dividers",
-      "detail": "Found ~85 SVG/divider elements",
+      "detail": "Found ~84 SVG/divider elements",
       "file": "",
       "severity": "warning",
       "expected": null,
@@ -1581,9 +1592,9 @@
       "section": "VISUAL QUALITY"
     },
     {
-      "status": "pass",
+      "status": "fail",
       "check": "Images with loading='lazy'",
-      "detail": "",
+      "detail": "5 violations in 1 file(s): service-area/index.php",
       "file": "",
       "severity": "warning",
       "expected": null,
@@ -1594,7 +1605,7 @@
     {
       "status": "fail",
       "check": "Images with width/height",
-      "detail": "2 violations in 2 file(s): includes/header.php, includes/footer.php",
+      "detail": "7 violations in 3 file(s): includes/footer.php, includes/header.php, service-area/index.php",
       "file": "",
       "severity": "warning",
       "expected": null,
@@ -1605,12 +1616,34 @@
     {
       "status": "fail",
       "check": "Images with descriptive alt",
-      "detail": "2 violations in 2 file(s): includes/header.php, includes/footer.php",
+      "detail": "7 violations in 3 file(s): includes/footer.php, includes/header.php, service-area/index.php",
       "file": "",
       "severity": "warning",
       "expected": null,
       "actual": null,
       "fix_hint": "",
+      "section": "IMAGES"
+    },
+    {
+      "status": "fail",
+      "check": "Image resolution",
+      "detail": "favicon.png is 32x32, recommend at least 800x500 for section",
+      "file": "assets/images/favicon.png",
+      "severity": "warning",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "Replace with higher-resolution version or remove from primary placement",
+      "section": "IMAGES"
+    },
+    {
+      "status": "fail",
+      "check": "Image resolution",
+      "detail": "apple-touch-icon.png is 180x180, recommend at least 800x500 for section",
+      "file": "assets/images/apple-touch-icon.png",
+      "severity": "warning",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "Replace with higher-resolution version or remove from primary placement",
       "section": "IMAGES"
     },
     {
@@ -1667,6 +1700,171 @@
       "actual": null,
       "fix_hint": "",
       "section": "FOOTER & CONVERSION"
+    },
+    {
+      "status": "fail",
+      "check": "All H2s are questions",
+      "detail": "113 non-question H2(s): contact.php: \"Tell Us About Your Project\"; contact.php: \"Reach Us Directly\"; contact.php: \"Serving Edgerton &amp; Southern Wisconsin\"; contact.php: \"Common Questions About Contacting Us\"; index.php: \"Everything Your Property Needs, Year-Round\"",
+      "file": "",
+      "severity": "blocker",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "Rephrase H2s as questions per aeo-content-schema.md \u00a71.1",
+      "section": "AEO CONTENT"
+    },
+    {
+      "status": "warn",
+      "check": "Speakable classes exist",
+      "detail": "No Speakable schema or .hero-answer class found",
+      "file": "",
+      "severity": "blocker",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "Add Speakable schema and .hero-answer class per aeo-content-schema.md",
+      "section": "AEO SCHEMA"
+    },
+    {
+      "status": "fail",
+      "check": "GPTBot readable",
+      "detail": "Homepage content gaps: missing .hero-answer class",
+      "file": "",
+      "severity": "blocker",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "Ensure homepage has H1, .hero-answer paragraph, and business name",
+      "section": "AEO CRAWLABILITY"
+    },
+    {
+      "status": "pass",
+      "check": "NAP consistency",
+      "detail": "",
+      "file": "",
+      "severity": "blocker",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "",
+      "section": "AEO ENTITY"
+    },
+    {
+      "status": "fail",
+      "check": "No carousel libraries",
+      "detail": "Carousel JS found in: index.php, includes/head.php, includes/footer.php",
+      "file": "",
+      "severity": "warning",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "Replace Swiper/Slick with CSS scroll-snap or static grid",
+      "section": "DESIGN"
+    },
+    {
+      "status": "pass",
+      "check": "Reduced motion respected",
+      "detail": "",
+      "file": "",
+      "severity": "warning",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "",
+      "section": "DESIGN"
+    },
+    {
+      "status": "fail",
+      "check": "Variable fonts loaded",
+      "detail": "Google Fonts using static weights instead of variable ranges",
+      "file": "",
+      "severity": "warning",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "Use variable fonts with wght@200..900 ranges per design-aesthetics-2026.md \u00a7A3",
+      "section": "DESIGN"
+    },
+    {
+      "status": "pass",
+      "check": "Industry schema subtype",
+      "detail": "",
+      "file": "",
+      "severity": "info",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "",
+      "section": "AEO SCHEMA"
+    },
+    {
+      "status": "fail",
+      "check": "llms.txt complete",
+      "detail": "Missing sections: Key Facts, Services Offered, Most Citable Pages",
+      "file": "",
+      "severity": "info",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "Add missing sections to llms.txt",
+      "section": "AEO CONTENT"
+    },
+    {
+      "status": "warn",
+      "check": "Hero answer word count",
+      "detail": "No .hero-answer element found on homepage",
+      "file": "",
+      "severity": "blocker",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "Add <p class=\"hero-answer\"> after H1 with 35-70 word answer",
+      "section": "AEO CONTENT"
+    },
+    {
+      "status": "pass",
+      "check": "Sanitized PHP input",
+      "detail": "",
+      "file": "",
+      "severity": "blocker",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "",
+      "section": "SECURITY"
+    },
+    {
+      "status": "fail",
+      "check": "Before/after no-JS fallback",
+      "detail": "Before/after slider exists but no CSS fallback rules",
+      "file": "",
+      "severity": "info",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "Add CSS rules so before/after images display without JS",
+      "section": "INTERACTIVE"
+    },
+    {
+      "status": "fail",
+      "check": "Gallery category attributes",
+      "detail": "Gallery items missing data-category in: index.php",
+      "file": "",
+      "severity": "warning",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "Add data-category attribute to each gallery/project item",
+      "section": "INTERACTIVE"
+    },
+    {
+      "status": "fail",
+      "check": "Image dimensions present",
+      "detail": "5 img(s) missing attributes: service-area/index.php: <?php echo htmlspecialchars($clientImage missing width,height,alt; service-area/index.php: <?php echo htmlspecialchars($clientImage missing width,height,alt; service-area/index.php: <?php echo htmlspecialchars($clientImage missing width,height,alt",
+      "file": "",
+      "severity": "warning",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "Add width, height, and alt to all <img> tags",
+      "section": "IMAGES"
+    },
+    {
+      "status": "pass",
+      "check": "Fonts preconnect",
+      "detail": "",
+      "file": "",
+      "severity": "warning",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "",
+      "section": "PERFORMANCE"
     }
   ],
   "failures": [
@@ -1694,8 +1892,19 @@
     },
     {
       "status": "fail",
+      "check": "Images with loading='lazy'",
+      "detail": "5 violations in 1 file(s): service-area/index.php",
+      "file": "",
+      "severity": "warning",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "",
+      "section": "IMAGES"
+    },
+    {
+      "status": "fail",
       "check": "Images with width/height",
-      "detail": "2 violations in 2 file(s): includes/header.php, includes/footer.php",
+      "detail": "7 violations in 3 file(s): includes/footer.php, includes/header.php, service-area/index.php",
       "file": "",
       "severity": "warning",
       "expected": null,
@@ -1706,12 +1915,122 @@
     {
       "status": "fail",
       "check": "Images with descriptive alt",
-      "detail": "2 violations in 2 file(s): includes/header.php, includes/footer.php",
+      "detail": "7 violations in 3 file(s): includes/footer.php, includes/header.php, service-area/index.php",
       "file": "",
       "severity": "warning",
       "expected": null,
       "actual": null,
       "fix_hint": "",
+      "section": "IMAGES"
+    },
+    {
+      "status": "fail",
+      "check": "Image resolution",
+      "detail": "favicon.png is 32x32, recommend at least 800x500 for section",
+      "file": "assets/images/favicon.png",
+      "severity": "warning",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "Replace with higher-resolution version or remove from primary placement",
+      "section": "IMAGES"
+    },
+    {
+      "status": "fail",
+      "check": "Image resolution",
+      "detail": "apple-touch-icon.png is 180x180, recommend at least 800x500 for section",
+      "file": "assets/images/apple-touch-icon.png",
+      "severity": "warning",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "Replace with higher-resolution version or remove from primary placement",
+      "section": "IMAGES"
+    },
+    {
+      "status": "fail",
+      "check": "All H2s are questions",
+      "detail": "113 non-question H2(s): contact.php: \"Tell Us About Your Project\"; contact.php: \"Reach Us Directly\"; contact.php: \"Serving Edgerton &amp; Southern Wisconsin\"; contact.php: \"Common Questions About Contacting Us\"; index.php: \"Everything Your Property Needs, Year-Round\"",
+      "file": "",
+      "severity": "blocker",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "Rephrase H2s as questions per aeo-content-schema.md \u00a71.1",
+      "section": "AEO CONTENT"
+    },
+    {
+      "status": "fail",
+      "check": "GPTBot readable",
+      "detail": "Homepage content gaps: missing .hero-answer class",
+      "file": "",
+      "severity": "blocker",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "Ensure homepage has H1, .hero-answer paragraph, and business name",
+      "section": "AEO CRAWLABILITY"
+    },
+    {
+      "status": "fail",
+      "check": "No carousel libraries",
+      "detail": "Carousel JS found in: index.php, includes/head.php, includes/footer.php",
+      "file": "",
+      "severity": "warning",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "Replace Swiper/Slick with CSS scroll-snap or static grid",
+      "section": "DESIGN"
+    },
+    {
+      "status": "fail",
+      "check": "Variable fonts loaded",
+      "detail": "Google Fonts using static weights instead of variable ranges",
+      "file": "",
+      "severity": "warning",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "Use variable fonts with wght@200..900 ranges per design-aesthetics-2026.md \u00a7A3",
+      "section": "DESIGN"
+    },
+    {
+      "status": "fail",
+      "check": "llms.txt complete",
+      "detail": "Missing sections: Key Facts, Services Offered, Most Citable Pages",
+      "file": "",
+      "severity": "info",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "Add missing sections to llms.txt",
+      "section": "AEO CONTENT"
+    },
+    {
+      "status": "fail",
+      "check": "Before/after no-JS fallback",
+      "detail": "Before/after slider exists but no CSS fallback rules",
+      "file": "",
+      "severity": "info",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "Add CSS rules so before/after images display without JS",
+      "section": "INTERACTIVE"
+    },
+    {
+      "status": "fail",
+      "check": "Gallery category attributes",
+      "detail": "Gallery items missing data-category in: index.php",
+      "file": "",
+      "severity": "warning",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "Add data-category attribute to each gallery/project item",
+      "section": "INTERACTIVE"
+    },
+    {
+      "status": "fail",
+      "check": "Image dimensions present",
+      "detail": "5 img(s) missing attributes: service-area/index.php: <?php echo htmlspecialchars($clientImage missing width,height,alt; service-area/index.php: <?php echo htmlspecialchars($clientImage missing width,height,alt; service-area/index.php: <?php echo htmlspecialchars($clientImage missing width,height,alt",
+      "file": "",
+      "severity": "warning",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "Add width, height, and alt to all <img> tags",
       "section": "IMAGES"
     }
   ],
@@ -1748,6 +2067,28 @@
       "actual": null,
       "fix_hint": "",
       "section": "VISUAL QUALITY"
+    },
+    {
+      "status": "warn",
+      "check": "Speakable classes exist",
+      "detail": "No Speakable schema or .hero-answer class found",
+      "file": "",
+      "severity": "blocker",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "Add Speakable schema and .hero-answer class per aeo-content-schema.md",
+      "section": "AEO SCHEMA"
+    },
+    {
+      "status": "warn",
+      "check": "Hero answer word count",
+      "detail": "No .hero-answer element found on homepage",
+      "file": "",
+      "severity": "blocker",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "Add <p class=\"hero-answer\"> after H1 with 35-70 word answer",
+      "section": "AEO CONTENT"
     }
   ]
 }

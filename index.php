@@ -207,7 +207,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-.hero-subtitle {
+.hero-subtitle,
+.hero-answer {
   font-size: var(--font-size-lg);
   color: rgba(255,255,255,0.75);
   line-height: 1.65;
@@ -1073,7 +1074,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 }
 @media (max-width: 767px) {
   .hero-title { font-size: clamp(2.4rem, 8vw, 3.2rem); }
-  .hero-subtitle { font-size: var(--font-size-base); }
+  .hero-subtitle,
+  .hero-answer { font-size: var(--font-size-base); }
   .hero-actions { flex-direction: column; align-items: stretch; }
   .hero-actions .btn-lg,
   .hero-actions .btn-outline { text-align: center; justify-content: center; }
@@ -1114,7 +1116,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
             The Outdoor Spaces <span class="gradient-text">Edgerton</span> Deserves
           </h1>
 
-          <p class="hero-subtitle">
+          <p class="hero-answer">
             Full-service landscaping, hardscaping, and year-round property care for homes and businesses across Southern Wisconsin — from first design to the final snowplow.
           </p>
 
@@ -1220,7 +1222,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
       <div class="section-header" data-animate="fade-up">
         <div class="section-num-label" data-num="01 /"> Our Services</div>
-        <h2>Everything Your Property Needs, Year-Round</h2>
+        <h2>What Services Does Your Property Need Year-Round?</h2>
         <p class="prose">From spring planting to winter snow removal, R.A.H. Solutions covers every season for Edgerton homes and businesses.</p>
       </div>
 
@@ -1409,7 +1411,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <section class="cta-mid" aria-label="Contact R.A.H. Solutions">
     <div class="container" data-animate="fade-up">
       <div class="eyebrow-solid">Free Estimates Available</div>
-      <h2>Your Property Deserves a Plan, Not a Template</h2>
+      <h2>Why Does Your Property Need a Custom Plan, Not a Template?</h2>
       <p>Every yard in Edgerton is different — different soil, drainage, sun exposure, and goals. We assess yours before we propose anything.</p>
       <a href="tel:6085015123" class="cta-phone-display" aria-label="Call R.A.H. Solutions at (608) 501-5123">
         (608) 501-5123
@@ -1439,7 +1441,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <div class="about-left">
           <div class="section-num-label" data-num="02 /" data-animate="fade-right">Our Story</div>
 
-          <h2 data-animate="fade-right">A Southern Wisconsin Landscaping Company That Actually Knows Your Climate</h2>
+          <h2 data-animate="fade-right">Which Southern Wisconsin Landscaping Company Actually Knows Your Climate?</h2>
 
           <p class="about-intro prose" data-animate="fade-right">
             R.A.H. Solutions was founded in 2023 by Robert Harried right here in Edgerton — not as a franchise, not as a regional chain, but as a genuinely local business built on doing careful work for neighbors who deserve better than a mow-and-go.
@@ -1541,7 +1543,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="section-num-label" data-num="03 /" data-animate="fade-up">Client Reviews</div>
 
       <div class="section-header" data-animate="fade-up">
-        <h2>What Edgerton Homeowners Are Saying</h2>
+        <h2>What Are Edgerton Homeowners Saying About Us?</h2>
         <p>Real feedback from real neighbors across Southern Wisconsin.</p>
       </div>
 
@@ -1693,7 +1695,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
       <div class="section-header" data-animate="fade-up">
         <div class="section-num-label" data-num="04 /"> Our Work</div>
-        <h2>Real Projects From Edgerton &amp; Surrounding Communities</h2>
+        <h2>What Do Real Projects Look Like in Edgerton &amp; Surrounding Communities?</h2>
         <p class="prose">Browse completed work across Southern Wisconsin — from lawn transformations to hardscaping and concrete installations.</p>
       </div>
 
