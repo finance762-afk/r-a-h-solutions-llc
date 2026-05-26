@@ -1030,7 +1030,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <!-- Content (right) -->
         <div class="design-detail-content">
           <span class="section-eyebrow">What We Do</span>
-          <h2>What Landscape Plans Are Built for Southern Wisconsin's Climate?</h2>
+          <h2>What <span class="text-accent">Landscape Plans</span> Are Built for Southern Wisconsin's Climate?</h2>
 
           <p>Landscape design at R.A.H. Solutions begins with a site consultation and typically involves either a standalone design plan ($150–$400 for residential properties) or design work rolled into your installation project at no separate charge. Every plan comes with a scaled site drawing, plant species list, placement guide, and a plant care document written specifically for what we're installing — not generic care sheets.</p>
 
@@ -1040,7 +1040,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
           <p>For clients who want to stretch a project budget, we frequently propose phased approaches — planting priority anchor trees and structural shrubs in year one, then adding perennial beds and ground covers in subsequent seasons. This lets you achieve the full vision without requiring the entire investment upfront, and gives each planting phase time to establish before the next is added.</p>
 
-          <p class="svc-updated">Last Updated: April 2026 · Serving Edgerton, WI and surrounding Southern Wisconsin communities.</p>
+          <div class="answer-block">
+            <h3>How much does landscape design cost in Edgerton, WI?</h3>
+            <p>Standalone landscape design plans from R.A.H. Solutions range from $150 to $400 for residential properties, depending on property size and project complexity. For clients who proceed with installation, design fees are typically rolled into the total project cost. Every plan includes Zone 5b-appropriate plant selection specific to Wisconsin's climate, and phased implementation options are available to spread your investment across multiple seasons.</p>
+          </div>
+
+          <p class="svc-updated">Last Updated: May 2026 · Serving Edgerton, WI and surrounding Southern Wisconsin communities.</p>
 
           <a href="/contact" class="btn-detail">
             <i data-lucide="calendar" aria-hidden="true" style="width:18px;height:18px;"></i>
@@ -1108,7 +1113,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="why-choose-header">
         <span class="section-eyebrow">Why R.A.H. Solutions</span>
-        <h2>What Landscape Design Performs in Wisconsin Winters?</h2>
+        <h2>What <span class="text-accent">Landscape Design</span> Performs in Wisconsin Winters?</h2>
         <p class="sub">Every design decision we make is filtered through Zone 5b reality — not what looks good in a catalog from a warmer climate.</p>
       </div>
       <div class="why-cards">

@@ -1061,7 +1061,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
         <div class="syc-detail-content">
           <span class="section-eyebrow">What's Included</span>
-          <h2>A Spring Reset That Works With Wisconsin's Soil, Not Against It</h2>
+          <h2>What Is a <span class="text-accent">Spring Reset</span> That Works With Wisconsin's Soil?</h2>
 
           <p>Spring cleanup in Edgerton, WI starts at $250 for small residential yards and covers winter debris removal, dead branch collection, leaf cleanup from fall blowback and winter accumulation, bed edging, light raking and thatch removal, and pre-mulch bed preparation. Most residential lots fall between $250–$600 depending on size and how much the winter left behind.</p>
 
@@ -1071,7 +1071,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
           <p>Mulch, overseeding, and fertilization are available as add-ons but are quoted separately. Cleanup takes a half-day to a full day depending on lot size — we arrive, complete the full job, and haul everything away before we leave. No piles waiting at the curb.</p>
 
-          <p class="syc-updated">Last Updated: April 2026 · Serving Edgerton, WI and surrounding Rock &amp; Dane County communities.</p>
+          <div class="answer-block">
+            <h3>When should I schedule spring yard cleanup in Edgerton?</h3>
+            <p>The ideal window for spring cleanup in Edgerton is mid-April through early May, after the last hard frost and once soil temps reach around 50°F. Starting too early compacts saturated ground and damages perennial crowns. A typical spring cleanup includes debris removal, thatch raking, bed edging, and the season's first mow — most residential yards take a half-day to a full day to complete.</p>
+          </div>
+
+          <p class="syc-updated">Last Updated: May 2026 · Serving Edgerton, WI and surrounding Rock &amp; Dane County communities.</p>
 
           <a href="/contact" class="syc-btn-detail">
             <i data-lucide="calendar-check" aria-hidden="true" style="width:18px;height:18px;"></i>
@@ -1142,7 +1147,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <section class="syc-cta-mid" aria-label="Schedule spring cleanup">
     <div class="container">
       <p class="syc-cta-eyebrow">Spring Booking Fills Fast — April Slots Are Limited</p>
-      <h2>Don't Let Winter's Damage Carry Into the Growing Season</h2>
+      <h2>How Do You Prevent Winter Damage from Carrying Into Growing Season?</h2>
       <p>Early-season cleanup slots in Edgerton go fast. Call now to lock in your April or May date — same-day debris haul-away always included.</p>
       <div class="syc-cta-actions">
         <a href="tel:6085015123" class="syc-btn-phone">
@@ -1166,7 +1171,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="syc-why-header">
         <span class="section-eyebrow">Why R.A.H. Solutions</span>
-        <h2>Spring Cleanup Built Around How Wisconsin Winters Actually Work</h2>
+        <h2>How Is Spring Cleanup Built Around <span class="text-accent">Wisconsin Winters</span>?</h2>
         <p class="sub">We're not a national service running the same protocol in every state. Our cleanups are timed and scoped for Rock County's specific freeze-thaw conditions.</p>
       </div>
       <div class="syc-why-cards">
@@ -1214,7 +1219,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="syc-process-header">
         <span class="section-eyebrow">How It Works</span>
-        <h2>From Call to Clean Yard — 4 Steps</h2>
+        <h2>What Are the 4 Steps from Call to <span class="text-accent">Clean Yard</span>?</h2>
         <p class="sub">Straightforward process with no guesswork. We handle the scheduling, the crew, and the haul-away.</p>
       </div>
       <div class="syc-steps">
@@ -1297,7 +1302,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <section class="syc-closing" data-animate="fade-up">
     <div class="container">
       <span class="section-eyebrow" style="justify-content:center;">April &amp; May Slots Are Limited</span>
-      <h2>Get Your Property Ready for the Growing Season</h2>
+      <h2>How Do You Get Your Property Ready for the Growing Season?</h2>
       <p>Spring cleanup appointments fill quickly in Rock County. Call now or request a free estimate online — R.A.H. Solutions has been handling Edgerton properties since 2023.</p>
       <div class="syc-closing-actions">
         <a href="tel:6085015123" class="syc-btn-closing-primary">

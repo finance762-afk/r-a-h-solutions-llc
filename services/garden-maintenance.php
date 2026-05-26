@@ -986,7 +986,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="gm-detail-grid">
         <div class="gm-detail-content">
           <span class="gm-section-eyebrow">What We Do</span>
-          <h2>What Garden Bed Care Keeps Up With Wisconsin's Growing Season?</h2>
+          <h2>What <span class="text-accent">Garden Bed Care</span> Keeps Up With Wisconsin's Growing Season?</h2>
 
           <p>Garden maintenance in Edgerton starts at $60/hour, with monthly program visits typically running 1–3 hours depending on bed size and plant complexity. Monthly programs run April through October. Every visit includes weeding, deadheading spent blooms, bed edge sharpening against lawn borders, and a visual check for pest and disease symptoms that need early attention.</p>
 
@@ -996,7 +996,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
           <p>Monthly programs are the most cost-effective approach because they prevent the expensive catch-up work that comes from letting beds go 8–10 weeks between visits. A bed maintained monthly stays manageable in 1–2 hours per visit. A bed neglected through summer may need 4–6 hours of corrective work before it can go back on a maintenance schedule.</p>
 
-          <p class="gm-updated">Last Updated: April 2026 · Serving Edgerton, WI and surrounding Rock &amp; Dane County communities.</p>
+          <div class="answer-block">
+            <h3>What does garden maintenance include in Edgerton?</h3>
+            <p>Garden maintenance from R.A.H. Solutions includes weeding, deadheading spent blooms, light pruning, seasonal planting support, bed edge sharpening, and mulch replenishment. Monthly and seasonal programs run April through October, with each visit tailored to what your beds need at that point in Wisconsin's growing cycle.</p>
+          </div>
+
+          <p class="gm-updated">Last Updated: May 2026 · Serving Edgerton, WI and surrounding Rock &amp; Dane County communities.</p>
 
           <a href="/contact" class="gm-btn-detail">
             <i data-lucide="calendar-range" aria-hidden="true" style="width:18px;height:18px;"></i>
@@ -1090,7 +1095,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="gm-why-header">
         <span class="gm-section-eyebrow">Why R.A.H. Solutions</span>
-        <h2>What Is Garden Care That Goes Beyond Pulling Weeds?</h2>
+        <h2>What Is <span class="text-accent">Garden Care</span> That Goes Beyond Pulling Weeds?</h2>
         <p class="sub">We treat your beds as a plant community — managing for long-term health, not just making things look tidy on the day of the visit.</p>
       </div>
       <div class="gm-why-cards">
@@ -1138,7 +1143,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="gm-process-header">
         <span class="gm-section-eyebrow">How It Works</span>
-        <h2>What Are the Four Steps from First Visit to Full-Season Coverage?</h2>
+        <h2>What Are the Four Steps from First Visit to <span class="text-accent">Full-Season</span> Coverage?</h2>
         <p class="sub">Starting a garden maintenance program is simple — a quick assessment, a clear plan, and consistent visits that keep your beds in top shape.</p>
       </div>
       <div class="gm-process-steps">

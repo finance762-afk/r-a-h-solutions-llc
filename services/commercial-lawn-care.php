@@ -581,7 +581,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
         <div class="clc-detail-content">
           <span class="section-eyebrow">What Commercial Clients Get</span>
-          <h2>Why Do Your Grounds Reflect Your Business Before Customers Walk In?</h2>
+          <h2>Why Do Your <span class="text-accent">Grounds</span> Reflect Your Business Before Customers Walk In?</h2>
 
           <p>Commercial lawn care from R.A.H. Solutions means scheduled programs with reliable crews and monthly invoicing — not calling around for someone every spring. Our commercial programs cover mowing, edging, debris removal, seasonal bed maintenance, and optional snow removal add-ons, structured as per-season contracts billed monthly for predictable budget management.</p>
 
@@ -591,7 +591,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
           <p>We serve retail storefronts, professional offices, apartment complexes and HOAs, churches, and light industrial facilities throughout Rock County. ADA walkway access and snow removal add-ons are available as part of a combined year-round program — one vendor, one invoice, consistent service from April through the last snowfall.</p>
 
-          <p class="clc-updated">Last Updated: April 2026 · Serving commercial properties in Edgerton, WI and Rock County.</p>
+          <div class="answer-block">
+            <h3>How much does commercial lawn care cost in Edgerton?</h3>
+            <p>Commercial lawn care in Edgerton is contract-based, with most properties running $400–$1,500 per month depending on acreage, service scope, and visit frequency. R.A.H. Solutions structures programs as seasonal contracts with monthly invoicing and scheduled grounds maintenance visits your operation can rely on week to week.</p>
+          </div>
+
+          <p class="clc-updated">Last Updated: May 2026 · Serving commercial properties in Edgerton, WI and Rock County.</p>
 
           <a href="/contact" class="clc-btn-detail">
             <i data-lucide="clipboard-list" aria-hidden="true" style="width:18px;height:18px;"></i>
@@ -686,7 +691,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="clc-why-header">
         <span class="section-eyebrow">Why R.A.H. Solutions</span>
-        <h2>What Is Commercial Grounds Maintenance Done Right?</h2>
+        <h2>What Is <span class="text-accent">Commercial Grounds</span> Maintenance Done Right?</h2>
         <p class="sub">Businesses need reliability above everything. Here's how we structure commercial programs so your grounds are never a concern again.</p>
       </div>
       <div class="clc-why-cards">
@@ -734,7 +739,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="clc-process-header">
         <span class="section-eyebrow">How It Works</span>
-        <h2>How Do You Go from First Call to Full-Season Contract?</h2>
+        <h2>How Do You Go from First Call to <span class="text-accent">Full-Season</span> Contract?</h2>
         <p class="sub">Setting up commercial service with R.A.H. Solutions is straightforward — one walkthrough, one proposal, and your grounds are handled for the season.</p>
       </div>
       <div class="clc-steps">

@@ -986,7 +986,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="st-detail-grid">
         <div class="st-detail-content">
           <span class="st-section-eyebrow">How We Work</span>
-          <h2>How Does Shrub Pruning Actually Work in Wisconsin?</h2>
+          <h2>How Does <span class="text-accent">Shrub Pruning</span> Actually Work in Wisconsin?</h2>
 
           <p>Shrub trimming in Edgerton starts at $75/hour, with most residential properties completed in 2–4 hours depending on shrub count, size, and access. We remove all clippings from your property the same day. No debris left to break down on your lawn or wash into your beds.</p>
 
@@ -998,7 +998,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
           <p>Untrimmed shrubs cause more problems than just aesthetics. Overgrown shrubs reduce light penetration to adjacent plantings, can damage siding and gutters when branches reach structures, and develop interior dead wood that harbors pests and fungal disease. Staying current with trimming is far cheaper than removing and replacing shrubs that have been let go for too long.</p>
 
-          <p class="st-updated">Last Updated: April 2026 · Serving Edgerton, WI and surrounding Rock &amp; Dane County communities.</p>
+          <div class="answer-block">
+            <h3>How often should shrubs be trimmed in Wisconsin?</h3>
+            <p>Most landscape shrubs in Wisconsin need trimming 1–3 times per growing season, depending on species and growth rate. Slow-growing evergreens like arborvitae typically need one annual trim, while fast-growing deciduous shrubs and formal hedges may require 2–3 sessions to maintain clean form and healthy growth.</p>
+          </div>
+
+          <p class="st-updated">Last Updated: May 2026 · Serving Edgerton, WI and surrounding Rock &amp; Dane County communities.</p>
 
           <a href="/contact" class="st-btn-detail">
             <i data-lucide="calendar" aria-hidden="true" style="width:18px;height:18px;"></i>
@@ -1092,7 +1097,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="st-why-header">
         <span class="st-section-eyebrow">Why R.A.H. Solutions</span>
-        <h2>What Shrub Care Matches How Each Species Actually Grows?</h2>
+        <h2>What <span class="text-accent">Shrub Care</span> Matches How Each Species Actually Grows?</h2>
         <p class="sub">Generic trimming crews cut everything the same way on the same schedule. We adapt technique and timing to what each shrub needs to stay healthy in Wisconsin's climate.</p>
       </div>
       <div class="st-why-cards">
@@ -1140,7 +1145,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="st-process-header">
         <span class="st-section-eyebrow">How It Works</span>
-        <h2>What Are the Four Steps from Scheduling to Clean Property?</h2>
+        <h2>What Are the Four Steps from <span class="text-accent">Scheduling</span> to Clean Property?</h2>
         <p class="sub">Simple, fast, and thorough — shrub trimming that gets done right and leaves your property ready to enjoy.</p>
       </div>
       <div class="st-process-steps">

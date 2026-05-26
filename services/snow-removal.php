@@ -642,7 +642,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
         <div class="sr-detail-content">
           <span class="section-eyebrow">What We Provide</span>
-          <h2>What Snow Removal Is Built for Rock County's Winter Reality?</h2>
+          <h2>What <span class="text-accent">Snow Removal</span> Is Built for Rock County's Winter Reality?</h2>
 
           <p>R.A.H. Solutions provides residential and commercial snow removal throughout Edgerton and Rock County — including driveway and parking lot plowing, sidewalk shoveling, de-icing and salting, and push-back service for heavy accumulation events. We monitor weather and dispatch during active storms so service happens when properties need it cleared, not the next morning.</p>
 
@@ -652,7 +652,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
           <p>De-icing is included with every plow pass — not separated as an optional add-on. Salt and ice melt are applied to driveways, walkways, and entry points after service. Costs are built into the service quote upfront. For commercial properties, consistent post-plow de-icing is a non-negotiable layer of liability protection in Wisconsin winters.</p>
 
-          <p class="sr-updated">Last Updated: April 2026 · Serving Edgerton, WI and surrounding Rock County communities.</p>
+          <div class="answer-block">
+            <h3>How much does snow removal cost in Edgerton, WI?</h3>
+            <p>Snow removal pricing in Edgerton depends on your service structure. Per-event residential plowing typically runs $45–$125 per push depending on driveway size, with de-icing included. Seasonal contracts offer a fixed monthly rate covering all events from November through March — most residential contracts fall in the $75–$200/month range. Service triggers at 2 inches of accumulation. Commercial lots are quoted individually after a property walkthrough.</p>
+          </div>
+
+          <p class="sr-updated">Last Updated: May 2026 · Serving Edgerton, WI and surrounding Rock County communities.</p>
 
           <a href="/contact" class="sr-btn-detail">
             <i data-lucide="clipboard-list" aria-hidden="true" style="width:18px;height:18px;"></i>
@@ -723,7 +728,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <section class="sr-cta-mid" aria-label="Schedule snow removal service">
     <div class="container">
       <p class="sr-cta-eyebrow">Seasonal Contracts — Lock In Before First Snowfall</p>
-      <h2>Don't Wait Until the First Storm to Figure Out Plowing</h2>
+      <h2>Why Shouldn't You Wait Until the First Storm to Figure Out Plowing?</h2>
       <p>Seasonal contracts in Rock County fill before November. Get a quote now and enter winter with your property already covered — R.A.H. Solutions serves Edgerton, Stoughton, Janesville &amp; Madison.</p>
       <div class="sr-cta-actions">
         <a href="tel:6085015123" class="sr-btn-phone">
@@ -747,7 +752,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="sr-why-header">
         <span class="section-eyebrow">Why R.A.H. Solutions</span>
-        <h2>What Snow Removal Actually Shows Up When It Matters?</h2>
+        <h2>What Snow Removal Actually <span class="text-accent">Shows Up</span> When It Matters?</h2>
         <p class="sub">Reliability during a Wisconsin winter storm is the only metric that counts. Here's how we deliver it for Edgerton and Rock County properties.</p>
       </div>
       <div class="sr-why-cards">
@@ -878,7 +883,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <section class="sr-closing" data-animate="fade-up">
     <div class="container">
       <span class="section-eyebrow" style="justify-content:center;">Lock In Before First Snow</span>
-      <h2>Enter Winter With Your Plowing Already Handled</h2>
+      <h2>How Do You Enter Winter With Your <span class="text-accent">Plowing</span> Already Handled?</h2>
       <p>Seasonal contracts fill before the first storm hits. Call now or request a free estimate online — R.A.H. Solutions has been keeping Rock County properties safe through Wisconsin winters since 2023.</p>
       <div class="sr-closing-actions">
         <a href="tel:6085015123" class="sr-btn-closing-primary">

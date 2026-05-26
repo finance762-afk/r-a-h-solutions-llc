@@ -945,7 +945,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       </div>
       <div class="detail-content">
         <span class="section-eyebrow">Professional Tree Care</span>
-        <h2>Pruning Done Right — the First Time</h2>
+        <h2>How Is <span class="text-accent">Pruning</span> Done Right the First Time?</h2>
         <div class="detail-price-note">
           <i data-lucide="tag" style="width:14px;height:14px;"></i>
           Typical range: $75–$400 per tree depending on size and scope
@@ -954,6 +954,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <p>A properly pruned tree lives longer, resists storm damage better, and doesn't create liability hazards over your driveway, roof, or power lines. R.A.H. Solutions handles crown thinning, deadwood removal, structural pruning for young trees, and clearance pruning near structures — all using proper collar-cut technique that allows wound closure, not the destructive flush cuts or topping practices that compromise tree health.</p>
           <p>In Wisconsin, the optimal pruning window runs from late January through early March for most hardwood species. Pruning before bud break reduces stress and minimizes exposure to fungal spores and wood-boring insects that become active once temperatures rise. Oaks get special scheduling — we avoid the April through July oak wilt season entirely when pruning any oak on your property in Rock or Dane County.</p>
           <p>After a storm rolls through Edgerton or Stoughton, damaged limbs hanging over structures need attention quickly. We assess structural integrity of affected trees, safely remove hazard limbs, and make proper pruning cuts that allow the tree to recover rather than leaving ragged stubs that invite decay. All debris is chipped and removed from your property — we don't leave brush piles at the curb and call it done.</p>
+          <div class="answer-block">
+            <h3>How much does tree pruning cost in Edgerton, WI?</h3>
+            <p>Tree pruning in Edgerton typically costs $75–$400 per tree, depending on tree size, species, accessibility, and the scope of work required. Small ornamental trees on the lower end, mature hardwoods with canopy access challenges on the higher end. R.A.H. Solutions provides free on-site estimates so you know exact pricing before any work begins.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -995,7 +999,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container">
     <div class="section-header">
       <div class="eyebrow">Why R.A.H. Solutions</div>
-      <h2>How We Approach Tree Care in Southern Wisconsin</h2>
+      <h2>How Do We Approach <span class="text-accent">Tree Care</span> in Southern Wisconsin?</h2>
     </div>
     <div class="benefit-cards-grid">
       <div class="benefit-card">
@@ -1028,7 +1032,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="tree-sig-header">
         <div class="eyebrow">What We Prune</div>
-        <h2>Every Tree Pruning Service We Offer in Rock &amp; Dane County</h2>
+        <h2>What Tree Pruning Services Do We Offer in Rock &amp; Dane County?</h2>
       </div>
       <div class="tree-service-overlay-cards">
         <div class="tree-overlay-card">
@@ -1061,7 +1065,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container">
     <div class="section-header">
       <div class="eyebrow">How It Works</div>
-      <h2>Our Tree Pruning Process</h2>
+      <h2>What Is Our Tree Pruning Process?</h2>
     </div>
     <div class="process-steps">
       <div class="process-step">
@@ -1098,7 +1102,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container">
     <div class="section-header">
       <div class="eyebrow">Common Questions</div>
-      <h2>Tree Pruning FAQ — Edgerton, WI</h2>
+      <h2>What Are Tree Pruning <span class="text-accent">FAQs</span> in Edgerton, WI?</h2>
     </div>
     <div class="faq-list">
       <?php foreach ($pageFaqs as $faq): ?>
@@ -1115,7 +1119,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="closing-cta" data-animate="fade-up">
   <div class="container">
     <div class="eyebrow">Ready to Schedule?</div>
-    <h2>Get Hazard Limbs Down Before the Next Storm</h2>
+    <h2>How Do You Get Hazard Limbs Down Before the Next Storm?</h2>
     <p>Free estimates for tree pruning and trimming in Edgerton, Stoughton, Janesville, and Madison. Most jobs scheduled within the week.</p>
     <div class="closing-cta-actions">
       <a href="tel:6085015123" class="closing-phone">
@@ -1127,7 +1131,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         Schedule Free Estimate
       </a>
     </div>
-    <p class="last-updated">Last Updated: April 2026</p>
+    <p class="last-updated">Last Updated: May 2026</p>
   </div>
 </section>
 

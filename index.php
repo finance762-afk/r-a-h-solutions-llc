@@ -1222,7 +1222,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
       <div class="section-header" data-animate="fade-up">
         <div class="section-num-label" data-num="01 /"> Our Services</div>
-        <h2>What Services Does Your Property Need Year-Round?</h2>
+        <h2>What Services Does Your Property Need <span class="text-accent">Year-Round</span>?</h2>
         <p class="prose">From spring planting to winter snow removal, R.A.H. Solutions covers every season for Edgerton homes and businesses.</p>
       </div>
 
@@ -1411,7 +1411,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <section class="cta-mid" aria-label="Contact R.A.H. Solutions">
     <div class="container" data-animate="fade-up">
       <div class="eyebrow-solid">Free Estimates Available</div>
-      <h2>Why Does Your Property Need a Custom Plan, Not a Template?</h2>
+      <h2>Why Does Your Property Need a <span class="text-accent">Custom Plan</span>, Not a Template?</h2>
       <p>Every yard in Edgerton is different — different soil, drainage, sun exposure, and goals. We assess yours before we propose anything.</p>
       <a href="tel:6085015123" class="cta-phone-display" aria-label="Call R.A.H. Solutions at (608) 501-5123">
         (608) 501-5123
@@ -1915,7 +1915,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
       <div class="section-header prose-centered" style="text-align:center;" data-animate="fade-up">
         <div class="section-num-label" data-num="05 /">FAQ</div>
-        <h2>Common Questions About Our Landscaping Services</h2>
+        <h2>What Are Common Questions About Our Landscaping Services?</h2>
         <p>Honest answers about what we do, where we work, and how we price.</p>
       </div>
 
@@ -1962,7 +1962,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         Edgerton, WI &amp; Surrounding Area
       </div>
 
-      <h2>Ready to Stop Guessing and Start Growing?</h2>
+      <h2>Ready to Stop Guessing and Start <span class="text-accent">Growing</span>?</h2>
 
       <p>
         Stop wondering what your yard could look like. R.A.H. Solutions visits your property, lays out a clear plan, and gets to work — no pressure, no fluff, just honest work from a local crew that lives here too.

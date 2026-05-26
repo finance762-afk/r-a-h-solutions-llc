@@ -1001,7 +1001,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="li-detail-grid">
         <div class="li-detail-content">
           <span class="li-section-eyebrow">What's Included</span>
-          <h2>What Is the Full Scope from Grading to Planted Beds?</h2>
+          <h2>What Is the Full Scope from Grading to <span class="text-accent">Planted Beds</span>?</h2>
 
           <p>Landscape installation in Edgerton starts at $2,500 for smaller bed installations and scales based on yard size, plant count, and grading complexity. Every project includes soil assessment and amendment, proper grading and drainage planning before a single plant goes in the ground, and a full mulch finish to lock in moisture and suppress weeds. You get a transformed yard — not just a plant delivery.</p>
 
@@ -1011,7 +1011,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
           <p>Installation sequence matters as much as plant selection. We follow a defined order: hardscape placement first (if applicable), then soil prep and amendment, then plant layout and spacing review before digging, then installation, then mulch. This sequence prevents the common mistake of planting first and discovering drainage problems too late. We provide a written care guide covering the critical establishment period — the first two growing seasons when new plants are most vulnerable.</p>
 
-          <p class="li-updated">Last Updated: April 2026 · Serving Edgerton, WI and surrounding Rock &amp; Dane County communities.</p>
+          <div class="answer-block">
+            <h3>How long does a landscape installation take in Edgerton?</h3>
+            <p>Most residential landscape installations in Edgerton are completed in 1 to 5 days depending on project scope, with smaller bed refreshes finishing in a single day and full-yard transformations spanning 3–5 days. Projects start at $2,500 for basic installations and scale based on plant count, grading complexity, and soil amendment needs. Every project includes soil prep, drainage planning, planting, and a full mulch finish.</p>
+          </div>
+
+          <p class="li-updated">Last Updated: May 2026 · Serving Edgerton, WI and surrounding Rock &amp; Dane County communities.</p>
 
           <a href="/contact" class="li-btn-detail">
             <i data-lucide="clipboard-list" aria-hidden="true" style="width:18px;height:18px;"></i>
@@ -1105,7 +1110,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="li-why-header">
         <span class="li-section-eyebrow">Why R.A.H. Solutions</span>
-        <h2>What Installs Are Built to Survive Wisconsin?</h2>
+        <h2>What <span class="text-accent">Installs</span> Are Built to Survive Wisconsin?</h2>
         <p class="sub">The difference between a landscape that thrives for 10 years and one that declines in two is almost always in what happens before the plants go in the ground.</p>
       </div>
       <div class="li-why-cards">
@@ -1153,7 +1158,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="li-process-header">
         <span class="li-section-eyebrow">How We Work</span>
-        <h2>What Are the Four Steps from Site Visit to Finished Landscape?</h2>
+        <h2>What Are the Four Steps from Site Visit to <span class="text-accent">Finished Landscape</span>?</h2>
         <p class="sub">A clear, predictable process that keeps your project on schedule and your property protected throughout installation.</p>
       </div>
       <div class="li-process-steps">

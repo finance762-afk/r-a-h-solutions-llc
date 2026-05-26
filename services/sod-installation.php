@@ -796,9 +796,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <i data-lucide="layers" style="width:14px;height:14px;" aria-hidden="true"></i>
         What's Included
       </div>
-      <h2 id="sod-detail-heading" class="sod-detail__heading">Everything Needed for a Lawn That Lasts</h2>
+      <h2 id="sod-detail-heading" class="sod-detail__heading">What Is Everything Needed for a <span class="text-accent">Lawn That Lasts</span>?</h2>
       <p class="sod-detail__text">Southern Wisconsin clay soils are hard on new lawns. If the ground isn't properly graded and amended before installation, water pools, roots can't penetrate, and sod dies within a season. R.A.H. Solutions treats site preparation as the core of every sod installation — not an afterthought. Every project includes a soil assessment, minimum 4 inches of quality topsoil where needed, proper grade for positive drainage, and locally sourced sod acclimated to Wisconsin's climate.</p>
       <p class="sod-detail__text">Typical installed cost runs <strong>$1.50–$2.50 per square foot</strong>, depending on site complexity and sod variety. That includes delivery, installation, rolling, and your 30-day establishment watering schedule.</p>
+
+      <div class="answer-block">
+        <h3>How much does sod installation cost in Edgerton?</h3>
+        <p>Sod installation in Edgerton typically runs $1.50–$2.50 per square foot fully installed. That price includes site preparation, soil grading, sod delivery, installation, rolling for root-to-soil contact, and a printed 30-day watering plan. A typical 2,000 sq ft lawn costs $3,000–$5,000 depending on site complexity and sod variety selected.</p>
+      </div>
 
       <ul class="sod-detail__list" role="list">
         <li><i data-lucide="check-circle" style="width:18px;height:18px;" aria-hidden="true"></i>Site assessment and drainage review</li>
@@ -846,7 +851,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="sod-cta-mid" aria-labelledby="sod-cta-mid-heading">
   <div class="sod-cta-mid__inner">
     <div class="sod-cta-mid__eyebrow">Ready for an Instant Lawn?</div>
-    <h2 id="sod-cta-mid-heading" class="sod-cta-mid__heading">Spring and Fall Booking Fills Fast — Reserve Your Date Now</h2>
+    <h2 id="sod-cta-mid-heading" class="sod-cta-mid__heading">Why Does Spring and Fall Booking Fill Fast?</h2>
     <p class="sod-cta-mid__sub">Edgerton's best sod installation windows book quickly. Call now for a free site assessment and same-week estimate.</p>
     <a href="tel:6085015123" class="sod-cta-mid__phone" aria-label="Call R.A.H. Solutions at (608) 501-5123">(608) 501-5123</a>
     <div class="sod-cta-mid__actions">
@@ -868,7 +873,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <i data-lucide="award" style="width:14px;height:14px;" aria-hidden="true"></i>
         Why R.A.H. Solutions
       </div>
-      <h2 id="sod-why-heading" class="sod-why__heading">Sod Installation Built for Southern Wisconsin Soil</h2>
+      <h2 id="sod-why-heading" class="sod-why__heading">What <span class="text-accent">Sod Installation</span> Is Built for Southern Wisconsin Soil?</h2>
       <p class="sod-why__sub">The Edgerton area's heavy clay soil and freeze-thaw cycles demand a different approach than what works in other states. Here's what we do differently.</p>
     </header>
     <div class="sod-why__grid">
@@ -909,7 +914,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <i data-lucide="list-ordered" style="width:14px;height:14px;" aria-hidden="true"></i>
         Our Process
       </div>
-      <h2 id="sod-process-heading" class="sod-process__heading">From Bare Ground to Green Lawn — 4 Steps</h2>
+      <h2 id="sod-process-heading" class="sod-process__heading">What Are the 4 Steps from Bare Ground to Green Lawn?</h2>
     </header>
     <div class="sod-process__steps">
       <div class="sod-process__step" data-animate="fade-up">
@@ -964,7 +969,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <!-- ── Closing CTA ────────────────────────────────────────── -->
 <section class="sod-cta-close" aria-labelledby="sod-close-heading">
   <div class="sod-cta-close__inner" data-animate="fade-up">
-    <h2 id="sod-close-heading" class="sod-cta-close__heading">Your New Lawn is One Call Away</h2>
+    <h2 id="sod-close-heading" class="sod-cta-close__heading">How Is Your New Lawn Just One Call Away?</h2>
     <p class="sod-cta-close__text">R.A.H. Solutions installs sod across Edgerton, Stoughton, Janesville, and Madison. Free estimates, local crew, and a watering plan that protects your investment from day one.</p>
     <a href="/contact" class="btn-primary" style="font-size:1.1rem;padding:var(--space-lg) var(--space-2xl);">Request Your Free Estimate</a>
     <div class="sod-cta-close__meta">
@@ -972,7 +977,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <span><i data-lucide="clock" style="width:15px;height:15px;" aria-hidden="true"></i> Free Estimates</span>
       <span><i data-lucide="map-pin" style="width:15px;height:15px;" aria-hidden="true"></i> Edgerton-Based</span>
     </div>
-    <p style="text-align:center;font-family:var(--font-body);font-size:var(--font-size-xs);color:var(--color-text-light);margin-top:var(--space-lg);">Last Updated: April 2026</p>
+    <p style="text-align:center;font-family:var(--font-body);font-size:var(--font-size-xs);color:var(--color-text-light);margin-top:var(--space-lg);">Last Updated: May 2026</p>
   </div>
 </section>
 

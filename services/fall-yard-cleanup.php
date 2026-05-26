@@ -1021,7 +1021,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
         <div class="fyc-detail-content">
           <span class="section-eyebrow">What's Covered</span>
-          <h2>Why Wet Leaves Left on Wisconsin Grass Over Winter Can Cost You in Spring</h2>
+          <h2>Why Can Wet Leaves Left on Wisconsin Grass Cost You in <span class="text-accent">Spring</span>?</h2>
 
           <p>Fall cleanup in Edgerton starts at $200 for small residential yards and covers full leaf removal, dead annual removal, perennial cutback (species-dependent), bed preparation for winter mulch, and a final mowing at reduced height. Properties with heavy oak or maple canopy often need two visits — one after peak drop in mid-October and a second in late October to catch stragglers before the ground freezes.</p>
 
@@ -1031,7 +1031,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
           <p>Fall cleanup also sets up spring. Properties that go into winter with beds cleared, soil tilled of debris, and a final mow done at 2.5–3 inches need significantly less spring prep — an earlier first mow, a shorter cleanup visit, and better overwintering success on perennials that weren't buried in mat. If you run a spring cleanup program with us, the fall visit connects directly into that schedule.</p>
 
-          <p class="fyc-updated">Last Updated: April 2026 · Serving Edgerton, WI and surrounding Rock &amp; Dane County communities.</p>
+          <div class="answer-block">
+            <h3>What does fall yard cleanup include in Edgerton?</h3>
+            <p>Fall cleanup in Edgerton covers full leaf removal, perennial bed cutback (species-appropriate), dead annual removal, final mowing at reduced height, and bed winterization prep. Most properties are serviced in October through early November — before Rock County's first hard frost locks the ground. Heavy-leaf properties with oaks or maples may need two visits to catch late-dropping leaves.</p>
+          </div>
+
+          <p class="fyc-updated">Last Updated: May 2026 · Serving Edgerton, WI and surrounding Rock &amp; Dane County communities.</p>
 
           <a href="/contact" class="fyc-btn-detail">
             <i data-lucide="calendar-check" aria-hidden="true" style="width:18px;height:18px;"></i>
@@ -1126,7 +1131,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="fyc-why-header">
         <span class="section-eyebrow">Why R.A.H. Solutions</span>
-        <h2>How Does Fall Cleanup Protect What You've Invested In?</h2>
+        <h2>How Does <span class="text-accent">Fall Cleanup</span> Protect What You've Invested In?</h2>
         <p class="sub">Good fall prep isn't just cosmetic — it directly affects how your lawn and beds perform next spring. Here's how we do it differently.</p>
       </div>
       <div class="fyc-why-cards">
@@ -1174,7 +1179,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="fyc-process-header">
         <span class="section-eyebrow">How It Works</span>
-        <h2>What Are the 4 Steps for Fall Cleanup Start to Finish?</h2>
+        <h2>What Are the 4 Steps for Fall Cleanup <span class="text-accent">Start to Finish</span>?</h2>
         <p class="sub">From your first call to a fully winterized property, here's how R.A.H. Solutions handles fall cleanup in Rock County.</p>
       </div>
       <div class="fyc-steps">

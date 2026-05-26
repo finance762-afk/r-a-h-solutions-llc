@@ -808,7 +808,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="si-section-head" data-animate="fade-up">
         <span class="si-eyebrow">Everything We Do</span>
-        <h2>What Are All the Services We Offer?</h2>
+        <h2>What Are All the <span class="text-accent">Services</span> We Offer?</h2>
         <p>Whether you need a one-time cleanup or a full seasonal contract, R.A.H. Solutions handles it. Select any service below for full details, pricing guidance, and FAQs.</p>
       </div>
 
@@ -1013,7 +1013,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="si-cta-close-inner" data-animate="fade-up">
         <span class="si-eyebrow">Edgerton, WI &amp; Rock County</span>
-        <h2>How Is Your Property Handled from Start to Finish?</h2>
+        <h2>How Is Your Property Handled from <span class="text-accent">Start to Finish</span>?</h2>
         <p>R.A.H. Solutions handles lawn care, hardscaping, seasonal cleanup, and snow removal across Rock County. One call gets you a free on-site estimate from Robert and his crew — typically scheduled within 2–3 business days.</p>
         <a href="tel:6085015123" class="si-cta-close-phone">(608) 501-5123</a>
         <div class="si-cta-close-actions">

@@ -783,7 +783,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <i data-lucide="clipboard-list" style="width:14px;height:14px;" aria-hidden="true"></i>
         What We Address
       </div>
-      <h2 id="rest-detail-heading" class="rest-heading">When Does Your Lawn Need More Than Mowing?</h2>
+      <h2 id="rest-detail-heading" class="rest-heading">When Does Your Lawn Need More Than <span class="text-accent">Mowing</span>?</h2>
       <p class="rest-text">A lawn with bare spots, thinning coverage, or heavy thatch isn't a cosmetic problem — it's a sign the root zone is failing. In the Edgerton area, compacted clay soil, grub cycles, and Wisconsin's harsh winters combine to stress lawns in ways that routine mowing can't fix. Lawn restoration targets the underlying cause: compaction, poor seed-to-soil contact, or soil nutrient deficiency.</p>
       <p class="rest-text">Core aeration paired with overseeding — the most effective combination for most Southern Wisconsin lawns — runs <strong>$250–$600 for a typical residential lot</strong>. That includes aeration, starter fertilizer, and seed selected to match your existing lawn species so the repair blends seamlessly.</p>
       <ul class="rest-services-list" role="list">
@@ -795,6 +795,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <li><i data-lucide="check-circle" style="width:17px;height:17px;" aria-hidden="true"></i>Pre-emergent weed control timing strategy</li>
         <li><i data-lucide="check-circle" style="width:17px;height:17px;" aria-hidden="true"></i>4-week follow-up care schedule included</li>
       </ul>
+
+      <div class="answer-block">
+        <h3>When is the best time for lawn restoration in Wisconsin?</h3>
+        <p>Fall is the ideal window for lawn restoration in Wisconsin — late August through mid-September delivers the best germination rates with warm soil and fall rainfall. Early spring (April) is a secondary option. Core aeration paired with overseeding produces visible improvement within one growing season, with full density typically reached by the following spring.</p>
+      </div>
+
       <a href="/contact" class="btn-primary">Schedule Your Lawn Assessment</a>
     </div>
 
@@ -865,7 +871,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <i data-lucide="award" style="width:14px;height:14px;" aria-hidden="true"></i>
         Why R.A.H. Solutions
       </div>
-      <h2 id="rest-why-heading" class="rest-why__heading">How Is Restoration Timed to Wisconsin's Growing Season?</h2>
+      <h2 id="rest-why-heading" class="rest-why__heading">How Is <span class="text-accent">Restoration</span> Timed to Wisconsin's Growing Season?</h2>
       <p class="rest-why__sub">Generic lawn restoration misses the timing that makes all the difference in Wisconsin. Here's what sets our approach apart.</p>
     </header>
     <div class="rest-why__cards">
@@ -914,7 +920,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <i data-lucide="list-ordered" style="width:14px;height:14px;" aria-hidden="true"></i>
         Our Process
       </div>
-      <h2 id="rest-process-heading" class="rest-process__heading">How Does Lawn Restoration Work?</h2>
+      <h2 id="rest-process-heading" class="rest-process__heading">How Does <span class="text-accent">Lawn Restoration</span> Work?</h2>
     </header>
     <div class="rest-process__grid">
       <div class="rest-process__step" data-animate="fade-up">
@@ -975,7 +981,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <a href="tel:6085015123" class="btn-secondary" style="background:rgba(255,255,255,0.1);border:2px solid rgba(255,255,255,0.25);color:#fff;">Call (608) 501-5123</a>
     </div>
     <div class="rest-cta-close__meta">Licensed &amp; Insured · Free Estimates · Edgerton, WI</div>
-    <p style="font-family:var(--font-body);font-size:var(--font-size-xs);color:rgba(255,255,255,0.35);margin-top:var(--space-lg);">Last Updated: April 2026</p>
+    <p style="font-family:var(--font-body);font-size:var(--font-size-xs);color:rgba(255,255,255,0.35);margin-top:var(--space-lg);">Last Updated: May 2026</p>
   </div>
 </section>
 

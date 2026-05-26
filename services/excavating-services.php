@@ -872,18 +872,22 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="answer-intro" data-animate="fade-up">
   <div class="container">
     <p class="section-eyebrow">What Excavating Covers</p>
-    <h2 class="section-title">What Does Excavating Actually Include?</h2>
+    <h2 class="section-title">What Does <span class="text-accent">Excavating</span> Actually Include?</h2>
     <p class="prose">
       Excavating from R.A.H. Solutions covers any project that requires moving or reshaping earth — site grading for new construction or additions, drainage grading to correct water pooling near your foundation, pond and water feature excavation, utility trenching for water or electrical lines, and basement or foundation preparation. If your property has a water problem, a new structure going in, or ground that needs reshaping, excavation is the first step.
     </p>
     <p class="prose">
       Wisconsin's heavy clay soils in the Edgerton area create specific drainage challenges. Water doesn't percolate well through clay — it pools, runs toward structures, and causes long-term foundation and basement moisture issues. Properly graded positive drainage (water flows away from your home at minimum 6 inches over the first 10 feet) is the single most effective preventative measure for basement water intrusion in Rock County.
     </p>
+    <div class="answer-block">
+      <h3>What excavating services are available in Edgerton, WI?</h3>
+      <p>R.A.H. Solutions offers site grading, drainage correction, pond excavation, utility trenching, and foundation preparation in Edgerton and Rock County. Most residential grading projects run $500–$3,000, with compact equipment rates of $80–$150 per hour. Every project starts with a free site walk and written estimate before equipment rolls.</p>
+    </div>
     <div class="cost-callout" data-animate="fade-up">
       <i data-lucide="dollar-sign" style="width:20px;height:20px;color:var(--color-accent);" aria-hidden="true"></i>
       <strong>Typical cost: $80–$150/hr</strong>&nbsp; for compact equipment. Most residential grading projects: $500–$3,000. Free estimates always.
     </div>
-    <p class="last-updated">Last Updated: April 2026</p>
+    <p class="last-updated">Last Updated: May 2026</p>
   </div>
 </section>
 
@@ -957,7 +961,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="why-choose" data-animate="fade-up">
   <div class="container">
     <p class="section-eyebrow">Why R.A.H. Solutions</p>
-    <h2 class="section-title">How Is Excavating Done Right for Wisconsin Properties?</h2>
+    <h2 class="section-title">How Is Excavating Done <span class="text-accent">Right</span> for Wisconsin Properties?</h2>
     <p class="prose" style="color:rgba(255,255,255,0.72);">
       Hiring the right excavating contractor in Rock County means finding someone who understands Wisconsin soil, local drainage requirements, and how to protect your landscaping investment during the process.
     </p>
@@ -1003,7 +1007,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="process-section" data-animate="fade-up">
   <div class="container">
     <p class="section-eyebrow" style="text-align:center;">Our Process</p>
-    <h2 class="section-title" style="text-align:center;">How We Handle Every Excavating Project</h2>
+    <h2 class="section-title" style="text-align:center;">How Do We Handle Every Excavating Project?</h2>
     <div class="process-steps">
       <div class="process-step" data-animate="fade-up">
         <div class="process-step__num">1</div>
@@ -1038,7 +1042,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="cta-banner" aria-label="Contact R.A.H. Solutions for excavating services">
   <div class="container">
     <p class="section-eyebrow" style="color:var(--color-accent);">Free Estimates — No Commitment</p>
-    <h2 class="cta-banner__title">Drainage Problem? Foundation Prep Needed?<br>Call Before It Gets Worse.</h2>
+    <h2 class="cta-banner__title">Have a Drainage Problem or Need Foundation Prep?</h2>
     <p class="cta-banner__sub">
       Water that pools against your foundation today becomes a basement moisture problem next season. Most drainage grading projects in Rock County can be scoped and scheduled within a week.
     </p>
@@ -1058,7 +1062,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="faq-section" data-animate="fade-up">
   <div class="container">
     <p class="section-eyebrow">Common Questions</p>
-    <h2 class="section-title">What Is Frequently Asked About Excavating in Edgerton?</h2>
+    <h2 class="section-title">What Is Frequently Asked About <span class="text-accent">Excavating</span> in Edgerton?</h2>
     <div class="faq-grid">
       <?php foreach ($faqs as $faq): ?>
       <div class="faq-item" data-animate="fade-up">

@@ -909,18 +909,22 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="intro-section" data-animate="fade-up">
   <div class="container">
     <p class="section-eyebrow">What's Included</p>
-    <h2 class="section-title">What Does Residential Lawn Care Cover?</h2>
+    <h2 class="section-title">What Does Residential <span class="text-accent">Lawn Care</span> Cover?</h2>
     <p class="prose">
       A standard residential lawn care visit from R.A.H. Solutions includes mowing at the right height for the season, edging along driveways and sidewalks, string trimming around beds and fences, and blowing clippings off hard surfaces. Weekly or bi-weekly programs are available, with seasonal adjustments in spring and fall when mowing frequency shifts. Most residential lots in the Edgerton area run $40–$80 per visit depending on size and complexity.
     </p>
     <p class="prose">
       The difference between residential and commercial service isn't just scale — it's attention to detail. Homeowners have ornamental beds, garden areas, and established landscaping that requires awareness during mowing. Edgerton's residential yards often mix mature trees, shade-tolerant turf under canopy, and sunny open sections that need different cut heights to stay healthy. We account for your specific conditions.
     </p>
+    <div class="answer-block">
+      <h3>How much does residential lawn care cost in Edgerton?</h3>
+      <p>Residential lawn care in Edgerton typically costs $40–$80 per visit depending on lot size and terrain complexity. Most standard residential lots fall in the $50–$65 range. Weekly and biweekly programs are available, with seasonal adjustments built in. R.A.H. Solutions provides a free yard walkthrough and written per-visit pricing before any commitment.</p>
+    </div>
     <div class="price-tag">
       <i data-lucide="dollar-sign" style="width:20px;height:20px;color:var(--color-accent);" aria-hidden="true"></i>
       <strong>Typical visit: $40–$80</strong>&nbsp; depending on lot size. Standard lots average $50–$65/visit. Free yard walkthrough before you commit.
     </div>
-    <p class="last-updated">Last Updated: April 2026</p>
+    <p class="last-updated">Last Updated: May 2026</p>
   </div>
 </section>
 
@@ -1046,7 +1050,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="why-section" data-animate="fade-up">
   <div class="container">
     <p class="section-eyebrow">Why Homeowners Choose R.A.H.</p>
-    <h2 class="section-title">What Is the Difference Between Reliable and Just Whoever Shows Up?</h2>
+    <h2 class="section-title">What Is the Difference Between <span class="text-accent">Reliable</span> and Just Whoever Shows Up?</h2>
     <div class="why-cards">
       <div class="why-card" data-animate="fade-up">
         <div class="why-card__icon">
@@ -1089,7 +1093,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="process-section" data-animate="fade-up">
   <div class="container">
     <p class="section-eyebrow" style="text-align:center;">Getting Started</p>
-    <h2 class="section-title" style="text-align:center;">How We Set Up Your Lawn Care Program</h2>
+    <h2 class="section-title" style="text-align:center;">How Do We Set Up Your Lawn Care Program?</h2>
     <div class="process-steps">
       <div class="process-step" data-animate="fade-up">
         <div class="process-step__num">1</div>
@@ -1143,7 +1147,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <section class="faq-section" data-animate="fade-up">
   <div class="container">
     <p class="section-eyebrow">Common Questions</p>
-    <h2 class="section-title">What Is Frequently Asked About Residential Lawn Care?</h2>
+    <h2 class="section-title">What Is Frequently Asked About Residential <span class="text-accent">Lawn Care</span>?</h2>
     <div class="faq-grid">
       <?php foreach ($faqs as $faq): ?>
       <div class="faq-item" data-animate="fade-up">

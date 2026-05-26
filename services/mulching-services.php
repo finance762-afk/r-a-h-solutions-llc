@@ -986,7 +986,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="ms-detail-grid">
         <div class="ms-detail-content">
           <span class="ms-section-eyebrow">What We Do</span>
-          <h2>What Is Mulch Applied at the Right Depth to Protect Your Beds?</h2>
+          <h2>What Is Mulch Applied at the <span class="text-accent">Right Depth</span> to Protect Your Beds?</h2>
 
           <p>Mulch installation in Edgerton starts at $65 per yard installed, which includes delivery and spreading — no separate delivery charge, no drop-and-go bags left for you to spread. A typical residential property with 400–600 sq ft of bed area needs 4–6 yards, totaling $260–$390 for the full install. We measure your beds during the estimate visit and calculate the exact quantity needed.</p>
 
@@ -998,7 +998,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
           <p>Spring is the optimal refresh window — after soil has warmed and before weed germination peaks in May. Annual refresh is all most beds need, topping up the previous year's decomposed layer back to the 2–3 inch ideal. We include edge cleanup before spreading so your beds look sharp and finished, not just covered in fresh mulch over ragged edges.</p>
 
-          <p class="ms-updated">Last Updated: April 2026 · Serving Edgerton, WI and surrounding Rock &amp; Dane County communities.</p>
+          <div class="answer-block">
+            <h3>How much does mulching cost in Edgerton, WI?</h3>
+            <p>Mulch installation in Edgerton starts at $65 per cubic yard installed, including delivery and spreading. Most residential properties need 4–6 yards applied at the correct 2–3 inch depth for effective moisture retention and weed suppression. Annual replenishment each spring maintains that protective layer as last year's mulch decomposes.</p>
+          </div>
+
+          <p class="ms-updated">Last Updated: May 2026 · Serving Edgerton, WI and surrounding Rock &amp; Dane County communities.</p>
 
           <a href="/contact" class="ms-btn-detail">
             <i data-lucide="clipboard-list" aria-hidden="true" style="width:18px;height:18px;"></i>
@@ -1092,7 +1097,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="ms-why-header">
         <span class="ms-section-eyebrow">Why R.A.H. Solutions</span>
-        <h2>How Are Depth, Material, and Method All Done Correctly?</h2>
+        <h2>How Are Depth, Material, and <span class="text-accent">Method</span> All Done Correctly?</h2>
         <p class="sub">Most mulch jobs fail on depth or technique. We bring all three factors to every install so your beds get the full protection mulch is supposed to provide.</p>
       </div>
       <div class="ms-why-cards">
@@ -1140,7 +1145,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="ms-process-header">
         <span class="ms-section-eyebrow">How It Works</span>
-        <h2>What Are the Four Steps: Measured, Delivered, Spread, and Done?</h2>
+        <h2>What Are the Four Steps: Measured, Delivered, <span class="text-accent">Spread</span>, and Done?</h2>
         <p class="sub">A fast, clean process that gets your beds mulched correctly and your property looking sharp — typically completed in a single visit.</p>
       </div>
       <div class="ms-process-steps">

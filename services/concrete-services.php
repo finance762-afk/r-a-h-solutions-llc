@@ -949,7 +949,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="split-grid">
       <div class="split-content">
         <span class="section-eyebrow">What We Do</span>
-        <h2>What Concrete Work Holds Up to Wisconsin Winters?</h2>
+        <h2>What <span class="text-accent">Concrete Work</span> Holds Up to Wisconsin Winters?</h2>
         <div class="detail-price-tag">
           <i data-lucide="tag" style="width:14px;height:14px;"></i>
           Driveways typically run $6–$12 per sq ft installed — final pricing at free estimate
@@ -958,6 +958,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <p>Concrete work in Wisconsin demands more than just a pour. Southern Wisconsin's climate cycles through dozens of freeze-thaw events each year, and concrete that isn't engineered for those conditions develops surface scaling, spalling, and cracks within a few seasons. R.A.H. Solutions installs driveways, walkways, patios, steps, and poured walls using the concrete specs your project actually needs — not the cheapest mix on the truck.</p>
           <p>Every residential driveway we install starts with a 6-inch compacted aggregate base. No gravel shortcuts. The base prevents the slab from settling unevenly and creates drainage beneath the concrete that reduces frost heave. We use 4,000 PSI air-entrained concrete mixes — the air-entraining admixture creates microscopic bubbles that give the slab room to expand and contract without cracking the surface layer. That's standard practice in Minnesota, Wisconsin, and Michigan for a reason.</p>
           <p>Finishing options include standard broom finish (the most durable for driveways), exposed aggregate (textured grip plus visual interest), and stamped patterns (cobblestone, slate, or wood-grain impressions with integral color). We cut control joints at the appropriate intervals — typically every 8–10 feet on a residential driveway — to give the slab planned crack locations that stay hidden rather than random cracking that shows. All slabs are sealed before we leave the job.</p>
+
+          <div class="answer-block">
+            <h3>How much do concrete services cost in Edgerton?</h3>
+            <p>Concrete driveways, patios, and walkways in Edgerton typically run $6–$12 per square foot installed, depending on slab thickness, finish type, and site prep requirements. R.A.H. Solutions uses air-entrained concrete mixes engineered for Wisconsin's freeze-thaw cycles, with a 6-inch compacted aggregate base standard on every driveway pour.</p>
+          </div>
         </div>
       </div>
       <div class="split-img-frame" data-animate="wipe-right">
@@ -1009,7 +1014,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container">
     <div class="section-header">
       <div class="eyebrow">Why R.A.H. Solutions</div>
-      <h2>Why Do Edgerton Homeowners Choose Us for Concrete?</h2>
+      <h2>Why Do <span class="text-accent">Edgerton Homeowners</span> Choose Us for Concrete?</h2>
     </div>
     <div class="benefit-cards-grid">
       <div class="benefit-card" data-animate="fade-up">
@@ -1097,7 +1102,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <div class="container">
     <div class="section-header">
       <div class="eyebrow">How It Works</div>
-      <h2>What Is Our Concrete Installation Process?</h2>
+      <h2>What Is Our Concrete <span class="text-accent">Installation Process</span>?</h2>
     </div>
     <div class="process-steps">
       <div class="process-step">
@@ -1163,7 +1168,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         Schedule Free Estimate
       </a>
     </div>
-    <p class="last-updated">Last Updated: April 2026</p>
+    <p class="last-updated">Last Updated: May 2026</p>
   </div>
 </section>
 

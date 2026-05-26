@@ -986,7 +986,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="hs-detail-grid">
         <div class="hs-detail-content">
           <span class="hs-section-eyebrow">What We Build</span>
-          <h2>What Hardscaping Holds Through Wisconsin Winters?</h2>
+          <h2>What <span class="text-accent">Hardscaping</span> Holds Through Wisconsin Winters?</h2>
 
           <p>Paver patio installation in Edgerton starts at $3,000 for a 200–250 sq ft area using standard concrete pavers. Natural stone and premium paver materials increase costs by 30–60% depending on material selection. Retaining walls run $50–$120 per linear foot installed, based on wall height and materials. Every project includes a free site evaluation and written estimate — no guesswork on price.</p>
 
@@ -996,7 +996,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
           <p>Hardscaping adds measurable property value. A well-installed patio in Edgerton typically returns $8,000–$20,000 in added home value depending on size and materials — often exceeding the installation cost on properties priced in the mid-range of Rock County's market. We design projects with resale in mind, not just curb appeal.</p>
 
-          <p class="hs-updated">Last Updated: April 2026 · Serving Edgerton, WI and surrounding Rock &amp; Dane County communities.</p>
+          <div class="answer-block">
+            <h3>How much does hardscaping cost in Edgerton, WI?</h3>
+            <p>Paver patios in Edgerton typically range from $3,000 to $15,000 depending on size and material selection, while retaining walls run $50–$120 per linear foot installed. Every R.A.H. Solutions hardscape project includes a minimum 6–8 inches of compacted gravel base — the correct depth to prevent frost heave during Wisconsin's dozens of annual freeze-thaw cycles.</p>
+          </div>
+
+          <p class="hs-updated">Last Updated: May 2026 · Serving Edgerton, WI and surrounding Rock &amp; Dane County communities.</p>
 
           <a href="/contact" class="hs-btn-detail">
             <i data-lucide="clipboard-list" aria-hidden="true" style="width:18px;height:18px;"></i>
@@ -1066,7 +1071,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <section class="hs-cta-mid" aria-label="Get a hardscaping estimate">
     <div class="container">
       <p class="hs-cta-eyebrow">Free Estimates · Written Quote Guaranteed</p>
-      <h2>A Patio Built Right Lasts 25+ Years in Wisconsin</h2>
+      <h2>How Long Does a Patio Built Right Last in Wisconsin?</h2>
       <p>Don't hire a crew that skips base prep and calls it good. R.A.H. Solutions builds hardscaping to handle Rock County winters — every single time. Call for a free site visit.</p>
       <div class="hs-cta-actions">
         <a href="tel:6085015123" class="hs-btn-cta-phone">
@@ -1090,7 +1095,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="hs-why-header">
         <span class="hs-section-eyebrow">Why R.A.H. Solutions</span>
-        <h2>Why Is Base Preparation Where Hardscaping Succeeds or Fails?</h2>
+        <h2>Why Is <span class="text-accent">Base Preparation</span> Where Hardscaping Succeeds or Fails?</h2>
         <p class="sub">Every crew can lay pavers. Fewer crews know how to prepare the sub-base correctly for Wisconsin's soil conditions and freeze-thaw pressure.</p>
       </div>
       <div class="hs-why-cards">
@@ -1138,7 +1143,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="hs-process-header">
         <span class="hs-section-eyebrow">How We Work</span>
-        <h2>What Are the Four Steps from First Consultation to Final Stone?</h2>
+        <h2>What Are the Four Steps from First Consultation to <span class="text-accent">Final Stone</span>?</h2>
         <p class="sub">A straightforward process that protects your property and delivers results that last through Wisconsin winters.</p>
       </div>
       <div class="hs-process-steps">

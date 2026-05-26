@@ -908,7 +908,45 @@ section { position: relative; }
   color: #fff;
 }
 
-/* ─── 19. TCPA Consent Checkbox ──────────────────────────────────── */
+/* ─── 19. AEO Answer Block ──────────────────────────────────────── */
+.answer-block {
+  background: var(--color-bg-alt);
+  border-left: 4px solid var(--color-accent);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: var(--space-xl) var(--space-2xl);
+  margin: var(--space-2xl) 0;
+}
+.answer-block h2,
+.answer-block h3 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+}
+.answer-block p {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: 1.7;
+  color: var(--color-text);
+  max-width: 65ch;
+}
+.answer-block p + p {
+  margin-top: var(--space-sm);
+}
+
+/* ─── 20. Last Updated Stamp ────────────────────────────────────── */
+.last-updated {
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+  margin-top: var(--space-xl);
+}
+
+/* ─── 21. TCPA Consent Checkbox ──────────────────────────────────── */
 .form-field--checkbox {
   display: flex;
   align-items: flex-start;

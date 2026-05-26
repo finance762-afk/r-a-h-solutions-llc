@@ -1094,7 +1094,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <!-- Content (left) -->
         <div class="svc-detail-content">
           <span class="section-eyebrow">What We Do</span>
-          <h2>What Precision Lawn Care Is Designed for Wisconsin's Growing Season?</h2>
+          <h2>What <span class="text-accent">Precision Lawn Care</span> Is Designed for Wisconsin's Growing Season?</h2>
 
           <p>Lawn maintenance in Edgerton starts at $40–$80 per visit depending on property size, and covers mowing, string trimming, edging along driveways and beds, and blowing clippings off all paved surfaces. Every visit is performed by the same crew on a consistent schedule so your lawn never looks neglected between visits.</p>
 
@@ -1104,7 +1104,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
           <p>Regular maintenance beats reactive repair every time. Lawns that receive consistent mowing, edging, and seasonal care are 60–70% less likely to develop significant weed pressure, bare spots, or thatch buildup that requires expensive renovation. Keeping your lawn on a program protects your investment in the property and prevents the kind of decline that takes multiple growing seasons to reverse.</p>
 
-          <p class="svc-updated">Last Updated: April 2026 · Serving Edgerton, WI and surrounding Rock &amp; Dane County communities.</p>
+          <div class="answer-block">
+            <h3>How much does lawn maintenance cost in Edgerton, WI?</h3>
+            <p>Lawn maintenance in Edgerton typically costs $40–$80 per visit depending on lot size and service frequency. R.A.H. Solutions offers both weekly and biweekly programs that include mowing, edging, and string trimming — with seasonal adjustments built into every program at no extra charge.</p>
+          </div>
+
+          <p class="svc-updated">Last Updated: May 2026 · Serving Edgerton, WI and surrounding Rock &amp; Dane County communities.</p>
 
           <a href="/contact" class="btn-detail">
             <i data-lucide="clipboard-list" aria-hidden="true" style="width:18px;height:18px;"></i>
@@ -1200,7 +1205,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="why-choose-header">
         <span class="section-eyebrow">Why R.A.H. Solutions</span>
-        <h2>How Is Our Service Built Around How Wisconsin Lawns Grow?</h2>
+        <h2>How Is Our Service Built Around How <span class="text-accent">Wisconsin Lawns</span> Grow?</h2>
         <p class="sub">Local crews who know Rock County's soil and seasonal patterns — not a franchise operation running the same playbook coast to coast.</p>
       </div>
       <div class="why-cards">
@@ -1248,7 +1253,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="process-section-header">
         <span class="section-eyebrow">How It Works</span>
-        <h2>What Are the 4 Steps from First Call to First Cut?</h2>
+        <h2>What Are the 4 Steps from <span class="text-accent">First Call</span> to First Cut?</h2>
         <p class="sub">No complicated contracts. No guesswork. We make getting on a maintenance program straightforward.</p>
       </div>
       <div class="process-steps">
