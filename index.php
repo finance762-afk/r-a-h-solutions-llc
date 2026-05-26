@@ -341,100 +341,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 }
 .services-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-xl);
   margin-bottom: var(--space-2xl);
+  align-items: stretch;
 }
-/* Featured card: dark gradient, 2 rows tall */
-.service-card-featured {
-  grid-row: span 2;
-  background: linear-gradient(155deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-  color: #fff;
-  border-radius: var(--radius-lg);
-  padding: var(--space-2xl);
-  position: relative;
-  overflow: hidden;
-  min-height: 440px;
-  box-shadow: var(--shadow-xl);
-  transition: transform var(--transition-base);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-.service-card-featured:hover { transform: translateY(-6px); box-shadow: var(--shadow-card-hover); }
-/* Decorative accent corner */
-.service-card-featured::before {
-  content: '';
-  position: absolute;
-  top: -80px; right: -80px;
-  width: 240px; height: 240px;
-  border-radius: 50%;
-  background: var(--color-accent);
-  opacity: 0.06;
-}
-.service-card-featured::after {
-  content: '';
-  position: absolute;
-  bottom: -40px; left: -40px;
-  width: 180px; height: 180px;
-  border-radius: 50%;
-  background: var(--color-accent);
-  opacity: 0.04;
-}
-.featured-icon {
-  width: 56px; height: 56px;
-  background: rgba(var(--color-accent-rgb), 0.15);
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: var(--space-lg);
-  color: var(--color-accent);
-  flex-shrink: 0;
-}
-.featured-content { position: relative; z-index: 2; }
-.featured-content h3 {
-  color: #fff;
-  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
-  margin-bottom: var(--space-md);
-  text-wrap: balance;
-}
-.featured-content p {
-  color: rgba(255,255,255,0.7);
-  font-size: var(--font-size-base);
-  margin-bottom: var(--space-lg);
-}
-.featured-checklist {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-  margin-bottom: var(--space-xl);
-}
-.featured-checklist li {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-sm);
-  color: rgba(255,255,255,0.72);
-  font-size: var(--font-size-sm);
-  line-height: 1.5;
-}
-.featured-checklist li [data-lucide] { color: var(--color-accent); flex-shrink: 0; margin-top: 2px; }
-.featured-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: var(--color-accent);
-  color: var(--color-primary-dark);
-  font-family: var(--font-heading);
-  font-size: 0.78rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 11px var(--space-xl);
-  border-radius: var(--radius-md);
-  transition: background var(--transition-fast), transform var(--transition-fast);
-}
-.featured-cta:hover { background: #fff; transform: translateX(3px); }
 
 /* Standard service cards — premium polish */
 .service-card-std {
@@ -1057,12 +968,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 /* ─── Responsive Breakpoints ──────────────────────────────────── */
 @media (max-width: 1023px) {
   .services-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .service-card-featured {
-    grid-row: span 1;
-    grid-column: 1 / -1;
-    min-height: 320px;
+    grid-template-columns: repeat(2, 1fr);
   }
   .stats-row {
     grid-template-columns: repeat(2, 1fr);
@@ -1091,7 +997,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   .hero-trust-row { gap: var(--space-lg); }
   .hero-trust-item { font-size: 0.7rem; }
   .services-grid { grid-template-columns: 1fr; }
-  .service-card-featured { min-height: 280px; }
   .stats-row { grid-template-columns: repeat(2, 1fr); }
   .faq-grid { grid-template-columns: 1fr; }
   .about-stat-badge {
@@ -1300,41 +1205,24 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
       <div class="services-grid" data-stagger>
 
-        <!-- Featured: Landscape Installation -->
-        <div class="service-card-featured" data-animate="fade-right">
-          <div class="featured-content">
-            <div class="featured-icon">
-              <i data-lucide="shovel" style="width:28px;height:28px;" aria-hidden="true"></i>
-            </div>
-            <h3>Landscape Installation</h3>
-            <p>Full outdoor transformations — plants, beds, grading, and features installed with precision. We bring the vision to life and leave nothing half-finished.</p>
-            <ul class="featured-checklist">
-              <li>
-                <i data-lucide="check" style="width:14px;height:14px;" aria-hidden="true"></i>
-                Plant &amp; tree installation for WI hardiness zones
-              </li>
-              <li>
-                <i data-lucide="check" style="width:14px;height:14px;" aria-hidden="true"></i>
-                Grading, drainage &amp; soil preparation
-              </li>
-              <li>
-                <i data-lucide="check" style="width:14px;height:14px;" aria-hidden="true"></i>
-                Mulch beds, edging &amp; landscape borders
-              </li>
-              <li>
-                <i data-lucide="check" style="width:14px;height:14px;" aria-hidden="true"></i>
-                Residential &amp; commercial properties
-              </li>
-            </ul>
-            <a href="/services/landscape-installation" class="featured-cta">
-              Learn More
-              <i data-lucide="arrow-right" style="width:16px;height:16px;" aria-hidden="true"></i>
-            </a>
+        <!-- Landscape Installation -->
+        <div class="service-card-std card-tint-1" data-animate="fade-up">
+          <div class="card-image">
+            <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963874866-f077by-471177305_122202492170208320_1592970065814584229_n.jpg" alt="Landscape installation and outdoor transformation in Edgerton, WI" width="600" height="400" loading="lazy">
           </div>
-        </div><!-- /.service-card-featured -->
+          <div class="card-icon">
+            <i data-lucide="shovel" style="width:22px;height:22px;" aria-hidden="true"></i>
+          </div>
+          <h3>Landscape Installation</h3>
+          <p>Full outdoor transformations — plants, beds, grading, and features installed with precision across Southern Wisconsin.</p>
+          <a href="/services/landscape-installation" class="card-link">
+            Learn More
+            <i data-lucide="arrow-right" style="width:14px;height:14px;" aria-hidden="true"></i>
+          </a>
+        </div>
 
         <!-- Lawn Maintenance -->
-        <div class="service-card-std card-tint-1" data-animate="fade-up">
+        <div class="service-card-std card-tint-2" data-animate="fade-up">
           <div class="card-image">
             <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963879670-etljhr-474465615_122209560308208320_6377695377545475044_n.jpg" alt="Lawn maintenance services in Edgerton, WI" width="600" height="400" loading="lazy">
           </div>
@@ -1350,7 +1238,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         </div>
 
         <!-- Hardscaping Services -->
-        <div class="service-card-std card-tint-2" data-animate="fade-up">
+        <div class="service-card-std card-tint-3" data-animate="fade-up">
           <div class="card-image">
             <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963878224-9yylmf-474790582_122209560278208320_5110498035873152787_n.jpg" alt="Hardscaping patio installation in Edgerton, WI" width="600" height="400" loading="lazy">
           </div>
@@ -1366,7 +1254,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         </div>
 
         <!-- Concrete Services -->
-        <div class="service-card-std card-tint-3" data-animate="fade-up">
+        <div class="service-card-std card-tint-1" data-animate="fade-up">
           <div class="card-image">
             <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963885204-c6dam2-475409956_122211163172208320_2104516663902467885_n.jpg" alt="Concrete driveway installation in Edgerton, WI" width="600" height="400" loading="lazy">
           </div>
@@ -1382,7 +1270,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         </div>
 
         <!-- Snow Removal -->
-        <div class="service-card-std card-tint-1" data-animate="fade-up">
+        <div class="service-card-std card-tint-2" data-animate="fade-up">
           <div class="card-image">
             <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963893874-ak4j6n-489926707_122226629426208320_2862562131488466064_n.jpg" alt="Snow removal services in Edgerton, WI" width="600" height="400" loading="lazy">
           </div>
@@ -1398,7 +1286,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         </div>
 
         <!-- Shrub Trimming -->
-        <div class="service-card-std card-tint-2" data-animate="fade-up">
+        <div class="service-card-std card-tint-3" data-animate="fade-up">
           <div class="card-image">
             <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963896244-0unq77-495336544_122236025864208320_4129821399527851126_n.jpg" alt="Shrub trimming and pruning in Edgerton, WI" width="600" height="400" loading="lazy">
           </div>
@@ -1414,7 +1302,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         </div>
 
         <!-- Excavating Services -->
-        <div class="service-card-std card-tint-3" data-animate="fade-up">
+        <div class="service-card-std card-tint-1" data-animate="fade-up">
           <div class="card-image">
             <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963890974-0j1sut-486971190_122226629348208320_8096727509961542480_n.jpg" alt="Excavating and site preparation in Edgerton, WI" width="600" height="400" loading="lazy">
           </div>
