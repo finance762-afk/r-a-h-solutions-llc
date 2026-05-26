@@ -6,9 +6,9 @@ $pageTitle       = 'Commercial Lawn Care | Edgerton, WI';
 $pageDescription = 'Commercial lawn care in Edgerton, WI — scheduled grounds maintenance for businesses & HOAs. R.A.H. Solutions. Free estimates. Call (608) 501-5123.';
 $canonicalUrl    = 'https://rahsolutionsllc.com/services/commercial-lawn-care';
 // SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
-$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963887692-btgk52-490023562_122226629156208320_4857034073232372127_n.jpg';
+$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963904225-q0hpk2-470686200_122202491702208320_8107918479252601066_n.jpg';
 $currentPage     = 'service-commercial-lawn-care';
-$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963887692-btgk52-490023562_122226629156208320_4857034073232372127_n.jpg';
+$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963904225-q0hpk2-470686200_122202491702208320_8107918479252601066_n.jpg';
 
 $faqs = [
   [
@@ -119,7 +119,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963887692-btgk52-490023562_122226629156208320_4857034073232372127_n.jpg');
+  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963904225-q0hpk2-470686200_122202491702208320_8107918479252601066_n.jpg');
   background-size: cover;
   background-position: center;
   animation: clc-kenburns 20s ease-in-out infinite alternate;

@@ -8,9 +8,9 @@ $pageTitle       = 'Concrete Services in Edgerton, WI';
 $pageDescription = 'Concrete driveways, patios & walkways in Edgerton, WI — proper base prep, air-entrained mix for WI winters, all finishes. Free estimates. Call (608) 501-5123.';
 $canonicalUrl    = 'https://rahsolutionsllc.com/services/concrete-services';
 // SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
-$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963885204-c6dam2-475409956_122211163172208320_2104516663902467885_n.jpg';
+$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785039114-o.jpg';
 $currentPage     = 'service-concrete-services';
-$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963885204-c6dam2-475409956_122211163172208320_2104516663902467885_n.jpg';
+$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785039114-o.jpg';
 
 $pageFaqs = [
   [
@@ -129,7 +129,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   position: relative;
   display: flex;
   align-items: center;
-  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963885204-c6dam2-475409956_122211163172208320_2104516663902467885_n.jpg');
+  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785039114-o.jpg');
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -967,9 +967,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       </div>
       <div class="split-img-frame" data-animate="wipe-right">
         <picture>
-          <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963903365-fqbeu8-470859907_122202491636208320_4879251461866482528_n.jpg" type="image/webp">
+          <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963899295-b8v0w8-607091027_122304065120208320_4309334725424131443_n.jpg" type="image/webp">
           <img
-            src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963903365-fqbeu8-470859907_122202491636208320_4879251461866482528_n.jpg"
+            src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963899295-b8v0w8-607091027_122304065120208320_4309334725424131443_n.jpg"
             alt="Concrete driveway installation Edgerton Wisconsin R.A.H. Solutions"
             width="800" height="600" loading="lazy">
         </picture>
@@ -1058,8 +1058,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <h3>What Fails Without Proper Concrete Installation</h3>
         <div class="sig-img">
           <picture>
-            <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963885204-c6dam2-475409956_122211163172208320_2104516663902467885_n.jpg" type="image/webp">
-            <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963885204-c6dam2-475409956_122211163172208320_2104516663902467885_n.jpg" alt="Concrete driveway installation Edgerton WI" width="600" height="260" loading="lazy">
+            <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785039114-o.jpg" type="image/webp">
+            <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785039114-o.jpg" alt="Concrete driveway installation Edgerton WI" width="600" height="260" loading="lazy">
           </picture>
         </div>
         <p>Most premature concrete failures in Wisconsin trace back to the same shortcuts: wrong mix, thin slabs, poor base prep, and missing control joints. You end up replacing the driveway in 6 years instead of 25.</p>
@@ -1075,8 +1075,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <h3>How We Install Concrete That Lasts 25+ Years</h3>
         <div class="sig-img">
           <picture>
-            <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963903365-fqbeu8-470859907_122202491636208320_4879251461866482528_n.jpg" type="image/webp">
-            <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963903365-fqbeu8-470859907_122202491636208320_4879251461866482528_n.jpg" alt="Properly installed concrete driveway Edgerton Wisconsin" width="600" height="260" loading="lazy">
+            <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963899295-b8v0w8-607091027_122304065120208320_4309334725424131443_n.jpg" type="image/webp">
+            <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963899295-b8v0w8-607091027_122304065120208320_4309334725424131443_n.jpg" alt="Properly installed concrete driveway Edgerton Wisconsin" width="600" height="260" loading="lazy">
           </picture>
         </div>
         <p>We follow ACPA and Wisconsin DOT concrete standards on every residential pour. When you invest in concrete, you should get a surface that looks good and holds up for decades — not a patch job in three years.</p>

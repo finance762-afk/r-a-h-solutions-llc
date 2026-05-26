@@ -8,9 +8,9 @@ $pageTitle       = 'Sod Installation in Edgerton, WI';
 $pageDescription = 'Sod installation in Edgerton, WI — Kentucky bluegrass & fescue varieties, proper site prep & grading. 30-day watering plan included. Call (608) 501-5123.';
 $canonicalUrl    = 'https://rahsolutionsllc.com/services/sod-installation';
 // SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
-$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963884244-pe5czp-475493043_122211163190208320_5361770049466921459_n.jpg';
+$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963887692-btgk52-490023562_122226629156208320_4857034073232372127_n.jpg';
 $currentPage     = 'service-sod-installation';
-$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963884244-pe5czp-475493043_122211163190208320_5361770049466921459_n.jpg';
+$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963887692-btgk52-490023562_122226629156208320_4857034073232372127_n.jpg';
 
 $pageFaqs = [
   [
@@ -103,7 +103,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   min-height: 88vh;
   display: flex;
   align-items: center;
-  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963884244-pe5czp-475493043_122211163190208320_5361770049466921459_n.jpg');
+  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963887692-btgk52-490023562_122226629156208320_4857034073232372127_n.jpg');
   background-size: cover;
   background-position: center 30%;
   animation: kenburns-sod 22s ease-in-out infinite alternate;
@@ -822,9 +822,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="sod-img-wrap" data-animate="wipe-right">
       <div class="sod-img-main">
         <picture>
-          <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963884244-pe5czp-475493043_122211163190208320_5361770049466921459_n.jpg" type="image/webp">
+          <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963887692-btgk52-490023562_122226629156208320_4857034073232372127_n.jpg" type="image/webp">
           <img
-            src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963884244-pe5czp-475493043_122211163190208320_5361770049466921459_n.jpg"
+            src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963887692-btgk52-490023562_122226629156208320_4857034073232372127_n.jpg"
             alt="Sod installation completed lawn Edgerton Wisconsin R.A.H. Solutions"
             width="640"
             height="800"

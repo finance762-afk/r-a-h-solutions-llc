@@ -7,9 +7,9 @@ $pageTitle       = 'Residential Lawn Care | Edgerton, WI';
 $pageDescription = 'Residential lawn care in Edgerton, WI — mowing, edging, trimming & seasonal care. Same crew every visit. Customizable programs. Call (608) 501-5123.';
 $canonicalUrl    = 'https://rahsolutionsllc.com/services/residential-lawn-care';
 // SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
-$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963892391-3enmm5-486843500_122226629396208320_6857620022192748149_n.jpg';
+$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963905145-cbpw70-470661025_122202491588208320_8070705476773582033_n.jpg';
 $currentPage     = 'service-residential-lawn-care';
-$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963892391-3enmm5-486843500_122226629396208320_6857620022192748149_n.jpg';
+$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963905145-cbpw70-470661025_122202491588208320_8070705476773582033_n.jpg';
 
 $pageServiceName = 'Residential Lawn Care';
 $pageServiceSlug = 'residential-lawn-care';
@@ -95,7 +95,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   min-height: 88vh;
   display: flex;
   align-items: center;
-  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963892391-3enmm5-486843500_122226629396208320_6857620022192748149_n.jpg');
+  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963905145-cbpw70-470661025_122202491588208320_8070705476773582033_n.jpg');
   background-size: cover;
   background-position: center 55%;
   overflow: hidden;
@@ -942,10 +942,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="ba-panel ba-panel--before">
         <div class="ba-panel__label" aria-label="Without regular lawn care">Without Regular Service</div>
         <picture>
-          <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963897215-2h4a0d-512659884_122253684104208320_1892119159010734985_n.jpg" type="image/webp">
+          <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785464766-unnamed.webp" type="image/webp">
           <img
             class="ba-panel__img"
-            src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963897215-2h4a0d-512659884_122253684104208320_1892119159010734985_n.jpg"
+            src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785464766-unnamed.webp"
             alt="Lawn before regular residential lawn care service Edgerton WI"
             width="600"
             height="320"
@@ -960,10 +960,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="ba-panel ba-panel--after">
         <div class="ba-panel__label" aria-label="With R.A.H. Solutions residential lawn care">With R.A.H. Solutions</div>
         <picture>
-          <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963892391-3enmm5-486843500_122226629396208320_6857620022192748149_n.jpg" type="image/webp">
+          <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963905145-cbpw70-470661025_122202491588208320_8070705476773582033_n.jpg" type="image/webp">
           <img
             class="ba-panel__img"
-            src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963892391-3enmm5-486843500_122226629396208320_6857620022192748149_n.jpg"
+            src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963905145-cbpw70-470661025_122202491588208320_8070705476773582033_n.jpg"
             alt="Residential lawn care result healthy maintained yard Edgerton Wisconsin"
             width="600"
             height="320"

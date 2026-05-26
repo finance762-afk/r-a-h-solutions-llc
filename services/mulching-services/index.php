@@ -6,9 +6,9 @@ $pageTitle       = 'Mulching Services in Edgerton, WI';
 $pageDescription = 'Mulch installation in Edgerton, WI — moisture retention, weed suppression & root protection through Wisconsin winters. Free estimates. Call (608) 501-5123.';
 $canonicalUrl    = 'https://rahsolutionsllc.com/services/mulching-services';
 // SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
-$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963899295-b8v0w8-607091027_122304065120208320_4309334725424131443_n.jpg';
+$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963882024-ohn2g8-474446326_122209560260208320_53140490767559634_n.jpg';
 $currentPage     = 'service-mulching-services';
-$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963899295-b8v0w8-607091027_122304065120208320_4309334725424131443_n.jpg';
+$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963882024-ohn2g8-474446326_122209560260208320_53140490767559634_n.jpg';
 
 $faqs = [
   [
@@ -144,7 +144,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963899295-b8v0w8-607091027_122304065120208320_4309334725424131443_n.jpg');
+  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963882024-ohn2g8-474446326_122209560260208320_53140490767559634_n.jpg');
   background-size: cover;
   background-position: center;
   animation: ms-kenburns 20s ease-in-out infinite alternate;
@@ -1014,9 +1014,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <div class="ms-detail-image">
           <div class="ms-image-frame">
             <picture>
-              <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963882024-ohn2g8-474446326_122209560260208320_53140490767559634_n.jpg" type="image/webp">
+              <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963880884-qw46fr-474382241_122209560170208320_4796638395126825561_n.jpg" type="image/webp">
               <img
-                src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963882024-ohn2g8-474446326_122209560260208320_53140490767559634_n.jpg"
+                src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963880884-qw46fr-474382241_122209560170208320_4796638395126825561_n.jpg"
                 alt="Professional mulch installation in landscape beds Edgerton Wisconsin Rock County"
                 width="600"
                 height="420"

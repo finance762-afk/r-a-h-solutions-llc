@@ -279,7 +279,7 @@ $clientSlug        = 'r-a-h-solutions-llc';
 $formAction  = 'https://formsubmit.co/rahsolutionsllc2@gmail.com';
 
 // ─── CSS Version (cache-bust) ─────────────────────────────
-$cssVersion = '5';
+$cssVersion = '6';
 
 // ─── Analytics ────────────────────────────────────────────────
 $googleAnalyticsId = ''; // TODO: Add GA4 Measurement ID (e.g. G-XXXXXXXXXX) to activate analytics
@@ -290,134 +290,194 @@ $logoUrl = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-
 $heroImageUrl = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963874866-f077by-471177305_122202492170208320_1592970065814584229_n.jpg';
 
 $clientImages = [
+    // ─── Lawn (6 images) ─────────────────────────────────────────
     [
         'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963874866-f077by-471177305_122202492170208320_1592970065814584229_n.jpg',
-        'context' => 'landscaping',
-        'alt'     => 'Professional landscaping services Edgerton WI R.A.H. Solutions',
+        'context' => 'lawn',
+        'alt'     => 'Large mowed residential yard with striping Edgerton WI',
     ],
     [
-        'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963876972-9uvcid-474456407_122209245674208320_3275147450913393227_n.jpg',
-        'context' => 'landscaping',
-        'alt'     => 'Landscape installation Edgerton Wisconsin R.A.H. Solutions',
+        'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963904225-q0hpk2-470686200_122202491702208320_8107918479252601066_n.jpg',
+        'context' => 'lawn',
+        'alt'     => 'Backyard with riding mower and fresh mow lines Edgerton WI',
     ],
+    [
+        'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963905145-cbpw70-470661025_122202491588208320_8070705476773582033_n.jpg',
+        'context' => 'lawn',
+        'alt'     => 'Residential backyard freshly mowed Edgerton WI',
+    ],
+    [
+        'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963907325-0lw8ac-470717235_122202491672208320_1286182138053082297_n.jpg',
+        'context' => 'lawn',
+        'alt'     => 'Freshly mowed residential lawn with stripe pattern Edgerton WI',
+    ],
+    [
+        'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963980269-u3tom9-470875398_122202491888208320_4188323936145154732_n.jpg',
+        'context' => 'lawn',
+        'alt'     => 'Zero-turn mower on residential lawn near sunroom Edgerton WI',
+    ],
+    [
+        'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785464766-unnamed.webp',
+        'context' => 'lawn',
+        'alt'     => 'Toro zero-turn mower on lush green spring lawn Edgerton WI',
+    ],
+    // ─── Lawn — medium confidence ────────────────────────────────
+    [
+        'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963886495-agh3u2-475671791_122211163124208320_6715996363556920497_n.jpg',
+        'context' => 'lawn',
+        'alt'     => 'Red barn with mowed lawn and shrubs Edgerton WI',
+    ],
+    // ─── Landscaping (2 images) ──────────────────────────────────
     [
         'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963878224-9yylmf-474790582_122209560278208320_5110498035873152787_n.jpg',
-        'context' => 'hardscaping',
-        'alt'     => 'Hardscaping services patio installation Edgerton WI',
+        'context' => 'landscaping',
+        'alt'     => 'Landscape edging install along garden bed with mulch and perennials Edgerton WI',
     ],
     [
         'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963879670-etljhr-474465615_122209560308208320_6377695377545475044_n.jpg',
-        'context' => 'lawn',
-        'alt'     => 'Lawn maintenance services Edgerton Wisconsin',
+        'context' => 'landscaping',
+        'alt'     => 'Garden bed edging install with mulch and irises Edgerton WI',
+    ],
+    // ─── Mulching (2 images) ─────────────────────────────────────
+    [
+        'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963880884-qw46fr-474382241_122209560170208320_4796638395126825561_n.jpg',
+        'context' => 'mulching',
+        'alt'     => 'Mulched garden bed with edging along mowed lawn Edgerton WI',
     ],
     [
         'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963882024-ohn2g8-474446326_122209560260208320_53140490767559634_n.jpg',
         'context' => 'mulching',
-        'alt'     => 'Mulching and garden maintenance Edgerton Wisconsin',
+        'alt'     => 'Long mulched bed with edging along sloped lawn Edgerton WI',
+    ],
+    // ─── Cleanup (3 images) ──────────────────────────────────────
+    [
+        'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963883232-jst9wv-475547624_122211163226208320_5983283941194375535_n.jpg',
+        'context' => 'cleanup',
+        'alt'     => 'Overgrown barnyard before cleanup Edgerton WI',
     ],
     [
         'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963884244-pe5czp-475493043_122211163190208320_5361770049466921459_n.jpg',
-        'context' => 'sod',
-        'alt'     => 'Sod installation new lawn Edgerton Wisconsin',
+        'context' => 'cleanup',
+        'alt'     => 'Cleared barnyard after cleanup Edgerton WI',
     ],
     [
         'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963885204-c6dam2-475409956_122211163172208320_2104516663902467885_n.jpg',
-        'context' => 'concrete',
-        'alt'     => 'Concrete services driveway installation Edgerton WI',
-    ],
-    [
-        'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963886495-agh3u2-475671791_122211163124208320_6715996363556920497_n.jpg',
         'context' => 'cleanup',
-        'alt'     => 'Spring yard cleanup services Edgerton Wisconsin',
+        'alt'     => 'Cleared dirt area beside barn after cleanup Edgerton WI',
     ],
+    // ─── Sod (5 images — recovered from truncated thumbnails) ────
     [
         'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963887692-btgk52-490023562_122226629156208320_4857034073232372127_n.jpg',
-        'context' => 'commercial',
-        'alt'     => 'Commercial lawn care Edgerton WI R.A.H. Solutions',
+        'context' => 'sod',
+        'alt'     => 'Bare hillside yard prepped for sod installation Edgerton WI',
     ],
     [
         'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963889584-ala069-486653046_122226629198208320_4781171488771186863_n.jpg',
-        'context' => 'hardscaping',
-        'alt'     => 'Retaining wall hardscaping installation Edgerton Wisconsin',
+        'context' => 'sod',
+        'alt'     => 'Hillside graded with topsoil and sod roll Edgerton WI',
     ],
     [
         'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963890974-0j1sut-486971190_122226629348208320_8096727509961542480_n.jpg',
-        'context' => 'excavating',
-        'alt'     => 'Excavating services site preparation Edgerton WI',
+        'context' => 'sod',
+        'alt'     => 'Hillside freshly graded for sod prep Edgerton WI',
     ],
     [
         'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963892391-3enmm5-486843500_122226629396208320_6857620022192748149_n.jpg',
-        'context' => 'residential',
-        'alt'     => 'Residential lawn care Edgerton WI homeowner services',
+        'context' => 'sod',
+        'alt'     => 'Large bare dirt yard graded for sod installation Edgerton WI',
     ],
     [
         'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963893874-ak4j6n-489926707_122226629426208320_2862562131488466064_n.jpg',
-        'context' => 'snow',
-        'alt'     => 'Snow removal services Edgerton Wisconsin winter maintenance',
+        'context' => 'sod',
+        'alt'     => 'Bobcat skid steer grading yard for sod prep Edgerton WI',
     ],
+    // ─── Excavating (2 images) ───────────────────────────────────
     [
         'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963895295-85rqf1-495734161_122236025852208320_5435639759042997660_n.jpg',
-        'context' => 'cleanup',
-        'alt'     => 'Fall yard cleanup leaf removal Edgerton WI',
+        'context' => 'excavating',
+        'alt'     => 'Excavator and skid steer clearing land with drainage pipe Edgerton WI',
     ],
     [
         'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963896244-0unq77-495336544_122236025864208320_4129821399527851126_n.jpg',
-        'context' => 'shrub',
-        'alt'     => 'Shrub trimming and pruning services Edgerton Wisconsin',
+        'context' => 'excavating',
+        'alt'     => 'Excavator and skid steer earthwork Edgerton WI',
     ],
+    // ─── Concrete (8 images) ─────────────────────────────────────
     [
         'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963897215-2h4a0d-512659884_122253684104208320_1892119159010734985_n.jpg',
-        'context' => 'lawn',
-        'alt'     => 'Lawn restoration overseeding services Edgerton WI',
+        'context' => 'concrete',
+        'alt'     => 'Fresh concrete patio and steps at stone ranch house Edgerton WI',
     ],
     [
         'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963898405-wb12tf-509629996_122253717212208320_4867801287963445550_n.jpg',
-        'context' => 'garden',
-        'alt'     => 'Garden maintenance plant care Edgerton Wisconsin',
+        'context' => 'concrete',
+        'alt'     => 'Aerial view fresh concrete patio with rounded steps Edgerton WI',
     ],
     [
         'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963899295-b8v0w8-607091027_122304065120208320_4309334725424131443_n.jpg',
-        'context' => 'mulching',
-        'alt'     => 'Mulch installation landscape beds Edgerton WI',
+        'context' => 'concrete',
+        'alt'     => 'Large freshly poured concrete driveway Edgerton WI',
     ],
     [
+        'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785039114-o.jpg',
+        'context' => 'concrete',
+        'alt'     => 'Freshly poured concrete slab residential Edgerton WI',
+    ],
+    [
+        'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785102672-o__1_.jpg',
+        'context' => 'concrete',
+        'alt'     => 'Crew prepping concrete pour at brick house Edgerton WI',
+    ],
+    [
+        'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785225437-driveway.webp',
+        'context' => 'concrete',
+        'alt'     => 'New concrete sidewalk section Edgerton WI',
+    ],
+    [
+        'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785335181-patio.webp',
+        'context' => 'concrete',
+        'alt'     => 'Freshly poured concrete driveway pad Edgerton WI',
+    ],
+    [
+        'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785402115-conrete.webp',
+        'context' => 'concrete',
+        'alt'     => 'Fresh concrete pad next to commercial building Edgerton WI',
+    ],
+    // ─── Snow (6 images) ─────────────────────────────────────────
+    [
         'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963900255-mzfpn4-615106273_122307410756208320_5795716215182246689_n.jpg',
-        'context' => 'hardscaping',
-        'alt'     => 'Patio hardscape outdoor living space Edgerton Wisconsin',
+        'context' => 'snow',
+        'alt'     => 'Fleet of plow trucks and skid steer in snow Edgerton WI',
     ],
     [
         'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963901265-nudusv-612484153_122306872124208320_6814002630237134691_n.jpg',
-        'context' => 'landscaping',
-        'alt'     => 'Landscape installation complete yard transformation Edgerton WI',
+        'context' => 'snow',
+        'alt'     => 'Snowy lot with vehicles and equipment Edgerton WI',
     ],
     [
         'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963902399-ex8uz9-470815796_122202491606208320_6104297074012647116_n.jpg',
-        'context' => 'landscaping',
-        'alt'     => 'Professional landscaping crew Edgerton Wisconsin RAH Solutions',
+        'context' => 'snow',
+        'alt'     => 'Two trucks with Boss snow plows Edgerton WI',
     ],
     [
         'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963903365-fqbeu8-470859907_122202491636208320_4879251461866482528_n.jpg',
-        'context' => 'concrete',
-        'alt'     => 'Concrete driveway installation Edgerton WI R.A.H. Solutions',
-    ],
-    [
-        'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963904225-q0hpk2-470686200_122202491702208320_8107918479252601066_n.jpg',
-        'context' => 'commercial',
-        'alt'     => 'Commercial grounds maintenance Edgerton Wisconsin',
-    ],
-    [
-        'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963905145-cbpw70-470661025_122202491588208320_8070705476773582033_n.jpg',
-        'context' => 'residential',
-        'alt'     => 'Residential landscape installation Edgerton WI outdoor spaces',
-    ],
-    [
-        'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963907325-0lw8ac-470717235_122202491672208320_1286182138053082297_n.jpg',
-        'context' => 'cleanup',
-        'alt'     => 'Yard cleanup seasonal services Edgerton Wisconsin',
-    ],
-    [
-        'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963980269-u3tom9-470875398_122202491888208320_4188323936145154732_n.jpg',
         'context' => 'snow',
-        'alt'     => 'Snow plowing winter services Edgerton WI R.A.H. Solutions',
+        'alt'     => 'Plow truck clearing residential driveway at dusk Edgerton WI',
+    ],
+    [
+        'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785163845-o__2_.jpg',
+        'context' => 'snow',
+        'alt'     => 'Fleet of plow trucks with plows in snow Edgerton WI',
+    ],
+    [
+        'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785308901-snow.webp',
+        'context' => 'snow',
+        'alt'     => 'Two plow trucks with snow plows Edgerton WI R.A.H. Solutions',
+    ],
+    // ─── Residential — low confidence ────────────────────────────
+    [
+        'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963876972-9uvcid-474456407_122209245674208320_3275147450913393227_n.jpg',
+        'context' => 'residential',
+        'alt'     => 'Work truck towing red dump trailer R.A.H. Solutions Edgerton WI',
     ],
 ];

@@ -6,9 +6,9 @@ $pageTitle       = 'Snow Removal Services Edgerton, WI';
 $pageDescription = 'Snow removal in Edgerton, WI — residential & commercial plowing, shoveling & salting after every storm. Same-day service. Call (608) 501-5123.';
 $canonicalUrl    = 'https://rahsolutionsllc.com/services/snow-removal';
 // SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
-$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963893874-ak4j6n-489926707_122226629426208320_2862562131488466064_n.jpg';
+$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963903365-fqbeu8-470859907_122202491636208320_4879251461866482528_n.jpg';
 $currentPage     = 'service-snow-removal';
-$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963893874-ak4j6n-489926707_122226629426208320_2862562131488466064_n.jpg';
+$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963903365-fqbeu8-470859907_122202491636208320_4879251461866482528_n.jpg';
 
 $faqs = [
   [
@@ -122,7 +122,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963893874-ak4j6n-489926707_122226629426208320_2862562131488466064_n.jpg');
+  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963903365-fqbeu8-470859907_122202491636208320_4879251461866482528_n.jpg');
   background-size: cover;
   background-position: center;
   animation: sr-kenburns 22s ease-in-out infinite alternate;
@@ -668,9 +668,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <div class="sr-detail-image">
           <div class="sr-image-frame">
             <picture>
-              <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963980269-u3tom9-470875398_122202491888208320_4188323936145154732_n.jpg" type="image/webp">
+              <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963902399-ex8uz9-470815796_122202491606208320_6104297074012647116_n.jpg" type="image/webp">
               <img
-                src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963980269-u3tom9-470875398_122202491888208320_4188323936145154732_n.jpg"
+                src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963902399-ex8uz9-470815796_122202491606208320_6104297074012647116_n.jpg"
                 alt="Snow removal plowing residential driveway Edgerton Wisconsin winter service"
                 width="600"
                 height="420"

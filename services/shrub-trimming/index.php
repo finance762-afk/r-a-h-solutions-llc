@@ -6,9 +6,9 @@ $pageTitle       = 'Shrub Trimming in Edgerton, WI';
 $pageDescription = 'Shrub trimming & shaping in Edgerton, WI by R.A.H. Solutions. Promotes healthy growth and clean lines year-round. Free estimates. Call (608) 501-5123.';
 $canonicalUrl    = 'https://rahsolutionsllc.com/services/shrub-trimming';
 // SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
-$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963896244-0unq77-495336544_122236025864208320_4129821399527851126_n.jpg';
+$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963879670-etljhr-474465615_122209560308208320_6377695377545475044_n.jpg';
 $currentPage     = 'service-shrub-trimming';
-$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963896244-0unq77-495336544_122236025864208320_4129821399527851126_n.jpg';
+$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963879670-etljhr-474465615_122209560308208320_6377695377545475044_n.jpg';
 
 $faqs = [
   [
@@ -144,7 +144,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963896244-0unq77-495336544_122236025864208320_4129821399527851126_n.jpg');
+  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963879670-etljhr-474465615_122209560308208320_6377695377545475044_n.jpg');
   background-size: cover;
   background-position: center;
   animation: st-kenburns 20s ease-in-out infinite alternate;
@@ -1014,9 +1014,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <div class="st-detail-image">
           <div class="st-image-frame">
             <picture>
-              <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963896244-0unq77-495336544_122236025864208320_4129821399527851126_n.jpg" type="image/webp">
+              <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963879670-etljhr-474465615_122209560308208320_6377695377545475044_n.jpg" type="image/webp">
               <img
-                src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963896244-0unq77-495336544_122236025864208320_4129821399527851126_n.jpg"
+                src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963879670-etljhr-474465615_122209560308208320_6377695377545475044_n.jpg"
                 alt="Professional shrub trimming and hedge shaping Edgerton Wisconsin landscape"
                 width="600"
                 height="420"

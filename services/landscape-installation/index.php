@@ -6,9 +6,9 @@ $pageTitle       = 'Landscape Installation Edgerton, WI';
 $pageDescription = 'Landscape installation in Edgerton, WI — complete yard transformations with plants, trees & hardscaping. R.A.H. Solutions. Free estimates. Call (608) 501-5123.';
 $canonicalUrl    = 'https://rahsolutionsllc.com/services/landscape-installation';
 // SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
-$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963876972-9uvcid-474456407_122209245674208320_3275147450913393227_n.jpg';
+$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963878224-9yylmf-474790582_122209560278208320_5110498035873152787_n.jpg';
 $currentPage     = 'service-landscape-installation';
-$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963876972-9uvcid-474456407_122209245674208320_3275147450913393227_n.jpg';
+$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963878224-9yylmf-474790582_122209560278208320_5110498035873152787_n.jpg';
 
 $faqs = [
   [
@@ -144,7 +144,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963876972-9uvcid-474456407_122209245674208320_3275147450913393227_n.jpg');
+  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963878224-9yylmf-474790582_122209560278208320_5110498035873152787_n.jpg');
   background-size: cover;
   background-position: center;
   animation: li-kenburns 20s ease-in-out infinite alternate;
@@ -1027,9 +1027,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <div class="li-detail-image">
           <div class="li-image-frame">
             <picture>
-              <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963901265-nudusv-612484153_122306872124208320_6814002630237134691_n.jpg" type="image/webp">
+              <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963879670-etljhr-474465615_122209560308208320_6377695377545475044_n.jpg" type="image/webp">
               <img
-                src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963901265-nudusv-612484153_122306872124208320_6814002630237134691_n.jpg"
+                src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963879670-etljhr-474465615_122209560308208320_6377695377545475044_n.jpg"
                 alt="Professional landscape installation project in Edgerton Wisconsin with planted beds and shrubs"
                 width="600"
                 height="420"

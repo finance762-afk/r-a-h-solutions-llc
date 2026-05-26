@@ -7,9 +7,9 @@ $pageTitle       = 'Excavating Services in Edgerton, WI';
 $pageDescription = 'Excavating in Edgerton, WI — site grading, drainage, pond excavation & utility trenching by R.A.H. Solutions. Free estimates. Call (608) 501-5123.';
 $canonicalUrl    = 'https://rahsolutionsllc.com/services/excavating-services';
 // SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
-$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963890974-0j1sut-486971190_122226629348208320_8096727509961542480_n.jpg';
+$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963895295-85rqf1-495734161_122236025852208320_5435639759042997660_n.jpg';
 $currentPage     = 'service-excavating-services';
-$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963890974-0j1sut-486971190_122226629348208320_8096727509961542480_n.jpg';
+$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963895295-85rqf1-495734161_122236025852208320_5435639759042997660_n.jpg';
 
 $pageServiceName = 'Excavating Services';
 $pageServiceSlug = 'excavating-services';
@@ -95,7 +95,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   min-height: 88vh;
   display: flex;
   align-items: center;
-  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963890974-0j1sut-486971190_122226629348208320_8096727509961542480_n.jpg');
+  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963895295-85rqf1-495734161_122236025852208320_5435639759042997660_n.jpg');
   background-size: cover;
   background-position: center 40%;
   background-attachment: fixed;
@@ -938,9 +938,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     </div>
     <div class="split-image" data-animate="wipe-right">
       <picture>
-        <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963890974-0j1sut-486971190_122226629348208320_8096727509961542480_n.jpg" type="image/webp">
+        <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963895295-85rqf1-495734161_122236025852208320_5435639759042997660_n.jpg" type="image/webp">
         <img
-          src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963890974-0j1sut-486971190_122226629348208320_8096727509961542480_n.jpg"
+          src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963895295-85rqf1-495734161_122236025852208320_5435639759042997660_n.jpg"
           alt="Excavating services site preparation Edgerton WI — R.A.H. Solutions earthmoving"
           width="700"
           height="420"

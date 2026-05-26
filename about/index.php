@@ -1009,9 +1009,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <div class="ab-story-corner" aria-hidden="true"></div>
           <div class="ab-story-frame">
             <picture>
-              <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963902399-ex8uz9-470815796_122202491606208320_6104297074012647116_n.jpg" type="image/webp">
+              <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963874866-f077by-471177305_122202492170208320_1592970065814584229_n.jpg" type="image/webp">
               <img
-                src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963902399-ex8uz9-470815796_122202491606208320_6104297074012647116_n.jpg"
+                src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963874866-f077by-471177305_122202492170208320_1592970065814584229_n.jpg"
                 alt="R.A.H. Solutions professional landscaping crew Edgerton Wisconsin"
                 width="600"
                 height="460"

@@ -6,9 +6,9 @@ $pageTitle       = 'Lawn Maintenance in Edgerton, WI';
 $pageDescription = 'Scheduled lawn maintenance in Edgerton, WI — mowing, edging & seasonal care programs from $40–$80/visit. Licensed & insured. Call (608) 501-5123.';
 $canonicalUrl    = 'https://rahsolutionsllc.com/services/lawn-maintenance';
 // SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
-$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963879670-etljhr-474465615_122209560308208320_6377695377545475044_n.jpg';
+$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963874866-f077by-471177305_122202492170208320_1592970065814584229_n.jpg';
 $currentPage     = 'service-lawn-maintenance';
-$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963879670-etljhr-474465615_122209560308208320_6377695377545475044_n.jpg';
+$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963874866-f077by-471177305_122202492170208320_1592970065814584229_n.jpg';
 
 $faqs = [
   [
@@ -146,7 +146,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963879670-etljhr-474465615_122209560308208320_6377695377545475044_n.jpg');
+  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963874866-f077by-471177305_122202492170208320_1592970065814584229_n.jpg');
   background-size: cover;
   background-position: center;
   animation: svc-kenburns 20s ease-in-out infinite alternate;
@@ -1121,9 +1121,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <div class="svc-detail-image">
           <div class="svc-image-frame">
             <picture>
-              <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963892391-3enmm5-486843500_122226629396208320_6857620022192748149_n.jpg" type="image/webp">
+              <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963907325-0lw8ac-470717235_122202491672208320_1286182138053082297_n.jpg" type="image/webp">
               <img
-                src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963892391-3enmm5-486843500_122226629396208320_6857620022192748149_n.jpg"
+                src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963907325-0lw8ac-470717235_122202491672208320_1286182138053082297_n.jpg"
                 alt="Residential lawn maintenance mowing and edging Edgerton Wisconsin"
                 width="600"
                 height="420"

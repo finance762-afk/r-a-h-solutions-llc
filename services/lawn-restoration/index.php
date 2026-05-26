@@ -8,9 +8,9 @@ $pageTitle       = 'Lawn Restoration in Edgerton, WI';
 $pageDescription = 'Lawn restoration in Edgerton, WI — core aeration, overseeding & soil amendment for bare or grub-damaged turf. R.A.H. Solutions. Free estimates. (608) 501-5123.';
 $canonicalUrl    = 'https://rahsolutionsllc.com/services/lawn-restoration';
 // SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
-$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963897215-2h4a0d-512659884_122253684104208320_1892119159010734985_n.jpg';
+$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785464766-unnamed.webp';
 $currentPage     = 'service-lawn-restoration';
-$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963897215-2h4a0d-512659884_122253684104208320_1892119159010734985_n.jpg';
+$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785464766-unnamed.webp';
 
 $pageFaqs = [
   [
@@ -104,7 +104,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   min-height: 85vh;
   display: flex;
   align-items: flex-end;
-  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963897215-2h4a0d-512659884_122253684104208320_1892119159010734985_n.jpg');
+  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785464766-unnamed.webp');
   background-size: cover;
   background-position: center 40%;
   animation: kenburns-rest 24s ease-in-out infinite alternate;
@@ -806,9 +806,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
     <div class="rest-img-block" data-animate="wipe-right">
       <picture>
-        <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963879670-etljhr-474465615_122209560308208320_6377695377545475044_n.jpg" type="image/webp">
+        <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963980269-u3tom9-470875398_122202491888208320_4188323936145154732_n.jpg" type="image/webp">
         <img
-          src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963879670-etljhr-474465615_122209560308208320_6377695377545475044_n.jpg"
+          src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963980269-u3tom9-470875398_122202491888208320_4188323936145154732_n.jpg"
           alt="Lawn restoration aeration overseeding Edgerton Wisconsin R.A.H. Solutions"
           width="560"
           height="747"

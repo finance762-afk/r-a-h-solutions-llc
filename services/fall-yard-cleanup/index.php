@@ -6,9 +6,9 @@ $pageTitle       = 'Fall Yard Cleanup | Edgerton, WI';
 $pageDescription = 'Fall yard cleanup in Edgerton, WI — leaf removal, bed prep & winterization by R.A.H. Solutions. Protect your landscape before first freeze. Call (608) 501-5123.';
 $canonicalUrl    = 'https://rahsolutionsllc.com/services/fall-yard-cleanup';
 // SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
-$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963895295-85rqf1-495734161_122236025852208320_5435639759042997660_n.jpg';
+$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963884244-pe5czp-475493043_122211163190208320_5361770049466921459_n.jpg';
 $currentPage     = 'service-fall-yard-cleanup';
-$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963895295-85rqf1-495734161_122236025852208320_5435639759042997660_n.jpg';
+$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963884244-pe5czp-475493043_122211163190208320_5361770049466921459_n.jpg';
 
 $faqs = [
   [
@@ -144,7 +144,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963895295-85rqf1-495734161_122236025852208320_5435639759042997660_n.jpg');
+  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963884244-pe5czp-475493043_122211163190208320_5361770049466921459_n.jpg');
   background-size: cover;
   background-position: center;
   animation: fyc-kenburns 22s ease-in-out infinite alternate;
@@ -1047,9 +1047,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <div class="fyc-detail-image">
           <div class="fyc-image-frame">
             <picture>
-              <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963895295-85rqf1-495734161_122236025852208320_5435639759042997660_n.jpg" type="image/webp">
+              <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963885204-c6dam2-475409956_122211163172208320_2104516663902467885_n.jpg" type="image/webp">
               <img
-                src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963895295-85rqf1-495734161_122236025852208320_5435639759042997660_n.jpg"
+                src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963885204-c6dam2-475409956_122211163172208320_2104516663902467885_n.jpg"
                 alt="Fall yard cleanup leaf removal winterization Edgerton Wisconsin"
                 width="600"
                 height="420"

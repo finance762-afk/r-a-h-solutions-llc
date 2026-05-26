@@ -6,9 +6,9 @@ $pageTitle       = 'Garden Maintenance | Edgerton, WI';
 $pageDescription = 'Garden maintenance in Edgerton, WI by R.A.H. Solutions — weeding, pruning & seasonal plant care. Healthy beds all season. Free estimates. Call (608) 501-5123.';
 $canonicalUrl    = 'https://rahsolutionsllc.com/services/garden-maintenance';
 // SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
-$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963898405-wb12tf-509629996_122253717212208320_4867801287963445550_n.jpg';
+$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963880884-qw46fr-474382241_122209560170208320_4796638395126825561_n.jpg';
 $currentPage     = 'service-garden-maintenance';
-$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963898405-wb12tf-509629996_122253717212208320_4867801287963445550_n.jpg';
+$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963880884-qw46fr-474382241_122209560170208320_4796638395126825561_n.jpg';
 
 $faqs = [
   [
@@ -144,7 +144,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963898405-wb12tf-509629996_122253717212208320_4867801287963445550_n.jpg');
+  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963880884-qw46fr-474382241_122209560170208320_4796638395126825561_n.jpg');
   background-size: cover;
   background-position: center;
   animation: gm-kenburns 20s ease-in-out infinite alternate;
@@ -1012,9 +1012,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <div class="gm-detail-image">
           <div class="gm-image-frame">
             <picture>
-              <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963898405-wb12tf-509629996_122253717212208320_4867801287963445550_n.jpg" type="image/webp">
+              <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963880884-qw46fr-474382241_122209560170208320_4796638395126825561_n.jpg" type="image/webp">
               <img
-                src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963898405-wb12tf-509629996_122253717212208320_4867801287963445550_n.jpg"
+                src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963880884-qw46fr-474382241_122209560170208320_4796638395126825561_n.jpg"
                 alt="Professional garden maintenance and bed care Edgerton Wisconsin"
                 width="600"
                 height="420"

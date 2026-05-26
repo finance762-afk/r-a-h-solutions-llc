@@ -1208,7 +1208,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <!-- Landscape Installation -->
         <div class="service-card-std card-tint-1" data-animate="fade-up">
           <div class="card-image">
-            <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963874866-f077by-471177305_122202492170208320_1592970065814584229_n.jpg" alt="Landscape installation and outdoor transformation in Edgerton, WI" width="600" height="400" loading="lazy">
+            <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963878224-9yylmf-474790582_122209560278208320_5110498035873152787_n.jpg" alt="Landscape and garden bed installation in Edgerton, WI" width="600" height="400" loading="lazy">
           </div>
           <div class="card-icon">
             <i data-lucide="shovel" style="width:22px;height:22px;" aria-hidden="true"></i>
@@ -1224,7 +1224,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <!-- Lawn Maintenance -->
         <div class="service-card-std card-tint-2" data-animate="fade-up">
           <div class="card-image">
-            <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963879670-etljhr-474465615_122209560308208320_6377695377545475044_n.jpg" alt="Lawn maintenance services in Edgerton, WI" width="600" height="400" loading="lazy">
+            <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963874866-f077by-471177305_122202492170208320_1592970065814584229_n.jpg" alt="Freshly mowed striped lawn in Edgerton, WI" width="600" height="400" loading="lazy">
           </div>
           <div class="card-icon">
             <i data-lucide="scissors" style="width:22px;height:22px;" aria-hidden="true"></i>
@@ -1240,7 +1240,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <!-- Hardscaping Services -->
         <div class="service-card-std card-tint-3" data-animate="fade-up">
           <div class="card-image">
-            <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963878224-9yylmf-474790582_122209560278208320_5110498035873152787_n.jpg" alt="Hardscaping patio installation in Edgerton, WI" width="600" height="400" loading="lazy">
+            <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963897215-2h4a0d-512659884_122253684104208320_1892119159010734985_n.jpg" alt="Concrete patio and steps installation in Edgerton, WI" width="600" height="400" loading="lazy">
           </div>
           <div class="card-icon">
             <i data-lucide="hammer" style="width:22px;height:22px;" aria-hidden="true"></i>
@@ -1256,7 +1256,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <!-- Concrete Services -->
         <div class="service-card-std card-tint-1" data-animate="fade-up">
           <div class="card-image">
-            <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963885204-c6dam2-475409956_122211163172208320_2104516663902467885_n.jpg" alt="Concrete driveway installation in Edgerton, WI" width="600" height="400" loading="lazy">
+            <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785225437-driveway.webp" alt="Freshly poured concrete driveway in Edgerton, WI" width="600" height="400" loading="lazy">
           </div>
           <div class="card-icon">
             <i data-lucide="settings-2" style="width:22px;height:22px;" aria-hidden="true"></i>
@@ -1272,7 +1272,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <!-- Snow Removal -->
         <div class="service-card-std card-tint-2" data-animate="fade-up">
           <div class="card-image">
-            <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963893874-ak4j6n-489926707_122226629426208320_2862562131488466064_n.jpg" alt="Snow removal services in Edgerton, WI" width="600" height="400" loading="lazy">
+            <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963903365-fqbeu8-470859907_122202491636208320_4879251461866482528_n.jpg" alt="Snow plowing residential driveway in Edgerton, WI" width="600" height="400" loading="lazy">
           </div>
           <div class="card-icon">
             <i data-lucide="snowflake" style="width:22px;height:22px;" aria-hidden="true"></i>
@@ -1288,7 +1288,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <!-- Shrub Trimming -->
         <div class="service-card-std card-tint-3" data-animate="fade-up">
           <div class="card-image">
-            <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963896244-0unq77-495336544_122236025864208320_4129821399527851126_n.jpg" alt="Shrub trimming and pruning in Edgerton, WI" width="600" height="400" loading="lazy">
+            <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963879670-etljhr-474465615_122209560308208320_6377695377545475044_n.jpg" alt="Landscape and shrub bed maintenance in Edgerton, WI" width="600" height="400" loading="lazy">
           </div>
           <div class="card-icon">
             <i data-lucide="scissors" style="width:22px;height:22px;" aria-hidden="true"></i>
@@ -1304,7 +1304,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <!-- Excavating Services -->
         <div class="service-card-std card-tint-1" data-animate="fade-up">
           <div class="card-image">
-            <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963890974-0j1sut-486971190_122226629348208320_8096727509961542480_n.jpg" alt="Excavating and site preparation in Edgerton, WI" width="600" height="400" loading="lazy">
+            <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963895295-85rqf1-495734161_122236025852208320_5435639759042997660_n.jpg" alt="Excavating and site grading work in Edgerton, WI" width="600" height="400" loading="lazy">
           </div>
           <div class="card-icon">
             <i data-lucide="truck" style="width:22px;height:22px;" aria-hidden="true"></i>

@@ -6,9 +6,9 @@ $pageTitle       = 'Spring Yard Cleanup | Edgerton, WI';
 $pageDescription = 'Spring yard cleanup in Edgerton, WI — debris removal, bed prep & lawn restoration for a clean start. R.A.H. Solutions. Free estimates. Call (608) 501-5123.';
 $canonicalUrl    = 'https://rahsolutionsllc.com/services/spring-yard-cleanup';
 // SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
-$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963886495-agh3u2-475671791_122211163124208320_6715996363556920497_n.jpg';
+$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963883232-jst9wv-475547624_122211163226208320_5983283941194375535_n.jpg';
 $currentPage     = 'service-spring-yard-cleanup';
-$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963886495-agh3u2-475671791_122211163124208320_6715996363556920497_n.jpg';
+$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963883232-jst9wv-475547624_122211163226208320_5983283941194375535_n.jpg';
 
 $faqs = [
   [
@@ -146,7 +146,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963886495-agh3u2-475671791_122211163124208320_6715996363556920497_n.jpg');
+  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963883232-jst9wv-475547624_122211163226208320_5983283941194375535_n.jpg');
   background-size: cover;
   background-position: center;
   animation: syc-kenburns 20s ease-in-out infinite alternate;
@@ -1087,9 +1087,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <div class="syc-detail-image">
           <div class="syc-image-frame">
             <picture>
-              <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963907325-0lw8ac-470717235_122202491672208320_1286182138053082297_n.jpg" type="image/webp">
+              <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963884244-pe5czp-475493043_122211163190208320_5361770049466921459_n.jpg" type="image/webp">
               <img
-                src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963907325-0lw8ac-470717235_122202491672208320_1286182138053082297_n.jpg"
+                src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963884244-pe5czp-475493043_122211163190208320_5361770049466921459_n.jpg"
                 alt="Spring yard cleanup bed prep and debris removal Edgerton Wisconsin"
                 width="600"
                 height="420"
