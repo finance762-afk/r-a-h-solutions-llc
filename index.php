@@ -342,7 +342,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 .services-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  gap: var(--space-lg);
+  gap: var(--space-xl);
   margin-bottom: var(--space-2xl);
 }
 /* Featured card: dark gradient, 2 rows tall */
@@ -361,7 +361,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   flex-direction: column;
   justify-content: flex-end;
 }
-.service-card-featured:hover { transform: translateY(-5px); }
+.service-card-featured:hover { transform: translateY(-6px); box-shadow: var(--shadow-card-hover); }
 /* Decorative accent corner */
 .service-card-featured::before {
   content: '';
@@ -436,66 +436,75 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 }
 .featured-cta:hover { background: #fff; transform: translateX(3px); }
 
-/* Standard service cards */
+/* Standard service cards — premium polish */
 .service-card-std {
-  background: #fff;
+  background: var(--color-bg);
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
+  border: 1px solid rgba(var(--color-primary-rgb), 0.08);
   box-shadow: var(--shadow-card);
-  transition: transform var(--transition-base), box-shadow var(--transition-base), border-top-color var(--transition-base);
-  border-top: 3px solid transparent;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 .service-card-std:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-xl);
-  border-top-color: var(--color-accent);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
 }
 .card-icon {
-  width: 44px; height: 44px;
-  background: var(--color-light);
+  width: 56px; height: 56px;
+  background: rgba(var(--color-primary-rgb), 0.08);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--color-primary);
-  margin-bottom: var(--space-md);
-  transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+  margin-bottom: var(--space-lg);
+  transition: background var(--transition-fast), color var(--transition-fast);
   flex-shrink: 0;
 }
 .service-card-std:hover .card-icon {
   background: rgba(var(--color-accent-rgb), 0.12);
   color: var(--color-accent);
-  transform: scale(1.1) rotate(-5deg);
 }
 .service-card-std h3 {
-  font-size: 1rem;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
   margin-bottom: var(--space-sm);
-  color: var(--color-text);
+  color: var(--color-primary);
   text-wrap: balance;
+  letter-spacing: -0.01em;
 }
 .service-card-std p {
   font-size: var(--font-size-sm);
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--color-text-light);
   flex: 1;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
 }
 .card-link {
   display: inline-flex;
   align-items: center;
   gap: var(--space-xs);
-  color: var(--color-accent);
+  color: var(--color-primary);
   font-family: var(--font-heading);
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  transition: gap var(--transition-fast);
+  transition: color var(--transition-fast), gap 0.2s ease;
   margin-top: auto;
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(var(--color-primary-rgb), 0.06);
+  width: 100%;
 }
-.card-link:hover { gap: var(--space-sm); }
+.card-link [data-lucide],
+.card-link i { transition: transform 0.2s ease; }
+.service-card-std:hover .card-link { color: var(--color-accent); gap: var(--space-sm); }
+.service-card-std:hover .card-link [data-lucide],
+.service-card-std:hover .card-link i { transform: translateX(3px); }
 
 /* ─── C4.1 + C6.3 Stats Section ──────────────────────────────── */
 .stats-section {
@@ -1325,7 +1334,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         </div><!-- /.service-card-featured -->
 
         <!-- Lawn Maintenance -->
-        <div class="service-card-std" data-animate="fade-up" data-tilt>
+        <div class="service-card-std card-tint-1" data-animate="fade-up">
           <div class="card-image">
             <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963879670-etljhr-474465615_122209560308208320_6377695377545475044_n.jpg" alt="Lawn maintenance services in Edgerton, WI" width="600" height="400" loading="lazy">
           </div>
@@ -1341,7 +1350,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         </div>
 
         <!-- Hardscaping Services -->
-        <div class="service-card-std" data-animate="fade-up" data-tilt>
+        <div class="service-card-std card-tint-2" data-animate="fade-up">
           <div class="card-image">
             <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963878224-9yylmf-474790582_122209560278208320_5110498035873152787_n.jpg" alt="Hardscaping patio installation in Edgerton, WI" width="600" height="400" loading="lazy">
           </div>
@@ -1357,7 +1366,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         </div>
 
         <!-- Concrete Services -->
-        <div class="service-card-std" data-animate="fade-up" data-tilt>
+        <div class="service-card-std card-tint-3" data-animate="fade-up">
           <div class="card-image">
             <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963885204-c6dam2-475409956_122211163172208320_2104516663902467885_n.jpg" alt="Concrete driveway installation in Edgerton, WI" width="600" height="400" loading="lazy">
           </div>
@@ -1373,7 +1382,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         </div>
 
         <!-- Snow Removal -->
-        <div class="service-card-std" data-animate="fade-up" data-tilt>
+        <div class="service-card-std card-tint-1" data-animate="fade-up">
           <div class="card-image">
             <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963893874-ak4j6n-489926707_122226629426208320_2862562131488466064_n.jpg" alt="Snow removal services in Edgerton, WI" width="600" height="400" loading="lazy">
           </div>
@@ -1389,7 +1398,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         </div>
 
         <!-- Shrub Trimming -->
-        <div class="service-card-std" data-animate="fade-up" data-tilt>
+        <div class="service-card-std card-tint-2" data-animate="fade-up">
           <div class="card-image">
             <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963896244-0unq77-495336544_122236025864208320_4129821399527851126_n.jpg" alt="Shrub trimming and pruning in Edgerton, WI" width="600" height="400" loading="lazy">
           </div>
@@ -1405,7 +1414,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         </div>
 
         <!-- Excavating Services -->
-        <div class="service-card-std" data-animate="fade-up" data-tilt>
+        <div class="service-card-std card-tint-3" data-animate="fade-up">
           <div class="card-image">
             <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963890974-0j1sut-486971190_122226629348208320_8096727509961542480_n.jpg" alt="Excavating and site preparation in Edgerton, WI" width="600" height="400" loading="lazy">
           </div>

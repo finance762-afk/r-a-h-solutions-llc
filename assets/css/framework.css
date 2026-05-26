@@ -250,11 +250,12 @@ p { line-height: 1.6; color: var(--color-text-light); }
 }
 [data-animate="scale-in"].is-visible { opacity: 1; transform: scale(1); }
 
+/* wipe-right neutralized — images always visible regardless of JS */
 [data-animate="wipe-right"] {
-  clip-path: inset(0 100% 0 0);
-  transition: opacity 0.85s ease, clip-path 0.85s ease;
+  opacity: 1;
+  clip-path: none;
 }
-[data-animate="wipe-right"].is-visible { opacity: 1; clip-path: inset(0 0% 0 0); }
+[data-animate="wipe-right"].is-visible { opacity: 1; clip-path: none; }
 
 /* ─── 7. Shared Section Utilities ─────────────────────────────── */
 section { position: relative; }
@@ -977,10 +978,10 @@ section { position: relative; }
 .card-image {
   position: relative;
   overflow: hidden;
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  border-radius: calc(var(--radius-lg) - 1px) calc(var(--radius-lg) - 1px) 0 0;
   aspect-ratio: 3 / 2;
   margin: calc(-1 * var(--space-xl)) calc(-1 * var(--space-xl)) 0;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
 }
 .card-image img {
   width: 100%;
@@ -989,14 +990,18 @@ section { position: relative; }
   display: block;
   transition: transform 0.5s ease;
 }
+.card-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(0,0,0,0.08) 0%, transparent 100%);
+  pointer-events: none;
+}
 .service-card-std:hover .card-image img {
   transform: scale(1.04);
-}
-.service-card-std {
-  border: 1px solid rgba(var(--color-primary-rgb), 0.08);
-}
-.service-card-std:hover {
-  box-shadow: var(--shadow-card-hover);
 }
 
 /* ─── 23. Hero Grid + Hero Form Card ────────────────────────────── */

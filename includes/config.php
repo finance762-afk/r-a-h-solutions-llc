@@ -279,7 +279,7 @@ $clientSlug        = 'r-a-h-solutions-llc';
 $formAction  = 'https://formsubmit.co/rahsolutionsllc2@gmail.com';
 
 // ─── CSS Version (cache-bust) ─────────────────────────────
-$cssVersion = '3';
+$cssVersion = '4';
 
 // ─── Analytics ────────────────────────────────────────────────
 $googleAnalyticsId = ''; // TODO: Add GA4 Measurement ID (e.g. G-XXXXXXXXXX) to activate analytics
