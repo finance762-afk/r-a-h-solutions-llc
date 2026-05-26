@@ -835,14 +835,20 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
             <div class="ct-form-body">
               <form
                 class="ct-form"
-                action="https://db.pageone.cloud/functions/v1/leads/r-a-h-solutions-llc"
+                action="https://formsubmit.co/rahsolutionsllc2@gmail.com"
                 method="POST"
                 novalidate
               >
+                <!-- Formsubmit requires activation: first submission triggers a confirmation email to rahsolutionsllc2@gmail.com. The owner MUST click that link or all submissions are silently dropped. -->
                 <!-- Honeypot -->
                 <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
-                <!-- Thank-you redirect -->
-                <input type="hidden" name="_next" value="/thank-you">
+                <!-- Thank-you redirect (absolute URL required for Formsubmit) -->
+                <input type="hidden" name="_next" value="https://rahsolutionsllc.com/thank-you">
+                <!-- Formsubmit configuration -->
+                <input type="hidden" name="_cc" value="CustomerService@pageoneinsights.com">
+                <input type="hidden" name="_subject" value="New Estimate Request — R.A.H. Solutions">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
                 <!-- Consent tracking (TCPA 2025/2026) -->
                 <input type="hidden" name="_consent_version" value="v2.1">
                 <input type="hidden" name="_consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI'], ENT_QUOTES, 'UTF-8'); ?>">
@@ -891,11 +897,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
                   <select id="ct-service" name="service" aria-label="Service Needed">
                     <option value="" disabled selected> </option>
                     <option value="lawn-maintenance">Lawn Maintenance</option>
-                    <option value="landscape-design">Landscape Design</option>
+
                     <option value="landscape-installation">Landscape Installation</option>
                     <option value="hardscaping-services">Hardscaping Services</option>
                     <option value="concrete-services">Concrete Services</option>
-                    <option value="tree-pruning">Tree Pruning</option>
+
                     <option value="shrub-trimming">Shrub Trimming</option>
                     <option value="garden-maintenance">Garden Maintenance</option>
                     <option value="mulching-services">Mulching Services</option>

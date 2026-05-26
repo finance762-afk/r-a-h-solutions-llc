@@ -712,7 +712,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
           <div class="sa-card__highlights">
             <span class="sa-card__tag"><i data-lucide="check" aria-hidden="true"></i> Same-Day Service</span>
             <span class="sa-card__tag"><i data-lucide="check" aria-hidden="true"></i> Residential &amp; Commercial</span>
-            <span class="sa-card__tag"><i data-lucide="check" aria-hidden="true"></i> 17 Services Available</span>
+            <span class="sa-card__tag"><i data-lucide="check" aria-hidden="true"></i> 15 Services Available</span>
           </div>
           <a href="/services" class="sa-card__cta">View All Services in Edgerton</a>
         </div>
@@ -865,7 +865,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="section-title reveal-up">
       <span class="eyebrow-label" style="color:var(--color-accent);">Full-Service Coverage</span>
       <h2>Do We Offer Every Service in Every Community?</h2>
-      <span class="section-subtitle">All 17 services available across our entire coverage area</span>
+      <span class="section-subtitle">All 15 services available across our entire coverage area</span>
     </div>
 
     <div class="sa-services-grid">

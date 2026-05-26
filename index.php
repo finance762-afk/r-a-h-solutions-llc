@@ -1105,52 +1105,115 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <section class="hero-home" aria-label="R.A.H. Solutions homepage hero">
     <div class="hero-inner">
       <div class="container">
-        <div class="hero-content">
+        <div class="hero-grid">
 
-          <div class="hero-eyebrow-badge">
-            <i data-lucide="shield-check" style="width:14px;height:14px;" aria-hidden="true"></i>
-            Serving Edgerton, WI Since 2023
-          </div>
+          <div class="hero-content">
 
-          <h1 class="hero-title">
-            The Outdoor Spaces <span class="gradient-text">Edgerton</span> Deserves
-          </h1>
-
-          <p class="hero-answer">
-            Full-service landscaping, hardscaping, and year-round property care for homes and businesses across Southern Wisconsin — from first design to the final snowplow.
-          </p>
-
-          <div class="hero-actions">
-            <a href="/contact" class="btn-primary btn-lg btn-magnetic">
-              <i data-lucide="clipboard-list" style="width:18px;height:18px;" aria-hidden="true"></i>
-              Get a Free Estimate
-            </a>
-            <a href="tel:6085015123" class="btn-outline btn-lg">
-              <i data-lucide="phone" style="width:18px;height:18px;" aria-hidden="true"></i>
-              (608) 501-5123
-            </a>
-          </div>
-
-          <div class="hero-trust-row">
-            <div class="hero-trust-item">
-              <i data-lucide="shield-check" style="width:16px;height:16px;" aria-hidden="true"></i>
-              Licensed &amp; Insured
+            <div class="hero-eyebrow-badge">
+              <i data-lucide="shield-check" style="width:14px;height:14px;" aria-hidden="true"></i>
+              Serving Edgerton, WI Since 2023
             </div>
-            <div class="hero-trust-item">
-              <i data-lucide="calendar" style="width:16px;height:16px;" aria-hidden="true"></i>
-              Est. 2023
-            </div>
-            <div class="hero-trust-item">
-              <i data-lucide="star" style="width:16px;height:16px;" aria-hidden="true"></i>
-              4.9 Google Rating
-            </div>
-            <div class="hero-trust-item">
-              <i data-lucide="map-pin" style="width:16px;height:16px;" aria-hidden="true"></i>
-              50-Mile Service Radius
-            </div>
-          </div>
 
-        </div><!-- /.hero-content -->
+            <h1 class="hero-title">
+              The Outdoor Spaces <span class="gradient-text">Edgerton</span> Deserves
+            </h1>
+
+            <p class="hero-answer">
+              Full-service landscaping, hardscaping, and year-round property care for homes and businesses across Southern Wisconsin — from first design to the final snowplow.
+            </p>
+
+            <div class="hero-actions">
+              <a href="/contact" class="btn-primary btn-lg btn-magnetic">
+                <i data-lucide="clipboard-list" style="width:18px;height:18px;" aria-hidden="true"></i>
+                Get a Free Estimate
+              </a>
+              <a href="tel:6085015123" class="btn-outline btn-lg">
+                <i data-lucide="phone" style="width:18px;height:18px;" aria-hidden="true"></i>
+                (608) 501-5123
+              </a>
+            </div>
+
+            <div class="hero-trust-row">
+              <div class="hero-trust-item">
+                <i data-lucide="shield-check" style="width:16px;height:16px;" aria-hidden="true"></i>
+                Licensed &amp; Insured
+              </div>
+              <div class="hero-trust-item">
+                <i data-lucide="calendar" style="width:16px;height:16px;" aria-hidden="true"></i>
+                Est. 2023
+              </div>
+              <div class="hero-trust-item">
+                <i data-lucide="star" style="width:16px;height:16px;" aria-hidden="true"></i>
+                4.9 Google Rating
+              </div>
+              <div class="hero-trust-item">
+                <i data-lucide="map-pin" style="width:16px;height:16px;" aria-hidden="true"></i>
+                50-Mile Service Radius
+              </div>
+            </div>
+
+          </div><!-- /.hero-content -->
+
+          <!-- Hero Estimate Form -->
+          <div class="hero-form-card">
+            <!-- Formsubmit requires activation: first submission triggers a confirmation email to rahsolutionsllc2@gmail.com. The owner MUST click that link or all submissions are silently dropped. -->
+            <form action="https://formsubmit.co/rahsolutionsllc2@gmail.com" method="POST">
+              <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <input type="hidden" name="_next" value="https://rahsolutionsllc.com/thank-you">
+              <input type="hidden" name="_cc" value="CustomerService@pageoneinsights.com">
+              <input type="hidden" name="_subject" value="New Hero Estimate Request — R.A.H. Solutions">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_consent_version" value="v2.1">
+              <input type="hidden" name="_consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI'], ENT_QUOTES, 'UTF-8'); ?>">
+
+              <div class="hero-form-field">
+                <input type="text" id="hero-name" name="name" placeholder=" " required autocomplete="name">
+                <label for="hero-name">Your Name</label>
+              </div>
+
+              <div class="hero-form-field">
+                <input type="tel" id="hero-phone" name="phone" placeholder=" " required autocomplete="tel">
+                <label for="hero-phone">Phone Number</label>
+              </div>
+
+              <div class="hero-form-field">
+                <input type="email" id="hero-email" name="email" placeholder=" " required autocomplete="email">
+                <label for="hero-email">Email Address</label>
+              </div>
+
+              <div class="hero-form-field">
+                <select id="hero-service" name="service" aria-label="Service Needed">
+                  <option value="" disabled selected> </option>
+                  <option value="lawn-maintenance">Lawn Maintenance</option>
+                  <option value="landscape-installation">Landscape Installation</option>
+                  <option value="hardscaping-services">Hardscaping Services</option>
+                  <option value="concrete-services">Concrete Services</option>
+                  <option value="shrub-trimming">Shrub Trimming</option>
+                  <option value="garden-maintenance">Garden Maintenance</option>
+                  <option value="mulching-services">Mulching Services</option>
+                  <option value="sod-installation">Sod Installation</option>
+                  <option value="lawn-restoration">Lawn Restoration</option>
+                  <option value="spring-yard-cleanup">Spring Yard Cleanup</option>
+                  <option value="fall-yard-cleanup">Fall Yard Cleanup</option>
+                  <option value="snow-removal">Snow Removal</option>
+                  <option value="excavating-services">Excavating Services</option>
+                  <option value="residential-lawn-care">Residential Lawn Care</option>
+                  <option value="commercial-lawn-care">Commercial Lawn Care</option>
+                </select>
+                <label for="hero-service">Service Needed</label>
+              </div>
+
+              <label class="hero-form-consent">
+                <input type="checkbox" name="terms_accepted" value="yes" required>
+                <span>I agree to the <a href="/privacy-policy/">Privacy Policy</a> and <a href="/terms/">Terms of Service</a>.</span>
+              </label>
+
+              <button type="submit" class="hero-form-submit">Get My Free Estimate</button>
+            </form>
+          </div><!-- /.hero-form-card -->
+
+        </div><!-- /.hero-grid -->
       </div><!-- /.container -->
     </div><!-- /.hero-inner -->
   </section><!-- /.hero-home -->
@@ -1263,6 +1326,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
         <!-- Lawn Maintenance -->
         <div class="service-card-std" data-animate="fade-up" data-tilt>
+          <div class="card-image">
+            <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963879670-etljhr-474465615_122209560308208320_6377695377545475044_n.jpg" alt="Lawn maintenance services in Edgerton, WI" width="600" height="400" loading="lazy">
+          </div>
           <div class="card-icon">
             <i data-lucide="scissors" style="width:22px;height:22px;" aria-hidden="true"></i>
           </div>
@@ -1276,6 +1342,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
         <!-- Hardscaping Services -->
         <div class="service-card-std" data-animate="fade-up" data-tilt>
+          <div class="card-image">
+            <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963878224-9yylmf-474790582_122209560278208320_5110498035873152787_n.jpg" alt="Hardscaping patio installation in Edgerton, WI" width="600" height="400" loading="lazy">
+          </div>
           <div class="card-icon">
             <i data-lucide="hammer" style="width:22px;height:22px;" aria-hidden="true"></i>
           </div>
@@ -1289,6 +1358,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
         <!-- Concrete Services -->
         <div class="service-card-std" data-animate="fade-up" data-tilt>
+          <div class="card-image">
+            <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963885204-c6dam2-475409956_122211163172208320_2104516663902467885_n.jpg" alt="Concrete driveway installation in Edgerton, WI" width="600" height="400" loading="lazy">
+          </div>
           <div class="card-icon">
             <i data-lucide="settings-2" style="width:22px;height:22px;" aria-hidden="true"></i>
           </div>
@@ -1302,6 +1374,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
         <!-- Snow Removal -->
         <div class="service-card-std" data-animate="fade-up" data-tilt>
+          <div class="card-image">
+            <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963893874-ak4j6n-489926707_122226629426208320_2862562131488466064_n.jpg" alt="Snow removal services in Edgerton, WI" width="600" height="400" loading="lazy">
+          </div>
           <div class="card-icon">
             <i data-lucide="snowflake" style="width:22px;height:22px;" aria-hidden="true"></i>
           </div>
@@ -1315,6 +1390,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
         <!-- Shrub Trimming -->
         <div class="service-card-std" data-animate="fade-up" data-tilt>
+          <div class="card-image">
+            <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963896244-0unq77-495336544_122236025864208320_4129821399527851126_n.jpg" alt="Shrub trimming and pruning in Edgerton, WI" width="600" height="400" loading="lazy">
+          </div>
           <div class="card-icon">
             <i data-lucide="scissors" style="width:22px;height:22px;" aria-hidden="true"></i>
           </div>
@@ -1328,6 +1406,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
         <!-- Excavating Services -->
         <div class="service-card-std" data-animate="fade-up" data-tilt>
+          <div class="card-image">
+            <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963890974-0j1sut-486971190_122226629348208320_8096727509961542480_n.jpg" alt="Excavating and site preparation in Edgerton, WI" width="600" height="400" loading="lazy">
+          </div>
           <div class="card-icon">
             <i data-lucide="truck" style="width:22px;height:22px;" aria-hidden="true"></i>
           </div>
@@ -1344,7 +1425,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div style="text-align:center;" data-animate="fade-up">
         <a href="/services" class="btn-secondary">
           <i data-lucide="grid-3x3" style="width:16px;height:16px;" aria-hidden="true"></i>
-          View All 15 Services
+          View All Services
         </a>
       </div>
 
@@ -1712,7 +1793,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <!-- Gallery grid -->
       <div class="gallery-grid" id="gallery-grid" data-stagger>
 
-        <div class="gallery-item" data-cat="lawn" data-animate="fade-up">
+        <div class="gallery-item" data-cat="\1" data-category="\1" data-animate="fade-up">
           <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963874866-f077by-471177305_122202492170208320_1592970065814584229_n.jpg"
                alt="Professional landscaping and lawn care Edgerton WI — R.A.H. Solutions" width="600" height="450" loading="lazy">
           <div class="gallery-item-overlay">
@@ -1723,7 +1804,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           </div>
         </div>
 
-        <div class="gallery-item" data-cat="lawn" data-animate="fade-up">
+        <div class="gallery-item" data-cat="\1" data-category="\1" data-animate="fade-up">
           <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963876972-9uvcid-474456407_122209245674208320_3275147450913393227_n.jpg"
                alt="Landscape installation outdoor transformation Edgerton Wisconsin" width="600" height="450" loading="lazy">
           <div class="gallery-item-overlay">
@@ -1734,7 +1815,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           </div>
         </div>
 
-        <div class="gallery-item" data-cat="hardscaping" data-animate="fade-up">
+        <div class="gallery-item" data-cat="\1" data-category="\1" data-animate="fade-up">
           <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963878224-9yylmf-474790582_122209560278208320_5110498035873152787_n.jpg"
                alt="Hardscaping patio installation Edgerton WI" width="600" height="450" loading="lazy">
           <div class="gallery-item-overlay">
@@ -1745,7 +1826,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           </div>
         </div>
 
-        <div class="gallery-item" data-cat="lawn" data-animate="fade-up">
+        <div class="gallery-item" data-cat="\1" data-category="\1" data-animate="fade-up">
           <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963879670-etljhr-474465615_122209560308208320_6377695377545475044_n.jpg"
                alt="Lawn maintenance services Edgerton Wisconsin" width="600" height="450" loading="lazy">
           <div class="gallery-item-overlay">
@@ -1756,7 +1837,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           </div>
         </div>
 
-        <div class="gallery-item" data-cat="lawn" data-animate="fade-up">
+        <div class="gallery-item" data-cat="\1" data-category="\1" data-animate="fade-up">
           <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963882024-ohn2g8-474446326_122209560260208320_53140490767559634_n.jpg"
                alt="Mulching and garden bed maintenance Edgerton Wisconsin" width="600" height="450" loading="lazy">
           <div class="gallery-item-overlay">
@@ -1767,7 +1848,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           </div>
         </div>
 
-        <div class="gallery-item" data-cat="concrete" data-animate="fade-up">
+        <div class="gallery-item" data-cat="\1" data-category="\1" data-animate="fade-up">
           <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785402115-conrete.webp"
                alt="Concrete services driveway installation Edgerton WI" width="600" height="450" loading="lazy">
           <div class="gallery-item-overlay">
@@ -1778,7 +1859,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           </div>
         </div>
 
-        <div class="gallery-item" data-cat="seasonal" data-animate="fade-up">
+        <div class="gallery-item" data-cat="\1" data-category="\1" data-animate="fade-up">
           <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963886495-agh3u2-475671791_122211163124208320_6715996363556920497_n.jpg"
                alt="Spring yard cleanup services Edgerton Wisconsin" width="600" height="450" loading="lazy">
           <div class="gallery-item-overlay">
@@ -1789,7 +1870,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           </div>
         </div>
 
-        <div class="gallery-item" data-cat="hardscaping" data-animate="fade-up">
+        <div class="gallery-item" data-cat="\1" data-category="\1" data-animate="fade-up">
           <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963889584-ala069-486653046_122226629198208320_4781171488771186863_n.jpg"
                alt="Retaining wall hardscaping installation Edgerton Wisconsin" width="600" height="450" loading="lazy">
           <div class="gallery-item-overlay">
@@ -1800,7 +1881,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           </div>
         </div>
 
-        <div class="gallery-item" data-cat="snow" data-animate="fade-up">
+        <div class="gallery-item" data-cat="\1" data-category="\1" data-animate="fade-up">
           <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785163845-o__2_.jpg"
                alt="Snow removal services Edgerton Wisconsin winter maintenance" width="600" height="450" loading="lazy">
           <div class="gallery-item-overlay">
@@ -1811,7 +1892,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           </div>
         </div>
 
-        <div class="gallery-item" data-cat="seasonal" data-animate="fade-up">
+        <div class="gallery-item" data-cat="\1" data-category="\1" data-animate="fade-up">
           <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963895295-85rqf1-495734161_122236025852208320_5435639759042997660_n.jpg"
                alt="Fall yard cleanup leaf removal Edgerton WI" width="600" height="450" loading="lazy">
           <div class="gallery-item-overlay">
@@ -1822,7 +1903,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           </div>
         </div>
 
-        <div class="gallery-item" data-cat="lawn" data-animate="fade-up">
+        <div class="gallery-item" data-cat="\1" data-category="\1" data-animate="fade-up">
           <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963896244-0unq77-495336544_122236025864208320_4129821399527851126_n.jpg"
                alt="Shrub trimming and pruning services Edgerton Wisconsin" width="600" height="450" loading="lazy">
           <div class="gallery-item-overlay">
@@ -1833,7 +1914,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           </div>
         </div>
 
-        <div class="gallery-item" data-cat="hardscaping" data-animate="fade-up">
+        <div class="gallery-item" data-cat="\1" data-category="\1" data-animate="fade-up">
           <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785335181-patio.webp"
                alt="Patio hardscape outdoor living space Edgerton Wisconsin" width="600" height="450" loading="lazy">
           <div class="gallery-item-overlay">
@@ -1844,7 +1925,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           </div>
         </div>
 
-        <div class="gallery-item" data-cat="concrete" data-animate="fade-up">
+        <div class="gallery-item" data-cat="\1" data-category="\1" data-animate="fade-up">
           <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785225437-driveway.webp"
                alt="Concrete driveway installation Edgerton WI R.A.H. Solutions" width="600" height="450" loading="lazy">
           <div class="gallery-item-overlay">
@@ -1855,7 +1936,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           </div>
         </div>
 
-        <div class="gallery-item" data-cat="snow" data-animate="fade-up">
+        <div class="gallery-item" data-cat="\1" data-category="\1" data-animate="fade-up">
           <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785308901-snow.webp"
                alt="Snow plowing winter services Edgerton WI R.A.H. Solutions" width="600" height="450" loading="lazy">
           <div class="gallery-item-overlay">
@@ -1866,7 +1947,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           </div>
         </div>
 
-        <div class="gallery-item" data-cat="lawn" data-animate="fade-up">
+        <div class="gallery-item" data-cat="\1" data-category="\1" data-animate="fade-up">
           <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785464766-unnamed.webp"
                alt="Landscape installation complete yard transformation Edgerton WI" width="600" height="450" loading="lazy">
           <div class="gallery-item-overlay">
@@ -1877,7 +1958,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           </div>
         </div>
 
-        <div class="gallery-item" data-cat="lawn" data-animate="fade-up">
+        <div class="gallery-item" data-cat="\1" data-category="\1" data-animate="fade-up">
           <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963887692-btgk52-490023562_122226629156208320_4857034073232372127_n.jpg"
                alt="Commercial lawn care Edgerton WI R.A.H. Solutions" width="600" height="450" loading="lazy">
           <div class="gallery-item-overlay">

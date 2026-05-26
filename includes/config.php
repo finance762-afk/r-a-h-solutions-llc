@@ -65,12 +65,6 @@ $services = [
         'keywords'    => ['lawn maintenance Edgerton WI', 'lawn care Wisconsin', 'grass maintenance Edgerton', 'lawn service programs'],
     ],
     [
-        'name'        => 'Landscape Design',
-        'slug'        => 'landscape-design',
-        'description' => 'Custom landscape design services that create beautiful, functional outdoor spaces tailored to your property. Expert planning and design for residential and commercial properties.',
-        'keywords'    => ['landscape design Edgerton WI', 'landscaping design Wisconsin', 'landscape architect Edgerton', 'custom landscaping design'],
-    ],
-    [
         'name'        => 'Landscape Installation',
         'slug'        => 'landscape-installation',
         'description' => 'Professional landscape installation services bringing your outdoor vision to life. From plants and trees to hardscaping elements, we handle complete landscape transformations.',
@@ -160,7 +154,7 @@ $services = [
 $navServices = array_filter($services, function($s) {
     return in_array($s['slug'], [
         'lawn-maintenance',
-        'landscape-design',
+
         'landscape-installation',
         'hardscaping-services',
         'concrete-services',
@@ -282,7 +276,10 @@ $siteUrl           = $canonicalBase;
 $clientSlug        = 'r-a-h-solutions-llc';
 
 // ─── Forms ────────────────────────────────────────────────────
-$formAction  = 'https://db.pageone.cloud/functions/v1/leads/r-a-h-solutions-llc';
+$formAction  = 'https://formsubmit.co/rahsolutionsllc2@gmail.com';
+
+// ─── CSS Version (cache-bust) ─────────────────────────────
+$cssVersion = '3';
 
 // ─── Analytics ────────────────────────────────────────────────
 $googleAnalyticsId = ''; // TODO: Add GA4 Measurement ID (e.g. G-XXXXXXXXXX) to activate analytics
@@ -314,19 +311,9 @@ $clientImages = [
         'alt'     => 'Lawn maintenance services Edgerton Wisconsin',
     ],
     [
-        'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963880884-qw46fr-474382241_122209560170208320_4796638395126825561_n.jpg',
-        'context' => 'design',
-        'alt'     => 'Landscape design custom outdoor spaces Edgerton WI',
-    ],
-    [
         'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963882024-ohn2g8-474446326_122209560260208320_53140490767559634_n.jpg',
         'context' => 'mulching',
         'alt'     => 'Mulching and garden maintenance Edgerton Wisconsin',
-    ],
-    [
-        'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963883232-jst9wv-475547624_122211163226208320_5983283941194375535_n.jpg',
-        'context' => 'tree',
-        'alt'     => 'Tree pruning arborist services Edgerton WI',
     ],
     [
         'url'     => 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963884244-pe5czp-475493043_122211163190208320_5361770049466921459_n.jpg',

@@ -1097,6 +1097,82 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <svg viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C300,80 900,0 1200,40 L1200,80 L0,80 Z" fill="#f4f7f9"/></svg>
 </div>
 
+<!-- ── Concrete Project Gallery ──────────────────────────────── -->
+<section class="concrete-gallery" data-animate="fade-up" style="padding:var(--space-4xl) 0;background:var(--color-bg-alt);">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">Recent Work</div>
+      <h2>What Do Finished <span class="text-accent">Concrete Projects</span> Look Like?</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-lg);">
+      <div style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);">
+        <img src="https://i.imgur.com/FGyjGvY.jpeg" alt="Concrete project completed by R.A.H. Solutions in Edgerton, WI" width="600" height="400" loading="lazy" style="width:100%;height:280px;object-fit:cover;display:block;">
+      </div>
+      <div style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);">
+        <img src="https://i.imgur.com/Q6hRrqg.jpeg" alt="Concrete patio installation Edgerton Wisconsin" width="600" height="400" loading="lazy" style="width:100%;height:280px;object-fit:cover;display:block;">
+      </div>
+      <div style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);">
+        <img src="https://i.imgur.com/34tWHmA.jpeg" alt="Concrete walkway and steps Edgerton WI" width="600" height="400" loading="lazy" style="width:100%;height:280px;object-fit:cover;display:block;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Before/After: Concrete Stairs ─────────────────────────── -->
+<section class="concrete-ba" data-animate="fade-up" style="padding:var(--space-4xl) 0;background:var(--color-bg);">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">The Difference</div>
+      <h2>What Do Concrete Stairs Look Like <span class="text-accent">Before &amp; After</span> Repair?</h2>
+    </div>
+
+    <!-- Pair 1 -->
+    <div class="ba-split">
+      <div class="ba-panel ba-panel--before">
+        <div class="ba-panel__label" aria-label="Concrete stairs before repair">Before</div>
+        <img class="ba-panel__img" src="https://i.imgur.com/3LRgoQn.jpeg" alt="Concrete stairs before repair, Edgerton WI" width="600" height="400" loading="lazy">
+        <div class="ba-panel__content">
+          <h3 class="ba-panel__title">Crumbling steps, uneven risers, safety hazard</h3>
+          <p class="ba-panel__desc">Deteriorating concrete stairs with spalling surfaces, exposed aggregate, and uneven risers that create a trip-and-fall risk — common after years of Wisconsin freeze-thaw cycles.</p>
+        </div>
+      </div>
+      <div class="ba-panel ba-panel--after">
+        <div class="ba-panel__label" aria-label="Concrete stairs after repair by R.A.H. Solutions">After</div>
+        <img class="ba-panel__img" src="https://i.imgur.com/LgQRgH4.jpeg" alt="Newly poured concrete stairs after repair, Edgerton WI" width="600" height="400" loading="lazy">
+        <div class="ba-panel__content">
+          <h3 class="ba-panel__title">Clean pour, level risers, sealed finish</h3>
+          <p class="ba-panel__desc">Freshly poured concrete stairs with uniform risers, broom finish for grip, and proper drainage — built to handle another 25+ years of Southern Wisconsin winters.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pair 2 -->
+    <div class="ba-split" style="margin-top:var(--space-3xl);">
+      <div class="ba-panel ba-panel--before">
+        <div class="ba-panel__label" aria-label="Concrete entry steps before replacement">Before</div>
+        <img class="ba-panel__img" src="https://i.imgur.com/0cGO4MJ.jpeg" alt="Damaged concrete entry steps before replacement, Edgerton WI" width="600" height="400" loading="lazy">
+        <div class="ba-panel__content">
+          <h3 class="ba-panel__title">Settled slab, cracked edges, curb-appeal problem</h3>
+          <p class="ba-panel__desc">Years of settling and frost heave left these entry steps cracked and tilting — making the front of the home look neglected and creating a liability for visitors.</p>
+        </div>
+      </div>
+      <div class="ba-panel ba-panel--after">
+        <div class="ba-panel__label" aria-label="Concrete entry steps after replacement by R.A.H. Solutions">After</div>
+        <img class="ba-panel__img" src="https://i.imgur.com/zXGzh4b.jpeg" alt="New concrete entry steps after replacement, Edgerton WI" width="600" height="400" loading="lazy">
+        <div class="ba-panel__content">
+          <h3 class="ba-panel__title">New pour on compacted base, proper slope, sealed</h3>
+          <p class="ba-panel__desc">Replaced on a 6-inch compacted aggregate base with air-entrained mix. Control joints cut, edges formed clean, and sealed before handoff. Built for Wisconsin.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Divider: diagonal into process -->
+<div class="divider-wrap" aria-hidden="true" style="background:var(--color-bg);line-height:0;">
+  <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 1200,60 1200,60 0,60" fill="#f4f7f9"/></svg>
+</div>
+
 <!-- Process Steps -->
 <section class="concrete-process" data-animate="fade-up">
   <div class="container">

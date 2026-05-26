@@ -7,7 +7,7 @@
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 
 $pageTitle       = 'Landscaping Services in Edgerton, WI';
-$pageDescription = 'R.A.H. Solutions offers 17 landscaping services in Edgerton, WI — lawn care, hardscaping, concrete, design & snow removal. Free estimates. (608) 501-5123.';
+$pageDescription = 'R.A.H. Solutions offers 15 landscaping services in Edgerton, WI — lawn care, hardscaping, concrete, design & snow removal. Free estimates. (608) 501-5123.';
 $canonicalUrl    = 'https://rahsolutionsllc.com/services';
 // SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
 $ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963874866-f077by-471177305_122202492170208320_1592970065814584229_n.jpg';

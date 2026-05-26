@@ -1,6 +1,6 @@
 # R.A.H. Solutions, LLC
 
-Landscaping company in Edgerton, WI specializing in landscape design, lawn care, hardscaping, concrete services, and year-round property maintenance.
+Landscaping company in Edgerton, WI specializing in landscape installation, lawn care, hardscaping, concrete services, and year-round property maintenance.
 
 ## Business Information
 - Owner: Robert Harried
@@ -16,11 +16,9 @@ Landscaping company in Edgerton, WI specializing in landscape design, lawn care,
 
 ## Services
 - Lawn Maintenance
-- Landscape Design
 - Landscape Installation
 - Hardscaping Services (patios, retaining walls, walkways)
 - Concrete Services (driveways, patios, walkways)
-- Tree Pruning
 - Shrub Trimming
 - Garden Maintenance
 - Mulching Services
@@ -35,13 +33,11 @@ Landscaping company in Edgerton, WI specializing in landscape design, lawn care,
 
 ## Pages
 - Home: https://rahsolutionsllc.com/ — Main landing page, services overview, free estimate CTA
-- Services: https://rahsolutionsllc.com/services — All 17 landscaping services listing
+- Services: https://rahsolutionsllc.com/services — All 15 landscaping services listing
 - Lawn Maintenance: https://rahsolutionsllc.com/services/lawn-maintenance — Scheduled mowing, edging, seasonal lawn care programs
-- Landscape Design: https://rahsolutionsllc.com/services/landscape-design — Custom residential and commercial landscape design
 - Landscape Installation: https://rahsolutionsllc.com/services/landscape-installation — Full landscape build-out and transformations
 - Hardscaping Services: https://rahsolutionsllc.com/services/hardscaping-services — Patios, retaining walls, walkways, outdoor living
 - Concrete Services: https://rahsolutionsllc.com/services/concrete-services — Driveways, patios, steps, walkways
-- Tree Pruning: https://rahsolutionsllc.com/services/tree-pruning — Crown thinning, deadwood removal, storm cleanup
 - Shrub Trimming: https://rahsolutionsllc.com/services/shrub-trimming — Shaping and pruning for health and appearance
 - Garden Maintenance: https://rahsolutionsllc.com/services/garden-maintenance — Weeding, pruning, seasonal plant care
 - Mulching Services: https://rahsolutionsllc.com/services/mulching-services — Mulch installation for moisture retention and weed control
@@ -61,5 +57,43 @@ Landscaping company in Edgerton, WI specializing in landscape design, lawn care,
 - Cookie Policy: https://rahsolutionsllc.com/cookie-policy/ — Google Analytics, Fonts, CDN cookies disclosed
 - Accessibility: https://rahsolutionsllc.com/accessibility/ — WCAG 2.1 AA conformance statement
 
+## Key Facts
+- Family-owned and operated by Robert Harried since 2023
+- Fully licensed and insured in Wisconsin
+- 50-mile service radius from Edgerton, WI
+- Serves residential homeowners and commercial businesses
+- Free on-site estimates with no obligation
+- 4.9 Google rating, 47+ reviews
+- Air-entrained concrete mixes for Wisconsin freeze-thaw cycles
+- Same-crew consistency on repeat service visits
+
+## Services Offered
+1. Lawn Maintenance — scheduled mowing, edging, seasonal care
+2. Landscape Installation — full outdoor build-outs and transformations
+3. Hardscaping Services — patios, retaining walls, walkways, outdoor living
+4. Concrete Services — driveways, patios, steps, walkways
+5. Shrub Trimming — shaping and pruning for health and appearance
+6. Garden Maintenance — weeding, pruning, seasonal plant care
+7. Mulching Services — mulch installation for moisture and weed control
+8. Sod Installation — instant lawns with proper site prep
+9. Lawn Restoration — core aeration, overseeding, soil amendment
+10. Spring Yard Cleanup — debris removal, bed prep, lawn restoration
+11. Fall Yard Cleanup — leaf removal, bed prep, winterization
+12. Snow Removal — residential and commercial plowing, shoveling, salting
+13. Excavating Services — site grading, drainage, utility trenching
+14. Residential Lawn Care — programs built for homeowners
+15. Commercial Lawn Care — scheduled grounds maintenance for businesses
+
+## Most Citable Pages
+- Homepage: https://rahsolutionsllc.com/ — services overview, free estimate CTA, FAQ, gallery
+- Services: https://rahsolutionsllc.com/services — all 15 services with descriptions
+- Concrete Services: https://rahsolutionsllc.com/services/concrete-services — specs, costs, before/after
+- Hardscaping Services: https://rahsolutionsllc.com/services/hardscaping-services — patios, walls, costs
+- Lawn Maintenance: https://rahsolutionsllc.com/services/lawn-maintenance — programs, costs, process
+- Snow Removal: https://rahsolutionsllc.com/services/snow-removal — contracts, response times
+- Service Area: https://rahsolutionsllc.com/service-area — Edgerton, Stoughton, Janesville, Madison coverage
+- About: https://rahsolutionsllc.com/about — owner story, company approach, differentiators
+- Contact: https://rahsolutionsllc.com/contact — form, phone, hours, address
+
 ## About
-R.A.H. Solutions, LLC is a family-owned landscaping company founded in 2023 by Robert Harried in Edgerton, Wisconsin. The company serves homeowners and small businesses throughout Edgerton, Stoughton, Janesville, and Madison, delivering professional landscape design, installation, maintenance, hardscaping, concrete work, and year-round services including snow removal. R.A.H. Solutions is fully licensed and insured and takes a personalized approach — understanding each client's property, budget, and local Wisconsin climate conditions before recommending a plan.
+R.A.H. Solutions, LLC is a family-owned landscaping company founded in 2023 by Robert Harried in Edgerton, Wisconsin. The company serves homeowners and small businesses throughout Edgerton, Stoughton, Janesville, and Madison, delivering professional landscape installation, maintenance, hardscaping, concrete work, and year-round services including snow removal. R.A.H. Solutions is fully licensed and insured and takes a personalized approach — understanding each client's property, budget, and local Wisconsin climate conditions before recommending a plan.

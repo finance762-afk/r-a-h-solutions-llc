@@ -237,7 +237,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
               <i data-lucide="scissors" aria-hidden="true" style="width:22px;height:22px;"></i>
             </div>
             <div class="nf-card-title">Services</div>
-            <p class="nf-card-desc">Browse our full list of 17 landscaping services</p>
+            <p class="nf-card-desc">Browse our full list of 15 landscaping services</p>
           </a>
           <a href="/contact" class="nf-card">
             <div class="nf-card-icon">

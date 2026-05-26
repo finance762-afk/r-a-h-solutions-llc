@@ -1,6 +1,6 @@
 # R.A.H. Solutions, LLC — Full Reference
 
-Landscaping company in Edgerton, WI specializing in landscape design, lawn care, hardscaping, concrete services, and year-round property maintenance.
+Landscaping company in Edgerton, WI specializing in landscape installation, lawn care, hardscaping, concrete services, and year-round property maintenance.
 
 ## Business Information
 - Owner: Robert Harried
@@ -16,11 +16,9 @@ Landscaping company in Edgerton, WI specializing in landscape design, lawn care,
 
 ## Services
 - Lawn Maintenance
-- Landscape Design
 - Landscape Installation
 - Hardscaping Services (patios, retaining walls, walkways, outdoor living)
 - Concrete Services (driveways, patios, walkways, steps)
-- Tree Pruning
 - Shrub Trimming
 - Garden Maintenance
 - Mulching Services
@@ -35,13 +33,11 @@ Landscaping company in Edgerton, WI specializing in landscape design, lawn care,
 
 ## Pages
 - Home: https://rahsolutionsllc.com/ — Main landing page, services overview, free estimate CTA
-- Services: https://rahsolutionsllc.com/services — All 17 landscaping services listing
+- Services: https://rahsolutionsllc.com/services — All 15 landscaping services listing
 - Lawn Maintenance: https://rahsolutionsllc.com/services/lawn-maintenance — Scheduled mowing, edging, seasonal lawn care programs
-- Landscape Design: https://rahsolutionsllc.com/services/landscape-design — Custom residential and commercial landscape design
 - Landscape Installation: https://rahsolutionsllc.com/services/landscape-installation — Full landscape build-out and transformations
 - Hardscaping Services: https://rahsolutionsllc.com/services/hardscaping-services — Patios, retaining walls, walkways, outdoor living
 - Concrete Services: https://rahsolutionsllc.com/services/concrete-services — Driveways, patios, steps, walkways
-- Tree Pruning: https://rahsolutionsllc.com/services/tree-pruning — Crown thinning, deadwood removal, storm cleanup
 - Shrub Trimming: https://rahsolutionsllc.com/services/shrub-trimming — Shaping and pruning for health and appearance
 - Garden Maintenance: https://rahsolutionsllc.com/services/garden-maintenance — Weeding, pruning, seasonal plant care
 - Mulching Services: https://rahsolutionsllc.com/services/mulching-services — Mulch installation for moisture retention and weed control
@@ -69,9 +65,6 @@ R.A.H. Solutions, LLC is a family-owned landscaping and outdoor improvement comp
 ### Lawn Maintenance
 Scheduled lawn maintenance programs including mowing, edging, trimming, and blowing. Programs are customized by property size and frequency — weekly, bi-weekly, or seasonal. Typical cost: $40–$80 per visit for residential properties. Serving Edgerton, WI and surrounding Rock and Dane County communities.
 
-### Landscape Design
-Custom landscape design services for residential and commercial properties. Includes site consultation, plant selection appropriate for Wisconsin's climate and soil, grading considerations, and phased implementation planning. Design services are coordinated with installation for a seamless experience.
-
 ### Landscape Installation
 Full-service landscape installation bringing designs to life — planting trees, shrubs, perennials, installing edging, mulch, sod, and hardscape elements. R.A.H. Solutions handles complete yard transformations from bare ground to finished landscape. Timeline: most residential installs complete in 1–5 days depending on scope.
 
@@ -80,9 +73,6 @@ Design and installation of patios, retaining walls, walkways, steps, and outdoor
 
 ### Concrete Services
 Professional concrete installation for driveways, patios, walkways, and steps. Uses air-entrained concrete mixes rated for Wisconsin winters. All concrete is placed on properly compacted aggregate base (6 inches minimum) to prevent settling and cracking. Residential driveways: 4–6 inches thick. Finishes available: broom, exposed aggregate, stamped.
-
-### Tree Pruning
-Professional tree pruning including crown thinning, canopy lifting, deadwood removal, and storm damage limb cleanup. Pruning is timed to Wisconsin seasons — most deciduous trees in late winter before bud break. Promotes long-term health, reduces wind resistance, and maintains clearances from structures.
 
 ### Shrub Trimming
 Expert shaping and pruning of ornamental shrubs, hedges, and foundation plantings. Proper pruning technique preserves natural form while maintaining health. Formal hedges shaped for geometric appearance; naturalistic plantings shaped to enhance their growth habit.
@@ -120,7 +110,7 @@ Scheduled grounds maintenance for businesses, commercial properties, HOAs, and m
 ## Frequently Asked Questions
 
 Q: What landscaping services does R.A.H. Solutions offer in Edgerton, WI?
-A: R.A.H. Solutions provides 17 professional services including landscape design, hardscape installation (patios, retaining walls, walkways), lawn maintenance, concrete services, tree pruning, shrub trimming, mulching, sod installation, spring and fall yard cleanup, and year-round snow removal for residential and commercial properties in Edgerton, WI.
+A: R.A.H. Solutions provides 15 professional services including landscape installation, hardscaping (patios, retaining walls, walkways), lawn maintenance, concrete services, shrub trimming, mulching, sod installation, spring and fall yard cleanup, and year-round snow removal for residential and commercial properties in Edgerton, WI.
 
 Q: What areas of Southern Wisconsin does R.A.H. Solutions serve?
 A: Our primary service area is Edgerton, WI. We regularly serve Stoughton, Janesville, and Madison, covering most of Rock and Dane counties within a 50-mile radius of our Edgerton location at 262 County Road W.

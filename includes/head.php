@@ -149,7 +149,7 @@ $localBusinessJson = json_encode($localBusinessSchema, JSON_UNESCAPED_SLASHES | 
   <link rel="dns-prefetch" href="https://db.pageone.cloud">
 
   <!-- Google Fonts: Oswald (headings) + Lato (body) + Caveat (accent) — font-display: swap -->
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Oswald:wght@400..700&family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
 
 <?php if (!empty($heroPreload)): ?>
   <!-- LCP hero image preload -->
