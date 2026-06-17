@@ -2,7 +2,8 @@
 require_once __DIR__ . '/site-config.php';
 // ============================================================
 // R.A.H. Solutions, LLC — head.php
-// Outputs: <!DOCTYPE html> through </head>
+// Outputs: <!DOCTYPE html> through <?php require_once __DIR__ . '/edit-mode.php'; ?>
+</head>
 //
 // Required page vars (set before including this file):
 //   $pageTitle       — string  — page-specific title (excludes site name)
