@@ -835,7 +835,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
             <div class="ct-form-body">
               <form
                 class="ct-form"
-                action="https://formsubmit.co/rahsolutionsllc2@gmail.com"
+                action="https://db.pageone.cloud/functions/v1/leads/r-a-h-solutions-llc"
                 method="POST"
                 novalidate
               >

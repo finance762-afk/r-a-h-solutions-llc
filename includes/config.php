@@ -276,7 +276,7 @@ $siteUrl           = $canonicalBase;
 $clientSlug        = 'r-a-h-solutions-llc';
 
 // ─── Forms ────────────────────────────────────────────────────
-$formAction  = 'https://formsubmit.co/rahsolutionsllc2@gmail.com';
+$formAction  = 'https://db.pageone.cloud/functions/v1/leads/r-a-h-solutions-llc';
 
 // ─── CSS Version (cache-bust) ─────────────────────────────
 $cssVersion = '6';

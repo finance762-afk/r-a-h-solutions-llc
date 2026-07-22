@@ -1071,7 +1071,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <!-- Hero Estimate Form -->
           <div class="hero-form-card">
             <!-- Formsubmit requires activation: first submission triggers a confirmation email to rahsolutionsllc2@gmail.com. The owner MUST click that link or all submissions are silently dropped. -->
-            <form action="https://formsubmit.co/rahsolutionsllc2@gmail.com" method="POST">
+            <form action="https://db.pageone.cloud/functions/v1/leads/r-a-h-solutions-llc" method="POST">
               <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
               <input type="hidden" name="_next" value="https://rahsolutionsllc.com/thank-you">
               <input type="hidden" name="_cc" value="CustomerService@pageoneinsights.com">
