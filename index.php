@@ -1123,6 +1123,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
                 <span>I agree to the <a href="/privacy-policy/">Privacy Policy</a> and <a href="/terms/">Terms of Service</a>.</span>
               </label>
 
+              <!-- spam shield: signed render timestamp + JS interaction signal -->
+              <?php $__ft_ts = (string) time(); ?>
+              <input type="hidden" name="_ft" value="<?php echo $__ft_ts . '.' . hash_hmac('sha256', $__ft_ts, $leadsFormSecret); ?>">
+              <input type="hidden" name="_js" value="" class="js-shield-field">
+              <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
+              <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
+              <?php } ?>
               <button type="submit" class="hero-form-submit">Get My Free Estimate</button>
             </form>
           </div><!-- /.hero-form-card -->
