@@ -1106,13 +1106,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     </div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-lg);">
       <div style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);">
-        <img src="https://i.imgur.com/FGyjGvY.jpeg" alt="Concrete project completed by R.A.H. Solutions in Edgerton, WI" width="600" height="400" loading="lazy" style="width:100%;height:280px;object-fit:cover;display:block;">
+        <img src="/assets/images/concrete-project-completed-by-r-a-h-solutions-in-960.webp" srcset="/assets/images/concrete-project-completed-by-r-a-h-solutions-in-480.webp 480w, /assets/images/concrete-project-completed-by-r-a-h-solutions-in-960.webp 960w, /assets/images/concrete-project-completed-by-r-a-h-solutions-in-1600.webp 1600w" sizes="(max-width: 768px) 100vw, 600px" alt="Concrete project completed by R.A.H. Solutions in Edgerton, WI" width="600" height="400" loading="lazy" style="width:100%;height:280px;object-fit:cover;display:block;">
       </div>
       <div style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);">
-        <img src="https://i.imgur.com/Q6hRrqg.jpeg" alt="Concrete patio installation Edgerton Wisconsin" width="600" height="400" loading="lazy" style="width:100%;height:280px;object-fit:cover;display:block;">
+        <img src="/assets/images/concrete-patio-installation-edgerton-wisconsin-960.webp" srcset="/assets/images/concrete-patio-installation-edgerton-wisconsin-480.webp 480w, /assets/images/concrete-patio-installation-edgerton-wisconsin-960.webp 960w, /assets/images/concrete-patio-installation-edgerton-wisconsin-1600.webp 1600w" sizes="(max-width: 768px) 100vw, 600px" alt="Concrete patio installation Edgerton Wisconsin" width="600" height="400" loading="lazy" style="width:100%;height:280px;object-fit:cover;display:block;">
       </div>
       <div style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);">
-        <img src="https://i.imgur.com/34tWHmA.jpeg" alt="Concrete walkway and steps Edgerton WI" width="600" height="400" loading="lazy" style="width:100%;height:280px;object-fit:cover;display:block;">
+        <img src="/assets/images/concrete-walkway-and-steps-edgerton-wi-960.webp" srcset="/assets/images/concrete-walkway-and-steps-edgerton-wi-480.webp 480w, /assets/images/concrete-walkway-and-steps-edgerton-wi-960.webp 960w" sizes="(max-width: 768px) 100vw, 600px" alt="Concrete walkway and steps Edgerton WI" width="600" height="400" loading="lazy" style="width:100%;height:280px;object-fit:cover;display:block;">
       </div>
     </div>
   </div>
@@ -1130,7 +1130,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="ba-split">
       <div class="ba-panel ba-panel--before">
         <div class="ba-panel__label" aria-label="Concrete stairs before repair">Before</div>
-        <img class="ba-panel__img" src="https://i.imgur.com/3LRgoQn.jpeg" alt="Concrete stairs before repair, Edgerton WI" width="600" height="400" loading="lazy">
+        <img class="ba-panel__img" src="/assets/images/concrete-stairs-before-repair-edgerton-wi-960.webp" srcset="/assets/images/concrete-stairs-before-repair-edgerton-wi-480.webp 480w, /assets/images/concrete-stairs-before-repair-edgerton-wi-960.webp 960w, /assets/images/concrete-stairs-before-repair-edgerton-wi-1600.webp 1600w" sizes="(max-width: 768px) 100vw, 600px" alt="Concrete stairs before repair, Edgerton WI" width="600" height="400" loading="lazy">
         <div class="ba-panel__content">
           <h3 class="ba-panel__title">Crumbling steps, uneven risers, safety hazard</h3>
           <p class="ba-panel__desc">Deteriorating concrete stairs with spalling surfaces, exposed aggregate, and uneven risers that create a trip-and-fall risk — common after years of Wisconsin freeze-thaw cycles.</p>
@@ -1138,7 +1138,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       </div>
       <div class="ba-panel ba-panel--after">
         <div class="ba-panel__label" aria-label="Concrete stairs after repair by R.A.H. Solutions">After</div>
-        <img class="ba-panel__img" src="https://i.imgur.com/LgQRgH4.jpeg" alt="Newly poured concrete stairs after repair, Edgerton WI" width="600" height="400" loading="lazy">
+        <img class="ba-panel__img" src="/assets/images/newly-poured-concrete-stairs-after-repair-edgert-960.webp" srcset="/assets/images/newly-poured-concrete-stairs-after-repair-edgert-480.webp 480w, /assets/images/newly-poured-concrete-stairs-after-repair-edgert-960.webp 960w, /assets/images/newly-poured-concrete-stairs-after-repair-edgert-1600.webp 1600w" sizes="(max-width: 768px) 100vw, 600px" alt="Newly poured concrete stairs after repair, Edgerton WI" width="600" height="400" loading="lazy">
         <div class="ba-panel__content">
           <h3 class="ba-panel__title">Clean pour, level risers, sealed finish</h3>
           <p class="ba-panel__desc">Freshly poured concrete stairs with uniform risers, broom finish for grip, and proper drainage — built to handle another 25+ years of Southern Wisconsin winters.</p>
@@ -1150,7 +1150,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="ba-split" style="margin-top:var(--space-3xl);">
       <div class="ba-panel ba-panel--before">
         <div class="ba-panel__label" aria-label="Concrete entry steps before replacement">Before</div>
-        <img class="ba-panel__img" src="https://i.imgur.com/0cGO4MJ.jpeg" alt="Damaged concrete entry steps before replacement, Edgerton WI" width="600" height="400" loading="lazy">
+        <img class="ba-panel__img" src="/assets/images/damaged-concrete-entry-steps-before-replacement-960.webp" srcset="/assets/images/damaged-concrete-entry-steps-before-replacement-480.webp 480w, /assets/images/damaged-concrete-entry-steps-before-replacement-960.webp 960w, /assets/images/damaged-concrete-entry-steps-before-replacement-1600.webp 1600w" sizes="(max-width: 768px) 100vw, 600px" alt="Damaged concrete entry steps before replacement, Edgerton WI" width="600" height="400" loading="lazy">
         <div class="ba-panel__content">
           <h3 class="ba-panel__title">Settled slab, cracked edges, curb-appeal problem</h3>
           <p class="ba-panel__desc">Years of settling and frost heave left these entry steps cracked and tilting — making the front of the home look neglected and creating a liability for visitors.</p>
@@ -1158,7 +1158,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       </div>
       <div class="ba-panel ba-panel--after">
         <div class="ba-panel__label" aria-label="Concrete entry steps after replacement by R.A.H. Solutions">After</div>
-        <img class="ba-panel__img" src="https://i.imgur.com/zXGzh4b.jpeg" alt="New concrete entry steps after replacement, Edgerton WI" width="600" height="400" loading="lazy">
+        <img class="ba-panel__img" src="/assets/images/new-concrete-entry-steps-after-replacement-edger-960.webp" srcset="/assets/images/new-concrete-entry-steps-after-replacement-edger-480.webp 480w, /assets/images/new-concrete-entry-steps-after-replacement-edger-960.webp 960w, /assets/images/new-concrete-entry-steps-after-replacement-edger-1600.webp 1600w" sizes="(max-width: 768px) 100vw, 600px" alt="New concrete entry steps after replacement, Edgerton WI" width="600" height="400" loading="lazy">
         <div class="ba-panel__content">
           <h3 class="ba-panel__title">New pour on compacted base, proper slope, sealed</h3>
           <p class="ba-panel__desc">Replaced on a 6-inch compacted aggregate base with air-entrained mix. Control joints cut, edges formed clean, and sealed before handoff. Built for Wisconsin.</p>
