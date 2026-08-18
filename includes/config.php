@@ -279,7 +279,7 @@ $clientSlug        = 'r-a-h-solutions-llc';
 $formAction  = 'https://db.pageone.cloud/functions/v1/leads/r-a-h-solutions-llc';
 
 // ─── CSS Version (cache-bust) ─────────────────────────────
-$cssVersion = '6';
+$cssVersion = '7';
 
 // ─── Analytics ────────────────────────────────────────────────
 $googleAnalyticsId = ''; // TODO: Add GA4 Measurement ID (e.g. G-XXXXXXXXXX) to activate analytics

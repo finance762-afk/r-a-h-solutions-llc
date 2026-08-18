@@ -2,8 +2,7 @@
 require_once __DIR__ . '/site-config.php';
 // ============================================================
 // R.A.H. Solutions, LLC — head.php
-// Outputs: <!DOCTYPE html> through <?php require_once __DIR__ . '/edit-mode.php'; ?>
-</head>
+// Outputs: the full document head
 //
 // Required page vars (set before including this file):
 //   $pageTitle       — string  — page-specific title (excludes site name)
@@ -163,7 +162,7 @@ $localBusinessJson = json_encode($localBusinessSchema, JSON_UNESCAPED_SLASHES | 
 <?php endif; ?>
 
   <!-- Shared stylesheet (cache-busted) -->
-  <link rel="stylesheet" href="/assets/css/framework.css?v=<?php echo $cssVersion ?? '1'; ?>">
+  <link rel="stylesheet" href="/assets/css/framework.css?v=<?php echo $cssVersion ?? '2'; ?>">
 
   <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
@@ -208,4 +207,5 @@ $localBusinessJson = json_encode($localBusinessSchema, JSON_UNESCAPED_SLASHES | 
   </script>
 <?php endif; ?>
 
+<?php require_once __DIR__ . '/edit-mode.php'; ?>
 </head>
