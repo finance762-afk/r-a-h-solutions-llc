@@ -132,6 +132,9 @@ $localBusinessJson = json_encode($localBusinessSchema, JSON_UNESCAPED_SLASHES | 
   <title><?php echo htmlspecialchars($metaTitle, ENT_QUOTES, 'UTF-8'); ?></title>
   <meta name="description" content="<?php echo htmlspecialchars($metaDescription, ENT_QUOTES, 'UTF-8'); ?>">
   <link rel="canonical" href="<?php echo htmlspecialchars($metaCanonical, ENT_QUOTES, 'UTF-8'); ?>">
+  <?php if (!empty($gscVerification)): ?>
+  <meta name="google-site-verification" content="<?php echo htmlspecialchars($gscVerification); ?>">
+  <?php endif; ?>
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
