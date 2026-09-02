@@ -71,13 +71,6 @@ $schemaMarkup = json_encode([
       '@type'           => 'LocalBusiness',
       '@id'             => 'https://rahsolutionsllc.com/#aggregate',
       'name'            => 'R.A.H. Solutions, LLC',
-      'aggregateRating' => [
-        '@type'       => 'AggregateRating',
-        'ratingValue' => '4.9',
-        'reviewCount' => '47',
-        'bestRating'  => '5',
-        'worstRating' => '1',
-      ],
     ],
     [
       '@type'      => 'FAQPage',
