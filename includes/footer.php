@@ -250,7 +250,8 @@ $servicesCol2 = array_slice($services, 9);
       </div>
     </div><!-- /.footer-bottom-bar -->
 
-  </footer><!-- /.site-footer -->
+      <?php include __DIR__ . '/partner-badge.php'; ?>
+</footer><!-- /.site-footer -->
 
   <!-- ================================================================
        SCRIPTS
