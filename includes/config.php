@@ -282,7 +282,7 @@ $formAction  = 'https://db.pageone.cloud/functions/v1/leads/r-a-h-solutions-llc'
 $cssVersion = '7';
 
 // ─── Analytics ────────────────────────────────────────────────
-$googleAnalyticsId = ''; // TODO: Add GA4 Measurement ID (e.g. G-XXXXXXXXXX) to activate analytics
+$googleAnalyticsId = 'G-F5F5TZ0F8J'; // TODO: Add GA4 Measurement ID (e.g. G-XXXXXXXXXX) to activate analytics
 
 // ─── Client Assets ────────────────────────────────────────────
 $logoUrl = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/logo/1776963748052-3tu1va-RAH_logo.jpg';
