@@ -1,1252 +1,249 @@
 <?php
-// ============================================================
-// Landscape Installation — R.A.H. Solutions, LLC
-// ============================================================
-$pageTitle       = 'Landscape Installation Edgerton, WI';
-$pageDescription = 'Landscape installation in Edgerton, WI — complete yard transformations with plants, trees & hardscaping. R.A.H. Solutions. Free estimates. Call (608) 501-5123.';
-$canonicalUrl    = 'https://rahsolutionsllc.com/services/landscape-installation';
-// SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
-$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963878224-9yylmf-474790582_122209560278208320_5110498035873152787_n.jpg';
-$currentPage     = 'service-landscape-installation';
-$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963878224-9yylmf-474790582_122209560278208320_5110498035873152787_n.jpg';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+?>
+<?php
+$svc             = serviceBySlug('landscape-installation');
+$currentPage     = 'services';
+$pageType        = 'service';
+$serviceSlug     = 'landscape-installation';
+$pageTitle       = 'Landscape Installation in Edgerton, WI | RAH Solutions LLC';
+$pageDescription = 'New planting beds, shrubs, trees, edging and mulch or stone in Edgerton, WI. RAH Solutions LLC grades first, then plants for zone 5b. Free on-site estimates.';
+$canonicalUrl    = $siteUrl . '/services/landscape-installation/';
+$heroPreload     = heroPreload('mulched-bed-steel-edging-driveway', '100vw');
+$ogImage         = 'mulched-bed-steel-edging-driveway.jpg';
+$pageCss         = ['service'];
+$pageStyle       = <<<CSS
+/* landscape-installation: leaf-green card rules, planted-bed accent on the plant-choice callout */
+.page-landscape-installation .svc-hero .hero-bg img { object-position: 50% 70%; }
+.page-landscape-installation .type-card { border-top: 3px solid var(--color-accent); }
+.page-landscape-installation .type-card__icon { background: color-mix(in srgb, var(--color-accent) 18%, var(--color-surface)); color: var(--color-secondary); }
+.page-landscape-installation .svc-callout { border-left: 4px solid var(--color-secondary); background: color-mix(in srgb, var(--color-accent) 9%, var(--color-paper)); }
+.page-landscape-installation .svc-callout > span { color: var(--color-secondary); }
+.page-landscape-installation .sp-gallery-item figcaption { font-family: var(--font-accent); }
+CSS;
 
 $faqs = [
-  [
-    '@type'          => 'Question',
-    'name'           => 'When is the best time to install landscaping in Wisconsin?',
-    'acceptedAnswer' => [
-      '@type' => 'Answer',
-      'text'  => 'Spring (late April through May) and fall (September through October) are the two ideal installation windows in Edgerton, WI. Spring allows plants to establish through a full growing season before winter. Fall installations benefit from cooler temperatures that reduce transplant stress and allow root development before the ground freezes. Summer installations are possible but require more intensive watering during the first 4–6 weeks.',
-    ],
-  ],
-  [
-    '@type'          => 'Question',
-    'name'           => 'What plants work best in Edgerton\'s climate?',
-    'acceptedAnswer' => [
-      '@type' => 'Answer',
-      'text'  => 'Edgerton sits in USDA hardiness zones 5a/5b, which supports a wide range of hardy perennials, shrubs, and trees. Reliable performers include coneflower (Echinacea), black-eyed Susan, Karl Foerster grass, hostas, spirea, burning bush, arborvitae, and ornamental grasses. We select plants that tolerate Wisconsin\'s freeze-thaw cycles and clay-heavy soils while minimizing your long-term maintenance needs.',
-    ],
-  ],
-  [
-    '@type'          => 'Question',
-    'name'           => 'How long does a landscape installation take?',
-    'acceptedAnswer' => [
-      '@type' => 'Answer',
-      'text'  => 'Most residential landscape installations in Edgerton are completed in 1–3 days, depending on scope. A straightforward front bed refresh with shrubs and perennials typically takes 4–8 hours. Full-yard transformations including soil amendment, grading, planting, and mulching may span 2–3 days. We provide a written timeline with your estimate so you know exactly what to expect.',
-    ],
-  ],
-  [
-    '@type'          => 'Question',
-    'name'           => 'Do you handle permit requirements for retaining walls?',
-    'acceptedAnswer' => [
-      '@type' => 'Answer',
-      'text'  => 'Retaining walls over 4 feet in height typically require a permit in Rock County municipalities. For walls under that threshold — which covers the majority of residential landscape projects — no permit is required. R.A.H. Solutions will advise you on permit requirements during your site assessment and can assist with the documentation process if needed for larger walls.',
-    ],
-  ],
+    ['When is the best time to plant in southern Wisconsin?',
+     'Spring and early fall are the easiest seasons for new shrubs, trees and perennials, because the soil is workable and the weather is cool. Container plants can go in through summer if they are watered. Planting stops when the ground freezes.'],
+    ['Do I need a design before RAH Solutions gives an estimate?',
+     'No. Most projects start with a walk around the yard. Robert looks at sun, slope and drainage, asks how you use the space, and writes an estimate that lists the beds, plants and finish. If you already have a plan or a plant list, bring it.'],
+    ['How much watering do new plants need?',
+     'Plan on watering through the whole first growing season. New shrubs and trees have a small root ball and dry out faster than the soil around them. Water slowly at the base, check the soil with a finger first, and keep going into fall until the ground freezes.'],
+    ['Should a new bed be finished with mulch or stone?',
+     'Wood mulch suits most planting beds because it holds moisture and breaks down into the soil. Decorative stone lasts longer and fits beds along foundations or in spots where mulch washes out. The <a href="/services/mulching-services/">mulching page</a> explains depth and materials.'],
+    ['Can RAH Solutions fix drainage before planting?',
+     'Yes. Low spots, downspouts that empty into a bed and soil that slopes toward the house are handled first, because few plants survive standing water. Larger regrading and buried downspout lines are covered under <a href="/services/excavating-services/">excavating services</a>.'],
 ];
 
-$schemaMarkup = json_encode([
-  '@context' => 'https://schema.org',
-  '@graph'   => [
-    [
-      '@type'           => 'BreadcrumbList',
-      'itemListElement' => [
-        ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home',     'item' => 'https://rahsolutionsllc.com'],
-        ['@type' => 'ListItem', 'position' => 2, 'name' => 'Services', 'item' => 'https://rahsolutionsllc.com/services'],
-        ['@type' => 'ListItem', 'position' => 3, 'name' => 'Landscape Installation', 'item' => 'https://rahsolutionsllc.com/services/landscape-installation'],
-      ],
-    ],
-    [
-      '@type'       => 'Service',
-      '@id'         => 'https://rahsolutionsllc.com/services/landscape-installation/#service',
-      'name'        => 'Landscape Installation',
-      'description' => 'Full-scope landscape installation including plant selection, soil amendment, grading, drainage planning, and mulching for residential properties in Edgerton, Stoughton, Janesville, and Madison, WI.',
-      'provider'    => ['@type' => 'LocalBusiness', '@id' => 'https://rahsolutionsllc.com/#business'],
-      'areaServed'  => [
-        ['@type' => 'City', 'name' => 'Edgerton'],
-        ['@type' => 'City', 'name' => 'Stoughton'],
-        ['@type' => 'City', 'name' => 'Janesville'],
-        ['@type' => 'City', 'name' => 'Madison'],
-      ],
-      'serviceType' => 'Landscape Installation',
-    ],
-    [
-      '@type'      => 'FAQPage',
-      'mainEntity' => $faqs,
-    ],
-    [
-      '@type'           => 'LocalBusiness',
-      '@id'             => 'https://rahsolutionsllc.com/#aggregate',
-      'name'            => 'R.A.H. Solutions, LLC',
-    ],
-  ],
-], JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+$steps = [
+    ['Look at the property', 'Robert walks the yard with you, checks sun, slope, drainage and soil, and measures the areas to be planted.'],
+    ['Written estimate', 'You receive a written estimate that lists the beds, the plants, the edging and the mulch or stone finish.'],
+    ['Prepare and plant', 'Old plants and sod are removed, the bed is graded and edged, and shrubs, trees and perennials are set and watered in.'],
+    ['Finish and walk the job', 'Mulch or stone goes down, the lawn and hard surfaces are cleaned up, and Robert walks the finished beds with you.'],
+];
+
+$schemaNodes = [
+    webPageNode(),
+    breadcrumbNode([['Home', '/'], ['Services', '/services/'], ['Landscape Installation', '/services/landscape-installation/']]),
+    serviceSchemaNode('Landscape Installation', 'New planting beds, shrubs, trees, perennials, edging and mulch or stone finishes in Edgerton, WI and nearby Rock and Dane County towns, with grading done before planting.', $canonicalUrl),
+    ['@type' => 'HowTo', 'name' => 'How RAH Solutions LLC installs a new landscape bed', 'step' => array_map(fn($s, $i) => ['@type' => 'HowToStep', 'position' => $i + 1, 'name' => $s[0], 'text' => $s[1]], $steps, array_keys($steps))],
+    faqSchemaNode($faqs),
+];
 
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
+<div class="page-landscape-installation">
 
-<style>
-/* ============================================================
-   Landscape Installation — Page-Specific Styles (li-)
-   ============================================================ */
-
-/* ── Breadcrumb ───────────────────────────────────────────── */
-.svc-breadcrumb {
-  background: var(--color-bg-dark);
-  padding: var(--space-sm) 0;
-  position: relative;
-  z-index: 10;
-}
-.svc-breadcrumb .container {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-}
-.breadcrumb-list {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-  list-style: none;
-  flex-wrap: wrap;
-}
-.breadcrumb-list li {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-  font-size: var(--font-size-sm);
-  color: rgba(255,255,255,0.55);
-}
-.breadcrumb-list li a {
-  color: rgba(255,255,255,0.7);
-  transition: color var(--transition-fast);
-}
-.breadcrumb-list li a:hover { color: var(--color-accent); }
-.breadcrumb-list li.current {
-  color: var(--color-accent);
-  font-weight: 600;
-}
-.breadcrumb-sep {
-  color: rgba(255,255,255,0.3);
-  font-size: var(--font-size-xs);
-}
-
-/* ── Inner Hero ───────────────────────────────────────────── */
-.li-hero {
-  position: relative;
-  min-height: 60vh;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963878224-9yylmf-474790582_122209560278208320_5110498035873152787_n.jpg');
-  background-size: cover;
-  background-position: center;
-  animation: li-kenburns 20s ease-in-out infinite alternate;
-}
-@keyframes li-kenburns {
-  from { background-size: 110%; background-position: center 40%; }
-  to   { background-size: 120%; background-position: center 55%; }
-}
-.li-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(var(--color-primary-rgb), 0.90) 0%,
-    rgba(var(--color-primary-rgb), 0.58) 60%,
-    rgba(var(--color-accent-rgb), 0.18) 100%
-  );
-  z-index: 1;
-}
-.li-hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  z-index: 2;
-  pointer-events: none;
-}
-.li-hero-inner {
-  position: relative;
-  z-index: 3;
-  padding: var(--space-4xl) 0 var(--space-3xl);
-}
-.li-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  font-family: var(--font-body);
-  font-size: var(--font-size-sm);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: var(--space-md);
-}
-.li-eyebrow::before {
-  content: '';
-  display: block;
-  width: 28px;
-  height: 2px;
-  background: var(--color-accent);
-  flex-shrink: 0;
-}
-.li-hero h1 {
-  font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 5vw, 3.8rem);
-  font-weight: 700;
-  line-height: 1.1;
-  text-wrap: balance;
-  letter-spacing: -0.02em;
-  margin-bottom: var(--space-md);
-  background: linear-gradient(135deg, #ffffff 0%, rgba(var(--color-accent-rgb), 0.9) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.li-hero-sub {
-  font-size: var(--font-size-lg);
-  color: rgba(255,255,255,0.82);
-  max-width: 52ch;
-  line-height: 1.6;
-  margin-bottom: var(--space-xl);
-}
-.li-hero-ctas {
-  display: flex;
-  gap: var(--space-md);
-  flex-wrap: wrap;
-  align-items: center;
-}
-.li-btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: var(--color-accent);
-  color: var(--color-bg-dark);
-  font-family: var(--font-heading);
-  font-size: var(--font-size-base);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: var(--space-md) var(--space-xl);
-  border-radius: var(--radius-md);
-  box-shadow: 0 4px 0 var(--color-accent-dark);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  overflow: hidden;
-  position: relative;
-}
-.li-btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 0 var(--color-accent-dark);
-}
-.li-btn-primary:active {
-  transform: translateY(2px);
-  box-shadow: 0 2px 0 var(--color-accent-dark);
-}
-.li-btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: transparent;
-  color: #ffffff;
-  font-family: var(--font-heading);
-  font-size: var(--font-size-base);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: var(--space-md) var(--space-xl);
-  border-radius: var(--radius-md);
-  border: 2px solid rgba(255,255,255,0.5);
-  transition: background var(--transition-base), border-color var(--transition-base);
-}
-.li-btn-secondary:hover {
-  background: rgba(255,255,255,0.12);
-  border-color: rgba(255,255,255,0.8);
-}
-.li-hero-trust {
-  display: flex;
-  align-items: center;
-  gap: var(--space-lg);
-  margin-top: var(--space-xl);
-  flex-wrap: wrap;
-}
-.li-trust-item {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-  font-size: var(--font-size-sm);
-  color: rgba(255,255,255,0.75);
-  font-weight: 600;
-}
-.li-trust-item i { color: var(--color-accent); }
-
-/* ── Ticker ───────────────────────────────────────────────── */
-.ticker-strip {
-  background: var(--color-primary);
-  padding: var(--space-sm) 0;
-  overflow: hidden;
-  position: relative;
-}
-.ticker-strip::before,
-.ticker-strip::after {
-  content: '';
-  position: absolute;
-  top: 0; bottom: 0;
-  width: 80px;
-  z-index: 2;
-  pointer-events: none;
-}
-.ticker-strip::before { left: 0; background: linear-gradient(to right, var(--color-primary), transparent); }
-.ticker-strip::after  { right: 0; background: linear-gradient(to left,  var(--color-primary), transparent); }
-.ticker-track {
-  display: flex;
-  width: max-content;
-  animation: ticker-scroll 32s linear infinite;
-}
-.ticker-track:hover { animation-play-state: paused; }
-@keyframes ticker-scroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-.ticker-item {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-md);
-  white-space: nowrap;
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #ffffff;
-  padding: 0 var(--space-xl);
-}
-.ticker-sep { color: var(--color-accent); font-size: 1.2rem; line-height: 1; }
-
-/* ── Section Dividers ─────────────────────────────────────── */
-.divider-wrap { display: block; line-height: 0; overflow: hidden; }
-.divider-wrap svg { display: block; width: 100%; }
-
-/* ── Section Eyebrow ──────────────────────────────────────── */
-.li-section-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  font-family: var(--font-body);
-  font-size: var(--font-size-xs);
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: var(--space-sm);
-}
-.li-section-eyebrow::after {
-  content: '';
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--color-accent);
-}
-
-/* ── Service Detail ───────────────────────────────────────── */
-.li-detail {
-  padding: var(--space-4xl) 0 var(--space-3xl);
-  background: var(--color-bg);
-}
-.li-detail-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-3xl);
-  align-items: center;
-}
-.li-detail-content { order: 1; }
-.li-detail-image   { order: 2; }
-.li-detail h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700;
-  line-height: 1.15;
-  text-wrap: balance;
-  letter-spacing: -0.02em;
-  color: var(--color-primary);
-  margin-bottom: var(--space-lg);
-}
-.li-detail p {
-  font-size: var(--font-size-base);
-  color: var(--color-text-light);
-  line-height: 1.7;
-  max-width: 65ch;
-  margin-bottom: var(--space-md);
-}
-.li-detail p:last-of-type { margin-bottom: var(--space-xl); }
-.li-updated {
-  font-size: var(--font-size-sm);
-  color: var(--color-gray);
-  font-style: italic;
-}
-.li-image-frame {
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-xl);
-}
-.li-image-frame::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border: 3px solid rgba(var(--color-accent-rgb), 0.25);
-  border-radius: var(--radius-lg);
-  z-index: 2;
-  pointer-events: none;
-}
-.li-image-frame picture img {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  display: block;
-  transition: transform var(--transition-slow);
-}
-.li-image-frame:hover picture img { transform: scale(1.03); }
-.li-image-badge {
-  position: absolute;
-  bottom: var(--space-lg);
-  left: var(--space-lg);
-  background: var(--color-accent);
-  color: var(--color-bg-dark);
-  font-family: var(--font-heading);
-  font-size: var(--font-size-sm);
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: var(--space-xs) var(--space-md);
-  border-radius: var(--radius-sm);
-  z-index: 3;
-  box-shadow: var(--shadow-md);
-}
-.li-btn-detail {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: var(--color-primary);
-  color: #ffffff;
-  font-family: var(--font-heading);
-  font-size: var(--font-size-base);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: var(--space-md) var(--space-xl);
-  border-radius: var(--radius-md);
-  box-shadow: 0 4px 0 var(--color-primary-dark);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  overflow: hidden;
-  position: relative;
-}
-.li-btn-detail:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 0 var(--color-primary-dark);
-}
-.li-btn-detail:active {
-  transform: translateY(2px);
-  box-shadow: 0 2px 0 var(--color-primary-dark);
-}
-
-/* ── SIGNATURE: Stats Band ────────────────────────────────── */
-.li-stats-band {
-  background: var(--color-bg-dark);
-  padding: var(--space-3xl) 0;
-  position: relative;
-  overflow: hidden;
-}
-.li-stats-band::before {
-  content: '';
-  position: absolute;
-  top: -60px; left: -60px;
-  width: 320px; height: 320px;
-  border-radius: 50%;
-  background: rgba(var(--color-accent-rgb), 0.06);
-  pointer-events: none;
-}
-.li-stats-band::after {
-  content: '';
-  position: absolute;
-  bottom: -80px; right: -40px;
-  width: 400px; height: 400px;
-  border-radius: 50%;
-  background: rgba(var(--color-accent-rgb), 0.04);
-  pointer-events: none;
-}
-.li-stats-inner { position: relative; z-index: 1; }
-.li-stats-label {
-  text-align: center;
-  font-family: var(--font-body);
-  font-size: var(--font-size-sm);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: var(--space-2xl);
-}
-.li-stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-xl);
-}
-.li-stat-item {
-  text-align: center;
-  padding: var(--space-xl);
-  border: 1px solid rgba(var(--color-accent-rgb), 0.15);
-  border-radius: var(--radius-lg);
-  background: rgba(255,255,255,0.03);
-  transition: border-color var(--transition-base), background var(--transition-base);
-}
-.li-stat-item:hover {
-  border-color: rgba(var(--color-accent-rgb), 0.35);
-  background: rgba(var(--color-accent-rgb), 0.05);
-}
-.li-stat-number {
-  font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
-  font-weight: 700;
-  color: var(--color-accent);
-  line-height: 1;
-  margin-bottom: var(--space-xs);
-  letter-spacing: -0.02em;
-}
-.li-stat-label {
-  font-size: var(--font-size-sm);
-  color: rgba(255,255,255,0.65);
-  line-height: 1.4;
-  max-width: 18ch;
-  margin: 0 auto;
-}
-
-/* ── Mid CTA Banner ───────────────────────────────────────── */
-.li-cta-mid {
-  position: relative;
-  padding: var(--space-3xl) 0;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-  overflow: hidden;
-}
-.li-cta-mid::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 0;
-}
-.li-cta-mid .container { position: relative; z-index: 1; text-align: center; }
-.li-cta-eyebrow {
-  display: inline-block;
-  font-family: var(--font-body);
-  font-size: var(--font-size-sm);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: var(--space-sm);
-}
-.li-cta-mid h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
-  font-weight: 700;
-  text-wrap: balance;
-  letter-spacing: -0.02em;
-  color: #ffffff;
-  margin-bottom: var(--space-md);
-}
-.li-cta-mid > .container > p {
-  font-size: var(--font-size-lg);
-  color: rgba(255,255,255,0.8);
-  max-width: 55ch;
-  margin: 0 auto var(--space-xl);
-  line-height: 1.6;
-}
-.li-cta-actions {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: var(--space-md);
-  flex-wrap: wrap;
-}
-.li-btn-cta-phone {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: #ffffff;
-  color: var(--color-primary-dark);
-  font-family: var(--font-heading);
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
-  font-weight: 700;
-  padding: var(--space-md) var(--space-xl);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  overflow: hidden;
-  position: relative;
-}
-.li-btn-cta-phone:hover { transform: translateY(-2px); box-shadow: var(--shadow-xl); }
-.li-btn-cta-est {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: var(--color-accent);
-  color: var(--color-bg-dark);
-  font-family: var(--font-heading);
-  font-size: var(--font-size-base);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: var(--space-md) var(--space-xl);
-  border-radius: var(--radius-md);
-  box-shadow: 0 4px 0 var(--color-accent-dark);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  overflow: hidden;
-  position: relative;
-}
-.li-btn-cta-est:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--color-accent-dark); }
-.li-btn-cta-est:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--color-accent-dark); }
-
-/* ── Why Choose ───────────────────────────────────────────── */
-.li-why {
-  padding: var(--space-4xl) 0;
-  background: var(--color-bg-alt);
-}
-.li-why-header { text-align: center; margin-bottom: var(--space-3xl); }
-.li-why h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700;
-  text-wrap: balance;
-  letter-spacing: -0.02em;
-  color: var(--color-primary);
-  margin-bottom: var(--space-sm);
-}
-.li-why .sub {
-  font-size: var(--font-size-lg);
-  color: var(--color-text-light);
-  max-width: 55ch;
-  margin: 0 auto;
-}
-.li-why-cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-lg);
-}
-.li-why-card {
-  background: var(--color-bg);
-  border-radius: var(--radius-lg);
-  padding: var(--space-xl) var(--space-lg);
-  box-shadow: var(--shadow-card);
-  transition: transform var(--transition-base), box-shadow var(--transition-base), background var(--transition-base);
-  position: relative;
-  overflow: hidden;
-}
-.li-why-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: var(--color-accent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--transition-base);
-}
-.li-why-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-xl); background: var(--color-primary); }
-.li-why-card:hover::before { transform: scaleX(1); }
-.li-why-card:hover .li-why-title,
-.li-why-card:hover .li-why-text { color: rgba(255,255,255,0.9); }
-.li-why-card:hover .li-why-icon {
-  background: rgba(var(--color-accent-rgb), 0.2);
-  color: var(--color-accent);
-}
-.li-why-icon {
-  width: 52px; height: 52px;
-  border-radius: var(--radius-md);
-  background: rgba(var(--color-accent-rgb), 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-accent);
-  margin-bottom: var(--space-md);
-  transition: background var(--transition-base), color var(--transition-base);
-}
-.li-why-title {
-  font-family: var(--font-heading);
-  font-size: var(--font-size-xl);
-  font-weight: 600;
-  text-wrap: balance;
-  color: var(--color-primary);
-  margin-bottom: var(--space-sm);
-  transition: color var(--transition-base);
-}
-.li-why-text {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-light);
-  line-height: 1.6;
-  transition: color var(--transition-base);
-}
-
-/* ── Process ──────────────────────────────────────────────── */
-.li-process {
-  padding: var(--space-4xl) 0;
-  background: var(--color-bg);
-}
-.li-process-header { text-align: center; margin-bottom: var(--space-3xl); }
-.li-process h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700;
-  text-wrap: balance;
-  letter-spacing: -0.02em;
-  color: var(--color-primary);
-  margin-bottom: var(--space-sm);
-}
-.li-process .sub {
-  font-size: var(--font-size-lg);
-  color: var(--color-text-light);
-  max-width: 55ch;
-  margin: 0 auto;
-}
-.li-process-steps {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-lg);
-  position: relative;
-}
-.li-process-steps::before {
-  content: '';
-  position: absolute;
-  top: 32px;
-  left: calc(12.5% + 26px);
-  right: calc(12.5% + 26px);
-  height: 2px;
-  background: linear-gradient(to right, var(--color-accent), rgba(var(--color-accent-rgb), 0.2));
-  pointer-events: none;
-}
-.li-step { text-align: center; padding: var(--space-lg); }
-.li-step-num {
-  width: 64px; height: 64px;
-  border-radius: 50%;
-  background: var(--color-primary);
-  color: #ffffff;
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto var(--space-md);
-  position: relative;
-  z-index: 1;
-  border: 3px solid rgba(var(--color-accent-rgb), 0.3);
-  transition: background var(--transition-base), border-color var(--transition-base);
-}
-.li-step:hover .li-step-num {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
-  color: var(--color-bg-dark);
-}
-.li-step-title {
-  font-family: var(--font-heading);
-  font-size: var(--font-size-lg);
-  font-weight: 600;
-  text-wrap: balance;
-  color: var(--color-primary);
-  margin-bottom: var(--space-sm);
-}
-.li-step-desc {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-light);
-  line-height: 1.6;
-  max-width: 22ch;
-  margin: 0 auto;
-}
-
-/* ── FAQ ──────────────────────────────────────────────────── */
-.li-faq {
-  padding: var(--space-4xl) 0;
-  background: var(--color-bg-alt);
-}
-.li-faq-header { text-align: center; margin-bottom: var(--space-3xl); }
-.li-faq h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700;
-  text-wrap: balance;
-  letter-spacing: -0.02em;
-  color: var(--color-primary);
-  margin-bottom: var(--space-sm);
-}
-.li-faq .sub {
-  font-size: var(--font-size-lg);
-  color: var(--color-text-light);
-  max-width: 55ch;
-  margin: 0 auto;
-}
-.li-faq-list {
-  max-width: 800px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-}
-.li-faq-item {
-  background: var(--color-bg);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(var(--color-primary-rgb), 0.08);
-  overflow: hidden;
-}
-.li-faq-item summary {
-  padding: var(--space-lg) var(--space-xl);
-  font-family: var(--font-heading);
-  font-size: var(--font-size-lg);
-  font-weight: 600;
-  text-wrap: balance;
-  color: var(--color-primary);
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--space-md);
-  list-style: none;
-  transition: color var(--transition-fast);
-}
-.li-faq-item summary::-webkit-details-marker { display: none; }
-.li-faq-item summary::after {
-  content: '+';
-  font-size: 1.4rem;
-  color: var(--color-accent);
-  flex-shrink: 0;
-  transition: transform var(--transition-base);
-}
-.li-faq-item[open] summary::after { transform: rotate(45deg); }
-.li-faq-item[open] summary { color: var(--color-accent); }
-.li-faq-answer {
-  padding: 0 var(--space-xl) var(--space-lg);
-  font-size: var(--font-size-base);
-  color: var(--color-text-light);
-  line-height: 1.7;
-  max-width: 65ch;
-}
-
-/* ── Closing CTA ──────────────────────────────────────────── */
-.li-closing {
-  padding: var(--space-4xl) 0;
-  background: var(--color-bg);
-  text-align: center;
-}
-.li-closing h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700;
-  text-wrap: balance;
-  letter-spacing: -0.02em;
-  color: var(--color-primary);
-  margin-bottom: var(--space-md);
-}
-.li-closing p {
-  font-size: var(--font-size-lg);
-  color: var(--color-text-light);
-  max-width: 55ch;
-  margin: 0 auto var(--space-xl);
-  line-height: 1.6;
-}
-.li-closing-actions {
-  display: flex;
-  justify-content: center;
-  gap: var(--space-md);
-  flex-wrap: wrap;
-}
-.li-btn-closing-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: var(--color-accent);
-  color: var(--color-bg-dark);
-  font-family: var(--font-heading);
-  font-size: var(--font-size-lg);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: var(--space-md) var(--space-2xl);
-  border-radius: var(--radius-md);
-  box-shadow: 0 4px 0 var(--color-accent-dark);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  overflow: hidden;
-  position: relative;
-}
-.li-btn-closing-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--color-accent-dark); }
-.li-btn-closing-phone {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: var(--color-primary);
-  color: #ffffff;
-  font-family: var(--font-heading);
-  font-size: var(--font-size-lg);
-  font-weight: 700;
-  padding: var(--space-md) var(--space-2xl);
-  border-radius: var(--radius-md);
-  box-shadow: 0 4px 0 var(--color-primary-dark);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  overflow: hidden;
-  position: relative;
-}
-.li-btn-closing-phone:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--color-primary-dark); }
-
-/* ── Responsive ───────────────────────────────────────────── */
-@media (max-width: 1023px) {
-  .li-stats-grid    { grid-template-columns: repeat(2, 1fr); }
-  .li-why-cards     { grid-template-columns: repeat(2, 1fr); }
-  .li-process-steps { grid-template-columns: repeat(2, 1fr); }
-  .li-process-steps::before { display: none; }
-}
-@media (max-width: 767px) {
-  .li-detail-grid   { grid-template-columns: 1fr; }
-  .li-detail-image  { order: -1; }
-  .li-image-frame picture img { height: 280px; }
-  .li-stats-grid    { grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
-  .li-why-cards     { grid-template-columns: 1fr; }
-  .li-process-steps { grid-template-columns: 1fr; }
-  .li-hero-ctas     { flex-direction: column; align-items: flex-start; }
-}
-</style>
-
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php'; ?>
-
-  <!-- ── Breadcrumb ─────────────────────────────────────────── -->
-  <nav class="svc-breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol class="breadcrumb-list">
-        <li><a href="/">Home</a></li>
-        <li aria-hidden="true"><span class="breadcrumb-sep">›</span></li>
-        <li><a href="/services">Services</a></li>
-        <li aria-hidden="true"><span class="breadcrumb-sep">›</span></li>
-        <li class="current" aria-current="page">Landscape Installation</li>
-      </ol>
-    </div>
-  </nav>
-
-  <!-- ── Inner Hero ─────────────────────────────────────────── -->
-  <section class="li-hero" aria-label="Landscape Installation Services">
-    <div class="container li-hero-inner">
-      <span class="li-eyebrow">
-        <i data-lucide="tree-pine" aria-hidden="true" style="width:14px;height:14px;"></i>
-        Complete Landscape Transformations
-      </span>
-      <h1>Landscape Installation Services in Edgerton, WI</h1>
-      <p class="li-hero-sub">Full-scope landscape installs starting from $2,500 — proper soil prep, zone 5 plant selection, drainage-first planning, and mulch finish — all handled in one project by R.A.H. Solutions.</p>
-      <div class="li-hero-ctas">
-        <a href="tel:6085015123" class="li-btn-primary">
-          <i data-lucide="phone" aria-hidden="true" style="width:18px;height:18px;"></i>
-          Call (608) 501-5123
-        </a>
-        <a href="/contact" class="li-btn-secondary">Get a Free Estimate</a>
+<section class="hero hero--photo svc-hero" aria-label="Landscape installation in Edgerton, WI">
+  <div class="hero-bg"><?php echo picture('mulched-bed-steel-edging-driveway', 'Mulched planting bed with metal edging, shrubs and daylilies beside a mowed lawn and a rural driveway', '100vw', ['eager' => true, 'class' => 'hero-img']); ?></div>
+  <div class="hero-overlay"></div>
+  <span class="grain" aria-hidden="true"></span>
+  <div class="container hero-grid hero-grid--form">
+    <div class="hero-text">
+      <?php echo breadcrumbs([['Home', '/'], ['Services', '/services/'], ['Landscape Installation', '/services/landscape-installation/']]); ?>
+      <span class="eyebrow">Beds · Plants · Trees · Edging</span>
+      <h1 class="hero-title">Landscape Installation in Edgerton, WI</h1>
+      <p class="page-answer">RAH Solutions LLC installs new landscapes in Edgerton and nearby towns: beds cut and graded, shrubs, trees and perennials planted, edging set, and mulch or stone to finish. Estimates are free and given on site.</p>
+      <div class="hero-actions">
+        <button type="button" class="btn btn-accent btn-lg hero-form-open" data-open-estimate>Get a free landscape estimate</button>
+        <a class="link-call" href="<?php echo telHref(); ?>"><?php echo icon('phone', 18); ?> or call <?php echo e($phone); ?></a>
       </div>
-      <div class="li-hero-trust">
-        <span class="li-trust-item">
-          <i data-lucide="shield-check" aria-hidden="true"></i> Licensed &amp; Insured
-        </span>
-        <span class="li-trust-item">
-          <i data-lucide="star" aria-hidden="true"></i> 4.9-Star Rated
-        </span>
-        <span class="li-trust-item">
-          <i data-lucide="sprout" aria-hidden="true"></i> Zone 5 Specialists
-        </span>
-      </div>
+      <p class="last-updated">Last updated: <?php echo date('F Y'); ?></p>
     </div>
-  </section>
+    <?php $heroFormId = 'hero-landscape-installation'; $heroFormService = 'landscape-installation'; $heroFormHeading = 'Get a free landscape estimate'; include $_SERVER['DOCUMENT_ROOT'] . '/includes/hero-form.php'; ?>
+  </div>
+</section>
 
-  <!-- ── Proof Ticker Strip ─────────────────────────────────── -->
-  <div class="ticker-strip" aria-hidden="true">
-    <div class="ticker-track">
-      <span class="ticker-item">Full-Yard Transformations<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Zone 5 Plant Selection<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Drainage-First Installs<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Licensed &amp; Insured<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Free Estimates<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Edgerton · Stoughton · Madison · Janesville<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Soil Amendment Included<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Blueprint to Mulch<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Full-Yard Transformations<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Zone 5 Plant Selection<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Drainage-First Installs<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Licensed &amp; Insured<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Free Estimates<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Edgerton · Stoughton · Madison · Janesville<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Soil Amendment Included<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Blueprint to Mulch<span class="ticker-sep">✦</span></span>
+<section class="section svc-intro" aria-labelledby="intro-h2">
+  <div class="container svc-layout">
+    <div class="svc-body">
+      <p class="identity-line"><strong>RAH Solutions LLC</strong> is a licensed and insured, family-owned landscaper based in Edgerton, Wisconsin. Started by Robert Harried in 2023, it serves Rock and Dane County homes and businesses.</p>
+      <h2 id="intro-h2">What does landscape installation from RAH Solutions include?</h2>
+      <div class="answer-block">
+        <h3>Short answer</h3>
+        <p>RAH Solutions LLC builds new planting areas from bare ground or from an overgrown bed. A typical installation covers removal of old plants and sod, grading, bed edging, shrubs, trees and perennials chosen for zone 5b, and a mulch or decorative stone finish. Estimates are free and written after an on-site look.</p>
+      </div>
+      <p>People searching for landscape installation near me in Edgerton usually have one of three yards. A newer house has a strip of builder shrubs and nothing else. An older house has foundation plants that outgrew the windows years ago. Or a rural lot has plenty of lawn and no beds to break it up. RAH Solutions handles all three with its own crew and equipment.</p>
+      <p>The order of work matters. Soil is shaped before anything is planted, so water moves away from the house and does not sit in the new bed. Edging goes in next, which fixes the line between bed and lawn. Plants follow, and the finish layer goes down last. If the project also calls for a patio, a path or a low wall, the <a href="/services/hardscaping-services/">hardscaping page</a> covers that part.</p>
+      <p>New beds often go in alongside new turf. If the lawn around the bed is thin or torn up from construction, <a href="/services/sod-installation/">sod installation</a> can be priced in the same estimate so the yard is finished in one visit.</p>
+    </div>
+    <aside class="svc-rail" aria-label="On this page">
+      <nav class="svc-toc" aria-label="Page sections">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#types-h2">What we install</a></li>
+          <li><a href="#cond-h2">Soil and climate</a></li>
+          <li><a href="#plants-h2">Choosing plants</a></li>
+          <li><a href="#steps-h2">How a project works</a></li>
+          <li><a href="#gallery-h2">Job photos</a></li>
+          <li><a href="#faq-h2">Landscape FAQ</a></li>
+        </ol>
+      </nav>
+      <div class="svc-callcard">
+        <strong>Planning new beds this season?</strong>
+        <p><?php echo e($hoursLong); ?></p>
+        <a class="btn btn-accent" href="<?php echo telHref(); ?>"><?php echo icon('phone', 18); ?> <?php echo e($phone); ?></a>
+        <button type="button" class="btn btn-outline-white" data-open-estimate>Request an estimate</button>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section svc-types" aria-labelledby="types-h2">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <span class="eyebrow-label">What we install</span>
+      <h2 id="types-h2">Which landscape projects does RAH Solutions install?</h2>
+      <p>RAH Solutions LLC installs the parts of a landscape that sit between the lawn and the house, from one new bed to a full front yard.</p>
+    </div>
+    <div class="type-grid" data-p1-dynamic>
+      <article class="type-card reveal-up reveal-delay-1">
+        <span class="type-card__icon"><?php echo icon('pencil-ruler', 22); ?></span>
+        <h3>New planting beds</h3>
+        <p>Bed lines are laid out on the ground first, then sod is stripped and the soil is loosened and shaped. Curves are kept wide enough for a mower to follow.</p>
+      </article>
+      <article class="type-card reveal-up reveal-delay-2">
+        <span class="type-card__icon"><?php echo icon('sprout', 22); ?></span>
+        <h3>Shrubs and perennials</h3>
+        <p>Foundation shrubs, flowering shrubs, ornamental grasses and perennials, spaced for their mature size so the bed fills in without crowding the siding.</p>
+      </article>
+      <article class="type-card reveal-up reveal-delay-3">
+        <span class="type-card__icon"><?php echo icon('trees', 22); ?></span>
+        <h3>Trees</h3>
+        <p>Shade, ornamental and evergreen trees set in a wide hole with the root flare at grade, then watered in and mulched in a flat ring that stays off the trunk.</p>
+      </article>
+      <article class="type-card reveal-up reveal-delay-1">
+        <span class="type-card__icon"><?php echo icon('ruler', 22); ?></span>
+        <h3>Garden edging</h3>
+        <p>A firm edge keeps mulch in the bed and grass out of it. The bed in the photo at the top of this page was finished with metal edging along the lawn.</p>
+      </article>
+      <article class="type-card reveal-up reveal-delay-2">
+        <span class="type-card__icon"><?php echo icon('mountain', 22); ?></span>
+        <h3>Mulch and decorative stone</h3>
+        <p>Shredded wood mulch for planted beds, or decorative stone and gravel where a longer-lasting cover makes more sense, such as along a foundation or a driveway.</p>
+      </article>
+      <article class="type-card reveal-up reveal-delay-3">
+        <span class="type-card__icon"><?php echo icon('layers', 22); ?></span>
+        <h3>Renovating old beds</h3>
+        <p>Overgrown shrubs, weeds and worn-out edging are removed, the soil is reshaped, and the bed is replanted. Plants worth keeping are worked around or moved.</p>
+      </article>
     </div>
   </div>
+</section>
 
-  <!-- ── Divider ────────────────────────────────────────────── -->
-  <div class="divider-wrap" aria-hidden="true">
-    <svg viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="0,0 1200,40 1200,40 0,40" fill="#ffffff"/>
-    </svg>
+<section class="section svc-conditions texture-grain edge-facet-top" aria-labelledby="cond-h2">
+  <span class="grain-layer" aria-hidden="true"></span>
+  <div class="container">
+    <div class="cond-head reveal-left">
+      <span class="eyebrow-label">Rock and Dane County yards</span>
+      <h2 id="cond-h2">How do southern Wisconsin soil and winters affect a new landscape?</h2>
+      <p>Soil that drains slowly and winters that freeze and thaw decide which plants live. RAH Solutions LLC plans every installation around four local conditions.</p>
+    </div>
+    <ul class="cond-list">
+      <li class="reveal-up"><span><?php echo icon('droplets', 22); ?></span><b>Slow-draining soil</b><p>Much of the area is silt loam over a heavier clay subsoil. Water lingers, so beds are graded to shed it and plants that dislike wet roots are kept out of low spots.</p></li>
+      <li class="reveal-up"><span><?php echo icon('snowflake', 22); ?></span><b>Zone 5b cold</b><p>Most of Rock and Dane counties sit in USDA hardiness zone 5b. Every shrub, tree and perennial on the plant list has to be rated for that winter.</p></li>
+      <li class="reveal-up"><span><?php echo icon('waves', 22); ?></span><b>Freeze and thaw</b><p>Repeated freezing and thawing can lift shallow-rooted plants out of the ground. A mulch layer evens out soil temperature and holds new perennials in place.</p></li>
+      <li class="reveal-up"><span><?php echo icon('home', 22); ?></span><b>Compacted subdivision lots</b><p>On newer lots the soil was often driven over during construction. It is loosened across the whole bed before planting, not only inside each planting hole.</p></li>
+    </ul>
   </div>
+</section>
 
-  <!-- ── Service Detail Section ─────────────────────────────── -->
-  <section class="li-detail" data-animate="fade-up">
-    <div class="container">
-      <div class="li-detail-grid">
-        <div class="li-detail-content">
-          <span class="li-section-eyebrow">What's Included</span>
-          <h2>What Is the Full Scope from Grading to <span class="text-accent">Planted Beds</span>?</h2>
-
-          <p>Landscape installation in Edgerton starts at $2,500 for smaller bed installations and scales based on yard size, plant count, and grading complexity. Every project includes soil assessment and amendment, proper grading and drainage planning before a single plant goes in the ground, and a full mulch finish to lock in moisture and suppress weeds. You get a transformed yard — not just a plant delivery.</p>
-
-          <p>Edgerton's soils trend heavily toward clay — particularly in Rock County neighborhoods built on former agricultural land. Clay compacts under foot traffic and equipment and stays waterlogged after heavy spring rains. Before we plant anything, we address drainage: identifying low spots, amending soil with compost and grit to improve drainage rates, and establishing proper slope away from foundations. Planting into unamended clay is one of the most common reasons landscape installations fail within two years.</p>
-
-          <p>We select plants specifically suited to USDA zones 5a and 5b — the hardiness zones that cover Edgerton and the surrounding Rock &amp; Dane County area. Wisconsin winters push to -20°F in cold years. The plants we specify — coneflower, black-eyed Susan, Karl Foerster grass, hostas, arborvitae, spirea, and ornamental grasses — are proven performers in this climate, not southern nursery stock sold north of its comfort zone.</p>
-
-          <p>Installation sequence matters as much as plant selection. We follow a defined order: hardscape placement first (if applicable), then soil prep and amendment, then plant layout and spacing review before digging, then installation, then mulch. This sequence prevents the common mistake of planting first and discovering drainage problems too late. We provide a written care guide covering the critical establishment period — the first two growing seasons when new plants are most vulnerable.</p>
-
-          <div class="answer-block">
-            <h3>How long does a landscape installation take in Edgerton?</h3>
-            <p>Most residential landscape installations in Edgerton are completed in 1 to 5 days depending on project scope, with smaller bed refreshes finishing in a single day and full-yard transformations spanning 3–5 days. Projects start at $2,500 for basic installations and scale based on plant count, grading complexity, and soil amendment needs. Every project includes soil prep, drainage planning, planting, and a full mulch finish.</p>
-          </div>
-
-          <p class="li-updated">Last Updated: May 2026 · Serving Edgerton, WI and surrounding Rock &amp; Dane County communities.</p>
-
-          <a href="/contact" class="li-btn-detail">
-            <i data-lucide="clipboard-list" aria-hidden="true" style="width:18px;height:18px;"></i>
-            Request a Project Estimate
-          </a>
-        </div>
-
-        <div class="li-detail-image">
-          <div class="li-image-frame">
-            <picture>
-              <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963879670-etljhr-474465615_122209560308208320_6377695377545475044_n.jpg" type="image/webp">
-              <img
-                src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963879670-etljhr-474465615_122209560308208320_6377695377545475044_n.jpg"
-                alt="Professional landscape installation project in Edgerton Wisconsin with planted beds and shrubs"
-                width="600"
-                height="420"
-                loading="lazy"
-              >
-            </picture>
-            <span class="li-image-badge">Edgerton, WI</span>
-          </div>
-        </div>
+<section class="section section--tight" aria-labelledby="plants-h2">
+  <div class="container">
+    <div class="svc-callout reveal-up">
+      <span><?php echo icon('leaf', 26); ?></span>
+      <div>
+        <h2 id="plants-h2">Which plants should go in a zone 5b bed?</h2>
+        <p>RAH Solutions matches each plant to three things: zone 5b hardiness, the hours of sun the bed gets, and how wet the soil stays. A plant that is right on all three needs far less care than one that is right on only one.</p>
+        <p>Mature size comes next. A shrub that will grow six feet wide does not belong under a window or two feet from the siding. Choosing for full-grown size means less <a href="/services/shrub-trimming/">shrub trimming</a> later.</p>
       </div>
     </div>
-  </section>
-
-  <!-- ── Divider: bg → bg-dark (wave) ──────────────────────── -->
-  <div class="divider-wrap" aria-hidden="true">
-    <svg viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,40 C300,80 900,0 1200,40 L1200,80 L0,80 Z" fill="#0f1e2d"/>
-    </svg>
   </div>
+</section>
 
-  <!-- ── SIGNATURE: Stats Band ──────────────────────────────── -->
-  <section class="li-stats-band" aria-label="Landscape installation project statistics">
-    <div class="container li-stats-inner">
-      <p class="li-stats-label">R.A.H. Solutions — Landscape Installation by the Numbers</p>
-      <div class="li-stats-grid">
-        <div class="li-stat-item" data-animate="fade-up">
-          <div class="li-stat-number">$2,500<span style="font-size:1.5rem;">+</span></div>
-          <div class="li-stat-label">Starting price for small landscape installs</div>
-        </div>
-        <div class="li-stat-item" data-animate="fade-up">
-          <div class="li-stat-number">3+</div>
-          <div class="li-stat-label">Years serving Rock &amp; Dane County</div>
-        </div>
-        <div class="li-stat-item" data-animate="fade-up">
-          <div class="li-stat-number">4.9★</div>
-          <div class="li-stat-label">Average rating across 47 customer reviews</div>
-        </div>
-        <div class="li-stat-item" data-animate="fade-up">
-          <div class="li-stat-number">4</div>
-          <div class="li-stat-label">Cities served across Southern Wisconsin</div>
-        </div>
-      </div>
+<section class="section svc-steps" aria-labelledby="steps-h2">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <span class="eyebrow-label">The process</span>
+      <h2 id="steps-h2">How does a landscape installation with RAH Solutions work?</h2>
+      <p>RAH Solutions LLC follows the same four steps on a single bed and on a full yard.</p>
     </div>
-  </section>
-
-  <!-- ── Divider: bg-dark → bg-alt (diagonal up) ───────────── -->
-  <div class="divider-wrap" aria-hidden="true">
-    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="0,60 1200,0 1200,60" fill="#f4f7f9"/>
-    </svg>
+    <ol class="step-track">
+      <?php foreach ($steps as $i => $s): ?>
+      <li class="reveal-up reveal-delay-<?php echo $i + 1; ?>"><h3><?php echo e($s[0]); ?></h3><p><?php echo e($s[1]); ?></p></li>
+      <?php endforeach; ?>
+    </ol>
   </div>
+</section>
 
-  <!-- ── Mid-Page CTA Banner ────────────────────────────────── -->
-  <section class="li-cta-mid" aria-label="Get a landscape installation estimate">
-    <div class="container">
-      <p class="li-cta-eyebrow">Free Estimates · Spring &amp; Fall Booking Available</p>
-      <h2>Are This Season's Install Spots Filling Fast?</h2>
-      <p>Spring and fall are our busiest install windows. Lock in your project date before the schedule fills — call R.A.H. Solutions for a free site assessment and written estimate.</p>
-      <div class="li-cta-actions">
-        <a href="tel:6085015123" class="li-btn-cta-phone">
-          <i data-lucide="phone" aria-hidden="true" style="width:20px;height:20px;"></i>
-          (608) 501-5123
-        </a>
-        <a href="/contact" class="li-btn-cta-est">Get a Free Estimate</a>
-      </div>
+<section class="section svc-gallery" aria-labelledby="gallery-h2">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <span class="eyebrow-label">Recent bed work</span>
+      <h2 id="gallery-h2">What does RAH Solutions bed work look like?</h2>
+      <p>These are RAH Solutions job photos: a bed finished with mulch and metal edging, and a shade bed with the edging laid out for install.</p>
     </div>
-  </section>
-
-  <!-- ── Divider: primary → bg-alt ─────────────────────────── -->
-  <div class="divider-wrap" aria-hidden="true">
-    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="0,0 1200,60 1200,60 0,60" fill="#f4f7f9"/>
-    </svg>
+    <div class="sp-gallery-grid sp-gallery-grid--two" data-p1-dynamic>
+      <figure class="sp-gallery-item reveal-scale"><?php echo picture('mulched-bed-steel-edging-driveway', 'Finished mulched bed with metal edging, shrubs and perennials next to a mowed lawn', '(max-width: 700px) 100vw, 55vw'); ?><figcaption>Finished bed: edging set, mulch down</figcaption></figure>
+      <figure class="sp-gallery-item reveal-scale reveal-delay-1"><?php echo picture('bed-edging-install-shade-garden', 'Shade garden bed with fresh soil and a length of edging laid on the lawn before installation', '(max-width: 700px) 100vw, 40vw'); ?><figcaption>Shade bed in progress, edging laid out</figcaption></figure>
+    </div>
   </div>
+</section>
 
-  <!-- ── Why Choose Section ─────────────────────────────────── -->
-  <section class="li-why" data-animate="fade-up">
-    <div class="container">
-      <div class="li-why-header">
-        <span class="li-section-eyebrow">Why R.A.H. Solutions</span>
-        <h2>What <span class="text-accent">Installs</span> Are Built to Survive Wisconsin?</h2>
-        <p class="sub">The difference between a landscape that thrives for 10 years and one that declines in two is almost always in what happens before the plants go in the ground.</p>
-      </div>
-      <div class="li-why-cards">
-        <div class="li-why-card" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.12">
-          <div class="li-why-icon">
-            <i data-lucide="thermometer" aria-hidden="true" style="width:24px;height:24px;"></i>
-          </div>
-          <h3 class="li-why-title">Plant Selection for Zone 5 Wisconsin</h3>
-          <p class="li-why-text">Every plant we specify is rated to handle Edgerton winters. No marginal zone 6 material that survives one season and fails the next.</p>
-        </div>
-        <div class="li-why-card" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.12">
-          <div class="li-why-icon">
-            <i data-lucide="layers" aria-hidden="true" style="width:24px;height:24px;"></i>
-          </div>
-          <h3 class="li-why-title">Proper Soil Prep Before Planting</h3>
-          <p class="li-why-text">Rock County clay soils need amendment before installation. We test, amend, and structure the soil so roots actually have somewhere to grow.</p>
-        </div>
-        <div class="li-why-card" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.12">
-          <div class="li-why-icon">
-            <i data-lucide="droplets" aria-hidden="true" style="width:24px;height:24px;"></i>
-          </div>
-          <h3 class="li-why-title">Drainage-First Installation Approach</h3>
-          <p class="li-why-text">We resolve drainage problems before the first plant goes in — not after beds flood and roots rot through their first Wisconsin winter.</p>
-        </div>
-        <div class="li-why-card" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.12">
-          <div class="li-why-icon">
-            <i data-lucide="clipboard-check" aria-hidden="true" style="width:24px;height:24px;"></i>
-          </div>
-          <h3 class="li-why-title">Full-Scope Install from Blueprint to Mulch</h3>
-          <p class="li-why-text">One crew, one project, no subcontractor gaps. From the initial site plan through the final mulch layer — we own the entire installation.</p>
-        </div>
-      </div>
+<section class="section svc-faq" aria-labelledby="faq-h2">
+  <div class="container faq-wrap">
+    <div class="section-head reveal-left">
+      <span class="eyebrow-label">FAQ</span>
+      <h2 id="faq-h2">What do people ask about landscape installation in Edgerton?</h2>
+      <p>Describe the yard on a call to <?php echo e($phone); ?> and Robert will tell you what to expect. The <a href="/blog/spring-yard-cleanup-checklist-wisconsin/">spring cleanup checklist</a> is a good first read if the beds are overgrown.</p>
     </div>
-  </section>
-
-  <!-- ── Divider: bg-alt → bg ───────────────────────────────── -->
-  <div class="divider-wrap" aria-hidden="true">
-    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="0,0 1200,60 1200,0" fill="#ffffff"/>
-    </svg>
+    <div><?php echo faqList($faqs, 2); ?></div>
   </div>
+</section>
 
-  <!-- ── Process Steps ──────────────────────────────────────── -->
-  <section class="li-process" data-animate="fade-up">
-    <div class="container">
-      <div class="li-process-header">
-        <span class="li-section-eyebrow">How We Work</span>
-        <h2>What Are the Four Steps from Site Visit to <span class="text-accent">Finished Landscape</span>?</h2>
-        <p class="sub">A clear, predictable process that keeps your project on schedule and your property protected throughout installation.</p>
-      </div>
-      <div class="li-process-steps">
-        <div class="li-step">
-          <div class="li-step-num">1</div>
-          <h3 class="li-step-title">Site Assessment &amp; Grading Review</h3>
-          <p class="li-step-desc">We evaluate drainage, soil condition, sun exposure, and existing plants before designing anything.</p>
-        </div>
-        <div class="li-step">
-          <div class="li-step-num">2</div>
-          <h3 class="li-step-title">Material Selection &amp; Sourcing</h3>
-          <p class="li-step-desc">You review and approve plant selections, hardscape materials, and mulch type before we order a thing.</p>
-        </div>
-        <div class="li-step">
-          <div class="li-step-num">3</div>
-          <h3 class="li-step-title">Installation Day(s)</h3>
-          <p class="li-step-desc">Soil prep and amendment first, then hardscape if applicable, then planting, then mulch — sequence done right.</p>
-        </div>
-        <div class="li-step">
-          <div class="li-step-num">4</div>
-          <h3 class="li-step-title">Final Inspection &amp; Care Instructions</h3>
-          <p class="li-step-desc">Walk-through of the completed project plus a written care guide covering watering, first-year maintenance, and what to expect.</p>
-        </div>
-      </div>
+<section class="section svc-related" aria-labelledby="related-h2">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <span class="eyebrow-label">More from RAH Solutions</span>
+      <h2 id="related-h2">Other Services You May Need</h2>
     </div>
-  </section>
-
-  <!-- ── Divider: bg → bg-alt (diagonal down) ──────────────── -->
-  <div class="divider-wrap" aria-hidden="true">
-    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="0,0 1200,60 1200,60 0,60" fill="#f4f7f9"/>
-    </svg>
+    <div class="services-grid" data-p1-dynamic>
+      <?php echo serviceCards(relatedServices(['mulching-services', 'garden-maintenance', 'sod-installation']), '(max-width: 560px) 100vw, 33vw'); ?>
+    </div>
+    <div class="town-links">
+      <h3>Landscape installation near you</h3>
+      <ul>
+        <?php foreach (['edgerton-wi', 'stoughton-wi', 'janesville-wi', 'milton-wi', 'mcfarland-wi', 'oregon-wi'] as $tl): $ta = areaBySlug($tl); ?>
+        <li><a href="<?php echo areaHref($ta); ?>"><?php echo icon('map-pin', 14); ?> Landscaping in <?php echo e($ta['name']); ?></a></li>
+        <?php endforeach; ?>
+      </ul>
+    </div>
   </div>
+</section>
 
-  <!-- ── FAQ Section ────────────────────────────────────────── -->
-  <section class="li-faq" data-animate="fade-up">
-    <div class="container">
-      <div class="li-faq-header">
-        <span class="li-section-eyebrow">Common Questions</span>
-        <h2>What Are Your Landscape Installation Questions?</h2>
-        <p class="sub">What Edgerton homeowners ask before booking a landscape install project.</p>
-      </div>
-      <div class="li-faq-list">
-        <details class="li-faq-item">
-          <summary>When is the best time to install landscaping in Wisconsin?</summary>
-          <div class="li-faq-answer">
-            <p>Spring (late April through May) and fall (September through October) are the two ideal installation windows in Edgerton. Spring allows plants to establish through a full growing season before winter. Fall installations benefit from cooler temperatures that reduce transplant stress and allow root development before the ground freezes. Summer installs are possible but require more intensive watering during the first 4–6 weeks.</p>
-          </div>
-        </details>
-        <details class="li-faq-item">
-          <summary>What plants work best in Edgerton's climate?</summary>
-          <div class="li-faq-answer">
-            <p>Edgerton sits in USDA hardiness zones 5a/5b, which supports a wide range of hardy perennials, shrubs, and trees. Reliable performers include coneflower (Echinacea), black-eyed Susan, Karl Foerster grass, hostas, spirea, burning bush, arborvitae, and ornamental grasses. We select plants that tolerate Wisconsin's freeze-thaw cycles and clay-heavy soils while minimizing your long-term maintenance load.</p>
-          </div>
-        </details>
-        <details class="li-faq-item">
-          <summary>How long does a landscape installation take?</summary>
-          <div class="li-faq-answer">
-            <p>Most residential landscape installations in Edgerton are completed in 1–3 days, depending on scope. A straightforward front bed refresh with shrubs and perennials typically takes 4–8 hours. Full-yard transformations including soil amendment, grading, planting, and mulching may span 2–3 days. We provide a written timeline with your estimate so you know exactly what to expect.</p>
-          </div>
-        </details>
-        <details class="li-faq-item">
-          <summary>Do you handle permit requirements for retaining walls?</summary>
-          <div class="li-faq-answer">
-            <p>Retaining walls over 4 feet in height typically require a permit in Rock County municipalities. For walls under that threshold — which covers the majority of residential projects — no permit is required. R.A.H. Solutions will advise you on permit requirements during your site assessment and can assist with the documentation process if needed for larger walls.</p>
-          </div>
-        </details>
-      </div>
-    </div>
-  </section>
+<?php $ctaBandId = 'band-landscape-installation'; $ctaBandHeading = 'Get a written price for your landscape project'; include $_SERVER['DOCUMENT_ROOT'] . '/includes/cta-band.php'; ?>
 
-  <!-- ── Divider: bg-alt → bg (diagonal up) ────────────────── -->
-  <div class="divider-wrap" aria-hidden="true">
-    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="0,60 1200,0 1200,60" fill="#ffffff"/>
-    </svg>
-  </div>
-
-  <!-- ── Closing CTA ────────────────────────────────────────── -->
-  <section class="li-closing" data-animate="fade-up">
-    <div class="container">
-      <span class="li-section-eyebrow" style="justify-content:center;">Book Your Install This Season</span>
-      <h2>How Do You Get a Free Estimate for Your Landscape Project?</h2>
-      <p>Spring and fall slots book up fast. Call R.A.H. Solutions for a free site visit — we'll assess your yard, walk through options, and deliver a written estimate with no pressure.</p>
-      <div class="li-closing-actions">
-        <a href="tel:6085015123" class="li-btn-closing-phone">
-          <i data-lucide="phone" aria-hidden="true" style="width:20px;height:20px;"></i>
-          (608) 501-5123
-        </a>
-        <a href="/contact" class="li-btn-closing-primary">
-          <i data-lucide="clipboard-list" aria-hidden="true" style="width:20px;height:20px;"></i>
-          Get a Free Estimate
-        </a>
-      </div>
-    </div>
-  </section>
-
+</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>

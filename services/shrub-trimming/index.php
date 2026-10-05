@@ -1,1239 +1,240 @@
 <?php
-// ============================================================
-// Shrub Trimming — R.A.H. Solutions, LLC
-// ============================================================
-$pageTitle       = 'Shrub Trimming in Edgerton, WI';
-$pageDescription = 'Shrub trimming & shaping in Edgerton, WI by R.A.H. Solutions. Promotes healthy growth and clean lines year-round. Free estimates. Call (608) 501-5123.';
-$canonicalUrl    = 'https://rahsolutionsllc.com/services/shrub-trimming';
-// SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
-$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963879670-etljhr-474465615_122209560308208320_6377695377545475044_n.jpg';
-$currentPage     = 'service-shrub-trimming';
-$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963879670-etljhr-474465615_122209560308208320_6377695377545475044_n.jpg';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+?>
+<?php
+$svc             = serviceBySlug('shrub-trimming');
+$currentPage     = 'services';
+$pageType        = 'service';
+$serviceSlug     = 'shrub-trimming';
+$pageTitle       = 'Shrub Trimming in Edgerton, WI | RAH Solutions LLC';
+$pageDescription = 'Shrub and hedge trimming in Edgerton, WI. RAH Solutions LLC shapes shrubs, renews overgrown ones and times cuts around bloom. Clippings hauled. Free estimates.';
+$canonicalUrl    = $siteUrl . '/services/shrub-trimming/';
+$pageCss         = ['service'];
+$pageStyle       = <<<CSS
+/* shrub-trimming: clean white cards with a teal clipped corner rule, bloom-timing callout */
+.page-shrub-trimming .type-card { background: var(--color-surface); border: 1px solid var(--color-line); border-top: 3px solid var(--color-primary); box-shadow: var(--shadow); }
+.page-shrub-trimming .type-card__icon { background: color-mix(in srgb, var(--color-primary) 14%, var(--color-surface)); color: var(--color-primary); }
+.page-shrub-trimming .svc-callout { border-left: 4px solid var(--color-primary); background: color-mix(in srgb, var(--color-aqua) 10%, var(--color-paper)); }
+.page-shrub-trimming .svc-callout > span { color: var(--color-primary); }
+.page-shrub-trimming .bloom-list { list-style: none; padding: 0; margin: 1rem 0 0; display: grid; gap: .6rem; }
+.page-shrub-trimming .bloom-list li { padding-left: .9rem; border-left: 3px solid var(--color-aqua); color: var(--color-ink-2); }
+.page-shrub-trimming .bloom-list b { color: var(--color-primary); font-family: var(--font-accent); }
+CSS;
 
 $faqs = [
-  [
-    '@type'          => 'Question',
-    'name'           => 'When should shrubs be trimmed in Wisconsin?',
-    'acceptedAnswer' => [
-      '@type' => 'Answer',
-      'text'  => 'Timing varies by shrub species. Spring-blooming shrubs like lilac and forsythia should be trimmed immediately after they flower — typically late May to early June in Edgerton — to preserve next year\'s bloom. Summer-blooming shrubs like spirea and potentilla can be shaped in early spring before growth begins. Evergreens such as arborvitae and boxwood are best trimmed in late spring or early summer once new growth has extended and hardened off. Avoid heavy trimming in late summer or fall, which can stimulate new growth that doesn\'t have time to harden before Wisconsin\'s first frost.',
-    ],
-  ],
-  [
-    '@type'          => 'Question',
-    'name'           => 'Can overgrown shrubs be saved with rejuvenation pruning?',
-    'acceptedAnswer' => [
-      '@type' => 'Answer',
-      'text'  => 'Yes — most common Wisconsin landscape shrubs respond well to rejuvenation pruning. This technique removes one-third of the oldest wood each year over three seasons, gradually replacing the entire shrub with younger, more vigorous growth. Shrubs that have been severely neglected may need a harder cut, which works well on forsythia, lilac, and most deciduous shrubs but should be avoided with evergreens like arborvitae that do not regenerate from old wood.',
-    ],
-  ],
-  [
-    '@type'          => 'Question',
-    'name'           => 'How often do shrubs need trimming?',
-    'acceptedAnswer' => [
-      '@type' => 'Answer',
-      'text'  => 'Most residential landscape shrubs in Edgerton need trimming 1–2 times per year. Fast-growing shrubs like burning bush, ninebark, and forsythia may need attention twice — once after spring blooming and again in midsummer if they\'ve filled in significantly. Slower-growing evergreens like arborvitae typically need trimming once per year in late spring or early summer. Formal hedges maintained at specific heights may require 2–3 trimmings per season.',
-    ],
-  ],
-  [
-    '@type'          => 'Question',
-    'name'           => 'Do you trim arborvitae and evergreen hedges?',
-    'acceptedAnswer' => [
-      '@type' => 'Answer',
-      'text'  => 'Yes — arborvitae and evergreen hedge trimming is one of our most common requests in Edgerton and Rock County. Arborvitae are trimmed in late spring after new growth has emerged, removing no more than one-third of the new growth per session to avoid exposing brown interior wood that will not regenerate. We take care to maintain the natural form while controlling height and width, and we remove all clippings from your property on the same day.',
-    ],
-  ],
+    ['When is the best time to trim shrubs in southern Wisconsin?',
+     'It depends on when the shrub blooms. Spring bloomers such as lilac and forsythia are pruned right after they flower. Summer bloomers are pruned in late winter or early spring. Evergreens and hedges are trimmed after their spring flush of growth. Heavy pruning in late summer and fall is avoided.'],
+    ['Why did my lilac stop blooming after it was trimmed?',
+     'It was probably pruned at the wrong time. Lilacs set next year’s flower buds soon after they finish blooming. Trimming in summer, fall or winter cuts those buds off. Prune a lilac within a few weeks after the flowers fade and it will bloom again the next spring.'],
+    ['How often should shrubs be trimmed?',
+     'Most flowering shrubs need pruning once a year. Formal hedges that are kept to a tight shape usually need one or two trims in the growing season. Slow-growing evergreens may only need a light touch-up.'],
+    ['Can an overgrown shrub be saved, or should it be replaced?',
+     'Many can be saved. Multi-stem shrubs such as lilac, dogwood and spirea respond well to renewal pruning over a few years. A shrub that is too large for its spot, or an evergreen that is bare inside, is often better replaced through <a href="/services/landscape-installation/">landscape installation</a>.'],
+    ['Do you haul away the clippings?',
+     'Yes. Branches and clippings are raked out of the shrubs and beds, loaded and hauled away, and walks and drives are blown off before the crew leaves.'],
+    ['Can shrub trimming be done with other yard work?',
+     'Yes. It pairs well with a <a href="/services/spring-yard-cleanup/">spring yard cleanup</a> or with <a href="/services/garden-maintenance/">garden maintenance</a> visits, so beds are weeded and edged while the shrubs are trimmed.'],
 ];
 
-$schemaMarkup = json_encode([
-  '@context' => 'https://schema.org',
-  '@graph'   => [
-    [
-      '@type'           => 'BreadcrumbList',
-      'itemListElement' => [
-        ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home',     'item' => 'https://rahsolutionsllc.com'],
-        ['@type' => 'ListItem', 'position' => 2, 'name' => 'Services', 'item' => 'https://rahsolutionsllc.com/services'],
-        ['@type' => 'ListItem', 'position' => 3, 'name' => 'Shrub Trimming', 'item' => 'https://rahsolutionsllc.com/services/shrub-trimming'],
-      ],
-    ],
-    [
-      '@type'       => 'Service',
-      '@id'         => 'https://rahsolutionsllc.com/services/shrub-trimming/#service',
-      'name'        => 'Shrub Trimming',
-      'description' => 'Professional shrub trimming, shaping, and rejuvenation pruning for residential properties in Edgerton, Stoughton, Janesville, and Madison, WI. Species-specific timing and technique for all Wisconsin landscape shrubs.',
-      'provider'    => ['@type' => 'LocalBusiness', '@id' => 'https://rahsolutionsllc.com/#business'],
-      'areaServed'  => [
-        ['@type' => 'City', 'name' => 'Edgerton'],
-        ['@type' => 'City', 'name' => 'Stoughton'],
-        ['@type' => 'City', 'name' => 'Janesville'],
-        ['@type' => 'City', 'name' => 'Madison'],
-      ],
-      'serviceType' => 'Shrub Trimming',
-    ],
-    [
-      '@type'      => 'FAQPage',
-      'mainEntity' => $faqs,
-    ],
-    [
-      '@type'           => 'LocalBusiness',
-      '@id'             => 'https://rahsolutionsllc.com/#aggregate',
-      'name'            => 'R.A.H. Solutions, LLC',
-    ],
-  ],
-], JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+$steps = [
+    ['Look at the property', 'Robert walks the yard with you, identifies each shrub and hedge, and asks what size and shape you want.'],
+    ['Written estimate', 'You receive a written estimate that lists the shrubs, the type of pruning for each and when it should be done.'],
+    ['Trim and prune', 'The crew shapes, thins or renewal-prunes each shrub, removing dead and damaged wood along the way.'],
+    ['Clean up and walk the job', 'Clippings are raked out and hauled away, hard surfaces are blown off, and Robert walks the finished work with you.'],
+];
+
+$schemaNodes = [
+    webPageNode(),
+    breadcrumbNode([['Home', '/'], ['Services', '/services/'], ['Shrub Trimming', '/services/shrub-trimming/']]),
+    serviceSchemaNode('Shrub Trimming', 'Shrub and hedge trimming, shaping and renewal pruning in Edgerton, WI and nearby Rock and Dane County towns, timed around bloom, with clippings hauled away.', $canonicalUrl),
+    ['@type' => 'HowTo', 'name' => 'How RAH Solutions LLC trims shrubs and hedges', 'step' => array_map(fn($s, $i) => ['@type' => 'HowToStep', 'position' => $i + 1, 'name' => $s[0], 'text' => $s[1]], $steps, array_keys($steps))],
+    faqSchemaNode($faqs),
+];
 
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
+<div class="page-shrub-trimming">
 
-<style>
-/* ============================================================
-   Shrub Trimming — Page-Specific Styles (st-)
-   ============================================================ */
-
-/* ── Breadcrumb ───────────────────────────────────────────── */
-.svc-breadcrumb {
-  background: var(--color-bg-dark);
-  padding: var(--space-sm) 0;
-  position: relative;
-  z-index: 10;
-}
-.svc-breadcrumb .container {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-}
-.breadcrumb-list {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-  list-style: none;
-  flex-wrap: wrap;
-}
-.breadcrumb-list li {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-  font-size: var(--font-size-sm);
-  color: rgba(255,255,255,0.55);
-}
-.breadcrumb-list li a {
-  color: rgba(255,255,255,0.7);
-  transition: color var(--transition-fast);
-}
-.breadcrumb-list li a:hover { color: var(--color-accent); }
-.breadcrumb-list li.current {
-  color: var(--color-accent);
-  font-weight: 600;
-}
-.breadcrumb-sep {
-  color: rgba(255,255,255,0.3);
-  font-size: var(--font-size-xs);
-}
-
-/* ── Inner Hero ───────────────────────────────────────────── */
-.st-hero {
-  position: relative;
-  min-height: 60vh;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963879670-etljhr-474465615_122209560308208320_6377695377545475044_n.jpg');
-  background-size: cover;
-  background-position: center;
-  animation: st-kenburns 20s ease-in-out infinite alternate;
-}
-@keyframes st-kenburns {
-  from { background-size: 110%; background-position: center 35%; }
-  to   { background-size: 120%; background-position: center 50%; }
-}
-.st-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(var(--color-primary-rgb), 0.88) 0%,
-    rgba(var(--color-primary-rgb), 0.55) 60%,
-    rgba(var(--color-accent-rgb), 0.16) 100%
-  );
-  z-index: 1;
-}
-.st-hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  z-index: 2;
-  pointer-events: none;
-}
-.st-hero-inner {
-  position: relative;
-  z-index: 3;
-  padding: var(--space-4xl) 0 var(--space-3xl);
-}
-.st-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  font-family: var(--font-body);
-  font-size: var(--font-size-sm);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: var(--space-md);
-}
-.st-eyebrow::before {
-  content: '';
-  display: block;
-  width: 28px;
-  height: 2px;
-  background: var(--color-accent);
-  flex-shrink: 0;
-}
-.st-hero h1 {
-  font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 5vw, 3.8rem);
-  font-weight: 700;
-  line-height: 1.1;
-  text-wrap: balance;
-  letter-spacing: -0.02em;
-  margin-bottom: var(--space-md);
-  background: linear-gradient(135deg, #ffffff 0%, rgba(var(--color-accent-rgb), 0.9) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.st-hero-sub {
-  font-size: var(--font-size-lg);
-  color: rgba(255,255,255,0.82);
-  max-width: 52ch;
-  line-height: 1.6;
-  margin-bottom: var(--space-xl);
-}
-.st-hero-ctas {
-  display: flex;
-  gap: var(--space-md);
-  flex-wrap: wrap;
-  align-items: center;
-}
-.st-btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: var(--color-accent);
-  color: var(--color-bg-dark);
-  font-family: var(--font-heading);
-  font-size: var(--font-size-base);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: var(--space-md) var(--space-xl);
-  border-radius: var(--radius-md);
-  box-shadow: 0 4px 0 var(--color-accent-dark);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  overflow: hidden;
-  position: relative;
-}
-.st-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--color-accent-dark); }
-.st-btn-primary:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--color-accent-dark); }
-.st-btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: transparent;
-  color: #ffffff;
-  font-family: var(--font-heading);
-  font-size: var(--font-size-base);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: var(--space-md) var(--space-xl);
-  border-radius: var(--radius-md);
-  border: 2px solid rgba(255,255,255,0.5);
-  transition: background var(--transition-base), border-color var(--transition-base);
-}
-.st-btn-secondary:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.8); }
-.st-hero-trust {
-  display: flex;
-  align-items: center;
-  gap: var(--space-lg);
-  margin-top: var(--space-xl);
-  flex-wrap: wrap;
-}
-.st-trust-item {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-  font-size: var(--font-size-sm);
-  color: rgba(255,255,255,0.75);
-  font-weight: 600;
-}
-.st-trust-item i { color: var(--color-accent); }
-
-/* ── Ticker ───────────────────────────────────────────────── */
-.ticker-strip {
-  background: var(--color-primary);
-  padding: var(--space-sm) 0;
-  overflow: hidden;
-  position: relative;
-}
-.ticker-strip::before,
-.ticker-strip::after {
-  content: '';
-  position: absolute;
-  top: 0; bottom: 0;
-  width: 80px;
-  z-index: 2;
-  pointer-events: none;
-}
-.ticker-strip::before { left: 0; background: linear-gradient(to right, var(--color-primary), transparent); }
-.ticker-strip::after  { right: 0; background: linear-gradient(to left,  var(--color-primary), transparent); }
-.ticker-track {
-  display: flex;
-  width: max-content;
-  animation: ticker-scroll 30s linear infinite;
-}
-.ticker-track:hover { animation-play-state: paused; }
-@keyframes ticker-scroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-.ticker-item {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-md);
-  white-space: nowrap;
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #ffffff;
-  padding: 0 var(--space-xl);
-}
-.ticker-sep { color: var(--color-accent); font-size: 1.2rem; line-height: 1; }
-
-/* ── Dividers ─────────────────────────────────────────────── */
-.divider-wrap { display: block; line-height: 0; overflow: hidden; }
-.divider-wrap svg { display: block; width: 100%; }
-
-/* ── Section Eyebrow ──────────────────────────────────────── */
-.st-section-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  font-family: var(--font-body);
-  font-size: var(--font-size-xs);
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: var(--space-sm);
-}
-.st-section-eyebrow::after {
-  content: '';
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--color-accent);
-}
-
-/* ── Service Detail ───────────────────────────────────────── */
-.st-detail {
-  padding: var(--space-4xl) 0 var(--space-3xl);
-  background: var(--color-bg);
-}
-.st-detail-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-3xl);
-  align-items: center;
-}
-.st-detail-content { order: 1; }
-.st-detail-image   { order: 2; }
-.st-detail h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700;
-  line-height: 1.15;
-  text-wrap: balance;
-  letter-spacing: -0.02em;
-  color: var(--color-primary);
-  margin-bottom: var(--space-lg);
-}
-.st-detail p {
-  font-size: var(--font-size-base);
-  color: var(--color-text-light);
-  line-height: 1.7;
-  max-width: 65ch;
-  margin-bottom: var(--space-md);
-}
-.st-detail p:last-of-type { margin-bottom: var(--space-xl); }
-.st-updated {
-  font-size: var(--font-size-sm);
-  color: var(--color-gray);
-  font-style: italic;
-}
-.st-image-frame {
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-xl);
-}
-.st-image-frame::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border: 3px solid rgba(var(--color-accent-rgb), 0.25);
-  border-radius: var(--radius-lg);
-  z-index: 2;
-  pointer-events: none;
-}
-.st-image-frame picture img {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  display: block;
-  transition: transform var(--transition-slow);
-}
-.st-image-frame:hover picture img { transform: scale(1.03); }
-.st-image-badge {
-  position: absolute;
-  bottom: var(--space-lg);
-  left: var(--space-lg);
-  background: var(--color-accent);
-  color: var(--color-bg-dark);
-  font-family: var(--font-heading);
-  font-size: var(--font-size-sm);
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: var(--space-xs) var(--space-md);
-  border-radius: var(--radius-sm);
-  z-index: 3;
-  box-shadow: var(--shadow-md);
-}
-.st-btn-detail {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: var(--color-primary);
-  color: #ffffff;
-  font-family: var(--font-heading);
-  font-size: var(--font-size-base);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: var(--space-md) var(--space-xl);
-  border-radius: var(--radius-md);
-  box-shadow: 0 4px 0 var(--color-primary-dark);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  overflow: hidden;
-  position: relative;
-}
-.st-btn-detail:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--color-primary-dark); }
-.st-btn-detail:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--color-primary-dark); }
-
-/* ── SIGNATURE: Stats Band ────────────────────────────────── */
-.st-stats-band {
-  background: var(--color-bg-dark);
-  padding: var(--space-3xl) 0;
-  position: relative;
-  overflow: hidden;
-}
-.st-stats-band::before {
-  content: '';
-  position: absolute;
-  top: -60px; left: -60px;
-  width: 320px; height: 320px;
-  border-radius: 50%;
-  background: rgba(var(--color-accent-rgb), 0.06);
-  pointer-events: none;
-}
-.st-stats-band::after {
-  content: '';
-  position: absolute;
-  bottom: -80px; right: -40px;
-  width: 400px; height: 400px;
-  border-radius: 50%;
-  background: rgba(var(--color-accent-rgb), 0.04);
-  pointer-events: none;
-}
-.st-stats-inner { position: relative; z-index: 1; }
-.st-stats-label {
-  text-align: center;
-  font-family: var(--font-body);
-  font-size: var(--font-size-sm);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: var(--space-2xl);
-}
-.st-stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-xl);
-}
-.st-stat-item {
-  text-align: center;
-  padding: var(--space-xl);
-  border: 1px solid rgba(var(--color-accent-rgb), 0.15);
-  border-radius: var(--radius-lg);
-  background: rgba(255,255,255,0.03);
-  transition: border-color var(--transition-base), background var(--transition-base);
-}
-.st-stat-item:hover {
-  border-color: rgba(var(--color-accent-rgb), 0.35);
-  background: rgba(var(--color-accent-rgb), 0.05);
-}
-.st-stat-number {
-  font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
-  font-weight: 700;
-  color: var(--color-accent);
-  line-height: 1;
-  margin-bottom: var(--space-xs);
-  letter-spacing: -0.02em;
-}
-.st-stat-label {
-  font-size: var(--font-size-sm);
-  color: rgba(255,255,255,0.65);
-  line-height: 1.4;
-  max-width: 18ch;
-  margin: 0 auto;
-}
-
-/* ── Mid CTA Banner ───────────────────────────────────────── */
-.st-cta-mid {
-  position: relative;
-  padding: var(--space-3xl) 0;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-  overflow: hidden;
-}
-.st-cta-mid::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 0;
-}
-.st-cta-mid .container { position: relative; z-index: 1; text-align: center; }
-.st-cta-eyebrow {
-  display: inline-block;
-  font-family: var(--font-body);
-  font-size: var(--font-size-sm);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: var(--space-sm);
-}
-.st-cta-mid h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
-  font-weight: 700;
-  text-wrap: balance;
-  letter-spacing: -0.02em;
-  color: #ffffff;
-  margin-bottom: var(--space-md);
-}
-.st-cta-mid > .container > p {
-  font-size: var(--font-size-lg);
-  color: rgba(255,255,255,0.8);
-  max-width: 55ch;
-  margin: 0 auto var(--space-xl);
-  line-height: 1.6;
-}
-.st-cta-actions {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: var(--space-md);
-  flex-wrap: wrap;
-}
-.st-btn-cta-phone {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: #ffffff;
-  color: var(--color-primary-dark);
-  font-family: var(--font-heading);
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
-  font-weight: 700;
-  padding: var(--space-md) var(--space-xl);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  overflow: hidden;
-  position: relative;
-}
-.st-btn-cta-phone:hover { transform: translateY(-2px); box-shadow: var(--shadow-xl); }
-.st-btn-cta-est {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: var(--color-accent);
-  color: var(--color-bg-dark);
-  font-family: var(--font-heading);
-  font-size: var(--font-size-base);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: var(--space-md) var(--space-xl);
-  border-radius: var(--radius-md);
-  box-shadow: 0 4px 0 var(--color-accent-dark);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  overflow: hidden;
-  position: relative;
-}
-.st-btn-cta-est:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--color-accent-dark); }
-.st-btn-cta-est:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--color-accent-dark); }
-
-/* ── Why Choose ───────────────────────────────────────────── */
-.st-why {
-  padding: var(--space-4xl) 0;
-  background: var(--color-bg-alt);
-}
-.st-why-header { text-align: center; margin-bottom: var(--space-3xl); }
-.st-why h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700;
-  text-wrap: balance;
-  letter-spacing: -0.02em;
-  color: var(--color-primary);
-  margin-bottom: var(--space-sm);
-}
-.st-why .sub {
-  font-size: var(--font-size-lg);
-  color: var(--color-text-light);
-  max-width: 55ch;
-  margin: 0 auto;
-}
-.st-why-cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-lg);
-}
-.st-why-card {
-  background: var(--color-bg);
-  border-radius: var(--radius-lg);
-  padding: var(--space-xl) var(--space-lg);
-  box-shadow: var(--shadow-card);
-  transition: transform var(--transition-base), box-shadow var(--transition-base), background var(--transition-base);
-  position: relative;
-  overflow: hidden;
-}
-.st-why-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: var(--color-accent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--transition-base);
-}
-.st-why-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-xl); background: var(--color-primary); }
-.st-why-card:hover::before { transform: scaleX(1); }
-.st-why-card:hover .st-why-title,
-.st-why-card:hover .st-why-text { color: rgba(255,255,255,0.9); }
-.st-why-card:hover .st-why-icon {
-  background: rgba(var(--color-accent-rgb), 0.2);
-  color: var(--color-accent);
-}
-.st-why-icon {
-  width: 52px; height: 52px;
-  border-radius: var(--radius-md);
-  background: rgba(var(--color-accent-rgb), 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-accent);
-  margin-bottom: var(--space-md);
-  transition: background var(--transition-base), color var(--transition-base);
-}
-.st-why-title {
-  font-family: var(--font-heading);
-  font-size: var(--font-size-xl);
-  font-weight: 600;
-  text-wrap: balance;
-  color: var(--color-primary);
-  margin-bottom: var(--space-sm);
-  transition: color var(--transition-base);
-}
-.st-why-text {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-light);
-  line-height: 1.6;
-  transition: color var(--transition-base);
-}
-
-/* ── Process ──────────────────────────────────────────────── */
-.st-process {
-  padding: var(--space-4xl) 0;
-  background: var(--color-bg);
-}
-.st-process-header { text-align: center; margin-bottom: var(--space-3xl); }
-.st-process h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700;
-  text-wrap: balance;
-  letter-spacing: -0.02em;
-  color: var(--color-primary);
-  margin-bottom: var(--space-sm);
-}
-.st-process .sub {
-  font-size: var(--font-size-lg);
-  color: var(--color-text-light);
-  max-width: 55ch;
-  margin: 0 auto;
-}
-.st-process-steps {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-lg);
-  position: relative;
-}
-.st-process-steps::before {
-  content: '';
-  position: absolute;
-  top: 32px;
-  left: calc(12.5% + 26px);
-  right: calc(12.5% + 26px);
-  height: 2px;
-  background: linear-gradient(to right, var(--color-accent), rgba(var(--color-accent-rgb), 0.2));
-  pointer-events: none;
-}
-.st-step { text-align: center; padding: var(--space-lg); }
-.st-step-num {
-  width: 64px; height: 64px;
-  border-radius: 50%;
-  background: var(--color-primary);
-  color: #ffffff;
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto var(--space-md);
-  position: relative;
-  z-index: 1;
-  border: 3px solid rgba(var(--color-accent-rgb), 0.3);
-  transition: background var(--transition-base), border-color var(--transition-base);
-}
-.st-step:hover .st-step-num {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
-  color: var(--color-bg-dark);
-}
-.st-step-title {
-  font-family: var(--font-heading);
-  font-size: var(--font-size-lg);
-  font-weight: 600;
-  text-wrap: balance;
-  color: var(--color-primary);
-  margin-bottom: var(--space-sm);
-}
-.st-step-desc {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-light);
-  line-height: 1.6;
-  max-width: 22ch;
-  margin: 0 auto;
-}
-
-/* ── FAQ ──────────────────────────────────────────────────── */
-.st-faq {
-  padding: var(--space-4xl) 0;
-  background: var(--color-bg-alt);
-}
-.st-faq-header { text-align: center; margin-bottom: var(--space-3xl); }
-.st-faq h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700;
-  text-wrap: balance;
-  letter-spacing: -0.02em;
-  color: var(--color-primary);
-  margin-bottom: var(--space-sm);
-}
-.st-faq .sub {
-  font-size: var(--font-size-lg);
-  color: var(--color-text-light);
-  max-width: 55ch;
-  margin: 0 auto;
-}
-.st-faq-list {
-  max-width: 800px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-}
-.st-faq-item {
-  background: var(--color-bg);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(var(--color-primary-rgb), 0.08);
-  overflow: hidden;
-}
-.st-faq-item summary {
-  padding: var(--space-lg) var(--space-xl);
-  font-family: var(--font-heading);
-  font-size: var(--font-size-lg);
-  font-weight: 600;
-  text-wrap: balance;
-  color: var(--color-primary);
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--space-md);
-  list-style: none;
-  transition: color var(--transition-fast);
-}
-.st-faq-item summary::-webkit-details-marker { display: none; }
-.st-faq-item summary::after {
-  content: '+';
-  font-size: 1.4rem;
-  color: var(--color-accent);
-  flex-shrink: 0;
-  transition: transform var(--transition-base);
-}
-.st-faq-item[open] summary::after { transform: rotate(45deg); }
-.st-faq-item[open] summary { color: var(--color-accent); }
-.st-faq-answer {
-  padding: 0 var(--space-xl) var(--space-lg);
-  font-size: var(--font-size-base);
-  color: var(--color-text-light);
-  line-height: 1.7;
-  max-width: 65ch;
-}
-
-/* ── Closing CTA ──────────────────────────────────────────── */
-.st-closing {
-  padding: var(--space-4xl) 0;
-  background: var(--color-bg);
-  text-align: center;
-}
-.st-closing h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700;
-  text-wrap: balance;
-  letter-spacing: -0.02em;
-  color: var(--color-primary);
-  margin-bottom: var(--space-md);
-}
-.st-closing p {
-  font-size: var(--font-size-lg);
-  color: var(--color-text-light);
-  max-width: 55ch;
-  margin: 0 auto var(--space-xl);
-  line-height: 1.6;
-}
-.st-closing-actions {
-  display: flex;
-  justify-content: center;
-  gap: var(--space-md);
-  flex-wrap: wrap;
-}
-.st-btn-closing-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: var(--color-accent);
-  color: var(--color-bg-dark);
-  font-family: var(--font-heading);
-  font-size: var(--font-size-lg);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: var(--space-md) var(--space-2xl);
-  border-radius: var(--radius-md);
-  box-shadow: 0 4px 0 var(--color-accent-dark);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  overflow: hidden;
-  position: relative;
-}
-.st-btn-closing-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--color-accent-dark); }
-.st-btn-closing-phone {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: var(--color-primary);
-  color: #ffffff;
-  font-family: var(--font-heading);
-  font-size: var(--font-size-lg);
-  font-weight: 700;
-  padding: var(--space-md) var(--space-2xl);
-  border-radius: var(--radius-md);
-  box-shadow: 0 4px 0 var(--color-primary-dark);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  overflow: hidden;
-  position: relative;
-}
-.st-btn-closing-phone:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--color-primary-dark); }
-
-/* ── Responsive ───────────────────────────────────────────── */
-@media (max-width: 1023px) {
-  .st-stats-grid    { grid-template-columns: repeat(2, 1fr); }
-  .st-why-cards     { grid-template-columns: repeat(2, 1fr); }
-  .st-process-steps { grid-template-columns: repeat(2, 1fr); }
-  .st-process-steps::before { display: none; }
-}
-@media (max-width: 767px) {
-  .st-detail-grid   { grid-template-columns: 1fr; }
-  .st-detail-image  { order: -1; }
-  .st-image-frame picture img { height: 280px; }
-  .st-stats-grid    { grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
-  .st-why-cards     { grid-template-columns: 1fr; }
-  .st-process-steps { grid-template-columns: 1fr; }
-  .st-hero-ctas     { flex-direction: column; align-items: flex-start; }
-}
-</style>
-
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php'; ?>
-
-  <!-- ── Breadcrumb ─────────────────────────────────────────── -->
-  <nav class="svc-breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol class="breadcrumb-list">
-        <li><a href="/">Home</a></li>
-        <li aria-hidden="true"><span class="breadcrumb-sep">›</span></li>
-        <li><a href="/services">Services</a></li>
-        <li aria-hidden="true"><span class="breadcrumb-sep">›</span></li>
-        <li class="current" aria-current="page">Shrub Trimming</li>
-      </ol>
-    </div>
-  </nav>
-
-  <!-- ── Inner Hero ─────────────────────────────────────────── -->
-  <section class="st-hero" aria-label="Shrub Trimming Services">
-    <div class="container st-hero-inner">
-      <span class="st-eyebrow">
-        <i data-lucide="scissors" aria-hidden="true" style="width:14px;height:14px;"></i>
-        Shrub &amp; Hedge Care
-      </span>
-      <h1>Shrub Trimming Services in Edgerton, WI</h1>
-      <p class="st-hero-sub">Species-specific pruning from $75/hour — the right technique at the right time for arborvitae, boxwood, burning bush, lilac, and the other shrubs that define Rock County landscapes.</p>
-      <div class="st-hero-ctas">
-        <a href="tel:6085015123" class="st-btn-primary">
-          <i data-lucide="phone" aria-hidden="true" style="width:18px;height:18px;"></i>
-          Call (608) 501-5123
-        </a>
-        <a href="/contact" class="st-btn-secondary">Get a Free Estimate</a>
+<section class="hero svc-hero svc-hero--plain" aria-label="Shrub trimming in Edgerton, WI">
+  <svg class="floating-facet" viewBox="0 0 120 110" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M34 6H86L112 32 60 104 8 32ZM8 32H112M34 6 44 32 60 6 76 32 86 6M44 32 60 104 76 32"/></svg>
+  <span class="grain" aria-hidden="true"></span>
+  <div class="container hero-grid hero-grid--form">
+    <div class="hero-text">
+      <?php echo breadcrumbs([['Home', '/'], ['Services', '/services/'], ['Shrub Trimming', '/services/shrub-trimming/']]); ?>
+      <span class="eyebrow">Shaping · Renewal Pruning · Hedges</span>
+      <h1 class="hero-title">Shrub Trimming in Edgerton, WI</h1>
+      <p class="page-answer">RAH Solutions LLC trims, shapes and prunes shrubs and hedges in Edgerton and nearby towns. Cuts are timed around bloom, overgrown shrubs are brought back in stages, and clippings are hauled away. Estimates are free and given on site.</p>
+      <div class="hero-actions">
+        <button type="button" class="btn btn-accent btn-lg hero-form-open" data-open-estimate>Get a free trimming estimate</button>
+        <a class="link-call" href="<?php echo telHref(); ?>"><?php echo icon('phone', 18); ?> or call <?php echo e($phone); ?></a>
       </div>
-      <div class="st-hero-trust">
-        <span class="st-trust-item">
-          <i data-lucide="shield-check" aria-hidden="true"></i> Licensed &amp; Insured
-        </span>
-        <span class="st-trust-item">
-          <i data-lucide="star" aria-hidden="true"></i> 4.9-Star Rated
-        </span>
-        <span class="st-trust-item">
-          <i data-lucide="leaf" aria-hidden="true"></i> All Debris Removed Same Day
-        </span>
-      </div>
+      <p class="last-updated">Last updated: <?php echo date('F Y'); ?></p>
     </div>
-  </section>
+    <?php $heroFormId = 'hero-shrub-trimming'; $heroFormService = 'shrub-trimming'; $heroFormHeading = 'Get a free trimming estimate'; include $_SERVER['DOCUMENT_ROOT'] . '/includes/hero-form.php'; ?>
+  </div>
+</section>
 
-  <!-- ── Proof Ticker Strip ─────────────────────────────────── -->
-  <div class="ticker-strip" aria-hidden="true">
-    <div class="ticker-track">
-      <span class="ticker-item">Shrub Shaping &amp; Trimming<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Arborvitae &amp; Evergreen Hedges<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Rejuvenation Pruning<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Licensed &amp; Insured<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Free Estimates<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Edgerton · Stoughton · Madison · Janesville<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">All Debris Removed<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Spring &amp; Fall Optimal Timing<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Shrub Shaping &amp; Trimming<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Arborvitae &amp; Evergreen Hedges<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Rejuvenation Pruning<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Licensed &amp; Insured<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Free Estimates<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Edgerton · Stoughton · Madison · Janesville<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">All Debris Removed<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Spring &amp; Fall Optimal Timing<span class="ticker-sep">✦</span></span>
+<section class="section svc-intro" aria-labelledby="intro-h2">
+  <div class="container svc-layout">
+    <div class="svc-body">
+      <p class="identity-line"><strong>RAH Solutions LLC</strong> is a licensed and insured, family-owned landscaper based in Edgerton, Wisconsin. Started by Robert Harried in 2023, it serves Rock and Dane County homes and businesses.</p>
+      <h2 id="intro-h2">What does shrub trimming from RAH Solutions include?</h2>
+      <div class="answer-block">
+        <h3>Short answer</h3>
+        <p>RAH Solutions LLC trims and prunes deciduous shrubs, evergreen shrubs and hedges. A visit covers shaping to the plant’s natural form or to a formal line, removing dead and crossing branches, renewal pruning of overgrown shrubs, and full cleanup of clippings. Estimates are free and written after an on-site look.</p>
+      </div>
+      <p>Trimming and pruning are not the same cut. Trimming, or shearing, clips the outside of a shrub to hold a shape. Pruning reaches inside and removes whole branches to control size, let in light and bring on new growth. Most yards need some of each, and the right choice depends on the plant.</p>
+      <p>The usual call for shrub trimming near me in Edgerton is about foundation shrubs that now cover the windows, a hedge that has grown wide and thin at the bottom, or a lilac that has become all trunk with flowers out of reach. Each has a fix, and each fix has a right time of year.</p>
+      <p>Shrub work fits with other bed care. Many owners pair it with <a href="/services/garden-maintenance/">garden maintenance</a> so beds are weeded while shrubs are trimmed, and finish with fresh mulch from <a href="/services/mulching-services/">mulching services</a>.</p>
+    </div>
+    <aside class="svc-rail" aria-label="On this page">
+      <nav class="svc-toc" aria-label="Page sections">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#types-h2">What we trim</a></li>
+          <li><a href="#cond-h2">Getting the cut right</a></li>
+          <li><a href="#timing-h2">Timing by bloom</a></li>
+          <li><a href="#steps-h2">How a visit works</a></li>
+          <li><a href="#faq-h2">Trimming FAQ</a></li>
+        </ol>
+      </nav>
+      <div class="svc-callcard">
+        <strong>Shrubs covering the windows?</strong>
+        <p><?php echo e($hoursLong); ?></p>
+        <a class="btn btn-accent" href="<?php echo telHref(); ?>"><?php echo icon('phone', 18); ?> <?php echo e($phone); ?></a>
+        <button type="button" class="btn btn-outline-white" data-open-estimate>Request an estimate</button>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section svc-types" aria-labelledby="types-h2">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <span class="eyebrow-label">What we trim</span>
+      <h2 id="types-h2">Which shrub and hedge work does RAH Solutions do?</h2>
+      <p>RAH Solutions LLC trims and prunes shrubs at homes and businesses around Edgerton, from one hedge to every bed on the property.</p>
+    </div>
+    <div class="type-grid" data-p1-dynamic>
+      <article class="type-card reveal-up reveal-delay-1">
+        <span class="type-card__icon"><?php echo icon('scissors', 22); ?></span>
+        <h3>Shaping</h3>
+        <p>Light trimming that keeps a shrub the size and outline you want without changing its natural form or removing its flower buds.</p>
+      </article>
+      <article class="type-card reveal-up reveal-delay-2">
+        <span class="type-card__icon"><?php echo icon('sprout', 22); ?></span>
+        <h3>Renewal pruning</h3>
+        <p>About a third of the oldest, thickest stems are cut at the ground each year for three years. The shrub is rebuilt from young wood and stays in bloom.</p>
+      </article>
+      <article class="type-card reveal-up reveal-delay-3">
+        <span class="type-card__icon"><?php echo icon('fence', 22); ?></span>
+        <h3>Hedges</h3>
+        <p>Hedges are sheared slightly wider at the base than at the top, so sunlight reaches the lower branches and they stay full.</p>
+      </article>
+      <article class="type-card reveal-up reveal-delay-1">
+        <span class="type-card__icon"><?php echo icon('home', 22); ?></span>
+        <h3>Overgrown foundation shrubs</h3>
+        <p>Shrubs that block windows, crowd walks or rub on siding are reduced in stages and cleared back so air can move along the house.</p>
+      </article>
+      <article class="type-card reveal-up reveal-delay-2">
+        <span class="type-card__icon"><?php echo icon('trees', 22); ?></span>
+        <h3>Evergreen shrubs</h3>
+        <p>Yews, arborvitae, junipers and boxwood are trimmed within their green growth and tidied after the spring flush.</p>
+      </article>
+      <article class="type-card reveal-up reveal-delay-3">
+        <span class="type-card__icon"><?php echo icon('truck', 22); ?></span>
+        <h3>Cleanup and haul-away</h3>
+        <p>Clippings are raked out of the shrubs and the beds beneath them, loaded on the trailer and hauled away.</p>
+      </article>
     </div>
   </div>
+</section>
 
-  <!-- ── Divider ────────────────────────────────────────────── -->
-  <div class="divider-wrap" aria-hidden="true">
-    <svg viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="0,0 1200,40 1200,40 0,40" fill="#ffffff"/>
-    </svg>
+<section class="section svc-conditions texture-grain edge-facet-top" aria-labelledby="cond-h2">
+  <span class="grain-layer" aria-hidden="true"></span>
+  <div class="container">
+    <div class="cond-head reveal-left">
+      <span class="eyebrow-label">Cut for the plant</span>
+      <h2 id="cond-h2">What makes the difference between a good trim and a damaging one?</h2>
+      <p>The plant, the season and how much comes off decide whether a shrub recovers. RAH Solutions LLC checks four things before cutting.</p>
+    </div>
+    <ul class="cond-list">
+      <li class="reveal-up"><span><?php echo icon('search', 22); ?></span><b>What the shrub is</b><p>Each kind regrows differently. Yews sprout again from old wood. Arborvitae and junipers do not, so a cut into their bare interior leaves a hole that stays.</p></li>
+      <li class="reveal-up"><span><?php echo icon('calendar', 22); ?></span><b>When it blooms</b><p>Shrubs that flower in spring carry their buds through winter. Trimming them before bloom removes the flowers for that year.</p></li>
+      <li class="reveal-up"><span><?php echo icon('minus', 22); ?></span><b>How much comes off</b><p>Taking a moderate amount in one season and repeating it the next keeps a shrub healthy. Stripping most of the leaves at once sets it back.</p></li>
+      <li class="reveal-up"><span><?php echo icon('snowflake', 22); ?></span><b>Winter ahead</b><p>Heavy pruning in late summer or fall pushes soft new growth that does not harden before a zone 5b winter, so major cuts wait for late winter or spring.</p></li>
+    </ul>
   </div>
+</section>
 
-  <!-- ── Service Detail Section ─────────────────────────────── -->
-  <section class="st-detail" data-animate="fade-up">
-    <div class="container">
-      <div class="st-detail-grid">
-        <div class="st-detail-content">
-          <span class="st-section-eyebrow">How We Work</span>
-          <h2>How Does <span class="text-accent">Shrub Pruning</span> Actually Work in Wisconsin?</h2>
-
-          <p>Shrub trimming in Edgerton starts at $75/hour, with most residential properties completed in 2–4 hours depending on shrub count, size, and access. We remove all clippings from your property the same day. No debris left to break down on your lawn or wash into your beds.</p>
-
-          <p>Timing is the most misunderstood part of shrub care. Cut a lilac at the wrong time and you lose next spring's bloom entirely — the buds set on old wood in summer. Cut an arborvitae in late fall and you expose interior brown wood that won't regenerate before Wisconsin's first hard frost. Every species in your landscape has a different optimal pruning window, and we work within those windows rather than just scheduling visits on a fixed calendar.</p>
-
-          <p>Common Edgerton landscape shrubs we see regularly include arborvitae (trim late spring after new growth hardens), boxwood (early summer, light shaping only), burning bush (early spring before growth begins), forsythia (immediately after bloom in May), lilac (same — right after bloom), spirea (early spring, then shape after summer bloom), and ninebark (early spring). We assess what's in your beds before we touch anything.</p>
-
-          <p>Rejuvenation pruning is often the right call for shrubs that have been neglected for 3–5 or more years. Instead of trying to cut them back hard all at once — which shocks the plant and leaves a stick-like form — we remove the oldest one-third of wood each season, gradually renewing the shrub over three years. This technique works well on most deciduous shrubs and keeps the plant looking presentable throughout the process. Evergreens like arborvitae don't respond to this approach and need a different strategy if they've outgrown their space.</p>
-
-          <p>Untrimmed shrubs cause more problems than just aesthetics. Overgrown shrubs reduce light penetration to adjacent plantings, can damage siding and gutters when branches reach structures, and develop interior dead wood that harbors pests and fungal disease. Staying current with trimming is far cheaper than removing and replacing shrubs that have been let go for too long.</p>
-
-          <div class="answer-block">
-            <h3>How often should shrubs be trimmed in Wisconsin?</h3>
-            <p>Most landscape shrubs in Wisconsin need trimming 1–3 times per growing season, depending on species and growth rate. Slow-growing evergreens like arborvitae typically need one annual trim, while fast-growing deciduous shrubs and formal hedges may require 2–3 sessions to maintain clean form and healthy growth.</p>
-          </div>
-
-          <p class="st-updated">Last Updated: May 2026 · Serving Edgerton, WI and surrounding Rock &amp; Dane County communities.</p>
-
-          <a href="/contact" class="st-btn-detail">
-            <i data-lucide="calendar" aria-hidden="true" style="width:18px;height:18px;"></i>
-            Schedule a Trim Visit
-          </a>
-        </div>
-
-        <div class="st-detail-image">
-          <div class="st-image-frame">
-            <picture>
-              <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963879670-etljhr-474465615_122209560308208320_6377695377545475044_n.jpg" type="image/webp">
-              <img
-                src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963879670-etljhr-474465615_122209560308208320_6377695377545475044_n.jpg"
-                alt="Professional shrub trimming and hedge shaping Edgerton Wisconsin landscape"
-                width="600"
-                height="420"
-                loading="lazy"
-              >
-            </picture>
-            <span class="st-image-badge">Edgerton, WI</span>
-          </div>
-        </div>
+<section class="section section--tight" aria-labelledby="timing-h2">
+  <div class="container">
+    <div class="svc-callout reveal-up">
+      <span><?php echo icon('calendar-check', 26); ?></span>
+      <div>
+        <h2 id="timing-h2">When should each kind of shrub be trimmed?</h2>
+        <p>RAH Solutions times pruning by when a shrub blooms. Spring bloomers are cut right after they flower, and summer bloomers are cut before growth starts.</p>
+        <ul class="bloom-list" data-p1-dynamic>
+          <li><b>Spring bloomers:</b> lilac, forsythia and similar shrubs are pruned in the weeks right after the flowers fade.</li>
+          <li><b>Summer bloomers:</b> panicle and smooth hydrangeas, summer spirea and other shrubs that flower on new growth are pruned in late winter or early spring.</li>
+          <li><b>Evergreens and hedges:</b> trimmed in late spring or early summer once the new growth has extended.</li>
+          <li><b>Dead or broken branches:</b> removed whenever they are found.</li>
+        </ul>
+        <p>Early-season pruning fits with the bed work on the <a href="/blog/spring-yard-cleanup-checklist-wisconsin/">spring yard cleanup checklist</a>.</p>
       </div>
     </div>
-  </section>
-
-  <!-- ── Divider: bg → bg-dark (wave) ──────────────────────── -->
-  <div class="divider-wrap" aria-hidden="true">
-    <svg viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,40 C300,80 900,0 1200,40 L1200,80 L0,80 Z" fill="#0f1e2d"/>
-    </svg>
   </div>
+</section>
 
-  <!-- ── SIGNATURE: Stats Band ──────────────────────────────── -->
-  <section class="st-stats-band" aria-label="Shrub trimming service statistics">
-    <div class="container st-stats-inner">
-      <p class="st-stats-label">R.A.H. Solutions — Shrub Trimming by the Numbers</p>
-      <div class="st-stats-grid">
-        <div class="st-stat-item" data-animate="fade-up">
-          <div class="st-stat-number">$75<span style="font-size:1.5rem;">/hr</span></div>
-          <div class="st-stat-label">Starting hourly rate for shrub trimming</div>
-        </div>
-        <div class="st-stat-item" data-animate="fade-up">
-          <div class="st-stat-number">2x</div>
-          <div class="st-stat-label">Spring &amp; fall optimal trimming windows</div>
-        </div>
-        <div class="st-stat-item" data-animate="fade-up">
-          <div class="st-stat-number">3+</div>
-          <div class="st-stat-label">Years of local expertise in Rock County</div>
-        </div>
-        <div class="st-stat-item" data-animate="fade-up">
-          <div class="st-stat-number">4.9★</div>
-          <div class="st-stat-label">Average rating across 47 customer reviews</div>
-        </div>
-      </div>
+<section class="section svc-steps" aria-labelledby="steps-h2">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <span class="eyebrow-label">The process</span>
+      <h2 id="steps-h2">How does a shrub trimming visit with RAH Solutions work?</h2>
+      <p>RAH Solutions LLC follows the same four steps for a single hedge and for a full property.</p>
     </div>
-  </section>
-
-  <!-- ── Divider: bg-dark → bg-alt (diagonal up) ───────────── -->
-  <div class="divider-wrap" aria-hidden="true">
-    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="0,60 1200,0 1200,60" fill="#f4f7f9"/>
-    </svg>
+    <ol class="step-track">
+      <?php foreach ($steps as $i => $s): ?>
+      <li class="reveal-up reveal-delay-<?php echo $i + 1; ?>"><h3><?php echo e($s[0]); ?></h3><p><?php echo e($s[1]); ?></p></li>
+      <?php endforeach; ?>
+    </ol>
   </div>
+</section>
 
-  <!-- ── Mid-Page CTA Banner ────────────────────────────────── -->
-  <section class="st-cta-mid" aria-label="Schedule a shrub trimming visit">
-    <div class="container">
-      <p class="st-cta-eyebrow">Free Estimates · Same-Day Debris Removal</p>
-      <h2>Why Don't Overgrown Shrubs Fix Themselves?</h2>
-      <p>Don't let another season pass on overgrown beds. R.A.H. Solutions handles the timing, technique, and cleanup — leaving your property looking finished, not just cut.</p>
-      <div class="st-cta-actions">
-        <a href="tel:6085015123" class="st-btn-cta-phone">
-          <i data-lucide="phone" aria-hidden="true" style="width:20px;height:20px;"></i>
-          (608) 501-5123
-        </a>
-        <a href="/contact" class="st-btn-cta-est">Get a Free Estimate</a>
-      </div>
+<section class="section svc-faq" aria-labelledby="faq-h2">
+  <div class="container faq-wrap">
+    <div class="section-head reveal-left">
+      <span class="eyebrow-label">FAQ</span>
+      <h2 id="faq-h2">What do people ask about shrub trimming in Edgerton?</h2>
+      <p>Describe the shrubs on a call to <?php echo e($phone); ?> and Robert will tell you what to expect.</p>
     </div>
-  </section>
-
-  <!-- ── Divider: primary → bg-alt ─────────────────────────── -->
-  <div class="divider-wrap" aria-hidden="true">
-    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="0,0 1200,60 1200,60 0,60" fill="#f4f7f9"/>
-    </svg>
+    <div><?php echo faqList($faqs, 2); ?></div>
   </div>
+</section>
 
-  <!-- ── Why Choose Section ─────────────────────────────────── -->
-  <section class="st-why" data-animate="fade-up">
-    <div class="container">
-      <div class="st-why-header">
-        <span class="st-section-eyebrow">Why R.A.H. Solutions</span>
-        <h2>What <span class="text-accent">Shrub Care</span> Matches How Each Species Actually Grows?</h2>
-        <p class="sub">Generic trimming crews cut everything the same way on the same schedule. We adapt technique and timing to what each shrub needs to stay healthy in Wisconsin's climate.</p>
-      </div>
-      <div class="st-why-cards">
-        <div class="st-why-card" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.12">
-          <div class="st-why-icon">
-            <i data-lucide="clock" aria-hidden="true" style="width:24px;height:24px;"></i>
-          </div>
-          <h3 class="st-why-title">Species-Specific Pruning Timing</h3>
-          <p class="st-why-text">We trim each shrub in its optimal window — not on a fixed calendar. Lilac right after bloom. Arborvitae after new growth hardens. Burning bush before spring push begins.</p>
-        </div>
-        <div class="st-why-card" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.12">
-          <div class="st-why-icon">
-            <i data-lucide="refresh-cw" aria-hidden="true" style="width:24px;height:24px;"></i>
-          </div>
-          <h3 class="st-why-title">Rejuvenation for Overgrown Shrubs</h3>
-          <p class="st-why-text">We don't just hack overgrown shrubs back hard. The one-third renewal method restores them gradually while keeping your beds presentable throughout the process.</p>
-        </div>
-        <div class="st-why-card" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.12">
-          <div class="st-why-icon">
-            <i data-lucide="maximize-2" aria-hidden="true" style="width:24px;height:24px;"></i>
-          </div>
-          <h3 class="st-why-title">Clean Lines That Last All Season</h3>
-          <p class="st-why-text">Proper cuts at the right angles minimize regrowth that blurs form. Your shrubs look sharp weeks after the visit, not just the day of the trim.</p>
-        </div>
-        <div class="st-why-card" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.12">
-          <div class="st-why-icon">
-            <i data-lucide="trash-2" aria-hidden="true" style="width:24px;height:24px;"></i>
-          </div>
-          <h3 class="st-why-title">All Debris Removed Same Day</h3>
-          <p class="st-why-text">Every clipping leaves your property the day we trim. We don't pile it on your lawn or haul it to your curb — it's loaded and gone before we leave.</p>
-        </div>
-      </div>
+<section class="section svc-related" aria-labelledby="related-h2">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <span class="eyebrow-label">More from RAH Solutions</span>
+      <h2 id="related-h2">Other Services You May Need</h2>
     </div>
-  </section>
-
-  <!-- ── Divider: bg-alt → bg ───────────────────────────────── -->
-  <div class="divider-wrap" aria-hidden="true">
-    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="0,0 1200,60 1200,0" fill="#ffffff"/>
-    </svg>
+    <div class="services-grid" data-p1-dynamic>
+      <?php echo serviceCards(relatedServices(['garden-maintenance', 'mulching-services', 'spring-yard-cleanup']), '(max-width: 560px) 100vw, 33vw'); ?>
+    </div>
+    <div class="town-links">
+      <h3>Shrub trimming near you</h3>
+      <ul>
+        <?php foreach (['edgerton-wi', 'janesville-wi', 'stoughton-wi', 'mcfarland-wi', 'evansville-wi', 'brodhead-wi'] as $tl): $ta = areaBySlug($tl); ?>
+        <li><a href="<?php echo areaHref($ta); ?>"><?php echo icon('map-pin', 14); ?> Shrub trimming in <?php echo e($ta['name']); ?></a></li>
+        <?php endforeach; ?>
+      </ul>
+    </div>
   </div>
+</section>
 
-  <!-- ── Process Steps ──────────────────────────────────────── -->
-  <section class="st-process" data-animate="fade-up">
-    <div class="container">
-      <div class="st-process-header">
-        <span class="st-section-eyebrow">How It Works</span>
-        <h2>What Are the Four Steps from <span class="text-accent">Scheduling</span> to Clean Property?</h2>
-        <p class="sub">Simple, fast, and thorough — shrub trimming that gets done right and leaves your property ready to enjoy.</p>
-      </div>
-      <div class="st-process-steps">
-        <div class="st-step">
-          <div class="st-step-num">1</div>
-          <h3 class="st-step-title">Shrub Assessment</h3>
-          <p class="st-step-desc">We identify species, evaluate overall health, and spot any problem areas before selecting a pruning approach.</p>
-        </div>
-        <div class="st-step">
-          <div class="st-step-num">2</div>
-          <h3 class="st-step-title">Timing &amp; Technique Selection</h3>
-          <p class="st-step-desc">We confirm we're in the right pruning window for each species and select the correct tool and cut angle.</p>
-        </div>
-        <div class="st-step">
-          <div class="st-step-num">3</div>
-          <h3 class="st-step-title">Trimming &amp; Shaping</h3>
-          <p class="st-step-desc">Clean cuts at proper angles, maintaining the natural form of each shrub while achieving the shape you want.</p>
-        </div>
-        <div class="st-step">
-          <div class="st-step-num">4</div>
-          <h3 class="st-step-title">Debris Cleanup &amp; Disposal</h3>
-          <p class="st-step-desc">All clippings collected and hauled away before we leave — your property is clean and ready the same day.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<?php $ctaBandId = 'band-shrub-trimming'; $ctaBandHeading = 'Get a written price for shrub and hedge trimming'; include $_SERVER['DOCUMENT_ROOT'] . '/includes/cta-band.php'; ?>
 
-  <!-- ── Divider: bg → bg-alt (diagonal down) ──────────────── -->
-  <div class="divider-wrap" aria-hidden="true">
-    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="0,0 1200,60 1200,60 0,60" fill="#f4f7f9"/>
-    </svg>
-  </div>
-
-  <!-- ── FAQ Section ────────────────────────────────────────── -->
-  <section class="st-faq" data-animate="fade-up">
-    <div class="container">
-      <div class="st-faq-header">
-        <span class="st-section-eyebrow">Common Questions</span>
-        <h2>What Are Shrub Trimming Questions Edgerton Homeowners Ask?</h2>
-        <p class="sub">Straight answers on timing, technique, and what to expect from a professional shrub trim service.</p>
-      </div>
-      <div class="st-faq-list">
-        <details class="st-faq-item">
-          <summary>When should shrubs be trimmed in Wisconsin?</summary>
-          <div class="st-faq-answer">
-            <p>Timing varies by shrub species. Spring-blooming shrubs like lilac and forsythia should be trimmed immediately after they flower — typically late May to early June in Edgerton — to preserve next year's bloom. Evergreens such as arborvitae and boxwood are best trimmed in late spring once new growth has extended and hardened off. Avoid heavy trimming in late summer or fall, which stimulates new growth that won't harden before Wisconsin's first frost.</p>
-          </div>
-        </details>
-        <details class="st-faq-item">
-          <summary>Can overgrown shrubs be saved with rejuvenation pruning?</summary>
-          <div class="st-faq-answer">
-            <p>Yes — most common Wisconsin landscape shrubs respond well to rejuvenation pruning. This technique removes one-third of the oldest wood each year over three seasons, gradually replacing the entire shrub with younger, more vigorous growth. Shrubs that have been severely neglected may need a harder cut, which works well on forsythia, lilac, and most deciduous shrubs but should be avoided with evergreens like arborvitae that do not regenerate from old wood.</p>
-          </div>
-        </details>
-        <details class="st-faq-item">
-          <summary>How often do shrubs need trimming?</summary>
-          <div class="st-faq-answer">
-            <p>Most residential landscape shrubs in Edgerton need trimming 1–2 times per year. Fast-growing shrubs like burning bush, ninebark, and forsythia may need attention twice — once after spring blooming and again in midsummer if they've filled in significantly. Slower-growing evergreens like arborvitae typically need trimming once per year. Formal hedges maintained at specific heights may require 2–3 trimmings per season.</p>
-          </div>
-        </details>
-        <details class="st-faq-item">
-          <summary>Do you trim arborvitae and evergreen hedges?</summary>
-          <div class="st-faq-answer">
-            <p>Yes — arborvitae and evergreen hedge trimming is one of our most common requests in Edgerton and Rock County. Arborvitae are trimmed in late spring after new growth has emerged, removing no more than one-third of new growth per session to avoid exposing brown interior wood that won't regenerate. We maintain the natural form while controlling height and width, and we remove all clippings from your property the same day.</p>
-          </div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Divider: bg-alt → bg (diagonal up) ────────────────── -->
-  <div class="divider-wrap" aria-hidden="true">
-    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="0,60 1200,0 1200,60" fill="#ffffff"/>
-    </svg>
-  </div>
-
-  <!-- ── Closing CTA ────────────────────────────────────────── -->
-  <section class="st-closing" data-animate="fade-up">
-    <div class="container">
-      <span class="st-section-eyebrow" style="justify-content:center;">Book Your Shrub Trim</span>
-      <h2>How Do Sharp Beds Start with a Phone Call?</h2>
-      <p>Spring and fall trimming slots book quickly around Edgerton. Call R.A.H. Solutions to schedule your visit — same-day debris removal, no mess left behind.</p>
-      <div class="st-closing-actions">
-        <a href="tel:6085015123" class="st-btn-closing-phone">
-          <i data-lucide="phone" aria-hidden="true" style="width:20px;height:20px;"></i>
-          (608) 501-5123
-        </a>
-        <a href="/contact" class="st-btn-closing-primary">
-          <i data-lucide="calendar" aria-hidden="true" style="width:20px;height:20px;"></i>
-          Get a Free Estimate
-        </a>
-      </div>
-    </div>
-  </section>
-
+</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>
