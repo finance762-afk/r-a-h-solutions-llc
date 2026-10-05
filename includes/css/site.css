@@ -161,3 +161,5 @@ picture { display: block; }
 .ba__tag { position: absolute; top: .7rem; font-family: var(--font-accent); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; background: color-mix(in srgb, var(--color-ink) 82%, transparent); color: var(--color-white); padding: .3rem .55rem; border-radius: var(--radius-sm); pointer-events: none; }
 .ba__tag--before { left: .7rem; } .ba__tag--after { right: .7rem; background: var(--color-accent); color: var(--color-ink); }
 .ba figcaption { position: absolute; inset: auto 0 0 0; padding: 1.8rem .9rem .8rem; background: linear-gradient(to top, color-mix(in srgb, var(--color-black) 82%, transparent), transparent); color: var(--color-white); font-size: .86rem; pointer-events: none; }
+.breadcrumb, .breadcrumb ol { align-items: center; }
+.breadcrumb li { display: inline-flex; align-items: center; }

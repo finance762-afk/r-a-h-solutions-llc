@@ -119,6 +119,8 @@
 .about-process .about-image::before { border-color: var(--color-primary); opacity: .45; }
 .about-process .about-image-primary { aspect-ratio: 4 / 5; }
 .about-process .about-image-primary picture, .about-process .about-image-primary img { width: 100%; height: 100%; object-fit: cover; }
+.about-process .about-image-primary img { object-position: 78% 0; }
+.about-process .about-image-primary { aspect-ratio: 5 / 4; }
 .about-stat-card { display: grid; gap: .2rem; max-width: 14rem; }
 .about-stat-card .big-number { font-size: 2rem; }
 .about-stat-card span:last-child { font-size: .85rem; color: var(--color-ink-2); }

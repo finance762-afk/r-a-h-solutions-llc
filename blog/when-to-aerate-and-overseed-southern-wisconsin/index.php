@@ -35,7 +35,7 @@ $faqs = [
     ['Do I have to aerate before overseeding?',
      'No, but it helps on compacted soil. Core aeration opens the surface so seed, water and air reach the soil. On a thin lawn with decent soil, slit-seeding or raking seed into loosened bare spots also works. Seed scattered on top of thatch or hard ground mostly fails.'],
     ['How late is too late to seed in Edgerton?',
-     'UW–Madison Extension suggests a cutoff of about September 10 to 15 for most of Wisconsin, so seedlings can establish before hard freezes. After that, wait and dormant seed in late fall, once the soil is too cold for seed to sprout before winter.'],
+     'UW–Madison Extension suggests a cutoff of about September 10 to 15 for most of Wisconsin, so seedlings can establish before hard freezes. After that, sod is the dependable option. Dormant seeding in late fall is a fallback with variable results.'],
     ['How often should a lawn be aerated?',
      'It depends on the soil and the traffic. Lawns on compacted fill, heavy soil or with a lot of foot traffic benefit most, sometimes every year. A lawn on good soil that is not compacted may not need it at all. A screwdriver that will not push into moist soil is a sign of compaction.'],
     ['Does RAH Solutions aerate and overseed lawns?',
@@ -102,7 +102,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         <li><b>Mid-August</b>Mow, deal with weeds, plan soil work and book help.</li>
         <li class="is-best"><b>Late Aug – mid-Sept</b>Best window to overseed or seed bare areas.</li>
         <li class="is-best"><b>September</b>Best month to core aerate. October also works.</li>
-        <li><b>Late fall</b>Dormant seeding, after the soil is too cold for seed to sprout.</li>
+        <li><b>Late fall</b>Dormant seeding of bare spots only; results vary.</li>
       </ul>
       <p>A lawn that needs both gets them in order: aerate first, topdress if the soil needs it, then seed, so the seed falls into loosened soil instead of sitting on top.</p>
 
@@ -118,8 +118,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <div class="post-callout"><span><?php echo icon('info', 20); ?></span><p>Tip: on newer lots where the lawn was seeded over compacted fill, aeration alone may not be enough. Low or bare areas that hold water usually need <a href="/services/excavating-services/">regrading</a> or added topsoil before any seed goes down.</p></div>
 
       <h2 id="missed">What should you do if you missed the September window?</h2>
-      <p>If mid-September has passed, stop seeding and switch plans: aerate in October if the lawn needs it, then dormant seed in late fall or lay sod. RAH Solutions gives the same advice to customers who call in October.</p>
-      <p>Dormant seeding means spreading seed after the soil is too cold for it to sprout. The seed sits through winter and comes up with the first warmth of spring, ahead of anything you could plant in April. Its risk is a warm spell that sprouts the seed early.</p>
+      <p>If mid-September has passed, stop seeding and switch plans: aerate in October if the lawn needs it, then lay sod or wait for next year’s window, with dormant seeding as a fallback. RAH Solutions gives the same advice to customers who call in October.</p>
+      <p>Dormant seeding means spreading seed after the soil is too cold for it to sprout, so it sits through winter and comes up in spring. UW–Madison Extension’s lawn calendar calls the results variable and does not suggest it for most lawns, so treat it as a way to touch up bare spots, not as a substitute for late-summer seeding.</p>
       <p>Sod is the other route. It can be laid well into fall as long as it can be watered, and it gives a finished lawn right away. The comparison of <a href="/blog/sod-vs-seed-new-lawn-wisconsin/">sod and seed for a new Wisconsin lawn</a> covers when each makes sense, and <a href="/services/sod-installation/">sod installation</a> explains how the crew prepares the ground.</p>
       <p>Fall is also when leaves start to matter. A matted layer of leaves left on new grass over winter can smother it, so pair a fall seeding with a <a href="/services/fall-yard-cleanup/">fall yard cleanup</a>. Come spring, the <a href="/blog/spring-yard-cleanup-checklist-wisconsin/">spring yard cleanup checklist</a> picks up where this leaves off.</p>
 

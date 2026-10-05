@@ -24,6 +24,7 @@ $pageStyle       = <<<CSS
 .page-services .season-card:nth-child(even) { border-top-color: var(--color-primary); }
 .page-services .season-card p { margin: 0; font-size: .95rem; color: var(--color-ink-2); }
 .page-services .season-card a { color: var(--color-primary); font-weight: 600; }
+@media (min-width: 1200px) { .page-services .svc-group .services-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
 @media (max-width: 980px) { .page-services .season-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .page-services .season-grid { grid-template-columns: 1fr; } }
 CSS;
