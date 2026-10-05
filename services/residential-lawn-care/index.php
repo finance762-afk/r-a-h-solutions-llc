@@ -138,7 +138,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         <p>String trimming along fences, trees, bed edges, window wells and the foundation, done carefully so siding, bark and plants are not nicked.</p>
       </article>
       <div class="type-card type-card--photo reveal-scale reveal-delay-1">
-        <?php echo picture('zero-turn-spring-lawn-redbud', 'Zero-turn mower on a bright green spring lawn with a redbud tree in bloom', '(max-width: 560px) 100vw, 33vw'); ?>
+        <?php echo picture('zero-turn-mower-sunroom-yard', 'Zero-turn mower on a lawn beside arborvitae and a sunroom', '(max-width: 560px) 100vw, 33vw'); ?>
       </div>
       <article class="type-card reveal-up reveal-delay-2">
         <span class="type-card__icon"><?php echo icon('ruler', 22); ?></span>

@@ -6,7 +6,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 $currentPage     = 'privacy-policy';
 $pageType        = 'other';
 $pageTitle       = 'Privacy Policy | RAH Solutions LLC';
-$pageDescription = 'How RAH Solutions LLC in Edgerton, WI collects, uses and protects information sent through rahsolutionsllc.com, including text message consent and privacy rights.';
+$pageDescription = 'How RAH Solutions LLC in Edgerton, WI collects, uses and protects information sent through rahsolutionsllc.com, including text consent and privacy rights.';
 $canonicalUrl    = $siteUrl . '/privacy-policy/';
 $pageCss         = ['inner'];
 $pageStyle       = <<<CSS

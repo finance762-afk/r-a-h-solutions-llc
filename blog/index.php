@@ -7,7 +7,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/blog-data.php';
 $currentPage     = 'blog';
 $pageType        = 'blog';
 $pageTitle       = 'Yard & Lawn Blog for Southern Wisconsin | RAH Solutions LLC';
-$pageDescription = 'Practical yard advice for Edgerton, WI and southern Wisconsin from RAH Solutions LLC: seeding and aeration timing, sod, mulch, concrete steps and snow contracts.';
+$pageDescription = 'Practical yard advice for Edgerton, WI and southern Wisconsin from RAH Solutions LLC: seeding and aeration timing, sod, mulch, concrete and snow contracts.';
 $canonicalUrl    = $siteUrl . '/blog/';
 $pageCss         = ['inner'];
 $pageStyle       = <<<CSS

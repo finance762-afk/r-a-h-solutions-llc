@@ -7,7 +7,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/blog-data.php';
 $currentPage     = 'home';
 $pageType        = 'home';
 $pageTitle       = 'Landscaping & Lawn Care in Edgerton, WI | RAH Solutions LLC';
-$pageDescription = 'RAH Solutions LLC is a family-owned landscaper in Edgerton, WI: lawn care, landscaping, concrete, excavating and snow removal. Free on-site estimates. (608) 501-5123.';
+$pageDescription = 'RAH Solutions LLC is a family-owned landscaper in Edgerton, WI: lawn care, landscaping, concrete, excavating and snow removal. Free estimates. (608) 501-5123.';
 $canonicalUrl    = $siteUrl . '/';
 $heroPreload     = heroPreload($heroImage, '(max-width: 900px) 100vw, 55vw');
 $pageCss         = ['home'];

@@ -520,3 +520,4 @@
 }
 .svc-photo-note { display: flex; gap: .8rem; align-items: flex-start; padding: 1rem 1.2rem; border: 1px dashed color-mix(in srgb, var(--color-primary) 40%, var(--color-line)); border-radius: var(--radius-lg); background: var(--color-mist); font-size: .93rem; color: var(--color-ink-2); max-width: 62rem; }
 .svc-photo-note svg { color: var(--color-primary); flex: 0 0 auto; margin-top: 2px; }
+.type-card--facet { min-height: 220px; }

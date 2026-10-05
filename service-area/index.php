@@ -6,7 +6,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 $currentPage     = 'service-area';
 $pageType        = 'other';
 $pageTitle       = 'Service Area: Edgerton, WI & 12 Nearby Towns | RAH Solutions';
-$pageDescription = 'RAH Solutions LLC serves 13 towns from Edgerton, WI: Stoughton, Janesville, Madison, Milton, Beloit and more across Rock, Dane, Green, Jefferson and Iowa counties.';
+$pageDescription = 'RAH Solutions LLC serves 13 towns from Edgerton, WI: Stoughton, Janesville, Madison, Milton, Beloit and more in Rock, Dane, Green and Jefferson counties.';
 $canonicalUrl    = $siteUrl . '/service-area/';
 $pageCss         = ['inner'];
 $pageStyle       = <<<CSS

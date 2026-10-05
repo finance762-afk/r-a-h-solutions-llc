@@ -76,7 +76,7 @@ $logoPng   = '/assets/images/logo-rah-on-light-v2.png';   // schema logo
 $heroImage = 'hero-lawn-striped-yard';
 
 /* ── CSS / JS cache-bust — the ONLY place this is set ─────────────────────── */
-$cssVersion = '20261005c';
+$cssVersion = '20261005d';
 
 /* ── Lead form ────────────────────────────────────────────────────────────── */
 $formAction = 'https://db.pageone.cloud/functions/v1/leads/r-a-h-solutions-llc';
@@ -184,8 +184,7 @@ $services = [
         'slug' => 'spring-yard-cleanup', 'group' => 'seasonal', 'name' => 'Spring Yard Cleanup',
         'short' => 'Winter debris cleared and beds prepared for the growing season.',
         'bullets' => ['Sticks, leaves and debris out', 'Beds cleaned and edged', 'Lawn ready for first mow'],
-        'icon' => 'wind', 'image' => 'zero-turn-spring-lawn-redbud',
-        'alt' => 'Zero-turn mower on a bright green spring lawn with a redbud tree in bloom',
+        'icon' => 'wind', 'image' => '', 'alt' => '',
     ],
     [
         'slug' => 'fall-yard-cleanup', 'group' => 'seasonal', 'name' => 'Fall Yard Cleanup',

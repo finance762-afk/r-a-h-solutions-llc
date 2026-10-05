@@ -22,7 +22,6 @@ machine-written alts were wrong in several places and have been replaced by what
 | backyard-mowed-green-house | 2048x922 | Mowed backyard, green house, push mower, patio, shrubs | residential lawn care | wide | 7 | hero, card | 2 | `/services/residential-lawn-care/` (hero) | Freshly mowed backyard behind a green house with a patio and shrubs |
 | rural-yard-mowed-white-house | 2048x922 | Rural yard mowed, white house, riding mower, equipment at right edge | residential / lawn maintenance | wide | 5 | gallery | 2 | `/services/residential-lawn-care/` | Mowed rural yard in front of a white farmhouse |
 | zero-turn-mower-sunroom-yard | 1080x486 | Zero-turn mower on lawn beside arborvitae, junipers and a sunroom | lawn maintenance / shrub context | wide | 6 | gallery, split (small) | 2 | `/services/lawn-maintenance/`, `/services/residential-lawn-care/` | Zero-turn mower on a lawn beside arborvitae and a sunroom |
-| zero-turn-spring-lawn-redbud | 510x510 | Zero-turn mower on bright spring lawn, redbud in bloom | spring cleanup / first mow | square | 5 (small) | card only | 2 | `/services/spring-yard-cleanup/` | Zero-turn mower on a bright green spring lawn with a redbud tree in bloom |
 | red-barn-mowed-lawn | 2048x2048 | Long red barn, mowed lawn in front, maple, late-day light | lawn maintenance (rural) / commercial-scale mowing | square | 7 | split, gallery | 2 | `/services/commercial-lawn-care/` (supporting only), `/areas/` pages | Mowed lawn in front of a long red barn |
 | perennial-bed-edging-layout | 2048x2048 | Perennial bed (daylilies, shrubs) on a slope, edging laid out along lawn | garden maintenance / landscape install | square | 7 | card, split | 2 | `/services/garden-maintenance/` (hero) | Perennial bed with daylilies and shrubs along a lawn, edging laid out for install |
 | bed-edging-install-shade-garden | 2048x2048 | Shade bed with fresh soil, hostas/irises, edging being installed, string line | landscape installation / spring bed prep | square | 6 | split, gallery | 2 | `/services/landscape-installation/`, blog spring checklist | Shade garden bed with fresh soil and new edging being installed along a lawn |
@@ -40,8 +39,6 @@ machine-written alts were wrong in several places and have been replaced by what
 | concrete-patio-steps-stone-ranch | 1536x2048 | New concrete patio, rounded corner, two steps to door, stone ranch | concrete | tall | 9 | hero, card, gallery | 2 | `/services/concrete-services/` (hero), `/` (gallery) | New concrete patio with rounded corner and steps behind a stone ranch house |
 | concrete-patio-aerial-view | 1152x2048 | Aerial view of the same patio with joints, landscaped bed below | concrete | tall | 8 | gallery, split | 2 | `/services/concrete-services/`, `/` (gallery) | Aerial view of a new concrete patio with steps next to a landscaped bed |
 | concrete-slab-fresh-pour | 810x1080 | Freshly finished large slab/driveway with forms, hose, neighborhood behind | concrete | tall | 7 | gallery, split | 2 | `/services/concrete-services/` | Freshly finished concrete slab still in its forms |
-| concrete-crew-forming-brick-ranch | 480x720 | Crew forming steps at a brick ranch, plywood path over lawn | concrete (process) | tall | 4 (small) | small inline only | 1 | — | Crew forming concrete steps at a brick ranch with plywood protecting the lawn |
-| concrete-pad-metal-building | 510x510 | New concrete pad at the door of a metal building, track loader behind | concrete (commercial) | square | 4 (small) | small inline only | 1 | — | New concrete pad at the entrance of a metal building |
 | concrete-steps-cracked-before | 1600x2133 | Cracked, settled concrete steps along a house side entry | concrete (before) | tall | 7 | before/after | 3 | `/` (slider), `/services/concrete-services/` (slider), blog concrete steps | Cracked, settled concrete steps along the side of a house before replacement |
 | concrete-landing-formed-poured | 1600x2133 | Same side entry, new landing poured inside wood forms | concrete (after, in forms) | tall | 7 | before/after | 2 | `/` (slider), `/services/concrete-services/` (slider) | The same side entry with a new concrete landing poured inside wood forms |
 | concrete-walk-rebar-grid | 1600x2133 | Walk formed with gravel base and rebar grid before the pour | concrete (process) | tall | 7 | gallery, split | 2 | `/services/concrete-services/`, blog concrete steps | Sidewalk formed with a gravel base and rebar grid before the concrete pour |
@@ -53,7 +50,7 @@ machine-written alts were wrong in several places and have been replaced by what
 | snow-fleet-lineup-lot | 1080x810 | Same fleet from the front, four machines with blades | snow removal | wide | 6 | gallery | 2 | `/services/snow-removal/` | Four plow vehicles lined up side by side on a snow-covered lot |
 | rah-truck-dump-trailer | 2048x2048 | Company pickup towing a red dump trailer (a trailer dealer sign is in the background) | about / equipment | square | 6 | about split | 2 | `/` (about), `/about/` | RAH Solutions pickup truck towing a red dump trailer on a paved lot |
 
-Not used: five low-resolution duplicates of photos above (driveway.webp, snow.webp, patio.webp, o.jpg, o__2_.jpg),
+Not used (too small to publish, under 520 px wide): a crew-forming-steps photo, a concrete pad at a metal building, and a spring mowing photo. Also not used: five low-resolution duplicates of photos above (driveway.webp, snow.webp, patio.webp, o.jpg, o__2_.jpg),
 a second near-identical frame of the culvert job, and a second copy of the formed landing photo.
 
 ## GAPS — client photo request list
@@ -70,7 +67,7 @@ hero) rather than a mismatched picture:
 Weak matches (page has a photo, but a better one is wanted):
 
 4. **Sod Installation** — only grading/topsoil prep photos; no photo of sod being laid or a finished sodded lawn.
-5. **Spring Yard Cleanup** — only a small (510 px) spring mowing photo. Requested: bed cleanup or debris haul-off in spring.
+5. **Spring Yard Cleanup** — no usable photo (the one spring photo was a 510 px mowing shot, too small and off-topic, so it is not used). Requested: bed cleanup or debris haul-off in spring.
 6. **Fall Yard Cleanup** — the cleanup photos are a farmyard clearing, not leaf removal. Requested: leaf cleanup before/after.
 7. **Garden Maintenance** — bed photo shows an edging install; requested: a weeded, maintained bed mid-season.
 8. **Lawn Restoration** — has the "before" (dead turf) and the graded stage, but no "after" of the re-established lawn.

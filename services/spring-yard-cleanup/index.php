@@ -132,8 +132,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         <h3>Cutting back</h3>
         <p>Perennial stems and ornamental grasses left standing for winter are cut down before new shoots get tall.</p>
       </article>
-      <div class="type-card type-card--photo reveal-scale reveal-delay-1">
-        <?php echo picture('zero-turn-spring-lawn-redbud', 'Zero-turn mower on a bright green spring lawn with a redbud tree in bloom', '(max-width: 560px) 100vw, 33vw'); ?>
+      <div class="type-card type-card--photo type-card--facet reveal-scale reveal-delay-1">
+        <?php echo facetPanel('wind'); ?>
       </div>
       <article class="type-card reveal-up reveal-delay-2">
         <span class="type-card__icon"><?php echo icon('pencil-ruler', 22); ?></span>
