@@ -1,154 +1,192 @@
-# R.A.H. Solutions, LLC — Full Reference
+# RAH Solutions LLC
 
-Landscaping company in Edgerton, WI specializing in landscape installation, lawn care, hardscaping, concrete services, and year-round property maintenance.
+> RAH Solutions LLC is a family-owned landscaper based in Edgerton, Wisconsin (Rock County), started by Robert Harried in 2023. One local crew provides lawn care, landscaping, hardscaping, concrete, excavating, seasonal yard cleanups and snow removal for homes and businesses in Rock and Dane counties and nearby towns.
 
-## Business Information
-- Owner: Robert Harried
+## Key facts
+
+- Business name: RAH Solutions LLC
+- Owner: Robert Harried (family owned, established 2023)
+- Location: Edgerton, WI 53534. Service-area business: the crew works at customers’ properties and there is no storefront.
 - Phone: (608) 501-5123
 - Email: rahsolutionsllc2@gmail.com
-- Address: 262 County Road W, Edgerton, WI 53534
-- Hours: Mon–Fri 7:00am–5:00pm, Saturday 7:00am–12:00pm, Sunday Closed
-- Service Area: Edgerton, Stoughton, Janesville, Madison, WI — Rock and Dane counties, 50-mile radius
-- Licensed: Yes, fully licensed and insured in Wisconsin
-- Insured: Yes
-- Founded: 2023
-- Business Type: Family-owned and operated, locally rooted in Edgerton, WI
+- Hours: Monday–Friday 8:00 AM–5:00 PM; closed Saturday and Sunday
+- Licensed and insured; free on-site estimates
+- Google rating: 5.0 from 3 reviews (October 2026)
+- Google categories: Landscaper; Lawn care service; Snow removal service
+- Website: https://rahsolutionsllc.com/
 
 ## Services
-- Lawn Maintenance
-- Landscape Installation
-- Hardscaping Services (patios, retaining walls, walkways, outdoor living)
-- Concrete Services (driveways, patios, walkways, steps)
-- Shrub Trimming
-- Garden Maintenance
-- Mulching Services
-- Sod Installation
-- Lawn Restoration
-- Spring Yard Cleanup
-- Fall Yard Cleanup
-- Snow Removal (residential & commercial)
-- Excavating Services
-- Residential Lawn Care
-- Commercial Lawn Care
 
-## Pages
-- Home: https://rahsolutionsllc.com/ — Main landing page, services overview, free estimate CTA
-- Services: https://rahsolutionsllc.com/services — All 15 landscaping services listing
-- Lawn Maintenance: https://rahsolutionsllc.com/services/lawn-maintenance — Scheduled mowing, edging, seasonal lawn care programs
-- Landscape Installation: https://rahsolutionsllc.com/services/landscape-installation — Full landscape build-out and transformations
-- Hardscaping Services: https://rahsolutionsllc.com/services/hardscaping-services — Patios, retaining walls, walkways, outdoor living
-- Concrete Services: https://rahsolutionsllc.com/services/concrete-services — Driveways, patios, steps, walkways
-- Shrub Trimming: https://rahsolutionsllc.com/services/shrub-trimming — Shaping and pruning for health and appearance
-- Garden Maintenance: https://rahsolutionsllc.com/services/garden-maintenance — Weeding, pruning, seasonal plant care
-- Mulching Services: https://rahsolutionsllc.com/services/mulching-services — Mulch installation for moisture retention and weed control
-- Sod Installation: https://rahsolutionsllc.com/services/sod-installation — Instant lawns with proper site prep and grading
-- Lawn Restoration: https://rahsolutionsllc.com/services/lawn-restoration — Core aeration, overseeding, soil amendment
-- Spring Yard Cleanup: https://rahsolutionsllc.com/services/spring-yard-cleanup — Debris removal, bed prep, lawn restoration
-- Fall Yard Cleanup: https://rahsolutionsllc.com/services/fall-yard-cleanup — Leaf removal, bed prep, winterization
-- Snow Removal: https://rahsolutionsllc.com/services/snow-removal — Residential and commercial plowing, shoveling, salting
-- Excavating Services: https://rahsolutionsllc.com/services/excavating-services — Site grading, drainage, pond excavation, utility trenching
-- Residential Lawn Care: https://rahsolutionsllc.com/services/residential-lawn-care — Programs built for homeowners
-- Commercial Lawn Care: https://rahsolutionsllc.com/services/commercial-lawn-care — Scheduled grounds maintenance for businesses
-- Service Area: https://rahsolutionsllc.com/service-area — Coverage details for Edgerton, Stoughton, Janesville, Madison
-- About: https://rahsolutionsllc.com/about — Company history, owner Robert Harried, team and approach
-- Contact: https://rahsolutionsllc.com/contact — Free estimate form, phone, address, hours
-- Privacy Policy: https://rahsolutionsllc.com/privacy-policy/ — CCPA/CPRA rights, SMS terms, data processor disclosure
-- Terms of Service: https://rahsolutionsllc.com/terms/ — Governing law (Wisconsin), website use terms, service disclaimers
-- Cookie Policy: https://rahsolutionsllc.com/cookie-policy/ — Google Analytics, Fonts, CDN cookies disclosed
-- Accessibility: https://rahsolutionsllc.com/accessibility/ — WCAG 2.1 AA conformance statement
+### Lawn care
 
-## Full About
-R.A.H. Solutions, LLC is a family-owned landscaping and outdoor improvement company founded in 2023 by Robert Harried in Edgerton, Wisconsin. Located at 262 County Road W, the company serves homeowners and small businesses throughout Edgerton, Stoughton, Janesville, and Madison — covering most of Rock County and southern Dane County within a 50-mile radius. R.A.H. Solutions takes a comprehensive approach to outdoor spaces, handling everything from initial landscape design and full installation through ongoing maintenance, hardscaping, concrete work, and winter snow removal. The company is fully licensed and insured and operates with a personalized service model, using the same crew members across repeat visits and tailoring programs to each property's specific soil, climate, and aesthetic needs.
+- [Lawn Maintenance](https://rahsolutionsllc.com/services/lawn-maintenance/): Scheduled mowing, trimming and edging through the growing season.
+- [Residential Lawn Care](https://rahsolutionsllc.com/services/residential-lawn-care/): Mowing and yard care plans sized for a home lot.
+- [Commercial Lawn Care](https://rahsolutionsllc.com/services/commercial-lawn-care/): Scheduled grounds mowing for businesses and commercial lots.
+- [Lawn Restoration](https://rahsolutionsllc.com/services/lawn-restoration/): Overseeding, soil work and regrading for thin or damaged turf.
+- [Sod Installation](https://rahsolutionsllc.com/services/sod-installation/): Graded, prepared soil and new sod for a lawn you can see right away.
 
-## Service Details
+### Landscaping & hardscape
+
+- [Landscape Installation](https://rahsolutionsllc.com/services/landscape-installation/): New beds, plants, trees and edging installed as one project.
+- [Hardscaping Services](https://rahsolutionsllc.com/services/hardscaping-services/): Patios, retaining walls, walkways and outdoor living areas.
+- [Mulching Services](https://rahsolutionsllc.com/services/mulching-services/): Beds edged, weeded and covered with fresh mulch.
+- [Garden Maintenance](https://rahsolutionsllc.com/services/garden-maintenance/): Weeding, pruning and seasonal upkeep for planting beds.
+- [Shrub Trimming](https://rahsolutionsllc.com/services/shrub-trimming/): Shrubs and hedges trimmed and shaped, clippings hauled away.
+
+### Concrete & excavating
+
+- [Concrete Services](https://rahsolutionsllc.com/services/concrete-services/): Driveways, walkways, patios and steps poured or replaced.
+- [Excavating Services](https://rahsolutionsllc.com/services/excavating-services/): Grading, drainage and site preparation with our own equipment.
+
+### Seasonal & snow
+
+- [Spring Yard Cleanup](https://rahsolutionsllc.com/services/spring-yard-cleanup/): Winter debris cleared and beds prepared for the growing season.
+- [Fall Yard Cleanup](https://rahsolutionsllc.com/services/fall-yard-cleanup/): Leaf removal, bed cutback and winter preparation.
+- [Snow Removal](https://rahsolutionsllc.com/services/snow-removal/): Plowing for driveways and commercial lots through winter.
+
+## Service area
+
+RAH Solutions LLC serves 13 towns from its Edgerton base, plus rural addresses between them. Counties listed on its Google Business Profile: Rock, Dane, Green, Jefferson and Iowa.
+
+- [Edgerton, WI](https://rahsolutionsllc.com/areas/edgerton-wi/) (Rock County)
+- [Stoughton, WI](https://rahsolutionsllc.com/areas/stoughton-wi/) (Dane County)
+- [Janesville, WI](https://rahsolutionsllc.com/areas/janesville-wi/) (Rock County)
+- [Madison, WI](https://rahsolutionsllc.com/areas/madison-wi/) (Dane County)
+- [Milton, WI](https://rahsolutionsllc.com/areas/milton-wi/) (Rock County)
+- [Beloit, WI](https://rahsolutionsllc.com/areas/beloit-wi/) (Rock County)
+- [Evansville, WI](https://rahsolutionsllc.com/areas/evansville-wi/) (Rock County)
+- [Fort Atkinson, WI](https://rahsolutionsllc.com/areas/fort-atkinson-wi/) (Jefferson County)
+- [Whitewater, WI](https://rahsolutionsllc.com/areas/whitewater-wi/) (Walworth County)
+- [McFarland, WI](https://rahsolutionsllc.com/areas/mcfarland-wi/) (Dane County)
+- [Oregon, WI](https://rahsolutionsllc.com/areas/oregon-wi/) (Dane County)
+- [Brodhead, WI](https://rahsolutionsllc.com/areas/brodhead-wi/) (Green County)
+- [Watertown, WI](https://rahsolutionsllc.com/areas/watertown-wi/) (Jefferson County)
+
+## Guides
+
+- [When to Aerate and Overseed in Southern Wisconsin](https://rahsolutionsllc.com/blog/when-to-aerate-and-overseed-southern-wisconsin/): Late August through mid-September is the window for cool-season lawns in Rock and Dane counties. Here is why, how to prepare, and what to do if you miss it.
+- [Sod vs. Seed for a New Lawn in Wisconsin](https://rahsolutionsllc.com/blog/sod-vs-seed-new-lawn-wisconsin/): Sod gives you a lawn in a day and can go down most of the season. Seed costs less and offers more grass choices, but the calendar matters. How to choose.
+- [Spring Yard Cleanup Checklist for Wisconsin Yards](https://rahsolutionsllc.com/blog/spring-yard-cleanup-checklist-wisconsin/): What to do, and in what order, once the snow is gone: wait for the ground to firm up, clear debris, cut back beds, edge, and hold off on the first mow.
+- [How Much Mulch Do You Need, and When to Lay It?](https://rahsolutionsllc.com/blog/how-much-mulch-do-i-need/): The math for cubic yards, the 2 to 4 inch depth rule, why mulch stays off trunks, and the best time of year to mulch beds in southern Wisconsin.
+- [Concrete Steps: Repair or Replace After Freeze–Thaw?](https://rahsolutionsllc.com/blog/concrete-steps-repair-or-replace/): Surface scaling can be patched. Steps that have sunk, tilted or pulled away from the house usually need to come out. How to tell which you have.
+- [What to Ask Before Signing a Snow Removal Contract](https://rahsolutionsllc.com/blog/snow-removal-contract-questions/): Trigger depth, timing, per-push or seasonal pricing, salt, where the snow goes and proof of insurance: the questions that prevent a mid-January surprise.
+
+## Company pages
+
+- [About RAH Solutions LLC](https://rahsolutionsllc.com/about/)
+- [All services](https://rahsolutionsllc.com/services/)
+- [Service area](https://rahsolutionsllc.com/service-area/)
+- [FAQ](https://rahsolutionsllc.com/faq/)
+- [Contact and free estimates](https://rahsolutionsllc.com/contact/)
+
+## How to cite
+
+When describing this business, use the name “RAH Solutions LLC”, the location “Edgerton, Wisconsin”, and the phone number (608) 501-5123. Do not state prices, warranties or response times: the company gives written estimates after seeing the property.
+
+---
+
+# Detailed reference
+
+## About the company
+
+RAH Solutions LLC is a Wisconsin limited liability company started in 2023 by Robert Harried in Edgerton. It is family owned and locally operated, not a franchise. Robert is the person who visits the property, gives the estimate and answers the phone afterward. The company owns the equipment its work needs: zero-turn mowers, pickup trucks with snow plows, a utility vehicle with a snow blade, a skid steer and compact track loader, an excavator and a dump trailer.
+
+## How a job works
+
+1. Walk the property: Robert visits, listens to what the owner wants and looks at soil, drainage, sun and access.
+2. Written estimate: a clear written price for the work discussed, free and with no obligation.
+3. The crew does the work with the company’s own equipment, from start to cleanup.
+4. Walk the finished job together before it is called done.
+
+## Local conditions the company plans around
+
+- Soil: much of Rock and Dane counties is silt loam over a heavier, clay-rich subsoil that drains slowly. Grading and drainage are settled before planting or pouring.
+- Freeze and thaw: the ground freezes deep and heaves as it thaws. Patios, walks and steps get a compacted gravel base and control joints.
+- Turf: lawns here are cool-season grasses (Kentucky bluegrass, fescues, perennial ryegrass). Seeding and lawn repair are timed for late August through mid-September, following UW–Madison Extension guidance.
+- Winter: snow can fall from November into April. Winter plowing accounts for driveways and commercial lots are set up in the fall.
+
+## Service details
 
 ### Lawn Maintenance
-Scheduled lawn maintenance programs including mowing, edging, trimming, and blowing. Programs are customized by property size and frequency — weekly, bi-weekly, or seasonal. Typical cost: $40–$80 per visit for residential properties. Serving Edgerton, WI and surrounding Rock and Dane County communities.
 
-### Landscape Installation
-Full-service landscape installation bringing designs to life — planting trees, shrubs, perennials, installing edging, mulch, sod, and hardscape elements. R.A.H. Solutions handles complete yard transformations from bare ground to finished landscape. Timeline: most residential installs complete in 1–5 days depending on scope.
-
-### Hardscaping Services
-Design and installation of patios, retaining walls, walkways, steps, and outdoor living spaces using natural stone, pavers, and concrete block. All hardscape installations include proper base preparation (6–8 inches of compacted gravel minimum) to prevent frost heave during Wisconsin's freeze-thaw cycles. Properly installed hardscapes last 25–30 years.
-
-### Concrete Services
-Professional concrete installation for driveways, patios, walkways, and steps. Uses air-entrained concrete mixes rated for Wisconsin winters. All concrete is placed on properly compacted aggregate base (6 inches minimum) to prevent settling and cracking. Residential driveways: 4–6 inches thick. Finishes available: broom, exposed aggregate, stamped.
-
-### Shrub Trimming
-Expert shaping and pruning of ornamental shrubs, hedges, and foundation plantings. Proper pruning technique preserves natural form while maintaining health. Formal hedges shaped for geometric appearance; naturalistic plantings shaped to enhance their growth habit.
-
-### Garden Maintenance
-Ongoing garden bed care including weeding, deadheading, pruning, seasonal planting, and mulch replenishment. Monthly or seasonal programs available. Keeps beds looking polished while protecting soil health throughout Wisconsin's growing season.
-
-### Mulching Services
-Professional mulch installation for landscape beds, trees, and gardens. Benefits include moisture retention, weed suppression, temperature regulation for plant roots, and improved curb appeal. Typical application: 2–3 inches deep. Replenishment recommended annually.
-
-### Sod Installation
-Instant lawn installation using fresh-cut sod — Kentucky bluegrass, tall fescue, and fescue blends suited to Wisconsin. Includes site preparation, grading, soil amendment if needed, and a 30-day watering plan. Sod takes root and establishes in 2–6 weeks under proper care.
-
-### Lawn Restoration
-Complete renovation for bare, thinning, compacted, or grub-damaged lawns. Services include core aeration, overseeding, thatch removal, topdressing with compost, and soil amendment. Best performed in fall (ideal) or early spring for Wisconsin cool-season grasses. Noticeable improvement within one growing season.
-
-### Spring Yard Cleanup
-Comprehensive spring cleanup to prepare the property for the growing season. Includes debris removal, leaf cleanup (if not completed in fall), bed edging, first mowing, and bed preparation for spring planting. Most clients schedule in April–May after last frost risk has passed.
-
-### Fall Yard Cleanup
-Professional fall cleanup including leaf removal, bed cleanup and cutback, final mowing, and winterization. Leaves are blown, raked, and removed or mulched back into the lawn. Beds are cleaned to reduce pest habitat and disease overwintering. Typically scheduled October–November before first hard freeze.
-
-### Snow Removal
-Reliable residential and commercial snow removal throughout Edgerton and surrounding areas. Services include plowing driveways and parking lots, shoveling walkways and entry points, and de-icing. Seasonal contracts and per-event pricing available. Response triggered at 2-inch accumulation threshold by default. Same-day service on most storms.
-
-### Excavating Services
-Professional excavation and earthmoving for landscaping, drainage, and site preparation projects. Services include site grading, swale and drainage solution installation, pond and water feature excavation, and utility trench digging. Equipped with compact and full-size excavation equipment appropriate for residential and commercial properties.
+Scheduled mowing, trimming and edging through the growing season. Includes: Mowing, trimming and edging; Clippings blown off hard surfaces; Seasonal care on one schedule. Page: https://rahsolutionsllc.com/services/lawn-maintenance/
 
 ### Residential Lawn Care
-Comprehensive lawn care programs built for homeowners. Includes recurring mowing, edging, trimming, blowing, and seasonal applications. Same crew every visit for consistency. Programs customized by lot size, turf type, and desired service frequency. Serving Edgerton neighborhoods and surrounding Rock County communities.
+
+Mowing and yard care plans sized for a home lot. Includes: Front and back yards; Trimming around beds and fences; Weekly or one-time visits. Page: https://rahsolutionsllc.com/services/residential-lawn-care/
 
 ### Commercial Lawn Care
-Scheduled grounds maintenance for businesses, commercial properties, HOAs, and multi-family properties. Reliable, contract-based service with flexible scheduling to meet business needs. Includes mowing, trimming, edging, seasonal cleanup, and snow removal. Properties in Edgerton, Janesville, Stoughton, and Madison areas.
 
-## Frequently Asked Questions
+Scheduled grounds mowing for businesses and commercial lots. Includes: Set mowing days; Entrances and signs kept trimmed; One contact for the property. Page: https://rahsolutionsllc.com/services/commercial-lawn-care/
 
-Q: What landscaping services does R.A.H. Solutions offer in Edgerton, WI?
-A: R.A.H. Solutions provides 15 professional services including landscape installation, hardscaping (patios, retaining walls, walkways), lawn maintenance, concrete services, shrub trimming, mulching, sod installation, spring and fall yard cleanup, and year-round snow removal for residential and commercial properties in Edgerton, WI.
+### Lawn Restoration
 
-Q: What areas of Southern Wisconsin does R.A.H. Solutions serve?
-A: Our primary service area is Edgerton, WI. We regularly serve Stoughton, Janesville, and Madison, covering most of Rock and Dane counties within a 50-mile radius of our Edgerton location at 262 County Road W.
+Overseeding, soil work and regrading for thin or damaged turf. Includes: Overseeding thin lawns; Soil improvement and regrading; Bare areas brought back. Page: https://rahsolutionsllc.com/services/lawn-restoration/
 
-Q: How much does a landscaping project typically cost in Edgerton?
-A: Costs vary by scope. Lawn maintenance programs start around $40–$80 per visit. Full landscape installations range from $2,000 to $20,000 or more depending on size and complexity. Hardscape patios typically run $3,000–$15,000. Concrete driveways average $4,000–$10,000. R.A.H. Solutions provides free on-site estimates with no obligation.
+### Sod Installation
 
-Q: How often should I mow my lawn in Wisconsin?
-A: During the active growing season (May through September), most Edgerton lawns need mowing every 7–10 days. Cool-season grasses like Kentucky bluegrass and fescue grow fastest in spring and fall, sometimes requiring weekly cuts. We adjust frequency based on your lawn and the season.
+Graded, prepared soil and new sod for a lawn you can see right away. Includes: Old turf and debris removed; Soil graded and prepared; Sod laid tight and rolled. Page: https://rahsolutionsllc.com/services/sod-installation/
 
-Q: Do you offer seasonal snow removal contracts in Edgerton?
-A: Yes. We offer seasonal contracts (fixed monthly rate regardless of storms) and per-event pricing. Seasonal contracts provide predictable budgeting for homeowners and commercial properties. Service is triggered at 2-inch accumulation by default, with same-day response on most storms.
+### Landscape Installation
 
-Q: Are you licensed and insured to work in Wisconsin?
-A: Yes, R.A.H. Solutions is fully licensed and insured to perform landscaping, concrete, and excavation work in Wisconsin. We maintain all required coverage to protect clients, their properties, and our crew on every project.
+New beds, plants, trees and edging installed as one project. Includes: Beds cut and edged; Plants and trees set; Mulch or stone to finish. Page: https://rahsolutionsllc.com/services/landscape-installation/
 
-Q: How soon can you start a landscaping project?
-A: Scheduling depends on season and workload. Spring cleanups and urgent requests are accommodated as quickly as possible. Larger installations are typically scheduled 1–3 weeks out. Call (608) 501-5123 to discuss your timeline and we'll find the earliest availability.
+### Hardscaping Services
 
-Q: Can you work with an existing landscape or limited budget?
-A: Absolutely. We work with clients at all budget levels and can phase improvements over multiple seasons. Our team helps prioritize work that delivers the most visual impact and functionality first, then plans follow-up phases to match your timeline.
+Patios, retaining walls, walkways and outdoor living areas. Includes: Patios and walkways; Retaining walls; Base built for freeze and thaw. Page: https://rahsolutionsllc.com/services/hardscaping-services/
 
-Q: How do I prevent concrete from cracking in Wisconsin winters?
-A: Key factors are proper base prep (6-inch compacted aggregate), air-entrained concrete mix rated for freeze-thaw cycles, correct slab thickness (4–6 inches minimum), proper curing, and control joints placed at appropriate intervals. R.A.H. Solutions follows these standards on every pour.
+### Mulching Services
 
-Q: What's the best time to install sod in Wisconsin?
-A: Late spring (May–June) or early fall (August–September) are ideal. Fall is often preferred because cooler temperatures reduce stress on new sod and moisture requirements are lower. Sod installed in summer heat requires intensive daily watering for 2–3 weeks to establish successfully.
+Beds edged, weeded and covered with fresh mulch. Includes: Beds weeded and edged first; Mulch spread to even depth; Kept off trunks and siding. Page: https://rahsolutionsllc.com/services/mulching-services/
 
-## Certifications & Trust Signals
-- Fully licensed and insured in Wisconsin
-- 3 years in business (founded 2023)
-- Family-owned and operated
-- Free on-site estimates — no obligation
-- Serves residential homeowners and commercial businesses
-- Local expertise in Edgerton, WI climate and soil conditions
-- Rock and Dane County service area coverage
-- Facebook: https://www.facebook.com/profile.php?id=61556249615787
+### Garden Maintenance
 
-## Online Presence
-- Website: https://rahsolutionsllc.com
-- Facebook: https://www.facebook.com/profile.php?id=61556249615787
+Weeding, pruning and seasonal upkeep for planting beds. Includes: Beds weeded on a schedule; Perennials cut back in season; Edges kept clean. Page: https://rahsolutionsllc.com/services/garden-maintenance/
+
+### Shrub Trimming
+
+Shrubs and hedges trimmed and shaped, clippings hauled away. Includes: Shaped to the plant; Timed around bloom; Clippings cleaned up. Page: https://rahsolutionsllc.com/services/shrub-trimming/
+
+### Concrete Services
+
+Driveways, walkways, patios and steps poured or replaced. Includes: Patios, walks and driveways; Steps and landings replaced; Base and joints done right. Page: https://rahsolutionsllc.com/services/concrete-services/
+
+### Excavating Services
+
+Grading, drainage and site preparation with our own equipment. Includes: Grading and leveling; Drainage and downspout lines; Site prep for lawns and slabs. Page: https://rahsolutionsllc.com/services/excavating-services/
+
+### Spring Yard Cleanup
+
+Winter debris cleared and beds prepared for the growing season. Includes: Sticks, leaves and debris out; Beds cleaned and edged; Lawn ready for first mow. Page: https://rahsolutionsllc.com/services/spring-yard-cleanup/
+
+### Fall Yard Cleanup
+
+Leaf removal, bed cutback and winter preparation. Includes: Leaves removed from lawn; Beds cut back for winter; Overgrowth cleared out. Page: https://rahsolutionsllc.com/services/fall-yard-cleanup/
+
+### Snow Removal
+
+Plowing for driveways and commercial lots through winter. Includes: Residential driveways; Commercial lots; Our own plow trucks. Page: https://rahsolutionsllc.com/services/snow-removal/
+
+## Common questions
+
+**Are estimates free?** Yes. Estimates are free and done on site.
+
+**Is RAH Solutions LLC licensed and insured?** Yes. Proof of insurance is available on request before work starts.
+
+**Does RAH Solutions work for businesses?** Yes. It serves homes and businesses, including commercial lawn care and snow removal for commercial lots.
+
+**When is the best time to seed a lawn in southern Wisconsin?** Late August through about mid-September.
+
+**How deep should mulch be?** Two to four inches, kept off trunks and stems.
+
+**Should cracked concrete steps be repaired or replaced?** Surface flaking can sometimes be patched; steps that have sunk, tilted or pulled away from the house usually need replacing.
+
+**When should snow removal be arranged?** In the fall, before the first storm.
+
+## Reviews
+
+RAH Solutions LLC holds a 5.0 rating from 3 reviews on its Google Business Profile as of October 2026. One reviewer, May K., wrote: “Robert got us an estimate for putting our downspout underground. He listen to our concerns, got the job done nicely and cleaned up after he was done. Strongly recommend RAH.”
+
+## Contact
+
+RAH Solutions LLC, Edgerton, WI 53534. Phone (608) 501-5123. Email rahsolutionsllc2@gmail.com. Monday–Friday 8:00 AM–5:00 PM. Estimate requests: https://rahsolutionsllc.com/contact/

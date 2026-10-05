@@ -1,177 +1,117 @@
 <?php
-// ============================================================
-// Accessibility Statement — R.A.H. Solutions, LLC
-// ============================================================
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
-
-$companyName       = $siteName;
-$companyEntityType = $entityType;
-$companyState      = $stateOfFormation;
-$companyEmail      = $contactEmail;
-$companyPhone      = $contactPhone;
-$companyAddress    = $businessAddress;
-$lastUpdated       = 'April 24, 2026';
-
-$pageTitle       = 'Accessibility Statement | ' . $siteName;
-$pageDescription = 'Accessibility statement for R.A.H. Solutions, LLC — our commitment to WCAG 2.1 AA conformance and digital accessibility for all users.';
+?>
+<?php
+$currentPage     = 'accessibility';
+$pageType        = 'other';
+$pageTitle       = 'Accessibility Statement | RAH Solutions LLC';
+$pageDescription = 'RAH Solutions LLC of Edgerton, WI aims for WCAG 2.1 AA on rahsolutionsllc.com. See the accessibility features, known limits and how to report a barrier.';
 $canonicalUrl    = $siteUrl . '/accessibility/';
-// SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
-$currentPage     = 'legal';
+$pageCss         = ['inner'];
+$pageStyle       = <<<CSS
+/* accessibility: feature checklist with check icons, help panel */
+.page-accessibility .a11y-list { list-style: none; padding: 0; display: grid; gap: .55rem; }
+.page-accessibility .a11y-list li { display: grid; grid-template-columns: 22px 1fr; gap: .6rem; align-items: start; }
+.page-accessibility .a11y-list svg { margin-top: .2rem; color: var(--color-primary); }
+.page-accessibility .help-panel { padding: 1.1rem 1.3rem; border-radius: var(--radius-lg); background: var(--color-card-tint-1); border: 1px solid var(--color-line); }
+.page-accessibility .legal-contact { list-style: none; padding: 0; display: grid; gap: .35rem; }
+CSS;
 
-$schemaMarkup = json_encode([
-  '@context' => 'https://schema.org',
-  '@graph'   => [
-    [
-      '@type'       => 'WebPage',
-      'name'        => 'Accessibility Statement',
-      'url'         => $siteUrl . '/accessibility/',
-      'description' => $pageDescription,
-      'publisher'   => ['@type' => 'Organization', 'name' => $companyName],
-    ],
-    [
-      '@type'           => 'BreadcrumbList',
-      'itemListElement' => [
-        ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home',          'item' => $siteUrl . '/'],
-        ['@type' => 'ListItem', 'position' => 2, 'name' => 'Accessibility', 'item' => $siteUrl . '/accessibility/'],
-      ],
-    ],
-  ],
-], JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+$schemaNodes = [webPageNode(), breadcrumbNode([['Home', '/'], ['Accessibility Statement', '/accessibility/']])];
 
-$heroPreload = $heroImageUrl;
+$a11yFeatures = [
+    'A “Skip to main content” link at the top of every page',
+    'Full keyboard navigation, including the menus, the estimate form dialog and the mobile menu',
+    'A visible focus outline on links, buttons and form fields',
+    'Text alternatives (alt text) on meaningful images; decorative images are hidden from screen readers',
+    'Text and button colors chosen to meet WCAG AA contrast ratios',
+    'Animations turned off when your device is set to reduce motion',
+    'Form fields with visible, programmatically associated labels and required fields marked',
+    'Semantic headings and landmarks (header, navigation, main content, footer) for screen reader navigation',
+    'Layouts that reflow on phones and when text is zoomed to 200%',
+];
+
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
+<div class="page-accessibility">
 
-<style>
-.legal-hero {
-  min-height: 40vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background:
-    linear-gradient(135deg, rgba(var(--color-primary-rgb), 0.85) 0%, rgba(15,30,45,0.80) 100%),
-    url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963874866-f077by-471177305_122202492170208320_1592970065814584229_n.jpg') center/cover no-repeat;
-  color: #fff;
-  text-align: center;
-  padding: var(--space-3xl) var(--space-lg);
-  position: relative;
-  overflow: hidden;
-}
-.legal-hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none;
-}
-.legal-hero h1 {
-  font-family: var(--font-heading);
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  text-wrap: balance;
-  position: relative;
-  z-index: 1;
-}
-.legal-content { background: var(--color-bg); padding: var(--space-3xl) 0 var(--space-4xl); }
-.content-narrow {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 0 var(--space-xl);
-  line-height: 1.7;
-  color: var(--color-text);
-}
-.content-narrow h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-top: var(--space-3xl);
-  padding-bottom: var(--space-sm);
-  border-bottom: 1px solid rgba(var(--color-primary-rgb), 0.1);
-}
-.content-narrow h3 { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-primary); margin-top: var(--space-xl); }
-.content-narrow p { margin-bottom: var(--space-md); }
-.content-narrow ul { padding-left: var(--space-xl); margin-bottom: var(--space-md); }
-.content-narrow li { margin-bottom: var(--space-xs); }
-.content-narrow a { color: var(--color-accent); text-decoration: underline; }
-.legal-updated { font-size: 0.9rem; color: var(--color-text-light); margin-bottom: var(--space-2xl); padding-bottom: var(--space-md); border-bottom: 1px solid rgba(var(--color-primary-rgb), 0.08); }
-.a11y-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: rgba(var(--color-accent-rgb), 0.1);
-  border: 1px solid rgba(var(--color-accent-rgb), 0.25);
-  border-radius: var(--radius-md);
-  padding: var(--space-sm) var(--space-md);
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: var(--space-xl);
-}
-</style>
-
-  <nav aria-label="Breadcrumb" style="background:var(--color-bg-dark);padding:var(--space-sm) 0;">
-    <div class="container">
-      <ol style="display:flex;align-items:center;gap:var(--space-xs);list-style:none;flex-wrap:wrap;font-size:var(--font-size-sm);color:rgba(255,255,255,0.55);">
-        <li><a href="/" style="color:rgba(255,255,255,0.7);">Home</a></li>
-        <li aria-hidden="true" style="color:rgba(255,255,255,0.3);">›</li>
-        <li style="color:var(--color-accent);font-weight:600;" aria-current="page">Accessibility</li>
-      </ol>
-    </div>
-  </nav>
-
-  <section class="legal-hero" aria-label="Accessibility Statement">
+<section class="hero hero--interior inner-hero" aria-label="Accessibility Statement">
+  <div class="container">
+    <?php echo breadcrumbs([['Home', '/'], ['Accessibility Statement', '/accessibility/']]); ?>
+    <span class="eyebrow">Legal</span>
     <h1>Accessibility Statement</h1>
-  </section>
+    <p class="legal-meta">Effective date: <?php echo date('F j, Y'); ?></p>
+  </div>
+</section>
 
-  <section class="legal-content">
-    <div class="content-narrow">
-      <p class="legal-updated"><strong>Last Updated:</strong> <?php echo $lastUpdated; ?></p>
+<section class="section legal-wrap">
+  <div class="container legal-layout">
+    <article class="legal-prose">
 
-      <div class="a11y-badge">
-        <span>Target: WCAG 2.1 Level AA</span>
-      </div>
+      <h2 id="commitment">1. Our Commitment</h2>
+      <p><?php echo e($siteName); ?> wants everyone to be able to learn about our lawn care, landscaping, concrete and snow removal services and request an estimate, including people with disabilities. We work to make <a href="<?php echo e($siteUrl); ?>/"><?php echo e($domain); ?></a> (the “Site”) usable with assistive technologies such as screen readers, screen magnifiers, voice control and keyboard-only navigation.</p>
 
-      <h2>Our Commitment</h2>
-      <p><?php echo htmlspecialchars($companyName); ?> is committed to ensuring digital accessibility for people with disabilities. We continually work to improve the user experience of our website and aim to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA standards.</p>
+      <h2 id="conformance">2. Conformance Status</h2>
+      <p>The Web Content Accessibility Guidelines (WCAG) define how to make web content more accessible to people with disabilities. The Site is designed to conform with <strong>WCAG 2.1 Level AA</strong>. We consider it partially conformant, meaning some content may not yet fully meet the standard. We review the Site as it changes and fix issues we find.</p>
 
-      <h2>Accessibility Features</h2>
-      <p>We have implemented the following accessibility features on our website:</p>
-      <ul>
-        <li><strong>Semantic HTML5 structure</strong> — proper use of headings, landmarks, lists, and structural elements for screen reader compatibility</li>
-        <li><strong>Skip-to-content link</strong> — allows keyboard users to bypass navigation and jump directly to main content</li>
-        <li><strong>ARIA labels and landmarks</strong> — descriptive labels on interactive elements and ARIA landmarks for navigation regions</li>
-        <li><strong>Full keyboard navigation</strong> — all interactive elements are operable via keyboard</li>
-        <li><strong>Visible focus indicators</strong> — clear visual focus outlines on all interactive elements when navigating with a keyboard</li>
-        <li><strong>WCAG AA color contrast</strong> — minimum 4.5:1 contrast ratio for body text and 3:1 for large text</li>
-        <li><strong>Descriptive alt text</strong> — all informational images include descriptive alternative text</li>
-        <li><strong>Responsive zoom up to 200%</strong> — content remains usable and readable when zoomed to 200%</li>
-        <li><strong><code>prefers-reduced-motion</code> media query</strong> — animations are disabled or reduced for users who prefer reduced motion</li>
-        <li><strong>Form labels associated with inputs</strong> — all form fields have programmatically associated labels</li>
-        <li><strong>Mobile-responsive design</strong> — site adapts to all device sizes and orientations</li>
+      <h2 id="features">3. Accessibility Features on This Site</h2>
+      <ul class="a11y-list" data-p1-dynamic>
+        <?php foreach ($a11yFeatures as $feature): ?>
+        <li><?php echo icon('check-circle', 18); ?><span><?php echo e($feature); ?></span></li>
+        <?php endforeach; ?>
       </ul>
+      <p>The Site does not currently host video or audio content, so captions and transcripts do not apply. If we add media, we will provide captions.</p>
 
-      <h2>Known Limitations</h2>
-      <p>Despite our best efforts, some areas of the website may not be fully accessible:</p>
+      <h2 id="limitations">4. Known Limitations</h2>
       <ul>
-        <li><strong>Third-party content:</strong> Embedded content such as Google Maps may not fully conform to WCAG 2.1 AA standards. We are working with third-party providers to address these limitations.</li>
-        <li><strong>PDF documents:</strong> Any PDF documents linked from this website may not be fully accessible. Please contact us and we will provide the information in an alternative format.</li>
+        <li><strong>Third-party websites.</strong> Links to our Google Business Profile and Facebook page open sites we do not control, and their accessibility may differ from ours.</li>
+        <li><strong>Third-party badge.</strong> The partner badge image in the footer is supplied by another company; it has a text alternative, but its visual content is outside our control.</li>
+        <li><strong>Photographs.</strong> Job photos are described in alt text, but fine visual details such as turf color or concrete finish may not come through fully.</li>
       </ul>
+      <p>If any of these gets in your way, contact us and we will give you the information another way.</p>
 
-      <h2>Feedback</h2>
-      <p>We welcome your feedback on the accessibility of our website. If you encounter accessibility barriers or have suggestions for improvement, please contact us:</p>
-      <ul>
-        <li>Email: <a href="mailto:<?php echo htmlspecialchars($companyEmail); ?>"><?php echo htmlspecialchars($companyEmail); ?></a></li>
-        <li>Phone: <a href="tel:<?php echo htmlspecialchars($phone); ?>"><?php echo htmlspecialchars($companyPhone); ?></a></li>
+      <h2 id="feedback">5. Feedback and Reporting a Barrier</h2>
+      <p>If you have trouble using any part of the Site, please tell us. Include the page address and a short description of the problem, and let us know the assistive technology or browser you use if you can.</p>
+      <ul class="legal-contact">
+        <li>Phone: <a href="<?php echo telHref(); ?>"><?php echo e($phone); ?></a> (<?php echo e($hoursLong); ?>)</li>
+        <li>Email: <a href="mailto:<?php echo e($email); ?>"><?php echo e($email); ?></a></li>
       </ul>
       <p>We aim to respond to accessibility feedback within 5 business days.</p>
 
-      <h2>Enforcement</h2>
-      <p>We recognize your rights under the Americans with Disabilities Act (ADA), Section 508 of the Rehabilitation Act, and applicable state accessibility laws. If you believe that your rights have been violated, you may file a complaint with the appropriate enforcement agency or contact us directly so we can address your concerns.</p>
-    </div>
-  </section>
+      <h2 id="alternatives">6. Other Ways to Request an Estimate</h2>
+      <div class="help-panel">
+        <p>You never need to use the online form. Call RAH Solutions at <a href="<?php echo telHref(); ?>"><?php echo e($phone); ?></a> during business hours to request a free on-site estimate by phone, or email <a href="mailto:<?php echo e($email); ?>"><?php echo e($email); ?></a> with your name, phone number and the town where the work is. We can also share service information in another format on request.</p>
+      </div>
 
+      <h2 id="changes">7. Changes to This Statement</h2>
+      <p>We will update this statement as the Site changes and as we fix known issues. The “Last updated” date below shows the latest revision.</p>
+
+      <h2 id="contact">8. Contact Us</h2>
+      <ul class="legal-contact">
+        <li><strong><?php echo e($siteName); ?></strong>, Edgerton, Wisconsin 53534</li>
+        <li>Phone: <a href="<?php echo telHref(); ?>"><?php echo e($phone); ?></a></li>
+        <li>Email: <a href="mailto:<?php echo e($email); ?>"><?php echo e($email); ?></a></li>
+      </ul>
+
+      <p class="legal-meta">Last updated: <?php echo date('F j, Y'); ?></p>
+    </article>
+
+    <aside class="legal-toc" aria-label="On this page">
+      <ol>
+        <li><a href="#commitment">Our commitment</a></li>
+        <li><a href="#conformance">Conformance status</a></li>
+        <li><a href="#features">Accessibility features</a></li>
+        <li><a href="#limitations">Known limitations</a></li>
+        <li><a href="#feedback">Report a barrier</a></li>
+        <li><a href="#alternatives">Other ways to reach us</a></li>
+        <li><a href="#changes">Changes</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </aside>
+  </div>
+</section>
+
+</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>
