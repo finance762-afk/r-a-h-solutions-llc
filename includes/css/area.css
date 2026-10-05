@@ -1,0 +1,389 @@
+/* ==========================================================================
+   area.css — town pages (/service-areas/{town}/).
+   Photo hero with form card and parish chip, local intro with a "town
+   facts" card, common-work ledger, ground-and-rules panel, services for
+   the town, nearby-town chips, local FAQ, closing call band.
+   Each town page adds its own accent in $pageStyle. Tokens only.
+   ========================================================================== */
+
+/* --- Hero ------------------------------------------------------------------- */
+.area-hero {
+  padding-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+.area-hero .hero-overlay {
+  background:
+    linear-gradient(100deg,
+      color-mix(in srgb, var(--color-dark) 94%, transparent) 0%,
+      color-mix(in srgb, var(--color-secondary) 80%, transparent) 50%,
+      color-mix(in srgb, var(--color-dark) 45%, transparent) 100%);
+}
+.area-hero .breadcrumb {
+  color: color-mix(in srgb, var(--color-white) 72%, transparent);
+  margin: 0;
+}
+.area-hero .breadcrumb a {
+  min-height: 32px;
+}
+.area-hero .hero-title {
+  max-width: 19ch;
+}
+.area-hero .page-answer {
+  color: color-mix(in srgb, var(--color-white) 88%, transparent);
+  text-shadow: 0 1px 2px color-mix(in srgb, var(--color-black) 60%, transparent);
+}
+.parish-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  width: max-content;
+  max-width: 100%;
+  padding: .35rem .8rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-accent);
+  font-size: .78rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--color-dark);
+  background: var(--color-accent);
+}
+.area-hero .hero-form-card {
+  border-top: 4px solid var(--color-accent);
+}
+
+/* --- Local intro ------------------------------------------------------------ */
+.area-intro {
+  background: var(--color-surface);
+}
+.area-intro__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, .8fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+.area-copy {
+  display: grid;
+  gap: 1.05rem;
+  max-width: var(--measure);
+}
+.area-copy > p {
+  margin: 0;
+  color: var(--color-ink-2);
+}
+.area-copy h2 {
+  margin-top: .4rem;
+}
+.area-copy a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+.area-copy .answer-block {
+  margin: .2rem 0;
+  background: var(--color-card-tint-1);
+  border-left-color: var(--color-primary);
+}
+.area-copy .answer-block p {
+  margin: 0;
+}
+.town-card {
+  position: sticky;
+  top: calc(var(--nav-height) + 1.25rem);
+  display: grid;
+  gap: .9rem;
+  padding: 1.4rem;
+  border-radius: var(--radius-lg);
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+  box-shadow: var(--shadow);
+}
+.town-card h2 {
+  font-family: var(--font-accent);
+  font-size: .82rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--color-accent-dark);
+}
+.town-card dl {
+  margin: 0;
+  display: grid;
+  gap: .7rem;
+}
+.town-card dl div {
+  display: grid;
+  gap: .1rem;
+  padding-bottom: .7rem;
+  border-bottom: 1px dashed var(--color-line);
+}
+.town-card dl div:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.town-card dt {
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+.town-card dd {
+  margin: 0;
+  font-size: .95rem;
+  color: var(--color-ink);
+}
+.town-card .btn {
+  width: 100%;
+}
+@media (max-width: 900px) {
+  .area-intro__grid {
+    grid-template-columns: 1fr;
+  }
+  .town-card {
+    position: static;
+  }
+}
+
+/* --- Common yard work ledger ------------------------------------------------- */
+.area-work {
+  background: var(--color-paper-2);
+}
+.yard-ledger {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+.yard-ledger article {
+  position: relative;
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: .35rem 1rem;
+  align-items: start;
+  padding: 1.3rem 1.35rem;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  box-shadow: var(--shadow-sm);
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.yard-ledger article:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+.yard-ledger article:nth-child(4n+2),
+.yard-ledger article:nth-child(4n+3) {
+  background: var(--color-card-tint-3);
+}
+.yard-ledger article > span {
+  grid-row: span 2;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  color: var(--color-white);
+  background: var(--color-primary);
+}
+.yard-ledger h3 {
+  font-size: 1.08rem;
+}
+.yard-ledger p {
+  margin: 0;
+  font-size: .94rem;
+  color: var(--color-ink-2);
+}
+.yard-ledger a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+@media (max-width: 760px) {
+  .yard-ledger {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Ground & rules panel (dark) ---------------------------------------- */
+.area-ground .container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 5vw, 4rem);
+  align-items: center;
+}
+.area-ground__copy {
+  display: grid;
+  gap: .9rem;
+}
+.area-ground__copy p {
+  margin: 0;
+}
+.area-ground__copy a {
+  color: var(--color-accent-bright);
+  font-weight: 600;
+}
+.area-ground__photo {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  box-shadow: var(--shadow-lg);
+  clip-path: polygon(6% 0, 100% 0, 100% 100%, 0 100%, 0 8%);
+}
+.area-ground__photo picture,
+.area-ground__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.area-ground__photo figcaption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 2rem 1rem .8rem;
+  font-size: .85rem;
+  color: var(--color-white);
+  background: linear-gradient(to top, color-mix(in srgb, var(--color-black) 82%, transparent), transparent);
+}
+.ground-points {
+  list-style: none;
+  margin: .4rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: .55rem;
+}
+.ground-points li {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: .6rem;
+  align-items: start;
+  font-size: .96rem;
+  color: color-mix(in srgb, var(--color-white) 86%, transparent);
+}
+.ground-points svg {
+  color: var(--color-accent-bright);
+  margin-top: 3px;
+}
+@media (max-width: 860px) {
+  .area-ground .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Services for the town ----------------------------------------------- */
+.area-services {
+  background: var(--color-surface);
+}
+.area-services .services-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 900px) {
+  .area-services .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 560px) {
+  .area-services .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Nearby towns --------------------------------------------------------- */
+.nearby {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding: 1.4rem 1.5rem;
+  border-radius: var(--radius-lg);
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+  display: grid;
+  gap: .8rem;
+}
+.nearby h3 {
+  font-size: 1.05rem;
+}
+.nearby ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+.nearby a {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  min-height: 40px;
+  padding: .4rem .85rem;
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  color: var(--color-ink-2);
+  font-weight: 600;
+  font-size: .9rem;
+  text-decoration: none;
+}
+.nearby a:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.nearby a svg {
+  color: var(--color-accent-dark);
+}
+
+/* --- Local FAQ -------------------------------------------------------------- */
+.area-faq {
+  background: var(--color-paper);
+}
+.area-faq .faq-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  gap: clamp(1.5rem, 5vw, 4rem);
+  align-items: start;
+}
+.area-faq .faq-answer a {
+  color: var(--color-primary);
+}
+@media (max-width: 860px) {
+  .area-faq .faq-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Closing call band ------------------------------------------------------ */
+.area-close {
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+}
+.area-close .container {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) auto;
+  gap: 1.5rem;
+  align-items: center;
+}
+.area-close h2 {
+  margin-bottom: .4rem;
+}
+.area-close p {
+  margin: 0;
+}
+.area-close .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
+}
+@media (max-width: 760px) {
+  .area-close .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- RAH: plain gradient hero (no photo is tied to a town), county chip, ledger icons --- */
+.area-hero--plain { background: linear-gradient(118deg, var(--color-dark) 0%, var(--color-dark-green) 62%, var(--color-primary-deep) 140%); color: var(--color-white); }
+.area-hero--plain h1 { color: var(--color-white); }
+.area-hero--plain .page-answer { color: color-mix(in srgb, var(--color-white) 88%, transparent); }
+.area-hero--plain .link-call { color: color-mix(in srgb, var(--color-white) 90%, transparent); }
+.area-hero--plain .link-call svg { color: var(--color-white); }
+.area-hero--plain .breadcrumb { color: color-mix(in srgb, var(--color-white) 76%, transparent); margin: 0; }
+.area-hero--plain .hero-form-card h2 { color: var(--color-ink); }
+.area-hero--plain .hero-form-card p { color: var(--color-muted); }
+.area-hero--plain .floating-facet { right: 36%; top: -40px; left: auto; bottom: auto; opacity: .14; color: var(--color-aqua); }
+.parish-chip { background: color-mix(in srgb, var(--color-white) 12%, transparent); color: var(--color-white); border: 1px solid color-mix(in srgb, var(--color-white) 24%, transparent); }
+.parish-chip svg { color: var(--color-accent-bright); }
+.yard-ledger article > span { background: var(--color-primary); color: var(--color-white); }
+.area-copy a, .yard-ledger a { color: var(--color-primary); font-weight: 600; }
+.area-ground__photo picture, .area-ground__photo img { width: 100%; height: 100%; object-fit: cover; }
+.area-sources { font-size: .8rem; color: var(--color-muted); max-width: 70ch; margin: 1.5rem 0 0; }

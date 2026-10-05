@@ -1,211 +1,88 @@
-<?php
-// ============================================================
-// R.A.H. Solutions, LLC — header.php
-// Outputs: skip link, <header>, <nav>, </header>, <main>
-// ============================================================
-include_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
-?>
-<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Skip to main content (accessibility) -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+<!-- Fixed light glass header: main.js adds .scrolled on scroll (logo shrinks, bar turns solid) -->
+<header class="site-header" data-header>
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="navbar-inner container-wide">
+      <a href="/" class="site-logo" aria-label="<?php echo e($siteName); ?> home">
+        <img src="<?php echo e($logoLight); ?>" alt="<?php echo e($siteName); ?> logo" width="150" height="50" class="logo--lockup">
+      </a>
 
-  <header class="site-header" data-header>
-    <nav class="navbar" aria-label="Main navigation" role="navigation">
-      <div class="navbar-inner container">
-
-        <!-- ── Logo ─────────────────────────────────────── -->
-        <a href="/" class="navbar-logo" aria-label="<?php echo htmlspecialchars($companyName, ENT_QUOTES, 'UTF-8'); ?> — Home">
-          <img
-            src="<?php echo htmlspecialchars($logoUrl, ENT_QUOTES, 'UTF-8'); ?>"
-            alt="<?php echo htmlspecialchars($companyName, ENT_QUOTES, 'UTF-8'); ?> logo"
-            class="navbar-logo-img"
-            width="160"
-            height="60"
-            loading="eager"
-          >
-        </a>
-
-        <!-- ── Desktop Nav Links ─────────────────────────── -->
-        <ul class="navbar-links" role="list">
-
-          <li>
-            <a href="/"
-               class="nav-link<?php echo isActivePage('home') ? ' nav-link--active' : ''; ?>"
-               <?php echo isActivePage('home') ? 'aria-current="page"' : ''; ?>>
-              Home
-            </a>
-          </li>
-
-          <!-- Services with dropdown -->
-          <li class="has-dropdown">
-            <a href="/services"
-               class="nav-link<?php echo (isActivePage('services') || str_starts_with($currentPage ?? '', 'service-')) ? ' nav-link--active' : ''; ?>"
-               <?php echo isActivePage('services') ? 'aria-current="page"' : ''; ?>
-               aria-haspopup="true"
-               aria-expanded="false">
-              Services <span class="nav-chevron" aria-hidden="true">&#8964;</span>
-            </a>
-            <ul class="nav-dropdown" role="list" aria-label="Services submenu" style="display:none">
-              <?php foreach ($navServices as $svc): ?>
-              <li>
-                <a href="/services/<?php echo htmlspecialchars($svc['slug'], ENT_QUOTES, 'UTF-8'); ?>"
-                   class="dropdown-link<?php echo isActivePage('service-' . $svc['slug']) ? ' dropdown-link--active' : ''; ?>">
-                  <?php echo htmlspecialchars($svc['name'], ENT_QUOTES, 'UTF-8'); ?>
-                </a>
-              </li>
-              <?php endforeach; ?>
-              <li class="dropdown-divider" role="separator"></li>
-              <li>
-                <a href="/services" class="dropdown-link dropdown-link--all">
-                  View All Services &rarr;
-                </a>
-              </li>
-            </ul>
-          </li>
-
-          <li>
-            <a href="/service-area"
-               class="nav-link<?php echo isActivePage('service-area') ? ' nav-link--active' : ''; ?>"
-               <?php echo isActivePage('service-area') ? 'aria-current="page"' : ''; ?>>
-              Service Area
-            </a>
-          </li>
-
-          <li>
-            <a href="/about"
-               class="nav-link<?php echo isActivePage('about') ? ' nav-link--active' : ''; ?>"
-               <?php echo isActivePage('about') ? 'aria-current="page"' : ''; ?>>
-              About
-            </a>
-          </li>
-
-          <li>
-            <a href="/contact"
-               class="nav-link<?php echo isActivePage('contact') ? ' nav-link--active' : ''; ?>"
-               <?php echo isActivePage('contact') ? 'aria-current="page"' : ''; ?>>
-              Contact
-            </a>
-          </li>
-
-        </ul><!-- /.navbar-links -->
-
-        <!-- ── Desktop CTA ───────────────────────────────── -->
-        <div class="navbar-cta">
-          <a href="tel:<?php echo $phone; ?>" class="navbar-phone" aria-label="Call R.A.H. Solutions">
-            <span class="navbar-phone-icon" aria-hidden="true">
-              <i data-lucide="phone" style="width:16px;height:16px;vertical-align:middle;"></i>
-            </span>
-            <?php echo htmlspecialchars($phoneFormatted, ENT_QUOTES, 'UTF-8'); ?>
-          </a>
-          <a href="/contact" class="btn-primary navbar-estimate-btn">
-            Free Estimate
-          </a>
-        </div>
-
-        <!-- ── Mobile Hamburger ──────────────────────────── -->
-        <button
-          class="hamburger"
-          id="hamburger-btn"
-          aria-label="Open navigation menu"
-          aria-expanded="false"
-          aria-controls="mobile-menu"
-        >
-          <span class="hamburger-line" aria-hidden="true"></span>
-          <span class="hamburger-line" aria-hidden="true"></span>
-          <span class="hamburger-line" aria-hidden="true"></span>
-        </button>
-
-      </div><!-- /.navbar-inner -->
-    </nav><!-- /.navbar -->
-
-    <!-- ── Mobile Full-Screen Menu ───────────────────────── -->
-    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation menu" aria-modal="true" hidden>
-      <div class="mobile-menu-inner">
-
-        <button
-          class="mobile-menu-close"
-          id="mobile-menu-close"
-          aria-label="Close navigation menu"
-        >
-          <i data-lucide="x" style="width:28px;height:28px;" aria-hidden="true"></i>
-        </button>
-
-        <nav aria-label="Mobile navigation">
-          <ul class="mobile-nav-links" role="list">
-
-            <li>
-              <a href="/"
-                 class="mobile-nav-link<?php echo isActivePage('home') ? ' mobile-nav-link--active' : ''; ?>"
-                 <?php echo isActivePage('home') ? 'aria-current="page"' : ''; ?>>
-                Home
-              </a>
-            </li>
-
-            <!-- Services with sub-links -->
-            <li class="mobile-has-sub">
-              <a href="/services"
-                 class="mobile-nav-link<?php echo (isActivePage('services') || str_starts_with($currentPage ?? '', 'service-')) ? ' mobile-nav-link--active' : ''; ?>"
-                 <?php echo isActivePage('services') ? 'aria-current="page"' : ''; ?>>
-                Services
-              </a>
-              <ul class="mobile-sub-links" role="list">
-                <?php foreach ($services as $svc): ?>
-                <li>
-                  <a href="/services/<?php echo htmlspecialchars($svc['slug'], ENT_QUOTES, 'UTF-8'); ?>"
-                     class="mobile-sub-link">
-                    <?php echo htmlspecialchars($svc['name'], ENT_QUOTES, 'UTF-8'); ?>
-                  </a>
-                </li>
+      <ul class="navbar-links" role="list">
+        <li class="has-dropdown">
+          <button type="button" class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">Services <?php echo icon('chevron-down', 16); ?></button>
+          <ul class="dropdown dropdown--mega" role="menu" style="display:none">
+            <?php foreach ($serviceGroups as $navGroupKey => $navGroup): ?>
+            <li role="none" class="mega-col">
+              <span class="mega-h"><?php echo e($navGroup['name']); ?></span>
+              <ul role="none">
+                <?php foreach (servicesInGroup($navGroupKey) as $navSvc): ?>
+                <li role="none"><a role="menuitem" href="/services/<?php echo $navSvc['slug']; ?>/"><?php echo e($navSvc['name']); ?></a></li>
                 <?php endforeach; ?>
               </ul>
             </li>
-
-            <li>
-              <a href="/service-area"
-                 class="mobile-nav-link<?php echo isActivePage('service-area') ? ' mobile-nav-link--active' : ''; ?>"
-                 <?php echo isActivePage('service-area') ? 'aria-current="page"' : ''; ?>>
-                Service Area
-              </a>
-            </li>
-
-            <li>
-              <a href="/about"
-                 class="mobile-nav-link<?php echo isActivePage('about') ? ' mobile-nav-link--active' : ''; ?>"
-                 <?php echo isActivePage('about') ? 'aria-current="page"' : ''; ?>>
-                About
-              </a>
-            </li>
-
-            <li>
-              <a href="/contact"
-                 class="mobile-nav-link<?php echo isActivePage('contact') ? ' mobile-nav-link--active' : ''; ?>"
-                 <?php echo isActivePage('contact') ? 'aria-current="page"' : ''; ?>>
-                Contact
-              </a>
-            </li>
-
+            <?php endforeach; ?>
+            <li role="none" class="mega-all"><a role="menuitem" href="/services/" class="dropdown-all">See all 15 services <?php echo icon('arrow-right', 16); ?></a></li>
           </ul>
-        </nav>
+        </li>
+        <li class="has-dropdown">
+          <button type="button" class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">Service Area <?php echo icon('chevron-down', 16); ?></button>
+          <ul class="dropdown dropdown--areas" role="menu" style="display:none">
+            <?php foreach ($serviceAreas as $navArea): ?>
+            <li role="none"><a role="menuitem" href="<?php echo areaHref($navArea); ?>"><?php echo e($navArea['name'] . ', ' . $navArea['state']); ?></a></li>
+            <?php endforeach; ?>
+            <li role="none"><a role="menuitem" href="/service-area/" class="dropdown-all">Full service area</a></li>
+          </ul>
+        </li>
+        <li><a href="/about/"<?php echo ariaCurrent('/about/'); ?>>About</a></li>
+        <li><a href="/blog/"<?php echo ariaCurrent('/blog/'); ?>>Blog</a></li>
+        <li><a href="/faq/"<?php echo ariaCurrent('/faq/'); ?>>FAQ</a></li>
+        <li><a href="/contact/"<?php echo ariaCurrent('/contact/'); ?>>Contact</a></li>
+      </ul>
 
-        <!-- Mobile CTA block -->
-        <div class="mobile-menu-cta">
-          <a href="tel:<?php echo $phone; ?>" class="mobile-phone-link">
-            <i data-lucide="phone" style="width:20px;height:20px;vertical-align:middle;margin-right:8px;" aria-hidden="true"></i>
-            <?php echo htmlspecialchars($phoneFormatted, ENT_QUOTES, 'UTF-8'); ?>
-          </a>
-          <a href="/contact" class="btn-primary mobile-estimate-btn">
-            Get a Free Estimate
-          </a>
-        </div>
+      <div class="navbar-cta">
+        <a href="tel:<?php echo e($phoneRaw); ?>" class="btn btn-secondary navbar-phone"><?php echo icon('phone', 18); ?> <?php echo e($phone); ?></a>
+        <button type="button" class="btn btn-primary" data-open-estimate>Free Estimate</button>
+      </div>
 
-      </div><!-- /.mobile-menu-inner -->
-    </div><!-- /.mobile-menu -->
+      <button type="button" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+      </button>
+    </div>
+  </nav>
+</header>
 
-    <!-- Mobile menu overlay/backdrop -->
-    <div class="mobile-menu-overlay" id="mobile-menu-overlay" aria-hidden="true"></div>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <div class="mobile-menu-inner">
+    <nav aria-label="Mobile navigation">
+      <ul class="mobile-menu-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/services/">Services</a>
+          <div class="mobile-groups">
+            <?php foreach ($serviceGroups as $navGroupKey => $navGroup): ?>
+            <details class="mobile-group">
+              <summary><?php echo e($navGroup['name']); ?></summary>
+              <ul class="mobile-submenu">
+                <?php foreach (servicesInGroup($navGroupKey) as $navSvc): ?>
+                <li><a href="/services/<?php echo $navSvc['slug']; ?>/"><?php echo e($navSvc['name']); ?></a></li>
+                <?php endforeach; ?>
+              </ul>
+            </details>
+            <?php endforeach; ?>
+          </div>
+        </li>
+        <li><a href="/service-area/">Service Area</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="mobile-menu-cta">
+      <a href="tel:<?php echo e($phoneRaw); ?>" class="btn btn-accent btn-block"><?php echo icon('phone', 18); ?> Call <?php echo e($phone); ?></a>
+      <button type="button" class="btn btn-outline-white btn-block" data-open-estimate>Free Estimate</button>
+    </div>
+  </div>
+</div>
 
-  </header><!-- /.site-header -->
-
-  <main id="main-content">
+<main id="main-content">

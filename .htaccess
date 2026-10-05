@@ -1,59 +1,94 @@
 # ============================================================
-# R.A.H. Solutions, LLC — .htaccess
-# Subdirectory/index.php structure for Hostinger
-# Clean URLs via DirectoryIndex — no flat-file rewrite
+# RAH Solutions LLC — .htaccess (v7 rebuild, 2026-10-05)
+# Every page is directory/index.php with a trailing-slash URL.
 # ============================================================
-
 Options -Indexes
+DirectorySlash On
 DirectoryIndex index.php
+ErrorDocument 404 /404.php
 
+<IfModule mod_rewrite.c>
 RewriteEngine On
 
-# ── HTTPS redirect ──────────────────────────────────────────
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# --- Canonical host: force HTTPS and strip www in one hop ---
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^ https://rahsolutionsllc.com%{REQUEST_URI} [R=301,L]
 
-# ── Exclude static asset and include directories ───────────
-RewriteCond %{REQUEST_URI} !^/assets/
-RewriteCond %{REQUEST_URI} !^/includes/
+# --- 301 map: URLs that changed shape in the rebuild ---
+RewriteRule ^thank-you\.php$ /thank-you/ [R=301,L,NC]
+RewriteRule ^sitemap-images\.xml$ /sitemap.xml [R=301,L,NC]
+RewriteRule ^service-areas/?$ /service-area/ [R=301,L,NC]
+RewriteRule ^service-area/([a-z-]+-wi)/?$ /areas/$1/ [R=301,L,NC]
 
-# ── Remove .php extension from URL bar (301 redirect) ──────
-# Catches any straggler /about.php or /services/snow-removal.php links
-RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
-RewriteRule ^ /%1 [NC,L,R=301]
+# --- Internal build docs and inputs are never served ---
+RewriteRule ^(inventory/|content/|REBUILD-|CLAUDE\.md|build-plan\.json|qa-report|\.rebuild-done|\.git|\.claude) - [R=404,L,NC]
+RewriteRule \.md$ - [R=404,L,NC]
 
-# ── Remove trailing slash (except root) ─────────────────────
-# !-d is MANDATORY: every page is a real directory (subdirectory/index.php),
-# and stripping its slash fights Apache's DirectorySlash redirect — the loop
-# made every inner page a 301 cycle (confirmed live 2026-08-18)
+# --- Partials are never served directly ---
+RewriteRule ^includes/ - [R=404,L,NC]
+
+# --- Dynamic sitemap: /sitemap.xml is served by sitemap.php ---
+RewriteRule ^sitemap\.xml$ /sitemap.php [L]
+
+# --- Remove trailing slash from non-directory URLs (!-d is mandatory: every page
+#     is a real directory, and stripping its slash fights DirectorySlash) ---
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} (.+)/$
 RewriteRule ^ %1 [R=301,L]
 
-# ── Security headers ────────────────────────────────────────
+# --- Clean URLs: extensionless → .php only when that file exists (dirs fall through to DirectoryIndex) ---
+RewriteCond %{REQUEST_URI} !^/assets/
+RewriteCond %{REQUEST_URI} !^/includes/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{DOCUMENT_ROOT}/$1.php -f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+RewriteCond %{THE_REQUEST} /([^.\s]+)\.php[\s?] [NC]
+RewriteCond %{REQUEST_URI} !^/sitemap\.php [NC]
+RewriteCond %{REQUEST_URI} !^/404\.php [NC]
+RewriteRule ^ /%1 [NC,L,R=301]
+</IfModule>
+
+# --- Security headers ---
 <IfModule mod_headers.c>
-  Header set X-Content-Type-Options "nosniff"
-  Header set X-Frame-Options "SAMEORIGIN"
-  Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
 </IfModule>
 
-# ── Compression ─────────────────────────────────────────────
+# --- Compression: Brotli first, gzip fallback ---
+<IfModule mod_brotli.c>
+    AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css text/javascript application/javascript application/json application/xml application/ld+json image/svg+xml application/manifest+json
+</IfModule>
 <IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json text/xml
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/json application/xml application/ld+json image/svg+xml application/manifest+json
+</IfModule>
+<IfModule mod_mime.c>
+    AddType image/avif .avif
+    AddType font/woff2 .woff2
+    AddType application/manifest+json .webmanifest
 </IfModule>
 
-# ── Cache static assets ─────────────────────────────────────
+# --- Caching: static assets immutable 1 year (css/js carry ?v=$cssVersion); HTML revalidates ---
 <IfModule mod_expires.c>
-  ExpiresActive On
-  ExpiresByType image/jpeg "access plus 1 year"
-  ExpiresByType image/png  "access plus 1 year"
-  ExpiresByType image/webp "access plus 1 year"
-  ExpiresByType image/svg+xml "access plus 1 year"
-  ExpiresByType text/css   "access plus 1 month"
-  ExpiresByType application/javascript "access plus 1 month"
-  ExpiresByType application/json "access plus 1 week"
+    ExpiresActive On
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/avif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType text/html "access plus 0 seconds"
 </IfModule>
-
-# ── Custom error pages ──────────────────────────────────────
-ErrorDocument 404 /404.php
+<IfModule mod_headers.c>
+    <FilesMatch "\.(css|js|woff2|webp|avif|jpe?g|png|svg|ico)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    <FilesMatch "\.(php|html)$">
+        Header set Cache-Control "no-cache, must-revalidate"
+    </FilesMatch>
+</IfModule>

@@ -1,1096 +1,249 @@
 <?php
-// ============================================================
-// R.A.H. Solutions, LLC — Excavating Services
-// ============================================================
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+?>
+<?php
+$svc             = serviceBySlug('excavating-services');
+$currentPage     = 'services';
+$pageType        = 'service';
+$serviceSlug     = 'excavating-services';
+$pageTitle       = 'Excavating Services in Edgerton, WI | RAH Solutions LLC';
+$pageDescription = 'Grading, yard drainage, buried downspout lines and site prep in Edgerton, WI. RAH Solutions LLC runs its own excavator and loaders. Free on-site estimates.';
+$canonicalUrl    = $siteUrl . '/services/excavating-services/';
+$heroPreload     = heroPreload('excavator-skid-steer-culvert', '100vw');
+$ogImage         = 'excavator-skid-steer-culvert.jpg';
+$pageCss         = ['service'];
+$pageStyle       = <<<CSS
+/* excavating-services: tall hero photo held on the machines, earth-toned type cards, 811 callout */
+.page-excavating-services .svc-hero .hero-bg img { object-position: 50% 58%; }
+.page-excavating-services .type-card { border-top: 3px solid color-mix(in srgb, var(--color-secondary) 55%, var(--color-line)); }
+.page-excavating-services .type-card__icon { color: var(--color-secondary); }
+.page-excavating-services .type-card--photo { min-height: 340px; border-top: 0; }
+.page-excavating-services .svc-callout { border-left: 4px solid var(--color-accent); background: color-mix(in srgb, var(--color-accent) 9%, var(--color-surface)); }
+.page-excavating-services .svc-callout blockquote { margin: 1rem 0 0; padding-left: 1rem; border-left: 2px solid var(--color-line); font-family: var(--font-accent); color: var(--color-ink-2); }
+CSS;
 
-$pageTitle       = 'Excavating Services in Edgerton, WI';
-$pageDescription = 'Excavating in Edgerton, WI — site grading, drainage, pond excavation & utility trenching by R.A.H. Solutions. Free estimates. Call (608) 501-5123.';
-$canonicalUrl    = 'https://rahsolutionsllc.com/services/excavating-services';
-// SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
-$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963895295-85rqf1-495734161_122236025852208320_5435639759042997660_n.jpg';
-$currentPage     = 'service-excavating-services';
-$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963895295-85rqf1-495734161_122236025852208320_5435639759042997660_n.jpg';
-
-$pageServiceName = 'Excavating Services';
-$pageServiceSlug = 'excavating-services';
-
-// ── Page-Specific Schema ───────────────────────────────────────
 $faqs = [
-  ['q' => 'What permits are needed for excavation in Wisconsin?', 'a' => 'Most residential grading and drainage projects in Wisconsin do not require a permit unless you are altering more than one acre of land (which triggers a DNR erosion control permit) or working near wetlands or floodplains. Basement and foundation excavation typically requires a building permit from your municipality. R.A.H. Solutions reviews permit requirements during the site walk before any project begins.'],
-  ['q' => 'Can you fix poor drainage on my property?', 'a' => 'Yes. Poor drainage is one of the most common excavating requests we handle in Rock County. We assess your existing grade, design a corrective grading plan to direct water away from structures, and can install French drains or swales where needed. Most residential drainage correction projects take 1–3 days depending on scope.'],
-  ['q' => 'Do you do pond or water feature excavation?', 'a' => 'Yes. We excavate ponds, detention basins, and decorative water features for residential and agricultural properties in the Edgerton area. Pond size, soil type, and proximity to structures all factor into planning. We provide a site walk and estimate before committing to scope.'],
-  ['q' => 'How much does grading cost near Edgerton?', 'a' => 'Grading typically runs $80–$150 per hour for compact equipment in the Edgerton area, with most residential grading projects falling in the $500–$3,000 range. Larger site preparation projects are quoted by the job after a site assessment. Call (608) 501-5123 for a free estimate.'],
+    ['Do utilities have to be located before RAH Solutions digs?',
+     'Yes. Wisconsin law requires a locate request to Diggers Hotline (call 811) before any digging, and Diggers Hotline asks for at least three working days of notice. The service is free. It marks utility-owned lines only, so tell RAH Solutions about private lines such as a sprinkler system.'],
+    ['Why does water sit in my yard after it rains?',
+     'Usually for one of three reasons: the ground is flat or tilts the wrong way, the soil drains slowly, or roof water is being dumped in one spot. RAH Solutions checks the slope first.'],
+    ['Where does the water go when a downspout is buried?',
+     'A buried downspout line is a solid pipe that carries roof water underground, on a steady downhill slope, to a place where it can come out and soak in or run off without causing trouble. It should be well away from the foundation and not aimed at a neighbor or a sidewalk.'],
+    ['Do I need a permit for grading or a driveway culvert?',
+     'It depends on where the work is. A culvert under a driveway usually sits in the road right-of-way, so the town, village, city or county highway department commonly has to approve it and may set the pipe size. Check with your municipality before work is scheduled.'],
+    ['What time of year is best for excavating work?',
+     'Spring through fall, whenever the ground is thawed and dry enough to carry equipment. Wet soil ruts and compacts, so a job may wait after heavy rain. Grading for a new lawn is best timed so seed or sod can follow soon after; the <a href="/blog/sod-vs-seed-new-lawn-wisconsin/">sod or seed guide</a> explains the timing.'],
+    ['Will the equipment damage my lawn?',
+     'Machines leave marks on turf, so the access route is planned with you before work starts and disturbed areas are graded when the digging is done. The same company can then bring the lawn back through <a href="/services/lawn-restoration/">lawn restoration</a> or <a href="/services/sod-installation/">sod installation</a>.'],
 ];
 
-$faqItems = [];
-foreach ($faqs as $faq) {
-  $faqItems[] = [
-    '@type'          => 'Question',
-    'name'           => $faq['q'],
-    'acceptedAnswer' => ['@type' => 'Answer', 'text' => $faq['a']],
-  ];
-}
+$steps = [
+    ['Walk the site', 'Robert looks at where water comes from and where it goes, checks slope and access for equipment, and asks what the area will be used for.'],
+    ['Locate utilities', 'A locate request goes to Diggers Hotline before any digging, and the owner points out private lines the locators will not mark.'],
+    ['Dig and grade', 'Soil is cut, moved or brought in with the excavator and loader. Pipe is laid on a steady slope and base material is compacted in layers.'],
+    ['Finish and clean up', 'Trenches are backfilled, the surface is graded smooth, extra soil is hauled away and the site is left ready for lawn, concrete or pavers.'],
+];
 
-$schemaMarkup = json_encode([
-  '@context' => 'https://schema.org',
-  '@graph'   => [
-    [
-      '@type'            => 'Service',
-      'name'             => 'Excavating Services',
-      'serviceType'      => 'Excavation and Site Preparation',
-      'provider'         => ['@type' => 'LocalBusiness', 'name' => 'R.A.H. Solutions, LLC', '@id' => 'https://rahsolutionsllc.com/#business'],
-      'areaServed'       => ['@type' => 'City', 'name' => 'Edgerton', 'containedInPlace' => ['@type' => 'State', 'name' => 'Wisconsin']],
-      'description'      => 'Professional excavating, site grading, drainage solutions, pond excavation, and utility trenching for residential and commercial properties in Edgerton, WI.',
-      'url'              => 'https://rahsolutionsllc.com/services/excavating-services',
-    ],
-    [
-      '@type'       => 'FAQPage',
-      'mainEntity'  => $faqItems,
-    ],
-    [
-      '@type'           => 'LocalBusiness',
-      '@id'             => 'https://rahsolutionsllc.com/#aggregate',
-      'name'            => 'R.A.H. Solutions, LLC',
-    ],
-    [
-      '@type'           => 'BreadcrumbList',
-      'itemListElement' => [
-        ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home',     'item' => 'https://rahsolutionsllc.com'],
-        ['@type' => 'ListItem', 'position' => 2, 'name' => 'Services', 'item' => 'https://rahsolutionsllc.com/services'],
-        ['@type' => 'ListItem', 'position' => 3, 'name' => 'Excavating Services', 'item' => 'https://rahsolutionsllc.com/services/excavating-services'],
-      ],
-    ],
-    [
-      '@type'       => 'HowTo',
-      'name'        => 'How R.A.H. Solutions Handles an Excavating Project',
-      'step'        => [
-        ['@type' => 'HowToStep', 'position' => 1, 'name' => 'Site Walk & Grade Assessment', 'text' => 'We walk your property to evaluate existing grades, drainage patterns, soil conditions, and project scope. You receive a written estimate before any work begins.'],
-        ['@type' => 'HowToStep', 'position' => 2, 'name' => 'Equipment Mobilization', 'text' => 'We select and mobilize equipment sized to your property — compact equipment for tight residential lots, larger machinery for commercial and agricultural sites.'],
-        ['@type' => 'HowToStep', 'position' => 3, 'name' => 'Excavation & Grading', 'text' => 'We execute the excavation plan — grading for positive drainage, digging for foundations or ponds, trenching for utilities — per the agreed scope.'],
-        ['@type' => 'HowToStep', 'position' => 4, 'name' => 'Cleanup & Topsoil Restoration', 'text' => 'Excess soil is removed or redistributed. Disturbed topsoil is replaced and compacted. The site is left clean and ready for landscaping or construction.'],
-      ],
-    ],
-  ],
-], JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+$schemaNodes = [
+    webPageNode(),
+    breadcrumbNode([['Home', '/'], ['Services', '/services/'], ['Excavating Services', '/services/excavating-services/']]),
+    serviceSchemaNode('Excavating Services', 'Landscape excavating in Edgerton, WI and nearby Rock and Dane County towns: grading and leveling, yard drainage, buried downspout lines, culverts and swales, clearing, and site preparation for lawns, slabs and patios.', $canonicalUrl),
+    ['@type' => 'HowTo', 'name' => 'How RAH Solutions LLC handles an excavating job', 'step' => array_map(fn($s, $i) => ['@type' => 'HowToStep', 'position' => $i + 1, 'name' => $s[0], 'text' => $s[1]], $steps, array_keys($steps))],
+    faqSchemaNode($faqs),
+];
 
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
-
-<style>
-/* ============================================================
-   Excavating Services — Page-Specific Styles
-   Standard Tier: 200+ lines, 4+ techniques
-   ============================================================ */
-
-/* ── Hero ─────────────────────────────────────────────────── */
-.excavating-hero {
-  position: relative;
-  min-height: 88vh;
-  display: flex;
-  align-items: center;
-  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963895295-85rqf1-495734161_122236025852208320_5435639759042997660_n.jpg');
-  background-size: cover;
-  background-position: center 40%;
-  background-attachment: fixed;
-  overflow: hidden;
-  animation: excavHeroZoom 22s ease-in-out infinite alternate;
-}
-
-@keyframes excavHeroZoom {
-  from { background-size: 110%; background-position: center 40%; }
-  to   { background-size: 120%; background-position: center 50%; }
-}
-
-.excavating-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(var(--color-primary-rgb), 0.88) 0%,
-    rgba(var(--color-primary-rgb), 0.55) 60%,
-    rgba(0,0,0,0.20) 100%
-  );
-  z-index: 1;
-}
-
-.excavating-hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  z-index: 2;
-  pointer-events: none;
-}
-
-.excavating-hero__inner {
-  position: relative;
-  z-index: 3;
-  width: 100%;
-  padding: var(--space-4xl) var(--space-lg);
-  padding-top: calc(var(--navbar-height) + var(--space-4xl));
-}
-
-.excavating-hero__eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: rgba(var(--color-accent-rgb), 0.18);
-  border: 1px solid rgba(var(--color-accent-rgb), 0.40);
-  color: var(--color-accent);
-  font-family: var(--font-body);
-  font-size: var(--font-size-sm);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: var(--space-xs) var(--space-md);
-  border-radius: var(--radius-xl);
-  margin-bottom: var(--space-lg);
-  animation: fadeSlideUp 0.6s ease both;
-}
-
-.excavating-hero__title {
-  font-family: var(--font-heading);
-  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  text-wrap: balance;
-  color: #fff;
-  max-width: 760px;
-  margin-bottom: var(--space-lg);
-  animation: fadeSlideUp 0.7s 0.1s ease both;
-}
-
-.excavating-hero__title span {
-  background: linear-gradient(90deg, var(--color-accent), #38d9f5);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.excavating-hero__sub {
-  color: rgba(255,255,255,0.88);
-  font-size: var(--font-size-lg);
-  max-width: 55ch;
-  line-height: 1.65;
-  margin-bottom: var(--space-2xl);
-  animation: fadeSlideUp 0.7s 0.2s ease both;
-}
-
-.excavating-hero__ctas {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-md);
-  animation: fadeSlideUp 0.7s 0.3s ease both;
-}
-
-.excavating-hero__phone {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  color: rgba(255,255,255,0.92);
-  font-family: var(--font-heading);
-  font-size: var(--font-size-xl);
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  border: 2px solid rgba(255,255,255,0.30);
-  padding: var(--space-md) var(--space-xl);
-  border-radius: var(--radius-md);
-  transition: all var(--transition-base);
-}
-
-.excavating-hero__phone:hover {
-  background: rgba(255,255,255,0.12);
-  border-color: rgba(255,255,255,0.55);
-  transform: translateY(-2px);
-}
-
-.excavating-hero__trust {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-lg);
-  margin-top: var(--space-2xl);
-  padding-top: var(--space-xl);
-  border-top: 1px solid rgba(255,255,255,0.15);
-  animation: fadeSlideUp 0.7s 0.4s ease both;
-}
-
-.hero-trust-item {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  color: rgba(255,255,255,0.82);
-  font-size: var(--font-size-sm);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-}
-
-@keyframes fadeSlideUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* ── Breadcrumb ───────────────────────────────────────────── */
-.breadcrumb-strip {
-  background: var(--color-bg-alt);
-  border-bottom: 1px solid var(--color-light);
-  padding: var(--space-sm) 0;
-}
-
-.breadcrumb-nav {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-  font-size: var(--font-size-sm);
-  color: var(--color-text-light);
-  flex-wrap: wrap;
-}
-
-.breadcrumb-nav a {
-  color: var(--color-accent);
-  transition: color var(--transition-fast);
-}
-
-.breadcrumb-nav a:hover { color: var(--color-primary); }
-.breadcrumb-nav .sep { opacity: 0.5; }
-
-/* ── Answer Block / Intro ─────────────────────────────────── */
-.answer-intro {
-  padding: var(--space-4xl) var(--space-lg);
-  background: var(--color-bg);
-}
-
-.answer-intro .container {
-  max-width: var(--max-width);
-  margin-inline: auto;
-}
-
-.section-eyebrow {
-  display: inline-block;
-  font-family: var(--font-body);
-  font-size: var(--font-size-xs);
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: var(--space-md);
-}
-
-.section-title {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-  text-wrap: balance;
-  color: var(--color-primary);
-  margin-bottom: var(--space-lg);
-}
-
-.prose {
-  max-width: 65ch;
-  color: var(--color-text-light);
-  font-size: var(--font-size-base);
-  line-height: 1.7;
-  margin-bottom: var(--space-lg);
-}
-
-.cost-callout {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: rgba(var(--color-accent-rgb), 0.08);
-  border-left: 4px solid var(--color-accent);
-  padding: var(--space-md) var(--space-lg);
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
-  margin-top: var(--space-md);
-}
-
-.cost-callout strong {
-  color: var(--color-primary);
-  font-family: var(--font-heading);
-  font-size: var(--font-size-lg);
-}
-
-/* ── Split Layout — Services Detail ──────────────────────── */
-.services-detail {
-  padding: var(--space-4xl) var(--space-lg);
-  background: var(--color-bg-alt);
-}
-
-.split-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-3xl);
-  align-items: center;
-  max-width: var(--max-width);
-  margin-inline: auto;
-}
-
-.split-layout--reverse { direction: rtl; }
-.split-layout--reverse > * { direction: ltr; }
-
-.split-content { }
-
-.split-image {
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-xl);
-}
-
-.split-image::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  border: 3px solid var(--color-accent);
-  opacity: 0.30;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.split-image img {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  display: block;
-  transition: transform var(--transition-slow);
-}
-
-.split-image:hover img { transform: scale(1.04); }
-
-.split-image__badge {
-  position: absolute;
-  bottom: var(--space-lg);
-  left: var(--space-lg);
-  z-index: 2;
-  background: var(--color-accent);
-  color: #fff;
-  font-family: var(--font-heading);
-  font-size: var(--font-size-sm);
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: var(--space-xs) var(--space-md);
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-md);
-}
-
-.services-list {
-  list-style: none;
-  padding: 0;
-  margin: var(--space-lg) 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-}
-
-.services-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-md);
-  color: var(--color-text);
-  font-size: var(--font-size-base);
-  line-height: 1.5;
-}
-
-.services-list li .list-icon {
-  flex-shrink: 0;
-  width: 22px;
-  height: 22px;
-  color: var(--color-accent);
-  margin-top: 2px;
-}
-
-/* ── Why Choose — Signature Section (Dark) ────────────────── */
-.why-choose {
-  padding: var(--space-4xl) var(--space-lg);
-  background: var(--color-bg-dark);
-  position: relative;
-  overflow: hidden;
-}
-
-.why-choose::before {
-  content: '';
-  position: absolute;
-  top: -40%;
-  right: -15%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(var(--color-accent-rgb), 0.08) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.why-choose::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none;
-}
-
-.why-choose .container {
-  max-width: var(--max-width);
-  margin-inline: auto;
-  position: relative;
-  z-index: 1;
-}
-
-.why-choose .section-eyebrow { color: var(--color-accent); }
-.why-choose .section-title   { color: #fff; }
-
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-xl);
-  margin-top: var(--space-2xl);
-}
-
-.why-card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: var(--radius-lg);
-  padding: var(--space-xl);
-  transition: all var(--transition-base);
-  position: relative;
-  overflow: hidden;
-}
-
-.why-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-accent), transparent);
-  opacity: 0;
-  transition: opacity var(--transition-base);
-}
-
-.why-card:hover { background: rgba(255,255,255,0.09); transform: translateY(-4px); }
-.why-card:hover::before { opacity: 1; }
-
-.why-card__icon {
-  width: 48px;
-  height: 48px;
-  background: rgba(var(--color-accent-rgb), 0.15);
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-accent);
-  margin-bottom: var(--space-md);
-}
-
-.why-card__title {
-  font-family: var(--font-heading);
-  font-size: var(--font-size-lg);
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: var(--space-sm);
-  text-wrap: balance;
-}
-
-.why-card__desc {
-  color: rgba(255,255,255,0.65);
-  font-size: var(--font-size-sm);
-  line-height: 1.65;
-  max-width: 35ch;
-}
-
-/* ── Process Section ──────────────────────────────────────── */
-.process-section {
-  padding: var(--space-4xl) var(--space-lg);
-  background: var(--color-bg);
-}
-
-.process-section .container {
-  max-width: var(--max-width);
-  margin-inline: auto;
-}
-
-.process-steps {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-xl);
-  margin-top: var(--space-2xl);
-  position: relative;
-}
-
-.process-steps::before {
-  content: '';
-  position: absolute;
-  top: 32px;
-  left: 10%;
-  right: 10%;
-  height: 2px;
-  background: linear-gradient(90deg, var(--color-accent), rgba(var(--color-accent-rgb), 0.2));
-  z-index: 0;
-}
-
-.process-step {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-}
-
-.process-step__num {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: var(--color-primary);
-  color: #fff;
-  font-family: var(--font-heading);
-  font-size: var(--font-size-xl);
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto var(--space-lg);
-  border: 3px solid var(--color-bg);
-  box-shadow: var(--shadow-md);
-  transition: all var(--transition-base);
-}
-
-.process-step:hover .process-step__num {
-  background: var(--color-accent);
-  transform: scale(1.1);
-}
-
-.process-step__title {
-  font-family: var(--font-heading);
-  font-size: var(--font-size-lg);
-  font-weight: 600;
-  color: var(--color-primary);
-  margin-bottom: var(--space-sm);
-  text-wrap: balance;
-}
-
-.process-step__desc {
-  color: var(--color-text-light);
-  font-size: var(--font-size-sm);
-  line-height: 1.65;
-  max-width: 28ch;
-  margin-inline: auto;
-}
-
-/* ── Mid-Page CTA Banner ──────────────────────────────────── */
-.cta-banner {
-  padding: var(--space-3xl) var(--space-lg);
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-banner::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none;
-}
-
-.cta-banner .container {
-  max-width: var(--max-width);
-  margin-inline: auto;
-  position: relative;
-  z-index: 1;
-  text-align: center;
-}
-
-.cta-banner__title {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: var(--space-md);
-  text-wrap: balance;
-}
-
-.cta-banner__sub {
-  color: rgba(255,255,255,0.80);
-  max-width: 55ch;
-  margin-inline: auto;
-  margin-bottom: var(--space-xl);
-  line-height: 1.65;
-}
-
-.cta-banner__phone {
-  display: block;
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
-  font-weight: 700;
-  color: var(--color-accent);
-  letter-spacing: 0.02em;
-  margin-bottom: var(--space-xl);
-  transition: color var(--transition-fast);
-}
-
-.cta-banner__phone:hover { color: #fff; }
-
-.cta-banner__btns {
-  display: flex;
-  gap: var(--space-md);
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* ── FAQ Section ──────────────────────────────────────────── */
-.faq-section {
-  padding: var(--space-4xl) var(--space-lg);
-  background: var(--color-bg-alt);
-}
-
-.faq-section .container {
-  max-width: var(--max-width);
-  margin-inline: auto;
-}
-
-.faq-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-xl);
-  margin-top: var(--space-2xl);
-}
-
-.faq-item {
-  background: var(--color-bg);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-light);
-  padding: var(--space-xl);
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow var(--transition-base);
-}
-
-.faq-item:hover { box-shadow: var(--shadow-md); }
-
-.faq-item__q {
-  font-family: var(--font-heading);
-  font-size: var(--font-size-lg);
-  font-weight: 600;
-  color: var(--color-primary);
-  margin-bottom: var(--space-md);
-  text-wrap: balance;
-}
-
-.faq-item__a {
-  color: var(--color-text-light);
-  font-size: var(--font-size-base);
-  line-height: 1.7;
-  max-width: 60ch;
-}
-
-/* ── Closing CTA ──────────────────────────────────────────── */
-.closing-cta {
-  padding: var(--space-4xl) var(--space-lg);
-  background: var(--color-bg);
-  text-align: center;
-}
-
-.closing-cta .container {
-  max-width: var(--max-width);
-  margin-inline: auto;
-}
-
-.closing-cta__title {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: var(--space-md);
-  text-wrap: balance;
-}
-
-.closing-cta__sub {
-  color: var(--color-text-light);
-  max-width: 55ch;
-  margin-inline: auto;
-  margin-bottom: var(--space-2xl);
-  line-height: 1.65;
-}
-
-.closing-cta__btns {
-  display: flex;
-  gap: var(--space-md);
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* ── Buttons ──────────────────────────────────────────────── */
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: var(--color-accent);
-  color: #fff;
-  font-family: var(--font-heading);
-  font-size: var(--font-size-base);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  padding: var(--space-md) var(--space-xl);
-  border-radius: var(--radius-md);
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 0 var(--color-accent-dark);
-  transition: all var(--transition-base);
-  overflow: hidden;
-  position: relative;
-}
-
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--color-accent-dark); }
-.btn-primary:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--color-accent-dark); }
-
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: transparent;
-  color: var(--color-accent);
-  font-family: var(--font-heading);
-  font-size: var(--font-size-base);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  padding: var(--space-md) var(--space-xl);
-  border-radius: var(--radius-md);
-  border: 2px solid var(--color-accent);
-  cursor: pointer;
-  transition: all var(--transition-base);
-}
-
-.btn-secondary:hover { background: var(--color-accent); color: #fff; transform: translateY(-2px); }
-
-/* ── Last Updated ─────────────────────────────────────────── */
-.last-updated {
-  font-size: var(--font-size-xs);
-  color: var(--color-text-light);
-  margin-top: var(--space-lg);
-  opacity: 0.75;
-}
-
-/* ── Responsive ───────────────────────────────────────────── */
-@media (max-width: 1023px) {
-  .split-layout        { grid-template-columns: 1fr; gap: var(--space-2xl); }
-  .split-layout--reverse { direction: ltr; }
-  .why-grid            { grid-template-columns: 1fr; }
-  .process-steps       { grid-template-columns: repeat(2, 1fr); }
-  .process-steps::before { display: none; }
-  .faq-grid            { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 767px) {
-  .excavating-hero     { min-height: 70vh; background-attachment: scroll; animation: none; }
-  .excavating-hero__inner { padding-top: calc(var(--navbar-height) + var(--space-2xl)); }
-  .excavating-hero__ctas { flex-direction: column; }
-  .excavating-hero__trust { gap: var(--space-md); }
-  .process-steps       { grid-template-columns: 1fr; }
-  .cta-banner__btns    { flex-direction: column; align-items: center; }
-  .closing-cta__btns   { flex-direction: column; align-items: center; }
-}
-</style>
-
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php'; ?>
-
-<!-- ── Breadcrumb ──────────────────────────────────────────── -->
-<nav class="breadcrumb-strip" aria-label="Breadcrumb">
+<div class="page-excavating-services">
+
+<section class="hero hero--photo svc-hero" aria-label="Excavating services in Edgerton, WI">
+  <div class="hero-bg"><?php echo picture('excavator-skid-steer-culvert', 'Skid steer and excavator working dark soil with a corrugated culvert pipe in the foreground', '100vw', ['eager' => true, 'class' => 'hero-img']); ?></div>
+  <div class="hero-overlay"></div>
+  <span class="grain" aria-hidden="true"></span>
+  <div class="container hero-grid hero-grid--form">
+    <div class="hero-text">
+      <?php echo breadcrumbs([['Home', '/'], ['Services', '/services/'], ['Excavating Services', '/services/excavating-services/']]); ?>
+      <span class="eyebrow">Grading · Drainage · Downspout lines · Site prep</span>
+      <h1 class="hero-title">Excavating Services in Edgerton, WI</h1>
+      <p class="page-answer">RAH Solutions LLC grades and levels yards, fixes drainage, buries downspout lines and prepares sites for lawns, slabs and patios in Edgerton and nearby towns. The work is done with the company’s own excavator and loaders, and estimates are free.</p>
+      <div class="hero-actions">
+        <button type="button" class="btn btn-accent btn-lg hero-form-open" data-open-estimate>Get a free excavating estimate</button>
+        <a class="link-call" href="<?php echo telHref(); ?>"><?php echo icon('phone', 18); ?> or call <?php echo e($phone); ?></a>
+      </div>
+      <p class="last-updated">Last updated: <?php echo date('F Y'); ?></p>
+    </div>
+    <?php $heroFormId = 'hero-excavating-services'; $heroFormService = 'excavating-services'; $heroFormHeading = 'Get a free excavating estimate'; include $_SERVER['DOCUMENT_ROOT'] . '/includes/hero-form.php'; ?>
+  </div>
+</section>
+
+<section class="section svc-intro" aria-labelledby="intro-h2">
+  <div class="container svc-layout">
+    <div class="svc-body">
+      <p class="identity-line"><strong>RAH Solutions LLC</strong> is a licensed and insured, family-owned landscaper based in Edgerton, Wisconsin. Started by Robert Harried in 2023, it serves Rock and Dane County homes and businesses.</p>
+      <h2 id="intro-h2">What excavating work does RAH Solutions do?</h2>
+      <div class="answer-block">
+        <h3>Short answer</h3>
+        <p>RAH Solutions LLC does landscape-scale excavating: grading and leveling, yard drainage, downspout lines put underground, culverts and swales, clearing, and site preparation for lawns, concrete slabs and patios. It is dirt work for yards, lots and small commercial sites, done with the company’s own equipment after a free on-site estimate.</p>
+      </div>
+      <p>People searching for excavating near me in Edgerton rarely want a hole dug for its own sake. They want water to stop running toward the basement, a lumpy yard made mowable, or a flat, firm spot for a shed, a patio or a new lawn. Each is a grading or drainage problem, solved by moving soil to the right place and giving water somewhere to go.</p>
+      <p>RAH Solutions is a landscaper that runs its own excavator and loaders, so the digging and the finished surface come from one company. The same crew can pour the slab through <a href="/services/concrete-services/">concrete services</a> or put the lawn back with <a href="/services/sod-installation/">sod installation</a>.</p>
+    </div>
+    <aside class="svc-rail" aria-label="On this page">
+      <nav class="svc-toc" aria-label="Page sections">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#types-h2">What we dig and grade</a></li>
+          <li><a href="#cond-h2">Soil and water here</a></li>
+          <li><a href="#locate-h2">Call 811 first</a></li>
+          <li><a href="#steps-h2">How a job works</a></li>
+          <li><a href="#gallery-h2">Job photos</a></li>
+          <li><a href="#faq-h2">Excavating FAQ</a></li>
+        </ol>
+      </nav>
+      <div class="svc-callcard">
+        <strong>Water going where it should not?</strong>
+        <p><?php echo e($hoursLong); ?></p>
+        <a class="btn btn-accent" href="<?php echo telHref(); ?>"><?php echo icon('phone', 18); ?> <?php echo e($phone); ?></a>
+        <button type="button" class="btn btn-outline-white" data-open-estimate>Request an estimate</button>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section svc-types" aria-labelledby="types-h2">
   <div class="container">
-    <ol class="breadcrumb-nav" itemscope itemtype="https://schema.org/BreadcrumbList">
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
-        <meta itemprop="position" content="1">
-      </li>
-      <li class="sep" aria-hidden="true">/</li>
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="/services" itemprop="item"><span itemprop="name">Services</span></a>
-        <meta itemprop="position" content="2">
-      </li>
-      <li class="sep" aria-hidden="true">/</li>
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name">Excavating Services</span>
-        <meta itemprop="position" content="3">
-      </li>
+    <div class="section-head reveal-up">
+      <span class="eyebrow-label">What we dig and grade</span>
+      <h2 id="types-h2">Which excavating jobs does RAH Solutions take on?</h2>
+      <p>RAH Solutions LLC takes on residential and light commercial dirt work around Edgerton, from one buried downspout to regrading a whole lot.</p>
+    </div>
+    <div class="type-grid" data-p1-dynamic>
+      <article class="type-card reveal-up reveal-delay-1">
+        <span class="type-card__icon"><?php echo icon('ruler', 22); ?></span>
+        <h3>Grading and leveling</h3>
+        <p>High spots are cut down, low spots filled, and the surface shaped so it falls away from buildings.</p>
+      </article>
+      <article class="type-card reveal-up reveal-delay-2">
+        <span class="type-card__icon"><?php echo icon('droplets', 22); ?></span>
+        <h3>Yard drainage</h3>
+        <p>Standing water and soggy strips are traced back to their cause. The fix may be regrading, a shallow swale or a drain line to a better outlet.</p>
+      </article>
+      <article class="type-card reveal-up reveal-delay-3">
+        <span class="type-card__icon"><?php echo icon('home', 22); ?></span>
+        <h3>Buried downspout lines</h3>
+        <p>Downspouts are connected to solid pipe laid in a trench and run downhill to an outlet away from the house.</p>
+      </article>
+      <div class="type-card type-card--photo reveal-scale reveal-delay-1">
+        <?php echo picture('track-loader-grading-pad-base', 'Compact track loader beside graded soil and a compacted gravel pad with a plate compactor', '(max-width: 560px) 100vw, 33vw'); ?>
+      </div>
+      <article class="type-card reveal-up reveal-delay-2">
+        <span class="type-card__icon"><?php echo icon('waves', 22); ?></span>
+        <h3>Culverts and swales</h3>
+        <p>Culvert pipe is bedded and backfilled where a driveway or path crosses a ditch, and swales are shaped to move runoff across a property without cutting gullies.</p>
+      </article>
+      <article class="type-card reveal-up reveal-delay-3">
+        <span class="type-card__icon"><?php echo icon('layers', 22); ?></span>
+        <h3>Site prep and clearing</h3>
+        <p>Brush, old turf and soft soil come out. The area is graded, and for a slab or patio a gravel base is placed and compacted, as in the pad shown in this photo.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section svc-conditions texture-grain edge-facet-top" aria-labelledby="cond-h2">
+  <span class="grain-layer" aria-hidden="true"></span>
+  <div class="container">
+    <div class="cond-head reveal-left">
+      <span class="eyebrow-label">Rock and Dane County ground</span>
+      <h2 id="cond-h2">Why do so many southern Wisconsin yards hold water?</h2>
+      <p>The soil drains slowly and the ground freezes deep. RAH Solutions LLC plans excavating work around four local conditions that decide whether a grading or drainage fix lasts.</p>
+    </div>
+    <ul class="cond-list">
+      <li class="reveal-up"><span><?php echo icon('layers', 22); ?></span><b>Silt loam over clay</b><p>Most soils here are silt loams, often over a heavier clay-rich subsoil or glacial till. Water soaks in slowly, so surface slope has to do most of the work.</p></li>
+      <li class="reveal-up"><span><?php echo icon('truck', 22); ?></span><b>Compacted subdivision lots</b><p>Newer lots are often packed hard by construction traffic, then covered with a thin layer of topsoil. Water sheds off instead of soaking in.</p></li>
+      <li class="reveal-up"><span><?php echo icon('snowflake', 22); ?></span><b>Freeze and thaw</b><p>Wet soil heaves when it freezes. Pipe needs a steady slope so it drains empty, and slabs need a compacted gravel base.</p></li>
+      <li class="reveal-up"><span><?php echo icon('home', 22); ?></span><b>Roof water</b><p>A roof collects a lot of rain and a downspout drops all of it in one spot. Moving it away from the foundation is often the simplest fix.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section--tight" aria-labelledby="locate-h2">
+  <div class="container">
+    <div class="svc-callout reveal-up">
+      <span><?php echo icon('phone', 26); ?></span>
+      <div>
+        <h2 id="locate-h2">Do you have to call 811 before digging in Wisconsin?</h2>
+        <p>Yes, and RAH Solutions does not dig until public utilities are marked. Diggers Hotline is Wisconsin’s free utility-locate service, reached by dialing 811. According to diggershotline.com, state law (Wisconsin Statute 182.0175) requires contacting it at least three working days before digging, homeowners included.</p>
+        <p>The marks cover lines owned by utilities. Diggers Hotline says privately owned lines are not marked, which includes sprinkler systems, ornamental lighting, propane lines and electric lines to a barn or garage. Point those out during the estimate.</p>
+        <blockquote>One Google review of RAH Solutions describes this kind of job: an estimate “for putting our downspout underground,” after which Robert “got the job done nicely and cleaned up after he was done.”</blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section svc-steps" aria-labelledby="steps-h2">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <span class="eyebrow-label">The process</span>
+      <h2 id="steps-h2">How does an excavating job with RAH Solutions work?</h2>
+      <p>RAH Solutions LLC follows the same four steps whether the job is one downspout line or a full regrade.</p>
+    </div>
+    <ol class="step-track">
+      <?php foreach ($steps as $i => $s): ?>
+      <li class="reveal-up reveal-delay-<?php echo $i + 1; ?>"><h3><?php echo e($s[0]); ?></h3><p><?php echo e($s[1]); ?></p></li>
+      <?php endforeach; ?>
     </ol>
   </div>
-</nav>
-
-<!-- ── Hero ────────────────────────────────────────────────── -->
-<section class="excavating-hero" aria-label="Excavating Services hero">
-  <div class="excavating-hero__inner container">
-    <p class="excavating-hero__eyebrow">
-      <i data-lucide="construction" style="width:14px;height:14px;" aria-hidden="true"></i>
-      Excavating Services — Edgerton, WI
-    </p>
-    <h1 class="excavating-hero__title">
-      Excavating Services in Edgerton, WI —<br>
-      <span>Site Prep &amp; Earthmoving</span>
-    </h1>
-    <p class="excavating-hero__sub">
-      From drainage grading and utility trenching to pond excavation and foundation prep — R.A.H. Solutions moves earth precisely and protects your landscape investment. Compact equipment for residential lots. Commercial capability when you need it.
-    </p>
-    <div class="excavating-hero__ctas">
-      <a href="/contact" class="btn-primary">
-        <i data-lucide="clipboard-list" style="width:18px;height:18px;" aria-hidden="true"></i>
-        Get a Free Estimate
-      </a>
-      <a href="tel:6085015123" class="excavating-hero__phone">
-        <i data-lucide="phone" style="width:20px;height:20px;" aria-hidden="true"></i>
-        (608) 501-5123
-      </a>
-    </div>
-    <div class="excavating-hero__trust">
-      <span class="hero-trust-item">
-        <i data-lucide="shield-check" style="width:16px;height:16px;" aria-hidden="true"></i>
-        Licensed &amp; Insured
-      </span>
-      <span class="hero-trust-item">
-        <i data-lucide="map-pin" style="width:16px;height:16px;" aria-hidden="true"></i>
-        Edgerton, WI &amp; Surrounding Area
-      </span>
-      <span class="hero-trust-item">
-        <i data-lucide="clock" style="width:16px;height:16px;" aria-hidden="true"></i>
-        Same-Day Response for Urgent Drainage Issues
-      </span>
-    </div>
-  </div>
 </section>
 
-<!-- ── Divider: diagonal down ─────────────────────────────── -->
-<div aria-hidden="true" style="background:var(--color-primary);line-height:0;overflow:hidden;height:60px;">
-  <svg viewBox="0 0 1200 60" preserveAspectRatio="none" width="100%" height="60"><polygon points="0,0 1200,60 1200,60 0,60" fill="#ffffff"/></svg>
-</div>
-
-<!-- ── Intro / Answer Block ────────────────────────────────── -->
-<section class="answer-intro" data-animate="fade-up">
+<section class="section svc-gallery" aria-labelledby="gallery-h2">
   <div class="container">
-    <p class="section-eyebrow">What Excavating Covers</p>
-    <h2 class="section-title">What Does <span class="text-accent">Excavating</span> Actually Include?</h2>
-    <p class="prose">
-      Excavating from R.A.H. Solutions covers any project that requires moving or reshaping earth — site grading for new construction or additions, drainage grading to correct water pooling near your foundation, pond and water feature excavation, utility trenching for water or electrical lines, and basement or foundation preparation. If your property has a water problem, a new structure going in, or ground that needs reshaping, excavation is the first step.
-    </p>
-    <p class="prose">
-      Wisconsin's heavy clay soils in the Edgerton area create specific drainage challenges. Water doesn't percolate well through clay — it pools, runs toward structures, and causes long-term foundation and basement moisture issues. Properly graded positive drainage (water flows away from your home at minimum 6 inches over the first 10 feet) is the single most effective preventative measure for basement water intrusion in Rock County.
-    </p>
-    <div class="answer-block">
-      <h3>What excavating services are available in Edgerton, WI?</h3>
-      <p>R.A.H. Solutions offers site grading, drainage correction, pond excavation, utility trenching, and foundation preparation in Edgerton and Rock County. Most residential grading projects run $500–$3,000, with compact equipment rates of $80–$150 per hour. Every project starts with a free site walk and written estimate before equipment rolls.</p>
+    <div class="section-head reveal-up">
+      <span class="eyebrow-label">Recent dirt work</span>
+      <h2 id="gallery-h2">What does RAH Solutions grading look like on site?</h2>
+      <p>These are RAH Solutions job photos: a barn lot graded to bare soil after clearing, and fill dirt rough graded on a backyard slope.</p>
     </div>
-    <div class="cost-callout" data-animate="fade-up">
-      <i data-lucide="dollar-sign" style="width:20px;height:20px;color:var(--color-accent);" aria-hidden="true"></i>
-      <strong>Typical cost: $80–$150/hr</strong>&nbsp; for compact equipment. Most residential grading projects: $500–$3,000. Free estimates always.
+    <div class="sp-gallery-grid sp-gallery-grid--two" data-p1-dynamic>
+      <figure class="sp-gallery-item reveal-scale"><?php echo picture('barn-lot-graded-after-clearing', 'Barn lot graded to smooth bare soil after brush and debris were cleared', '(max-width: 700px) 100vw, 55vw'); ?><figcaption>Barn lot cleared and graded to bare soil</figcaption></figure>
+      <figure class="sp-gallery-item reveal-scale reveal-delay-1"><?php echo picture('hillside-fill-dirt-rough-grade', 'Fill dirt rough graded across a sloped backyard', '(max-width: 700px) 100vw, 40vw'); ?><figcaption>Fill dirt rough graded on a backyard slope</figcaption></figure>
     </div>
-    <p class="last-updated">Last Updated: May 2026</p>
   </div>
 </section>
 
-<!-- ── Divider: wave ──────────────────────────────────────── -->
-<div aria-hidden="true" style="background:var(--color-bg);line-height:0;overflow:hidden;height:80px;">
-  <svg viewBox="0 0 1200 80" preserveAspectRatio="none" width="100%" height="80"><path d="M0,40 C300,80 900,0 1200,40 L1200,80 L0,80 Z" fill="#f4f7f9"/></svg>
-</div>
+<section class="section svc-faq" aria-labelledby="faq-h2">
+  <div class="container faq-wrap">
+    <div class="section-head reveal-left">
+      <span class="eyebrow-label">FAQ</span>
+      <h2 id="faq-h2">What do people ask about excavating in Edgerton?</h2>
+      <p>Describe the problem on a call to <?php echo e($phone); ?> and Robert will tell you what RAH Solutions would look at first.</p>
+    </div>
+    <div><?php echo faqList($faqs, 2); ?></div>
+  </div>
+</section>
 
-<!-- ── Services Detail Split Layout ───────────────────────── -->
-<section class="services-detail" data-animate="fade-up">
-  <div class="split-layout">
-    <div class="split-content">
-      <p class="section-eyebrow">Full Service Scope</p>
-      <h2 class="section-title">What Excavating Services Do We Provide Near Edgerton?</h2>
-      <p class="prose">
-        From single-afternoon drainage fixes to multi-day site preparation projects, our excavating work is scoped properly before equipment rolls. We assess soil conditions, set grade benchmarks, and review any permit requirements specific to your municipality in Rock or Dane County.
-      </p>
-      <ul class="services-list">
-        <li>
-          <i data-lucide="check-circle" class="list-icon" aria-hidden="true"></i>
-          <span><strong>Site Grading</strong> — Positive drainage away from foundations and structures</span>
-        </li>
-        <li>
-          <i data-lucide="check-circle" class="list-icon" aria-hidden="true"></i>
-          <span><strong>Drainage Grading</strong> — Correct water pooling, standing water, and wet spots</span>
-        </li>
-        <li>
-          <i data-lucide="check-circle" class="list-icon" aria-hidden="true"></i>
-          <span><strong>Pond Excavation</strong> — Decorative and agricultural ponds sized to your property</span>
-        </li>
-        <li>
-          <i data-lucide="check-circle" class="list-icon" aria-hidden="true"></i>
-          <span><strong>Utility Trenching</strong> — Water lines, electrical conduit, irrigation</span>
-        </li>
-        <li>
-          <i data-lucide="check-circle" class="list-icon" aria-hidden="true"></i>
-          <span><strong>Foundation &amp; Basement Prep</strong> — Rough excavation for additions and new construction</span>
-        </li>
-        <li>
-          <i data-lucide="check-circle" class="list-icon" aria-hidden="true"></i>
-          <span><strong>Erosion Control</strong> — Temporary controls installed during active work</span>
-        </li>
-        <li>
-          <i data-lucide="check-circle" class="list-icon" aria-hidden="true"></i>
-          <span><strong>Topsoil Stripping &amp; Stockpiling</strong> — Preserve usable topsoil for restoration</span>
-        </li>
+<section class="section svc-related" aria-labelledby="related-h2">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <span class="eyebrow-label">More from RAH Solutions</span>
+      <h2 id="related-h2">Other Services You May Need</h2>
+    </div>
+    <div class="services-grid" data-p1-dynamic>
+      <?php echo serviceCards(relatedServices(['concrete-services', 'sod-installation', 'lawn-restoration']), '(max-width: 560px) 100vw, 33vw'); ?>
+    </div>
+    <div class="town-links">
+      <h3>Excavating services near you</h3>
+      <ul>
+        <?php foreach (['edgerton-wi', 'milton-wi', 'janesville-wi', 'stoughton-wi', 'fort-atkinson-wi', 'evansville-wi'] as $tl): $ta = areaBySlug($tl); ?>
+        <li><a href="<?php echo areaHref($ta); ?>"><?php echo icon('map-pin', 14); ?> Excavating in <?php echo e($ta['name']); ?></a></li>
+        <?php endforeach; ?>
       </ul>
     </div>
-    <div class="split-image" data-animate="wipe-right">
-      <picture>
-        <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963895295-85rqf1-495734161_122236025852208320_5435639759042997660_n.jpg" type="image/webp">
-        <img
-          src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963895295-85rqf1-495734161_122236025852208320_5435639759042997660_n.jpg"
-          alt="Excavating services site preparation Edgerton WI — R.A.H. Solutions earthmoving"
-          width="700"
-          height="420"
-          loading="lazy"
-        >
-      </picture>
-      <span class="split-image__badge">Edgerton, WI</span>
-    </div>
   </div>
 </section>
 
-<!-- ── Divider: diagonal-up from bg-alt to dark ───────────── -->
-<div aria-hidden="true" style="background:var(--color-bg-alt);line-height:0;overflow:hidden;height:60px;">
-  <svg viewBox="0 0 1200 60" preserveAspectRatio="none" width="100%" height="60"><polygon points="0,60 1200,0 1200,60" fill="#0f1e2d"/></svg>
+<?php $ctaBandId = 'band-excavating-services'; $ctaBandHeading = 'Get a written price for your grading or drainage job'; include $_SERVER['DOCUMENT_ROOT'] . '/includes/cta-band.php'; ?>
+
 </div>
-
-<!-- ── Why Choose — Signature Dark Section ────────────────── -->
-<section class="why-choose" data-animate="fade-up">
-  <div class="container">
-    <p class="section-eyebrow">Why R.A.H. Solutions</p>
-    <h2 class="section-title">How Is Excavating Done <span class="text-accent">Right</span> for Wisconsin Properties?</h2>
-    <p class="prose" style="color:rgba(255,255,255,0.72);">
-      Hiring the right excavating contractor in Rock County means finding someone who understands Wisconsin soil, local drainage requirements, and how to protect your landscaping investment during the process.
-    </p>
-    <div class="why-grid">
-      <div class="why-card" data-animate="fade-up">
-        <div class="why-card__icon">
-          <i data-lucide="truck" style="width:24px;height:24px;" aria-hidden="true"></i>
-        </div>
-        <h3 class="why-card__title">Equipment Sized for Your Property</h3>
-        <p class="why-card__desc">Compact equipment for residential lots protects your lawn and landscaping. We don't bring in oversized machinery that destroys what's left.</p>
-      </div>
-      <div class="why-card" data-animate="fade-up">
-        <div class="why-card__icon">
-          <i data-lucide="layers" style="width:24px;height:24px;" aria-hidden="true"></i>
-        </div>
-        <h3 class="why-card__title">Topsoil Preserved and Reused</h3>
-        <p class="why-card__desc">We strip, stockpile, and return usable topsoil after excavation. No stripping your good soil and leaving you with subsoil that won't support grass or plants.</p>
-      </div>
-      <div class="why-card" data-animate="fade-up">
-        <div class="why-card__icon">
-          <i data-lucide="git-branch" style="width:24px;height:24px;" aria-hidden="true"></i>
-        </div>
-        <h3 class="why-card__title">Drainage Plans Before Breaking Ground</h3>
-        <p class="why-card__desc">Every grading project starts with a drainage review. We define flow paths, grade slopes, and outlet points before the first bucket of dirt moves.</p>
-      </div>
-      <div class="why-card" data-animate="fade-up">
-        <div class="why-card__icon">
-          <i data-lucide="zap" style="width:24px;height:24px;" aria-hidden="true"></i>
-        </div>
-        <h3 class="why-card__title">Same-Day Response for Urgent Drainage</h3>
-        <p class="why-card__desc">Water in your basement after a storm isn't a next-week problem. We respond fast to active drainage emergencies in the Edgerton area.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── Divider: diagonal-down from dark to white ──────────── -->
-<div aria-hidden="true" style="background:var(--color-bg-dark);line-height:0;overflow:hidden;height:60px;">
-  <svg viewBox="0 0 1200 60" preserveAspectRatio="none" width="100%" height="60"><polygon points="0,60 1200,0 1200,60" fill="#ffffff"/></svg>
-</div>
-
-<!-- ── Process Section ─────────────────────────────────────── -->
-<section class="process-section" data-animate="fade-up">
-  <div class="container">
-    <p class="section-eyebrow" style="text-align:center;">Our Process</p>
-    <h2 class="section-title" style="text-align:center;">How Do We Handle Every Excavating Project?</h2>
-    <div class="process-steps">
-      <div class="process-step" data-animate="fade-up">
-        <div class="process-step__num">1</div>
-        <h3 class="process-step__title">Site Walk &amp; Grade Assessment</h3>
-        <p class="process-step__desc">We walk your property, assess existing grades, drainage patterns, and project scope. You get a written estimate before anything starts.</p>
-      </div>
-      <div class="process-step" data-animate="fade-up">
-        <div class="process-step__num">2</div>
-        <h3 class="process-step__title">Equipment Mobilization</h3>
-        <p class="process-step__desc">We select equipment sized for your lot — compact machines for residential, heavier equipment for large commercial or agricultural sites.</p>
-      </div>
-      <div class="process-step" data-animate="fade-up">
-        <div class="process-step__num">3</div>
-        <h3 class="process-step__title">Excavation &amp; Grading</h3>
-        <p class="process-step__desc">Excavation proceeds per the agreed plan — grading to spec, trenching to depth, digging to grade — with erosion controls in place throughout.</p>
-      </div>
-      <div class="process-step" data-animate="fade-up">
-        <div class="process-step__num">4</div>
-        <h3 class="process-step__title">Cleanup &amp; Topsoil Restoration</h3>
-        <p class="process-step__desc">Excess material is removed or redistributed. Topsoil is replaced and compacted. Site is left clean and ready for your next step.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── Mid-Page CTA Banner (CTA #2) ───────────────────────── -->
-<!-- ── Divider ─────────────────────────────────────────────── -->
-<div aria-hidden="true" style="background:var(--color-bg);line-height:0;overflow:hidden;height:60px;">
-  <svg viewBox="0 0 1200 60" preserveAspectRatio="none" width="100%" height="60"><polygon points="0,0 1200,60 1200,60 0,60" fill="#1a2b3c"/></svg>
-</div>
-
-<section class="cta-banner" aria-label="Contact R.A.H. Solutions for excavating services">
-  <div class="container">
-    <p class="section-eyebrow" style="color:var(--color-accent);">Free Estimates — No Commitment</p>
-    <h2 class="cta-banner__title">Have a Drainage Problem or Need Foundation Prep?</h2>
-    <p class="cta-banner__sub">
-      Water that pools against your foundation today becomes a basement moisture problem next season. Most drainage grading projects in Rock County can be scoped and scheduled within a week.
-    </p>
-    <a href="tel:6085015123" class="cta-banner__phone" aria-label="Call R.A.H. Solutions">(608) 501-5123</a>
-    <div class="cta-banner__btns">
-      <a href="/contact" class="btn-primary">Get a Free Estimate</a>
-      <a href="/services" class="btn-secondary" style="color:#fff;border-color:rgba(255,255,255,0.40);">View All Services</a>
-    </div>
-  </div>
-</section>
-
-<div aria-hidden="true" style="background:var(--color-primary);line-height:0;overflow:hidden;height:60px;">
-  <svg viewBox="0 0 1200 60" preserveAspectRatio="none" width="100%" height="60"><polygon points="0,0 1200,60 1200,60 0,60" fill="#f4f7f9"/></svg>
-</div>
-
-<!-- ── FAQ Section ─────────────────────────────────────────── -->
-<section class="faq-section" data-animate="fade-up">
-  <div class="container">
-    <p class="section-eyebrow">Common Questions</p>
-    <h2 class="section-title">What Is Frequently Asked About <span class="text-accent">Excavating</span> in Edgerton?</h2>
-    <div class="faq-grid">
-      <?php foreach ($faqs as $faq): ?>
-      <div class="faq-item" data-animate="fade-up">
-        <h3 class="faq-item__q"><?php echo htmlspecialchars($faq['q'], ENT_QUOTES, 'UTF-8'); ?></h3>
-        <p class="faq-item__a"><?php echo htmlspecialchars($faq['a'], ENT_QUOTES, 'UTF-8'); ?></p>
-      </div>
-      <?php endforeach; ?>
-    </div>
-  </div>
-</section>
-
-<!-- ── Divider ─────────────────────────────────────────────── -->
-<div aria-hidden="true" style="background:var(--color-bg-alt);line-height:0;overflow:hidden;height:60px;">
-  <svg viewBox="0 0 1200 60" preserveAspectRatio="none" width="100%" height="60"><polygon points="0,0 1200,60 1200,60 0,60" fill="#ffffff"/></svg>
-</div>
-
-<!-- ── Closing CTA (CTA #3) ───────────────────────────────── -->
-<section class="closing-cta" data-animate="fade-up">
-  <div class="container">
-    <p class="section-eyebrow">Ready to Start?</p>
-    <h2 class="closing-cta__title">How Do You Schedule a Site Walk for Your Excavating Project?</h2>
-    <p class="closing-cta__sub">
-      R.A.H. Solutions serves Edgerton, Stoughton, Janesville, and Madison with professional excavating and site preparation. We're licensed, insured, and ready to solve your drainage or earthmoving challenge.
-    </p>
-    <div class="closing-cta__btns">
-      <a href="/contact" class="btn-primary">
-        <i data-lucide="calendar" style="width:18px;height:18px;" aria-hidden="true"></i>
-        Request a Free Estimate
-      </a>
-      <a href="/services" class="btn-secondary">Browse All Services</a>
-    </div>
-    <p style="margin-top:var(--space-xl);color:var(--color-text-light);font-size:var(--font-size-sm);">
-      Also serving: <a href="/service-area" style="color:var(--color-accent);">Stoughton, Janesville &amp; Madison</a> — Hardscaping &amp; <a href="/services/concrete-services" style="color:var(--color-accent);">Concrete Services</a> available.
-    </p>
-  </div>
-</section>
-
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>

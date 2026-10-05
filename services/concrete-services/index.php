@@ -1,1244 +1,257 @@
 <?php
-// ============================================================
-// R.A.H. Solutions, LLC — services/concrete-services.php
-// Service: Concrete Services  |  Standard Tier
-// ============================================================
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+?>
+<?php
+$svc             = serviceBySlug('concrete-services');
+$currentPage     = 'services';
+$pageType        = 'service';
+$serviceSlug     = 'concrete-services';
+$pageTitle       = 'Concrete Services in Edgerton, WI | RAH Solutions LLC';
+$pageDescription = 'Concrete driveways, patios, walkways and steps in Edgerton, WI. RAH Solutions LLC builds the base, forms, pours and finishes. Free on-site estimates.';
+$canonicalUrl    = $siteUrl . '/services/concrete-services/';
+$heroPreload     = heroPreload('concrete-patio-steps-stone-ranch', '100vw');
+$ogImage         = 'concrete-patio-steps-stone-ranch.jpg';
+$pageCss         = ['service'];
+$pageStyle       = <<<CSS
+/* concrete-services: cool slate type cards, before/after beside the repair-or-replace callout */
+.page-concrete-services .svc-hero .hero-bg img { object-position: 50% 62%; }
+.page-concrete-services .type-card h3 { padding-left: .7rem; border-left: 3px solid var(--color-primary); }
+.page-concrete-services .type-card--photo { min-height: 340px; }
+.page-concrete-services .svc-compare { display: grid; grid-template-columns: minmax(0, 380px) minmax(0, 1fr); gap: clamp(1.5rem, 5vw, 3.5rem); align-items: center; }
+.page-concrete-services .svc-compare .svc-callout { max-width: none; }
+@media (max-width: 800px) { .page-concrete-services .svc-compare { grid-template-columns: 1fr; } .page-concrete-services .ba { max-width: 420px; } }
+CSS;
 
-$pageTitle       = 'Concrete Services in Edgerton, WI';
-$pageDescription = 'Concrete driveways, patios & walkways in Edgerton, WI — proper base prep, air-entrained mix for WI winters, all finishes. Free estimates. Call (608) 501-5123.';
-$canonicalUrl    = 'https://rahsolutionsllc.com/services/concrete-services';
-// SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
-$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785039114-o.jpg';
-$currentPage     = 'service-concrete-services';
-$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785039114-o.jpg';
-
-$pageFaqs = [
-  [
-    'q' => 'How thick should a concrete driveway be in Wisconsin?',
-    'a' => 'In Wisconsin, residential driveways should be a minimum of 4 inches thick, with 5–6 inches recommended for areas that see heavy vehicle traffic or large trucks. We always install on a properly compacted 6-inch aggregate base to prevent settling and cracking through freeze-thaw cycles.',
-  ],
-  [
-    'q' => 'What causes concrete to crack?',
-    'a' => 'The most common causes are inadequate base preparation, missing or improperly spaced control joints, too much water added to the mix on-site (which weakens the slab), and using a non-air-entrained mix in climates like Wisconsin that experience repeated freeze-thaw cycles. We address all four on every pour.',
-  ],
-  [
-    'q' => 'How long does concrete take to cure?',
-    'a' => 'Concrete reaches approximately 70% of its design strength in 7 days and full strength at 28 days. Light foot traffic is safe after 24–48 hours. We recommend keeping vehicles off a new driveway for at least 7 days, and avoiding de-icing salts for the first winter season.',
-  ],
-  [
-    'q' => 'Can you stamp or stain concrete in Edgerton?',
-    'a' => 'Yes. We offer stamped concrete patterns (cobblestone, slate, wood plank) and integral color options for driveways, patios, and walkways. Decorative concrete adds curb appeal while maintaining the same durability as standard concrete — it just requires periodic sealing to preserve the finish.',
-  ],
+$faqs = [
+    ['How long before I can use new concrete?',
+     'Plan on staying off a new slab for at least a day, and keep cars off a new driveway for about a week. Concrete keeps gaining strength for roughly a month, so heavy loads such as a loaded trailer or a dumpster should wait longer. RAH Solutions tells you the exact timing for your pour, because temperature changes it.'],
+    ['Can concrete be poured in cold weather in Wisconsin?',
+     'It can, within limits. Concrete must not freeze while it is fresh, so late-fall pours need warmer days, a mix suited to the temperature, and insulating blankets overnight. Most outdoor flatwork around Edgerton is poured from spring through fall. If the ground is frozen, the job waits.'],
+    ['Why did my old concrete crack, and will new concrete crack too?',
+     'All concrete shrinks slightly as it cures, and southern Wisconsin ground moves as it freezes and thaws. Control joints are cut or tooled into a slab so that movement happens in a straight line at the joint instead of across the middle. A compacted gravel base and water draining away from the slab do the rest.'],
+    ['Should I repair or replace cracked concrete steps?',
+     'Surface flaking can sometimes be patched. Steps that have sunk, tilted or pulled away from the house usually need to be removed and re-poured on a proper base. The <a href="/blog/concrete-steps-repair-or-replace/">repair or replace guide</a> walks through the checks.'],
+    ['Do I need a permit for a driveway or sidewalk?',
+     'It depends on the municipality and on where the concrete goes. Work in the public right-of-way, such as a city sidewalk or the apron where a driveway meets the street, commonly needs a permit. Check with your city or village hall before work is scheduled; RAH Solutions will tell you what it sees during the estimate.'],
+    ['Can I use salt on new concrete the first winter?',
+     'Avoid it. Deicing salt is hard on young concrete, and industry guidance is to keep deicers off a slab through its first winter. Use sand for traction instead. RAH Solutions also offers <a href="/services/snow-removal/">snow removal</a>, so the same company that poured the driveway can plow it.'],
 ];
 
-$faqItems = [];
-foreach ($pageFaqs as $faq) {
-  $faqItems[] = [
-    '@type'          => 'Question',
-    'name'           => $faq['q'],
-    'acceptedAnswer' => ['@type' => 'Answer', 'text' => $faq['a']],
-  ];
-}
+$steps = [
+    ['Look at the site', 'Robert measures the area, checks slope and drainage, and asks how the slab will be used: foot traffic, cars or equipment.'],
+    ['Remove and prepare', 'Old concrete and soft soil come out. A gravel base is placed and compacted, then forms are set to the right slope.'],
+    ['Reinforce and pour', 'Reinforcement is tied in where the job calls for it, the concrete is placed, leveled and finished, and joints are cut.'],
+    ['Cure and clean up', 'The slab is left to cure, forms come off, edges are backfilled and the yard around the pour is cleaned up.'],
+];
 
-$schemaMarkup = json_encode([
-  '@context' => 'https://schema.org',
-  '@graph'   => [
-    [
-      '@type'           => 'BreadcrumbList',
-      'itemListElement' => [
-        ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home',     'item' => 'https://rahsolutionsllc.com'],
-        ['@type' => 'ListItem', 'position' => 2, 'name' => 'Services', 'item' => 'https://rahsolutionsllc.com/services'],
-        ['@type' => 'ListItem', 'position' => 3, 'name' => 'Concrete Services', 'item' => 'https://rahsolutionsllc.com/services/concrete-services'],
-      ],
-    ],
-    [
-      '@type'       => 'Service',
-      '@id'         => 'https://rahsolutionsllc.com/services/concrete-services/#service',
-      'name'        => 'Concrete Services',
-      'description' => 'Professional concrete installation for driveways, walkways, patios, steps, and poured walls in Edgerton, WI. Air-entrained mixes, proper base prep, broom and decorative finishes available.',
-      'provider'    => ['@type' => 'LocalBusiness', '@id' => 'https://rahsolutionsllc.com/#business'],
-      'areaServed'  => [
-        ['@type' => 'City', 'name' => 'Edgerton'],
-        ['@type' => 'City', 'name' => 'Stoughton'],
-        ['@type' => 'City', 'name' => 'Janesville'],
-        ['@type' => 'City', 'name' => 'Madison'],
-      ],
-      'serviceType' => 'Concrete Installation',
-    ],
-    [
-      '@type'      => 'FAQPage',
-      'mainEntity' => $faqItems,
-    ],
-    [
-      '@type'           => 'LocalBusiness',
-      '@id'             => 'https://rahsolutionsllc.com/#aggregate',
-      'name'            => 'R.A.H. Solutions, LLC',
-    ],
-  ],
-], JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+$schemaNodes = [
+    webPageNode(),
+    breadcrumbNode([['Home', '/'], ['Services', '/services/'], ['Concrete Services', '/services/concrete-services/']]),
+    serviceSchemaNode('Concrete Services', 'Concrete driveways, patios, walkways, steps and pads in Edgerton, WI and nearby Rock and Dane County towns: removal, base preparation, forming, pouring and finishing.', $canonicalUrl),
+    ['@type' => 'HowTo', 'name' => 'How RAH Solutions LLC pours a concrete slab', 'step' => array_map(fn($s, $i) => ['@type' => 'HowToStep', 'position' => $i + 1, 'name' => $s[0], 'text' => $s[1]], $steps, array_keys($steps))],
+    faqSchemaNode($faqs),
+];
 
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
+<div class="page-concrete-services">
 
-<style>
-/* ============================================================
-   Concrete Services — Page-Specific Styles
-   Standard Tier: 200+ lines, all var() tokens
-   ============================================================ */
-
-/* ── Breadcrumb ─────────────────────────────────────────────── */
-.breadcrumb-nav {
-  background: var(--color-bg-alt);
-  padding: var(--space-sm) 0;
-  border-bottom: 1px solid var(--color-light);
-  position: relative;
-  z-index: 10;
-}
-.breadcrumb-nav .container {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-  flex-wrap: wrap;
-}
-.breadcrumb-nav a {
-  color: var(--color-accent);
-  font-size: var(--font-size-sm);
-  font-family: var(--font-body);
-  transition: color var(--transition-fast);
-}
-.breadcrumb-nav a:hover { color: var(--color-primary); }
-.breadcrumb-nav span {
-  color: var(--color-text-light);
-  font-size: var(--font-size-sm);
-}
-.breadcrumb-nav .current {
-  color: var(--color-text);
-  font-weight: 600;
-}
-
-/* ── Hero ────────────────────────────────────────────────────── */
-.concrete-hero {
-  min-height: 60vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785039114-o.jpg');
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-}
-.concrete-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(var(--color-primary-rgb), 0.88) 0%,
-    rgba(var(--color-primary-rgb), 0.65) 60%,
-    rgba(var(--color-accent-rgb), 0.25) 100%
-  );
-  z-index: 1;
-}
-.concrete-hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  z-index: 2;
-}
-.concrete-hero .hero-inner {
-  position: relative;
-  z-index: 3;
-  width: 100%;
-  padding: var(--space-4xl) 0;
-}
-.concrete-hero .eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: rgba(var(--color-accent-rgb), 0.18);
-  border: 1px solid rgba(var(--color-accent-rgb), 0.4);
-  color: var(--color-accent);
-  font-family: var(--font-body);
-  font-size: var(--font-size-sm);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: var(--space-xs) var(--space-md);
-  border-radius: var(--radius-xl);
-  margin-bottom: var(--space-lg);
-}
-.concrete-hero h1 {
-  font-family: var(--font-heading);
-  font-size: clamp(2.4rem, 5.5vw, 4rem);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  text-wrap: balance;
-  color: #fff;
-  margin-bottom: var(--space-lg);
-  max-width: 720px;
-}
-.concrete-hero h1 span {
-  background: linear-gradient(90deg, var(--color-accent), rgba(var(--color-accent-rgb), 0.6));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.concrete-hero .hero-sub {
-  font-family: var(--font-body);
-  font-size: var(--font-size-lg);
-  color: rgba(255,255,255,0.85);
-  max-width: 55ch;
-  line-height: 1.6;
-  margin-bottom: var(--space-xl);
-}
-.concrete-hero .hero-ctas {
-  display: flex;
-  gap: var(--space-md);
-  flex-wrap: wrap;
-}
-.btn-hero-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: var(--color-accent);
-  color: var(--color-primary-dark);
-  font-family: var(--font-heading);
-  font-size: var(--font-size-lg);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: var(--space-md) var(--space-xl);
-  border-radius: var(--radius-md);
-  box-shadow: 0 4px 0 var(--color-accent-dark);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  overflow: hidden;
-}
-.btn-hero-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 0 var(--color-accent-dark);
-  color: var(--color-primary-dark);
-}
-.btn-hero-primary:active {
-  transform: translateY(2px);
-  box-shadow: 0 2px 0 var(--color-accent-dark);
-}
-.btn-hero-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: transparent;
-  color: #fff;
-  font-family: var(--font-heading);
-  font-size: var(--font-size-lg);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: var(--space-md) var(--space-xl);
-  border-radius: var(--radius-md);
-  border: 2px solid rgba(255,255,255,0.55);
-  transition: background var(--transition-fast), border-color var(--transition-fast);
-  overflow: hidden;
-}
-.btn-hero-secondary:hover {
-  background: rgba(255,255,255,0.1);
-  border-color: #fff;
-  color: #fff;
-}
-
-/* ── Proof Ticker ─────────────────────────────────────────────── */
-.ticker-strip {
-  background: var(--color-primary);
-  overflow: hidden;
-  padding: var(--space-sm) 0;
-  border-top: 3px solid var(--color-accent);
-}
-.ticker-track {
-  display: flex;
-  width: max-content;
-  animation: ticker-scroll 28s linear infinite;
-}
-.ticker-track:hover { animation-play-state: paused; }
-.ticker-item {
-  display: flex;
-  align-items: center;
-  gap: var(--space-lg);
-  padding: 0 var(--space-2xl);
-  white-space: nowrap;
-  color: #fff;
-  font-family: var(--font-body);
-  font-size: var(--font-size-xs);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-.ticker-sep {
-  color: var(--color-accent);
-  font-size: var(--font-size-lg);
-  line-height: 1;
-}
-@keyframes ticker-scroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-
-/* ── Service Detail Section ──────────────────────────────────── */
-.concrete-detail {
-  padding: var(--space-4xl) 0;
-  background: var(--color-bg);
-}
-.concrete-detail .split-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-3xl);
-  align-items: center;
-}
-.concrete-detail .split-content {}
-.concrete-detail .split-content .section-eyebrow {
-  display: inline-block;
-  font-family: var(--font-body);
-  font-size: var(--font-size-xs);
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: var(--space-md);
-}
-.concrete-detail h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  text-wrap: balance;
-  color: var(--color-primary);
-  margin-bottom: var(--space-lg);
-}
-.concrete-detail .prose p {
-  font-family: var(--font-body);
-  font-size: var(--font-size-base);
-  line-height: 1.7;
-  color: var(--color-text);
-  max-width: 65ch;
-  margin-bottom: var(--space-md);
-}
-.concrete-detail .prose p:last-child { margin-bottom: 0; }
-.detail-price-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: var(--color-bg-alt);
-  border-left: 4px solid var(--color-accent);
-  padding: var(--space-sm) var(--space-md);
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
-  margin-bottom: var(--space-xl);
-  font-family: var(--font-body);
-  font-size: var(--font-size-sm);
-  font-weight: 700;
-  color: var(--color-primary);
-}
-.split-img-frame {
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-xl);
-}
-.split-img-frame picture img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  aspect-ratio: 4/3;
-  display: block;
-}
-.split-img-badge {
-  position: absolute;
-  bottom: var(--space-lg);
-  left: var(--space-lg);
-  background: var(--color-accent);
-  color: var(--color-primary-dark);
-  font-family: var(--font-heading);
-  font-size: var(--font-size-sm);
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: var(--space-xs) var(--space-md);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
-}
-
-/* ── Dividers ────────────────────────────────────────────────── */
-.divider-wrap {
-  display: block;
-  overflow: hidden;
-  line-height: 0;
-}
-.divider-wrap svg {
-  display: block;
-  width: 100%;
-}
-
-/* ── Mid-Page CTA Banner ──────────────────────────────────────── */
-.cta-banner-mid {
-  position: relative;
-  padding: var(--space-3xl) 0;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-  overflow: hidden;
-}
-.cta-banner-mid::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none;
-}
-.cta-banner-mid .container {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-xl);
-  flex-wrap: wrap;
-}
-.cta-banner-mid .cta-text h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  text-wrap: balance;
-  color: #fff;
-  margin-bottom: var(--space-sm);
-}
-.cta-banner-mid .cta-text p {
-  font-family: var(--font-body);
-  font-size: var(--font-size-base);
-  color: rgba(255,255,255,0.8);
-  max-width: 50ch;
-}
-.cta-banner-mid .cta-actions {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: var(--space-md);
-}
-.cta-phone-large {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  color: var(--color-accent);
-  font-family: var(--font-heading);
-  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  transition: color var(--transition-fast);
-}
-.cta-phone-large:hover { color: #fff; }
-.btn-cta-accent {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: var(--color-accent);
-  color: var(--color-primary-dark);
-  font-family: var(--font-heading);
-  font-size: var(--font-size-base);
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  padding: var(--space-md) var(--space-xl);
-  border-radius: var(--radius-md);
-  box-shadow: 0 4px 0 var(--color-accent-dark);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  overflow: hidden;
-}
-.btn-cta-accent:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 0 var(--color-accent-dark);
-  color: var(--color-primary-dark);
-}
-
-/* ── Why Choose — dark strip ─────────────────────────────────── */
-.why-choose-concrete {
-  background: var(--color-bg-dark);
-  padding: var(--space-4xl) 0;
-}
-.why-choose-concrete .section-header {
-  text-align: center;
-  margin-bottom: var(--space-3xl);
-}
-.why-choose-concrete .section-header .eyebrow {
-  display: inline-block;
-  font-family: var(--font-body);
-  font-size: var(--font-size-xs);
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: var(--space-sm);
-}
-.why-choose-concrete .section-header h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  text-wrap: balance;
-  color: #fff;
-}
-.benefit-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-lg);
-}
-.benefit-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: var(--radius-lg);
-  padding: var(--space-xl);
-  text-align: center;
-  transition: background var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
-}
-.benefit-card:hover {
-  background: rgba(var(--color-accent-rgb), 0.1);
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-}
-.benefit-icon {
-  width: 56px;
-  height: 56px;
-  background: rgba(var(--color-accent-rgb), 0.15);
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto var(--space-md);
-  color: var(--color-accent);
-}
-.benefit-icon svg { width: 28px; height: 28px; }
-.benefit-card h3 {
-  font-family: var(--font-heading);
-  font-size: var(--font-size-lg);
-  font-weight: 700;
-  text-wrap: balance;
-  color: #fff;
-  margin-bottom: var(--space-sm);
-}
-.benefit-card p {
-  font-family: var(--font-body);
-  font-size: var(--font-size-sm);
-  line-height: 1.6;
-  color: rgba(255,255,255,0.7);
-}
-
-/* ── Signature Section: Before/After Detail Strip ────────────── */
-/* Two-column dark comparison strip — signature layout for this page */
-.concrete-signature {
-  background: var(--color-primary);
-  padding: var(--space-4xl) 0;
-  position: relative;
-  overflow: hidden;
-}
-.concrete-signature::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
-}
-.concrete-sig-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-}
-.concrete-sig-panel {
-  padding: var(--space-3xl) var(--space-2xl);
-  position: relative;
-}
-.concrete-sig-panel:first-child {
-  border-right: 1px solid rgba(255,255,255,0.1);
-}
-.concrete-sig-panel .panel-label {
-  font-family: var(--font-body);
-  font-size: var(--font-size-xs);
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: var(--space-md);
-}
-.concrete-sig-panel h3 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  text-wrap: balance;
-  color: #fff;
-  margin-bottom: var(--space-lg);
-}
-.concrete-sig-panel .sig-img {
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  margin-bottom: var(--space-lg);
-  box-shadow: var(--shadow-xl);
-}
-.concrete-sig-panel .sig-img img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-  display: block;
-}
-.concrete-sig-panel p {
-  font-family: var(--font-body);
-  font-size: var(--font-size-sm);
-  line-height: 1.7;
-  color: rgba(255,255,255,0.75);
-  max-width: 45ch;
-}
-.sig-spec-list {
-  list-style: none;
-  padding: 0;
-  margin: var(--space-lg) 0 0;
-}
-.sig-spec-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-sm);
-  font-family: var(--font-body);
-  font-size: var(--font-size-sm);
-  color: rgba(255,255,255,0.8);
-  padding: var(--space-xs) 0;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-.sig-spec-list li:last-child { border-bottom: none; }
-.sig-spec-list li::before {
-  content: '✓';
-  color: var(--color-accent);
-  font-weight: 700;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-
-/* ── Process Steps ───────────────────────────────────────────── */
-.concrete-process {
-  padding: var(--space-4xl) 0;
-  background: var(--color-bg-alt);
-}
-.concrete-process .section-header {
-  text-align: center;
-  margin-bottom: var(--space-3xl);
-}
-.concrete-process .section-header .eyebrow {
-  display: inline-block;
-  font-family: var(--font-body);
-  font-size: var(--font-size-xs);
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: var(--space-sm);
-}
-.concrete-process .section-header h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  text-wrap: balance;
-  color: var(--color-primary);
-}
-.process-steps {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-lg);
-  position: relative;
-}
-.process-steps::before {
-  content: '';
-  position: absolute;
-  top: 36px;
-  left: calc(25% - 0px);
-  right: calc(25% - 0px);
-  height: 2px;
-  background: linear-gradient(90deg, var(--color-accent), rgba(var(--color-accent-rgb), 0.2));
-  z-index: 0;
-}
-.process-step {
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-.step-number {
-  width: 72px;
-  height: 72px;
-  background: var(--color-accent);
-  color: var(--color-primary-dark);
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 800;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto var(--space-lg);
-  box-shadow: 0 0 0 4px var(--color-bg-alt), 0 0 0 6px rgba(var(--color-accent-rgb), 0.3);
-  transition: transform var(--transition-base);
-}
-.process-step:hover .step-number { transform: scale(1.1); }
-.process-step h3 {
-  font-family: var(--font-heading);
-  font-size: var(--font-size-xl);
-  font-weight: 700;
-  text-wrap: balance;
-  color: var(--color-primary);
-  margin-bottom: var(--space-sm);
-}
-.process-step p {
-  font-family: var(--font-body);
-  font-size: var(--font-size-sm);
-  line-height: 1.6;
-  color: var(--color-text-light);
-  max-width: 22ch;
-  margin: 0 auto;
-}
-
-/* ── FAQ Section ──────────────────────────────────────────────── */
-.concrete-faq {
-  padding: var(--space-4xl) 0;
-  background: var(--color-bg);
-}
-.concrete-faq .section-header {
-  text-align: center;
-  margin-bottom: var(--space-3xl);
-}
-.concrete-faq .section-header .eyebrow {
-  display: inline-block;
-  font-family: var(--font-body);
-  font-size: var(--font-size-xs);
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: var(--space-sm);
-}
-.concrete-faq .section-header h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  text-wrap: balance;
-  color: var(--color-primary);
-}
-.faq-list {
-  max-width: 780px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-}
-.faq-item {
-  background: var(--color-bg-alt);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-light);
-  overflow: hidden;
-}
-.faq-item summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--space-lg) var(--space-xl);
-  cursor: pointer;
-  font-family: var(--font-heading);
-  font-size: var(--font-size-lg);
-  font-weight: 700;
-  color: var(--color-primary);
-  text-wrap: balance;
-  list-style: none;
-  transition: color var(--transition-fast);
-  gap: var(--space-md);
-}
-.faq-item summary::-webkit-details-marker { display: none; }
-.faq-item summary::after {
-  content: '+';
-  font-size: 1.4rem;
-  color: var(--color-accent);
-  flex-shrink: 0;
-  transition: transform var(--transition-fast);
-  line-height: 1;
-}
-.faq-item[open] summary::after { transform: rotate(45deg); }
-.faq-item[open] summary { color: var(--color-accent); }
-.faq-answer {
-  padding: 0 var(--space-xl) var(--space-lg);
-  font-family: var(--font-body);
-  font-size: var(--font-size-base);
-  line-height: 1.7;
-  color: var(--color-text-light);
-  max-width: 65ch;
-}
-
-/* ── Closing CTA ──────────────────────────────────────────────── */
-.closing-cta {
-  padding: var(--space-4xl) 0;
-  background: var(--color-bg-alt);
-  text-align: center;
-}
-.closing-cta .eyebrow {
-  display: inline-block;
-  font-family: var(--font-body);
-  font-size: var(--font-size-xs);
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: var(--space-md);
-}
-.closing-cta h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  text-wrap: balance;
-  color: var(--color-primary);
-  margin-bottom: var(--space-md);
-}
-.closing-cta p {
-  font-family: var(--font-body);
-  font-size: var(--font-size-lg);
-  color: var(--color-text-light);
-  max-width: 55ch;
-  margin: 0 auto var(--space-xl);
-  line-height: 1.6;
-}
-.closing-cta-actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-lg);
-  flex-wrap: wrap;
-}
-.btn-closing-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: var(--color-primary);
-  color: #fff;
-  font-family: var(--font-heading);
-  font-size: var(--font-size-lg);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: var(--space-md) var(--space-2xl);
-  border-radius: var(--radius-md);
-  box-shadow: 0 4px 0 var(--color-primary-dark);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  overflow: hidden;
-}
-.btn-closing-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 0 var(--color-primary-dark);
-  color: #fff;
-}
-.closing-phone {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  color: var(--color-primary);
-  font-family: var(--font-heading);
-  font-size: var(--font-size-xl);
-  font-weight: 700;
-}
-.closing-phone:hover { color: var(--color-accent); }
-.last-updated {
-  font-family: var(--font-body);
-  font-size: var(--font-size-xs);
-  color: var(--color-text-light);
-  margin-top: var(--space-xl);
-}
-
-/* ── Responsive ───────────────────────────────────────────────── */
-@media (max-width: 1023px) {
-  .benefit-cards-grid { grid-template-columns: repeat(2, 1fr); }
-  .process-steps { grid-template-columns: repeat(2, 1fr); }
-  .process-steps::before { display: none; }
-  .concrete-sig-grid { grid-template-columns: 1fr; }
-  .concrete-sig-panel:first-child { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
-}
-@media (max-width: 767px) {
-  .concrete-detail .split-grid { grid-template-columns: 1fr; }
-  .benefit-cards-grid { grid-template-columns: 1fr; }
-  .process-steps { grid-template-columns: 1fr; }
-  .cta-banner-mid .container { flex-direction: column; }
-  .cta-banner-mid .cta-actions { align-items: flex-start; }
-  .concrete-hero .hero-ctas { flex-direction: column; }
-  .closing-cta-actions { flex-direction: column; }
-}
-</style>
-
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php'; ?>
-
-<!-- Breadcrumb -->
-<nav class="breadcrumb-nav" aria-label="Breadcrumb">
-  <div class="container">
-    <a href="/">Home</a>
-    <span aria-hidden="true">›</span>
-    <a href="/services">Services</a>
-    <span aria-hidden="true">›</span>
-    <span class="current" aria-current="page">Concrete Services</span>
-  </div>
-</nav>
-
-<!-- Hero -->
-<section class="concrete-hero" aria-label="Concrete Services Hero">
-  <div class="hero-inner">
-    <div class="container">
-      <div class="eyebrow">
-        <i data-lucide="layers" style="width:14px;height:14px;"></i>
-        Edgerton, WI Concrete Contractor
+<section class="hero hero--photo svc-hero" aria-label="Concrete services in Edgerton, WI">
+  <div class="hero-bg"><?php echo picture('concrete-patio-steps-stone-ranch', 'New concrete patio with a rounded corner and steps behind a stone ranch house', '100vw', ['eager' => true, 'class' => 'hero-img']); ?></div>
+  <div class="hero-overlay"></div>
+  <span class="grain" aria-hidden="true"></span>
+  <div class="container hero-grid hero-grid--form">
+    <div class="hero-text">
+      <?php echo breadcrumbs([['Home', '/'], ['Services', '/services/'], ['Concrete Services', '/services/concrete-services/']]); ?>
+      <span class="eyebrow">Driveways · Patios · Walkways · Steps</span>
+      <h1 class="hero-title">Concrete Services in Edgerton, WI</h1>
+      <p class="page-answer">RAH Solutions LLC pours and replaces concrete driveways, patios, walkways and steps in Edgerton and nearby towns. The crew removes the old slab, builds a compacted base, forms, pours and finishes, with free on-site estimates.</p>
+      <div class="hero-actions">
+        <button type="button" class="btn btn-accent btn-lg hero-form-open" data-open-estimate>Get a free concrete estimate</button>
+        <a class="link-call" href="<?php echo telHref(); ?>"><?php echo icon('phone', 18); ?> or call <?php echo e($phone); ?></a>
       </div>
-      <h1>Concrete Services in <span>Edgerton, WI</span> — Driveways, Patios &amp; Walkways</h1>
-      <p class="hero-sub">Air-entrained concrete spec for Wisconsin's freeze-thaw cycles. Driveways, patios, walkways, steps &amp; poured walls — properly formed, reinforced, and sealed.</p>
-      <div class="hero-ctas">
-        <a href="/contact" class="btn-hero-primary">
-          <i data-lucide="file-text" style="width:18px;height:18px;"></i>
-          Get a Free Estimate
-        </a>
-        <a href="tel:6085015123" class="btn-hero-secondary">
-          <i data-lucide="phone" style="width:18px;height:18px;"></i>
-          (608) 501-5123
-        </a>
+      <p class="last-updated">Last updated: <?php echo date('F Y'); ?></p>
+    </div>
+    <?php $heroFormId = 'hero-concrete-services'; $heroFormService = 'concrete-services'; $heroFormHeading = 'Get a free concrete estimate'; include $_SERVER['DOCUMENT_ROOT'] . '/includes/hero-form.php'; ?>
+  </div>
+</section>
+
+<section class="section svc-intro" aria-labelledby="intro-h2">
+  <div class="container svc-layout">
+    <div class="svc-body">
+      <p class="identity-line"><strong>RAH Solutions LLC</strong> is a licensed and insured, family-owned landscaper based in Edgerton, Wisconsin. Started by Robert Harried in 2023, it serves Rock and Dane County homes and businesses.</p>
+      <h2 id="intro-h2">What concrete work does RAH Solutions do?</h2>
+      <div class="answer-block">
+        <h3>Short answer</h3>
+        <p>RAH Solutions LLC installs and replaces exterior concrete flatwork: driveways, patios, walkways, steps, landings and equipment pads. A typical job covers tear-out of the old concrete, a compacted gravel base, forms, the pour, finishing, control joints and cleanup. Estimates are free and given after an on-site look.</p>
+      </div>
+      <p>Concrete near me in Edgerton usually means one of two calls. Either an old slab has cracked, sunk or tilted and needs to come out, or a homeowner wants a new patio, a wider driveway or a proper walk where there is only grass. RAH Solutions handles both, and because the same company also does <a href="/services/excavating-services/">excavating and grading</a>, the dirt work under the slab is not handed to someone else.</p>
+      <p>That matters more than the pour itself. Most concrete problems in southern Wisconsin start below the surface: soil that holds water, a thin or uncompacted base, or a slab that sends water toward the house instead of away from it. RAH Solutions looks at slope and drainage first, then builds the base, then pours.</p>
+      <p>If you are planning a patio and are not sure between poured concrete and pavers, the <a href="/services/hardscaping-services/">hardscaping page</a> covers paver patios, walkways and retaining walls. Many yards end up with both.</p>
+    </div>
+    <aside class="svc-rail" aria-label="On this page">
+      <nav class="svc-toc" aria-label="Page sections">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#types-h2">What we pour</a></li>
+          <li><a href="#cond-h2">Freeze and thaw</a></li>
+          <li><a href="#compare-h2">Repair or replace?</a></li>
+          <li><a href="#steps-h2">How a pour works</a></li>
+          <li><a href="#faq-h2">Concrete FAQ</a></li>
+        </ol>
+      </nav>
+      <div class="svc-callcard">
+        <strong>Planning a pour this season?</strong>
+        <p><?php echo e($hoursLong); ?></p>
+        <a class="btn btn-accent" href="<?php echo telHref(); ?>"><?php echo icon('phone', 18); ?> <?php echo e($phone); ?></a>
+        <button type="button" class="btn btn-outline-white" data-open-estimate>Request an estimate</button>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section svc-types" aria-labelledby="types-h2">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <span class="eyebrow-label">What we pour</span>
+      <h2 id="types-h2">Which concrete projects does RAH Solutions take on?</h2>
+      <p>RAH Solutions LLC pours residential and light commercial flatwork around Edgerton, from a single replaced step to a full driveway.</p>
+    </div>
+    <div class="type-grid" data-p1-dynamic>
+      <article class="type-card reveal-up reveal-delay-1">
+        <span class="type-card__icon"><?php echo icon('car', 22); ?></span>
+        <h3>Driveways</h3>
+        <p>New driveways, widened parking pads and replacement of broken sections. The base and slab are built for vehicle weight, with joints laid out so cracks follow the lines.</p>
+      </article>
+      <article class="type-card reveal-up reveal-delay-2">
+        <span class="type-card__icon"><?php echo icon('sun', 22); ?></span>
+        <h3>Patios</h3>
+        <p>Backyard patios shaped to the house and the yard, including rounded corners and steps down from the door, sloped so rain runs off and away from the foundation.</p>
+      </article>
+      <article class="type-card reveal-up reveal-delay-3">
+        <span class="type-card__icon"><?php echo icon('footprints', 22); ?></span>
+        <h3>Walkways and sidewalks</h3>
+        <p>Front walks, side-yard paths and replaced sidewalk sections. Walks are formed over a gravel base and reinforced where the job calls for it.</p>
+      </article>
+      <div class="type-card type-card--photo reveal-scale reveal-delay-1">
+        <?php echo picture('concrete-walk-rebar-grid', 'Sidewalk formed with a gravel base and a rebar grid before the concrete pour', '(max-width: 560px) 100vw, 33vw'); ?>
+      </div>
+      <article class="type-card reveal-up reveal-delay-2">
+        <span class="type-card__icon"><?php echo icon('layers', 22); ?></span>
+        <h3>Steps and landings</h3>
+        <p>Cracked, sunken or tilted entry steps are removed and re-poured as a solid landing and steps with even rises, so the door opens onto something level again.</p>
+      </article>
+      <article class="type-card reveal-up reveal-delay-3">
+        <span class="type-card__icon"><?php echo icon('building-2', 22); ?></span>
+        <h3>Slabs and pads</h3>
+        <p>Shed and garage aprons, entry pads at shop buildings, and pads for trash enclosures or equipment at small commercial properties.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section svc-conditions texture-grain edge-facet-top" aria-labelledby="cond-h2">
+  <span class="grain-layer" aria-hidden="true"></span>
+  <div class="container">
+    <div class="cond-head reveal-left">
+      <span class="eyebrow-label">Built for Wisconsin winters</span>
+      <h2 id="cond-h2">How does freeze and thaw affect concrete in southern Wisconsin?</h2>
+      <p>Water in and under a slab expands when it freezes, and Rock County sees that cycle many times each winter. RAH Solutions LLC plans four things on every pour so the slab handles it.</p>
+    </div>
+    <ul class="cond-list">
+      <li class="reveal-up"><span><?php echo icon('layers', 22); ?></span><b>A compacted gravel base</b><p>Gravel drains and does not heave the way wet soil does. Soft soil is dug out, gravel is placed in layers and compacted before any forms go up.</p></li>
+      <li class="reveal-up"><span><?php echo icon('droplets', 22); ?></span><b>Slope and drainage</b><p>The slab is pitched so water runs off and away from the house. Downspouts that dump onto a walk or patio are a common cause of winter damage and get dealt with first.</p></li>
+      <li class="reveal-up"><span><?php echo icon('ruler', 22); ?></span><b>Control joints</b><p>Joints are spaced and cut so the slab can shrink and move along planned lines. You can see them in the patio photos on this page.</p></li>
+      <li class="reveal-up"><span><?php echo icon('snowflake', 22); ?></span><b>The right mix and first-winter care</b><p>Exterior concrete in a freeze and thaw climate should be an air-entrained mix, which gives freezing water room to expand. Keep deicing salt off it the first winter.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section--tight" aria-labelledby="compare-h2">
+  <div class="container svc-compare">
+    <figure class="ba reveal-scale">
+      <?php echo picture('concrete-steps-cracked-before', 'Cracked, settled concrete steps along the side of a house before replacement', '(max-width: 800px) 100vw, 380px'); ?>
+      <div class="ba__after"><?php echo picture('concrete-landing-formed-poured', 'The same side entry with a new concrete landing poured inside wood forms', '(max-width: 800px) 100vw, 380px'); ?></div>
+      <span class="ba__tag ba__tag--before">Before</span><span class="ba__tag ba__tag--after">After</span>
+      <input class="ba__range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
+      <span class="ba__divider" aria-hidden="true"></span>
+      <figcaption>Side entry: old steps out, new landing poured.</figcaption>
+    </figure>
+    <div class="svc-callout reveal-up">
+      <span><?php echo icon('hammer', 26); ?></span>
+      <div>
+        <h2 id="compare-h2">When should concrete be replaced instead of patched?</h2>
+        <p>Replace it when the slab has moved. Concrete that has sunk, tilted, heaved or pulled away from the house has a base problem, and a patch on top will not fix what is underneath. The steps in this photo had cracked and dropped away from the door, so RAH Solutions removed them and poured a new landing.</p>
+        <p>Patching is reasonable when the slab is still level and solid and the damage is on the surface: light flaking, a chipped edge or a hairline crack that has not opened or shifted.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Proof Ticker -->
-<div class="ticker-strip" aria-hidden="true">
-  <div class="ticker-track">
-    <div class="ticker-item">Licensed &amp; Insured<span class="ticker-sep">✦</span></div>
-    <div class="ticker-item">Air-Entrained Concrete<span class="ticker-sep">✦</span></div>
-    <div class="ticker-item">6" Compacted Base Standard<span class="ticker-sep">✦</span></div>
-    <div class="ticker-item">Serving Edgerton &amp; Southern WI<span class="ticker-sep">✦</span></div>
-    <div class="ticker-item">Free Estimates<span class="ticker-sep">✦</span></div>
-    <div class="ticker-item">4.9★ Rated — 47 Reviews<span class="ticker-sep">✦</span></div>
-    <div class="ticker-item">Control Joints Cut to Spec<span class="ticker-sep">✦</span></div>
-    <div class="ticker-item">Stamped &amp; Broom Finishes<span class="ticker-sep">✦</span></div>
-    <!-- duplicate for seamless loop -->
-    <div class="ticker-item">Licensed &amp; Insured<span class="ticker-sep">✦</span></div>
-    <div class="ticker-item">Air-Entrained Concrete<span class="ticker-sep">✦</span></div>
-    <div class="ticker-item">6" Compacted Base Standard<span class="ticker-sep">✦</span></div>
-    <div class="ticker-item">Serving Edgerton &amp; Southern WI<span class="ticker-sep">✦</span></div>
-    <div class="ticker-item">Free Estimates<span class="ticker-sep">✦</span></div>
-    <div class="ticker-item">4.9★ Rated — 47 Reviews<span class="ticker-sep">✦</span></div>
-    <div class="ticker-item">Control Joints Cut to Spec<span class="ticker-sep">✦</span></div>
-    <div class="ticker-item">Stamped &amp; Broom Finishes<span class="ticker-sep">✦</span></div>
-  </div>
-</div>
-
-<!-- Service Detail -->
-<section class="concrete-detail" data-animate="fade-up">
+<section class="section svc-steps" aria-labelledby="steps-h2">
   <div class="container">
-    <div class="split-grid">
-      <div class="split-content">
-        <span class="section-eyebrow">What We Do</span>
-        <h2>What <span class="text-accent">Concrete Work</span> Holds Up to Wisconsin Winters?</h2>
-        <div class="detail-price-tag">
-          <i data-lucide="tag" style="width:14px;height:14px;"></i>
-          Driveways typically run $6–$12 per sq ft installed — final pricing at free estimate
-        </div>
-        <div class="prose">
-          <p>Concrete work in Wisconsin demands more than just a pour. Southern Wisconsin's climate cycles through dozens of freeze-thaw events each year, and concrete that isn't engineered for those conditions develops surface scaling, spalling, and cracks within a few seasons. R.A.H. Solutions installs driveways, walkways, patios, steps, and poured walls using the concrete specs your project actually needs — not the cheapest mix on the truck.</p>
-          <p>Every residential driveway we install starts with a 6-inch compacted aggregate base. No gravel shortcuts. The base prevents the slab from settling unevenly and creates drainage beneath the concrete that reduces frost heave. We use 4,000 PSI air-entrained concrete mixes — the air-entraining admixture creates microscopic bubbles that give the slab room to expand and contract without cracking the surface layer. That's standard practice in Minnesota, Wisconsin, and Michigan for a reason.</p>
-          <p>Finishing options include standard broom finish (the most durable for driveways), exposed aggregate (textured grip plus visual interest), and stamped patterns (cobblestone, slate, or wood-grain impressions with integral color). We cut control joints at the appropriate intervals — typically every 8–10 feet on a residential driveway — to give the slab planned crack locations that stay hidden rather than random cracking that shows. All slabs are sealed before we leave the job.</p>
-
-          <div class="answer-block">
-            <h3>How much do concrete services cost in Edgerton?</h3>
-            <p>Concrete driveways, patios, and walkways in Edgerton typically run $6–$12 per square foot installed, depending on slab thickness, finish type, and site prep requirements. R.A.H. Solutions uses air-entrained concrete mixes engineered for Wisconsin's freeze-thaw cycles, with a 6-inch compacted aggregate base standard on every driveway pour.</p>
-          </div>
-        </div>
-      </div>
-      <div class="split-img-frame" data-animate="wipe-right">
-        <picture>
-          <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963899295-b8v0w8-607091027_122304065120208320_4309334725424131443_n.jpg" type="image/webp">
-          <img
-            src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963899295-b8v0w8-607091027_122304065120208320_4309334725424131443_n.jpg"
-            alt="Concrete driveway installation Edgerton Wisconsin R.A.H. Solutions"
-            width="800" height="600" loading="lazy">
-        </picture>
-        <div class="split-img-badge">Edgerton, WI</div>
-      </div>
+    <div class="section-head reveal-up">
+      <span class="eyebrow-label">The process</span>
+      <h2 id="steps-h2">How does a concrete project with RAH Solutions work?</h2>
+      <p>RAH Solutions LLC follows the same four steps on a single step replacement and on a full driveway.</p>
     </div>
-  </div>
-</section>
-
-<!-- Divider: diagonal down -->
-<div class="divider-wrap" aria-hidden="true" style="background:var(--color-bg);line-height:0;">
-  <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 1200,60 1200,60 0,60" fill="#1a2b3c"/></svg>
-</div>
-
-<!-- Mid-Page CTA Banner -->
-<section class="cta-banner-mid" aria-label="Request a concrete estimate">
-  <div class="container">
-    <div class="cta-text">
-      <h2>Ready to Replace That Crumbling Driveway?</h2>
-      <p>Free, no-pressure estimates for all concrete work in Edgerton, Stoughton, Janesville &amp; Madison. Same-week scheduling available for most jobs.</p>
-    </div>
-    <div class="cta-actions">
-      <a href="tel:6085015123" class="cta-phone-large">
-        <i data-lucide="phone-call" style="width:22px;height:22px;"></i>
-        (608) 501-5123
-      </a>
-      <a href="/contact" class="btn-cta-accent">
-        <i data-lucide="clipboard-list" style="width:18px;height:18px;"></i>
-        Request Free Estimate
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- Divider: diagonal up -->
-<div class="divider-wrap" aria-hidden="true" style="background:var(--color-primary-dark);line-height:0;">
-  <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><polygon points="0,60 1200,0 1200,60" fill="#0f1e2d"/></svg>
-</div>
-
-<!-- Why Choose — dark strip -->
-<section class="why-choose-concrete" data-animate="fade-up">
-  <div class="container">
-    <div class="section-header">
-      <div class="eyebrow">Why R.A.H. Solutions</div>
-      <h2>Why Do <span class="text-accent">Edgerton Homeowners</span> Choose Us for Concrete?</h2>
-    </div>
-    <div class="benefit-cards-grid">
-      <div class="benefit-card" data-animate="fade-up">
-        <div class="benefit-icon">
-          <i data-lucide="thermometer-snowflake" style="width:28px;height:28px;"></i>
-        </div>
-        <h3>Wisconsin-Grade Air-Entrained Mix</h3>
-        <p>We specify 4,000 PSI air-entrained concrete that handles Rock County's freeze-thaw cycles without surface scaling or spalling.</p>
-      </div>
-      <div class="benefit-card" data-animate="fade-up">
-        <div class="benefit-icon">
-          <i data-lucide="ruler" style="width:28px;height:28px;"></i>
-        </div>
-        <h3>4–6" Depth on Every Driveway</h3>
-        <p>Minimum 4" thickness, 6" at edges and vehicle approach zones — no thin slabs that crack under normal car and truck loads.</p>
-      </div>
-      <div class="benefit-card" data-animate="fade-up">
-        <div class="benefit-icon">
-          <i data-lucide="scissors" style="width:28px;height:28px;"></i>
-        </div>
-        <h3>Control Joints Cut to Prevent Cracking</h3>
-        <p>Properly spaced saw-cut or tooled control joints give the slab planned places to move — hidden beneath the surface, not across the face.</p>
-      </div>
-      <div class="benefit-card" data-animate="fade-up">
-        <div class="benefit-icon">
-          <i data-lucide="shield-check" style="width:28px;height:28px;"></i>
-        </div>
-        <h3>Fully Licensed &amp; Insured</h3>
-        <p>All concrete work is properly permitted where required. We carry full liability and worker's comp coverage on every job in Edgerton and surrounding areas.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Signature Section: Before/After Detail Strip -->
-<section class="concrete-signature" data-animate="fade-up" aria-label="Concrete spec comparison">
-  <div class="container">
-    <div class="concrete-sig-grid">
-      <div class="concrete-sig-panel">
-        <div class="panel-label">The Problem</div>
-        <h3>What Fails Without Proper Concrete Installation</h3>
-        <div class="sig-img">
-          <picture>
-            <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785039114-o.jpg" type="image/webp">
-            <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1778785039114-o.jpg" alt="Concrete driveway installation Edgerton WI" width="600" height="260" loading="lazy">
-          </picture>
-        </div>
-        <p>Most premature concrete failures in Wisconsin trace back to the same shortcuts: wrong mix, thin slabs, poor base prep, and missing control joints. You end up replacing the driveway in 6 years instead of 25.</p>
-        <ul class="sig-spec-list">
-          <li>Non-air-entrained mix scales and spalls after first hard freeze</li>
-          <li>3" slabs crack under normal vehicle loads within 2–3 years</li>
-          <li>Uncompacted base leads to settling, dips, and pooling water</li>
-          <li>No control joints = random cracking across the visible surface</li>
-        </ul>
-      </div>
-      <div class="concrete-sig-panel">
-        <div class="panel-label">The R.A.H. Standard</div>
-        <h3>How We Install Concrete That Lasts 25+ Years</h3>
-        <div class="sig-img">
-          <picture>
-            <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963899295-b8v0w8-607091027_122304065120208320_4309334725424131443_n.jpg" type="image/webp">
-            <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963899295-b8v0w8-607091027_122304065120208320_4309334725424131443_n.jpg" alt="Properly installed concrete driveway Edgerton Wisconsin" width="600" height="260" loading="lazy">
-          </picture>
-        </div>
-        <p>We follow ACPA and Wisconsin DOT concrete standards on every residential pour. When you invest in concrete, you should get a surface that looks good and holds up for decades — not a patch job in three years.</p>
-        <ul class="sig-spec-list">
-          <li>4,000 PSI air-entrained concrete — engineered for Wisconsin climate</li>
-          <li>6" compacted aggregate base on all driveway pours</li>
-          <li>Rebar or wire mesh reinforcement on driveways and patios</li>
-          <li>Control joints cut every 8–10 feet per slab dimension rules</li>
-          <li>Penetrating sealant applied before we leave the job</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Divider: wave -->
-<div class="divider-wrap" aria-hidden="true" style="background:var(--color-primary);line-height:0;">
-  <svg viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C300,80 900,0 1200,40 L1200,80 L0,80 Z" fill="#f4f7f9"/></svg>
-</div>
-
-<!-- ── Concrete Project Gallery ──────────────────────────────── -->
-<section class="concrete-gallery" data-animate="fade-up" style="padding:var(--space-4xl) 0;background:var(--color-bg-alt);">
-  <div class="container">
-    <div class="section-header">
-      <div class="eyebrow">Recent Work</div>
-      <h2>What Do Finished <span class="text-accent">Concrete Projects</span> Look Like?</h2>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-lg);">
-      <div style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);">
-        <img src="/assets/images/concrete-project-completed-by-r-a-h-solutions-in-960.webp" srcset="/assets/images/concrete-project-completed-by-r-a-h-solutions-in-480.webp 480w, /assets/images/concrete-project-completed-by-r-a-h-solutions-in-960.webp 960w, /assets/images/concrete-project-completed-by-r-a-h-solutions-in-1600.webp 1600w" sizes="(max-width: 768px) 100vw, 600px" alt="Concrete project completed by R.A.H. Solutions in Edgerton, WI" width="600" height="400" loading="lazy" style="width:100%;height:280px;object-fit:cover;display:block;">
-      </div>
-      <div style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);">
-        <img src="/assets/images/concrete-patio-installation-edgerton-wisconsin-960.webp" srcset="/assets/images/concrete-patio-installation-edgerton-wisconsin-480.webp 480w, /assets/images/concrete-patio-installation-edgerton-wisconsin-960.webp 960w, /assets/images/concrete-patio-installation-edgerton-wisconsin-1600.webp 1600w" sizes="(max-width: 768px) 100vw, 600px" alt="Concrete patio installation Edgerton Wisconsin" width="600" height="400" loading="lazy" style="width:100%;height:280px;object-fit:cover;display:block;">
-      </div>
-      <div style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);">
-        <img src="/assets/images/concrete-walkway-and-steps-edgerton-wi-960.webp" srcset="/assets/images/concrete-walkway-and-steps-edgerton-wi-480.webp 480w, /assets/images/concrete-walkway-and-steps-edgerton-wi-960.webp 960w" sizes="(max-width: 768px) 100vw, 600px" alt="Concrete walkway and steps Edgerton WI" width="600" height="400" loading="lazy" style="width:100%;height:280px;object-fit:cover;display:block;">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── Before/After: Concrete Stairs ─────────────────────────── -->
-<section class="concrete-ba" data-animate="fade-up" style="padding:var(--space-4xl) 0;background:var(--color-bg);">
-  <div class="container">
-    <div class="section-header">
-      <div class="eyebrow">The Difference</div>
-      <h2>What Do Concrete Stairs Look Like <span class="text-accent">Before &amp; After</span> Repair?</h2>
-    </div>
-
-    <!-- Pair 1 -->
-    <div class="ba-split">
-      <div class="ba-panel ba-panel--before">
-        <div class="ba-panel__label" aria-label="Concrete stairs before repair">Before</div>
-        <img class="ba-panel__img" src="/assets/images/concrete-stairs-before-repair-edgerton-wi-960.webp" srcset="/assets/images/concrete-stairs-before-repair-edgerton-wi-480.webp 480w, /assets/images/concrete-stairs-before-repair-edgerton-wi-960.webp 960w, /assets/images/concrete-stairs-before-repair-edgerton-wi-1600.webp 1600w" sizes="(max-width: 768px) 100vw, 600px" alt="Concrete stairs before repair, Edgerton WI" width="600" height="400" loading="lazy">
-        <div class="ba-panel__content">
-          <h3 class="ba-panel__title">Crumbling steps, uneven risers, safety hazard</h3>
-          <p class="ba-panel__desc">Deteriorating concrete stairs with spalling surfaces, exposed aggregate, and uneven risers that create a trip-and-fall risk — common after years of Wisconsin freeze-thaw cycles.</p>
-        </div>
-      </div>
-      <div class="ba-panel ba-panel--after">
-        <div class="ba-panel__label" aria-label="Concrete stairs after repair by R.A.H. Solutions">After</div>
-        <img class="ba-panel__img" src="/assets/images/newly-poured-concrete-stairs-after-repair-edgert-960.webp" srcset="/assets/images/newly-poured-concrete-stairs-after-repair-edgert-480.webp 480w, /assets/images/newly-poured-concrete-stairs-after-repair-edgert-960.webp 960w, /assets/images/newly-poured-concrete-stairs-after-repair-edgert-1600.webp 1600w" sizes="(max-width: 768px) 100vw, 600px" alt="Newly poured concrete stairs after repair, Edgerton WI" width="600" height="400" loading="lazy">
-        <div class="ba-panel__content">
-          <h3 class="ba-panel__title">Clean pour, level risers, sealed finish</h3>
-          <p class="ba-panel__desc">Freshly poured concrete stairs with uniform risers, broom finish for grip, and proper drainage — built to handle another 25+ years of Southern Wisconsin winters.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Pair 2 -->
-    <div class="ba-split" style="margin-top:var(--space-3xl);">
-      <div class="ba-panel ba-panel--before">
-        <div class="ba-panel__label" aria-label="Concrete entry steps before replacement">Before</div>
-        <img class="ba-panel__img" src="/assets/images/damaged-concrete-entry-steps-before-replacement-960.webp" srcset="/assets/images/damaged-concrete-entry-steps-before-replacement-480.webp 480w, /assets/images/damaged-concrete-entry-steps-before-replacement-960.webp 960w, /assets/images/damaged-concrete-entry-steps-before-replacement-1600.webp 1600w" sizes="(max-width: 768px) 100vw, 600px" alt="Damaged concrete entry steps before replacement, Edgerton WI" width="600" height="400" loading="lazy">
-        <div class="ba-panel__content">
-          <h3 class="ba-panel__title">Settled slab, cracked edges, curb-appeal problem</h3>
-          <p class="ba-panel__desc">Years of settling and frost heave left these entry steps cracked and tilting — making the front of the home look neglected and creating a liability for visitors.</p>
-        </div>
-      </div>
-      <div class="ba-panel ba-panel--after">
-        <div class="ba-panel__label" aria-label="Concrete entry steps after replacement by R.A.H. Solutions">After</div>
-        <img class="ba-panel__img" src="/assets/images/new-concrete-entry-steps-after-replacement-edger-960.webp" srcset="/assets/images/new-concrete-entry-steps-after-replacement-edger-480.webp 480w, /assets/images/new-concrete-entry-steps-after-replacement-edger-960.webp 960w, /assets/images/new-concrete-entry-steps-after-replacement-edger-1600.webp 1600w" sizes="(max-width: 768px) 100vw, 600px" alt="New concrete entry steps after replacement, Edgerton WI" width="600" height="400" loading="lazy">
-        <div class="ba-panel__content">
-          <h3 class="ba-panel__title">New pour on compacted base, proper slope, sealed</h3>
-          <p class="ba-panel__desc">Replaced on a 6-inch compacted aggregate base with air-entrained mix. Control joints cut, edges formed clean, and sealed before handoff. Built for Wisconsin.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Divider: diagonal into process -->
-<div class="divider-wrap" aria-hidden="true" style="background:var(--color-bg);line-height:0;">
-  <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 1200,60 1200,60 0,60" fill="#f4f7f9"/></svg>
-</div>
-
-<!-- Process Steps -->
-<section class="concrete-process" data-animate="fade-up">
-  <div class="container">
-    <div class="section-header">
-      <div class="eyebrow">How It Works</div>
-      <h2>What Is Our Concrete <span class="text-accent">Installation Process</span>?</h2>
-    </div>
-    <div class="process-steps">
-      <div class="process-step">
-        <div class="step-number">1</div>
-        <h3>Grade &amp; Compact Base</h3>
-        <p>We excavate, grade for drainage, and compact 6" of aggregate — the foundation everything else depends on.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-number">2</div>
-        <h3>Form Setting &amp; Reinforcement</h3>
-        <p>Lumber forms set to grade, rebar or wire mesh laid, expansion board at structure connections.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-number">3</div>
-        <h3>Pour, Finish &amp; Joint Cut</h3>
-        <p>Air-entrained concrete poured, screeded, finished to spec (broom, exposed aggregate, or stamped), joints cut.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-number">4</div>
-        <h3>Cure &amp; Seal</h3>
-        <p>Forms stripped at 24 hours, curing compound or wet cure applied, penetrating sealer rolled on before job close.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Divider: diagonal down -->
-<div class="divider-wrap" aria-hidden="true" style="background:var(--color-bg-alt);line-height:0;">
-  <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 1200,60 1200,60 0,60" fill="#ffffff"/></svg>
-</div>
-
-<!-- FAQ Section -->
-<section class="concrete-faq" data-animate="fade-up">
-  <div class="container">
-    <div class="section-header">
-      <div class="eyebrow">Common Questions</div>
-      <h2>What Are Frequently Asked Questions About Concrete Services?</h2>
-    </div>
-    <div class="faq-list">
-      <?php foreach ($pageFaqs as $faq): ?>
-      <details class="faq-item">
-        <summary><?php echo htmlspecialchars($faq['q']); ?></summary>
-        <div class="faq-answer"><?php echo htmlspecialchars($faq['a']); ?></div>
-      </details>
+    <ol class="step-track">
+      <?php foreach ($steps as $i => $s): ?>
+      <li class="reveal-up reveal-delay-<?php echo $i + 1; ?>"><h3><?php echo e($s[0]); ?></h3><p><?php echo e($s[1]); ?></p></li>
       <?php endforeach; ?>
-    </div>
+    </ol>
   </div>
 </section>
 
-<!-- Closing CTA -->
-<section class="closing-cta" data-animate="fade-up">
+<section class="section svc-gallery" aria-labelledby="gallery-h2">
   <div class="container">
-    <div class="eyebrow">Get Started Today</div>
-    <h2>Why Should You Stop Patching and Replace Your Driveway Right?</h2>
-    <p>Free estimates for concrete driveways, patios, walkways, and steps anywhere in Edgerton, Stoughton, Janesville, or Madison. Same-week scheduling on most projects.</p>
-    <div class="closing-cta-actions">
-      <a href="tel:6085015123" class="closing-phone">
-        <i data-lucide="phone" style="width:20px;height:20px;"></i>
-        (608) 501-5123
-      </a>
-      <a href="/contact" class="btn-closing-primary">
-        <i data-lucide="calendar-check" style="width:18px;height:18px;"></i>
-        Schedule Free Estimate
-      </a>
+    <div class="section-head reveal-up">
+      <span class="eyebrow-label">Recent concrete work</span>
+      <h2 id="gallery-h2">What does finished RAH Solutions concrete look like?</h2>
+      <p>These are RAH Solutions job photos: a patio seen from above, a slab just after finishing, and new front steps.</p>
     </div>
-    <p class="last-updated">Last Updated: May 2026</p>
+    <div class="sp-gallery-grid" data-p1-dynamic>
+      <figure class="sp-gallery-item reveal-scale"><?php echo picture('concrete-patio-aerial-view', 'Aerial view of a new concrete patio with steps next to a landscaped bed', '(max-width: 700px) 100vw, 55vw'); ?><figcaption>Patio with a stepped landing, joints cut, seen from above</figcaption></figure>
+      <figure class="sp-gallery-item reveal-scale reveal-delay-1"><?php echo picture('concrete-slab-fresh-pour', 'Freshly finished concrete slab still in its forms', '(max-width: 700px) 100vw, 40vw'); ?><figcaption>Slab finished and still in its forms</figcaption></figure>
+      <figure class="sp-gallery-item reveal-scale reveal-delay-2"><?php echo picture('porch-steps-new-after', 'New concrete steps, stoop and walkway at a front porch', '(max-width: 700px) 100vw, 40vw'); ?><figcaption>New front steps, stoop and walk</figcaption></figure>
+    </div>
   </div>
 </section>
 
+<section class="section svc-faq" aria-labelledby="faq-h2">
+  <div class="container faq-wrap">
+    <div class="section-head reveal-left">
+      <span class="eyebrow-label">FAQ</span>
+      <h2 id="faq-h2">What do people ask about concrete work in Edgerton?</h2>
+      <p>Describe the project on a call to <?php echo e($phone); ?> and Robert will tell you what to expect.</p>
+    </div>
+    <div><?php echo faqList($faqs, 2); ?></div>
+  </div>
+</section>
+
+<section class="section svc-related" aria-labelledby="related-h2">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <span class="eyebrow-label">More from RAH Solutions</span>
+      <h2 id="related-h2">Other Services You May Need</h2>
+    </div>
+    <div class="services-grid" data-p1-dynamic>
+      <?php echo serviceCards(relatedServices(['excavating-services', 'landscape-installation', 'snow-removal']), '(max-width: 560px) 100vw, 33vw'); ?>
+    </div>
+    <div class="town-links">
+      <h3>Concrete services near you</h3>
+      <ul>
+        <?php foreach (['edgerton-wi', 'janesville-wi', 'stoughton-wi', 'milton-wi', 'madison-wi', 'evansville-wi'] as $tl): $ta = areaBySlug($tl); ?>
+        <li><a href="<?php echo areaHref($ta); ?>"><?php echo icon('map-pin', 14); ?> Concrete in <?php echo e($ta['name']); ?></a></li>
+        <?php endforeach; ?>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<?php $ctaBandId = 'band-concrete-services'; $ctaBandHeading = 'Get a written price for your concrete project'; include $_SERVER['DOCUMENT_ROOT'] . '/includes/cta-band.php'; ?>
+
+</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>

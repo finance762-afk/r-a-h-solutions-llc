@@ -1,217 +1,120 @@
 <?php
-// ============================================================
-// Cookie Policy — R.A.H. Solutions, LLC
-// ============================================================
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
-
-$companyName       = $siteName;
-$companyEntityType = $entityType;
-$companyState      = $stateOfFormation;
-$companyEmail      = $contactEmail;
-$companyPhone      = $contactPhone;
-$companyAddress    = $businessAddress;
-$lastUpdated       = 'April 24, 2026';
-
-$pageTitle       = 'Cookie Policy | ' . $siteName;
-$pageDescription = 'Cookie Policy for R.A.H. Solutions, LLC — what cookies we use (Google Analytics, Fonts, CDNs) and how to control them.';
+?>
+<?php
+$currentPage     = 'cookie-policy';
+$pageType        = 'other';
+$pageTitle       = 'Cookie Policy | RAH Solutions LLC';
+$pageDescription = 'The cookies and browser storage rahsolutionsllc.com uses, why RAH Solutions LLC of Edgerton, WI uses them, and how to block, delete or opt out of analytics.';
 $canonicalUrl    = $siteUrl . '/cookie-policy/';
-// SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
-$currentPage     = 'legal';
+$pageCss         = ['inner'];
+$pageStyle       = <<<CSS
+/* cookie-policy: cookie inventory table */
+.page-cookie-policy .cookie-table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: .92rem; }
+.page-cookie-policy .cookie-table th, .page-cookie-policy .cookie-table td { padding: .65rem .75rem; border-bottom: 1px solid var(--color-line); text-align: left; vertical-align: top; }
+.page-cookie-policy .cookie-table th { background: var(--color-paper-2); font-family: var(--font-heading); color: var(--color-secondary); }
+.page-cookie-policy .cookie-table code { font-size: .88em; color: var(--color-primary); }
+.page-cookie-policy .table-scroll { overflow-x: auto; }
+.page-cookie-policy .legal-contact { list-style: none; padding: 0; display: grid; gap: .35rem; }
+CSS;
 
-$schemaMarkup = json_encode([
-  '@context' => 'https://schema.org',
-  '@graph'   => [
-    [
-      '@type'       => 'WebPage',
-      'name'        => 'Cookie Policy',
-      'url'         => $siteUrl . '/cookie-policy/',
-      'description' => $pageDescription,
-      'publisher'   => ['@type' => 'Organization', 'name' => $companyName],
-    ],
-    [
-      '@type'           => 'BreadcrumbList',
-      'itemListElement' => [
-        ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home',          'item' => $siteUrl . '/'],
-        ['@type' => 'ListItem', 'position' => 2, 'name' => 'Cookie Policy', 'item' => $siteUrl . '/cookie-policy/'],
-      ],
-    ],
-  ],
-], JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+$schemaNodes = [webPageNode(), breadcrumbNode([['Home', '/'], ['Cookie Policy', '/cookie-policy/']])];
 
-$heroPreload = $heroImageUrl;
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
+<div class="page-cookie-policy">
 
-<style>
-.legal-hero {
-  min-height: 40vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background:
-    linear-gradient(135deg, rgba(var(--color-primary-rgb), 0.85) 0%, rgba(15,30,45,0.80) 100%),
-    url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963874866-f077by-471177305_122202492170208320_1592970065814584229_n.jpg') center/cover no-repeat;
-  color: #fff;
-  text-align: center;
-  padding: var(--space-3xl) var(--space-lg);
-  position: relative;
-  overflow: hidden;
-}
-.legal-hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none;
-}
-.legal-hero h1 {
-  font-family: var(--font-heading);
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  text-wrap: balance;
-  position: relative;
-  z-index: 1;
-}
-.legal-content { background: var(--color-bg); padding: var(--space-3xl) 0 var(--space-4xl); }
-.content-narrow {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 0 var(--space-xl);
-  line-height: 1.7;
-  color: var(--color-text);
-}
-.content-narrow h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-top: var(--space-3xl);
-  padding-bottom: var(--space-sm);
-  border-bottom: 1px solid rgba(var(--color-primary-rgb), 0.1);
-}
-.content-narrow h3 { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-primary); margin-top: var(--space-xl); }
-.content-narrow p { margin-bottom: var(--space-md); }
-.content-narrow ul { padding-left: var(--space-xl); margin-bottom: var(--space-md); }
-.content-narrow li { margin-bottom: var(--space-xs); }
-.content-narrow a { color: var(--color-accent); text-decoration: underline; }
-.legal-updated { font-size: 0.9rem; color: var(--color-text-light); margin-bottom: var(--space-2xl); padding-bottom: var(--space-md); border-bottom: 1px solid rgba(var(--color-primary-rgb), 0.08); }
-.cookie-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: var(--space-md) 0 var(--space-xl);
-  font-size: 0.9rem;
-}
-.cookie-table th, .cookie-table td {
-  padding: var(--space-sm) var(--space-md);
-  border: 1px solid rgba(var(--color-primary-rgb), 0.1);
-  text-align: left;
-  vertical-align: top;
-}
-.cookie-table th {
-  background: rgba(var(--color-primary-rgb), 0.04);
-  font-weight: 700;
-  color: var(--color-primary);
-}
-@media (max-width: 600px) {
-  .cookie-table { font-size: 0.8rem; }
-  .cookie-table th, .cookie-table td { padding: var(--space-xs) var(--space-sm); }
-}
-</style>
-
-  <nav aria-label="Breadcrumb" style="background:var(--color-bg-dark);padding:var(--space-sm) 0;">
-    <div class="container">
-      <ol style="display:flex;align-items:center;gap:var(--space-xs);list-style:none;flex-wrap:wrap;font-size:var(--font-size-sm);color:rgba(255,255,255,0.55);">
-        <li><a href="/" style="color:rgba(255,255,255,0.7);">Home</a></li>
-        <li aria-hidden="true" style="color:rgba(255,255,255,0.3);">›</li>
-        <li style="color:var(--color-accent);font-weight:600;" aria-current="page">Cookie Policy</li>
-      </ol>
-    </div>
-  </nav>
-
-  <section class="legal-hero" aria-label="Cookie Policy">
+<section class="hero hero--interior inner-hero" aria-label="Cookie Policy">
+  <div class="container">
+    <?php echo breadcrumbs([['Home', '/'], ['Cookie Policy', '/cookie-policy/']]); ?>
+    <span class="eyebrow">Legal</span>
     <h1>Cookie Policy</h1>
-  </section>
+    <p class="legal-meta">Effective date: <?php echo date('F j, Y'); ?></p>
+  </div>
+</section>
 
-  <section class="legal-content">
-    <div class="content-narrow">
-      <p class="legal-updated"><strong>Last Updated:</strong> <?php echo $lastUpdated; ?></p>
+<section class="section legal-wrap">
+  <div class="container legal-layout">
+    <article class="legal-prose">
 
-      <p><?php echo htmlspecialchars($companyName); ?> ("we," "us," or "our") uses cookies and similar technologies on our website. This Cookie Policy explains what cookies are, what cookies we use, and how you can control them.</p>
+      <p>This Cookie Policy explains how <?php echo e($siteName); ?> (“RAH Solutions,” “we,” “us,” or “our”) uses cookies and similar technologies on <a href="<?php echo e($siteUrl); ?>/"><?php echo e($domain); ?></a> (the “Site”). It should be read together with our <a href="/privacy-policy/">Privacy Policy</a>.</p>
 
-      <h2>What Are Cookies</h2>
-      <p>Cookies are small text files stored on your device when you visit a website. They help websites remember your preferences and understand how you interact with the site.</p>
+      <h2 id="what-are-cookies">1. What Are Cookies?</h2>
+      <p>Cookies are small text files a website stores on your device. Similar technologies, such as your browser’s local storage, keep small pieces of information on your device in the same way. Sites use them to work properly, remember settings and understand how visitors use them.</p>
 
-      <h2>Strictly Necessary Cookies</h2>
-      <p>These cookies are essential for the website to function and cannot be disabled.</p>
-      <table class="cookie-table">
-        <thead>
-          <tr><th>Cookie</th><th>Provider</th><th>Purpose</th><th>Duration</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>PHPSESSID</td><td>This website</td><td>PHP session management</td><td>Session</td></tr>
-        </tbody>
-      </table>
+      <h2 id="cookies-we-use">2. Cookies and Storage We Use</h2>
+      <p>The Site keeps its use of cookies small. This table lists what the Site uses today:</p>
+      <div class="table-scroll">
+        <table class="cookie-table">
+          <thead>
+            <tr><th scope="col">Name</th><th scope="col">Type</th><th scope="col">Purpose</th><th scope="col">Duration</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>p1_ft</code></td>
+              <td>First-party cookie (HttpOnly)</td>
+              <td>Remembers how your visit began: the first page you landed on, the referring site, campaign tags (UTM parameters), a Google Ads click ID if present, a random session ID and your device type. If you send a request, this is included so we know which page or search led to it.</td>
+              <td>30 days</td>
+            </tr>
+            <tr>
+              <td><code>cookieBannerDismissed_v1</code></td>
+              <td>Browser local storage</td>
+              <td>Remembers that you dismissed the cookie notice so it does not appear on every page.</td>
+              <td>Until you clear your browser’s site data</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-      <h2>Analytics Cookies</h2>
-      <p>These cookies help us understand how visitors interact with our website by collecting anonymous usage data.</p>
-      <table class="cookie-table">
-        <thead>
-          <tr><th>Cookie</th><th>Provider</th><th>Purpose</th><th>Duration</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>_ga</td><td>Google Analytics 4</td><td>Distinguishes unique users</td><td>2 years</td></tr>
-          <tr><td>_ga_&lt;container-id&gt;</td><td>Google Analytics 4</td><td>Maintains session state</td><td>2 years</td></tr>
-        </tbody>
-      </table>
-      <p>You can opt out of Google Analytics by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.</p>
+      <h3>Strictly necessary and functional</h3>
+      <p>The cookie notice setting above is functional. Our forms work without cookies; they send your request directly to our lead system over an encrypted connection.</p>
 
-      <h2>Functional Cookies &amp; Third-Party Resources</h2>
-      <p>The following third-party resources may set cookies or collect data to provide functionality on our website:</p>
-      <table class="cookie-table">
-        <thead>
-          <tr><th>Resource</th><th>Provider</th><th>Purpose</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Google Fonts (fonts.googleapis.com, fonts.gstatic.com)</td><td>Google LLC</td><td>Typography — loads web fonts for consistent display</td></tr>
-          <tr><td>Google Maps (maps.googleapis.com)</td><td>Google LLC</td><td>Embedded map for location display (if applicable)</td></tr>
-          <tr><td>Lucide Icons CDN (unpkg.com/lucide)</td><td>Unpkg / Lucide</td><td>Iconography — loads SVG icons</td></tr>
-          <tr><td>Swiper CDN (cdn.jsdelivr.net/npm/swiper)</td><td>jsDelivr / Swiper</td><td>UI functionality — carousel/slider component</td></tr>
-          <tr><td>VanillaTilt (cdnjs.cloudflare.com)</td><td>Cloudflare / VanillaTilt</td><td>UI functionality — card tilt effect</td></tr>
-        </tbody>
-      </table>
+      <h3>Attribution</h3>
+      <p>The <code>p1_ft</code> cookie is set by the Site itself, not by an advertising network. It cannot be read by JavaScript or by other websites, and it is not used to track you across other sites. RAH Solutions uses it only to attribute inquiries to the pages and campaigns that produced them.</p>
 
-      <h2>How to Control Cookies</h2>
-      <p>You can control and delete cookies through your browser settings. Most browsers allow you to:</p>
-      <ul>
-        <li>View what cookies are stored and delete them individually</li>
-        <li>Block third-party cookies</li>
-        <li>Block cookies from specific sites</li>
-        <li>Block all cookies</li>
-        <li>Delete all cookies when you close your browser</li>
+      <h3 id="analytics">Analytics (Google Analytics)</h3>
+      <p>The Site may use Google Analytics 4 to understand how visitors use it, such as which pages are viewed and how people arrive. When active, Google Analytics sets first-party cookies whose names begin with <code>_ga</code> (for example <code>_ga</code> and <code>_ga_&lt;ID&gt;</code>), which typically last up to two years and distinguish one visitor from another. Google processes this data under its own privacy terms.</p>
+
+      <h3>Fonts and other third-party content</h3>
+      <p>The Site’s fonts are hosted on our own server, so loading them sends no requests to Google Fonts. The Site does not embed maps or videos. The footer may show a “Verified Local Partner” badge image loaded from pageonepartner.com; loading it shares your IP address and browser details with that host, as any image request does, and the Site sets no cookies for it. Links to our Google Business Profile, Facebook page and Better Business Bureau profile take you to those sites, which set their own cookies under their own policies.</p>
+
+      <h2 id="control">3. How to Control Cookies</h2>
+      <p>Most browsers let you view, block and delete cookies and site data in their settings. You can block all cookies or only third-party cookies. The Site will still work if you block cookies, although we will not be able to tell which page first brought you to us. Instructions are available in the help pages for Chrome, Firefox, Safari and Edge.</p>
+
+      <h2 id="ga-opt-out">4. Opt Out of Google Analytics</h2>
+      <p>You can stop Google Analytics from collecting data about your visits on every website by installing the Google Analytics Opt-out Browser Add-on at <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">tools.google.com/dlpage/gaoptout</a>.</p>
+
+      <h2 id="notice">5. Our Cookie Notice</h2>
+      <p>The Site shows a short notice about cookies with a “Got it” button. Once you dismiss it, the setting described above keeps it hidden on later visits. To see the notice again, clear the Site’s data in your browser.</p>
+
+      <h2 id="changes">6. Changes to This Policy</h2>
+      <p>We may update this Cookie Policy when the Site’s technology changes. The “Last updated” date below shows the latest revision.</p>
+
+      <h2 id="contact">7. Contact Us</h2>
+      <ul class="legal-contact">
+        <li><strong><?php echo e($siteName); ?></strong>, Edgerton, Wisconsin 53534</li>
+        <li>Phone: <a href="<?php echo telHref(); ?>"><?php echo e($phone); ?></a> (<?php echo e($hoursDisplay); ?>)</li>
+        <li>Email: <a href="mailto:<?php echo e($email); ?>"><?php echo e($email); ?></a></li>
       </ul>
-      <p>Please note that blocking certain cookies may affect the functionality of our website.</p>
 
-      <h2>Do Not Track / Global Privacy Control</h2>
-      <p>We honor the Global Privacy Control (GPC) signal. When we detect a GPC signal from your browser, we treat it as a valid opt-out request for the sale or sharing of your personal information.</p>
+      <p class="legal-meta">Last updated: <?php echo date('F j, Y'); ?></p>
+    </article>
 
-      <h3 id="ccpa-cookie-rights">California Residents</h3>
-      <p>For more information about your privacy rights under the CCPA/CPRA, including your right to opt out of the sale or sharing of personal information, please see our <a href="/privacy-policy/#ccpa-rights">Privacy Policy — California Residents section</a>.</p>
+    <aside class="legal-toc" aria-label="On this page">
+      <ol>
+        <li><a href="#what-are-cookies">What are cookies?</a></li>
+        <li><a href="#cookies-we-use">Cookies we use</a></li>
+        <li><a href="#control">Controlling cookies</a></li>
+        <li><a href="#ga-opt-out">Analytics opt-out</a></li>
+        <li><a href="#notice">Cookie notice</a></li>
+        <li><a href="#changes">Changes</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </aside>
+  </div>
+</section>
 
-      <h2>Changes to This Cookie Policy</h2>
-      <p>We may update this Cookie Policy from time to time. Changes will be posted on this page with an updated "Last Updated" date.</p>
-
-      <h2>Contact Us</h2>
-      <p>If you have questions about our use of cookies, contact us:</p>
-      <ul>
-        <li><strong><?php echo htmlspecialchars($companyName); ?></strong></li>
-        <li>Email: <a href="mailto:<?php echo htmlspecialchars($companyEmail); ?>"><?php echo htmlspecialchars($companyEmail); ?></a></li>
-        <li>Phone: <a href="tel:<?php echo htmlspecialchars($phone); ?>"><?php echo htmlspecialchars($companyPhone); ?></a></li>
-        <li>Address: <?php echo htmlspecialchars($companyAddress); ?></li>
-      </ul>
-    </div>
-  </section>
-
+</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>

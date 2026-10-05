@@ -1,894 +1,249 @@
 <?php
-// ============================================================
-// Snow Removal — R.A.H. Solutions, LLC
-// ============================================================
-$pageTitle       = 'Snow Removal Services Edgerton, WI';
-$pageDescription = 'Snow removal in Edgerton, WI — residential & commercial plowing, shoveling & salting after every storm. Same-day service. Call (608) 501-5123.';
-$canonicalUrl    = 'https://rahsolutionsllc.com/services/snow-removal';
-// SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
-$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963903365-fqbeu8-470859907_122202491636208320_4879251461866482528_n.jpg';
-$currentPage     = 'service-snow-removal';
-$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963903365-fqbeu8-470859907_122202491636208320_4879251461866482528_n.jpg';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+?>
+<?php
+$svc             = serviceBySlug('snow-removal');
+$currentPage     = 'services';
+$pageType        = 'service';
+$serviceSlug     = 'snow-removal';
+$pageTitle       = 'Snow Removal in Edgerton, WI | RAH Solutions LLC';
+$pageDescription = 'Snow removal in Edgerton, WI for residential driveways and commercial lots. RAH Solutions LLC plows with its own trucks. Winter accounts set up in fall.';
+$canonicalUrl    = $siteUrl . '/services/snow-removal/';
+$heroPreload     = heroPreload('plow-trucks-ready-snow', '100vw');
+$ogImage         = 'plow-trucks-ready-snow.jpg';
+$pageCss         = ['service'];
+$pageStyle       = <<<CSS
+/* snow-removal: cold aqua accents, mist type cards, ordinance callout with an aqua rule */
+.page-snow-removal .svc-hero .hero-bg img { object-position: 50% 60%; }
+.page-snow-removal .type-card { background: color-mix(in srgb, var(--color-aqua) 8%, var(--color-surface)); border-bottom: 3px solid color-mix(in srgb, var(--color-aqua) 55%, var(--color-line)); }
+.page-snow-removal .type-card__icon { color: var(--color-primary); }
+.page-snow-removal .type-card--photo { min-height: 340px; border-bottom: 0; }
+.page-snow-removal .svc-callout { border-left: 4px solid var(--color-aqua); background: var(--color-mist); }
+.page-snow-removal .step-track li h3 { color: var(--color-primary); }
+CSS;
 
 $faqs = [
-  [
-    '@type'          => 'Question',
-    'name'           => 'Do you offer seasonal snow removal contracts in Edgerton?',
-    'acceptedAnswer' => [
-      '@type' => 'Answer',
-      'text'  => 'Yes. R.A.H. Solutions offers both seasonal contracts and per-event pricing for snow removal in Edgerton and Rock County. Seasonal contracts provide a fixed monthly rate for the winter season regardless of how many storms hit — predictable budgeting for both homeowners and commercial properties. Per-event pricing works well for clients who want flexibility without a full-season commitment.',
-    ],
-  ],
-  [
-    '@type'          => 'Question',
-    'name'           => 'How quickly do you respond after a snowfall?',
-    'acceptedAnswer' => [
-      '@type' => 'Answer',
-      'text'  => 'We monitor weather forecasts throughout the winter and dispatch crews as storms develop. Most properties are serviced within a few hours of snowfall stopping for standard accumulation events. Heavy storm events of 6+ inches may extend response time, but contracted clients are prioritized and receive service before one-off requests.',
-    ],
-  ],
-  [
-    '@type'          => 'Question',
-    'name'           => 'Do you service commercial parking lots in Edgerton?',
-    'acceptedAnswer' => [
-      '@type' => 'Answer',
-      'text'  => 'Yes. R.A.H. Solutions handles commercial parking lots, loading docks, storefront walkways, and commercial driveways throughout Edgerton and the surrounding Rock County area. Commercial clients receive priority scheduling under seasonal contracts and monthly invoicing for easy budget management.',
-    ],
-  ],
-  [
-    '@type'          => 'Question',
-    'name'           => 'Is de-icing included with snow removal?',
-    'acceptedAnswer' => [
-      '@type' => 'Answer',
-      'text'  => 'Yes — de-icing and salting is included as part of our standard snow removal service after each plow pass. We apply ice melt to driveways, walkways, and entry points to reduce slip hazards. Salt and ice melt material costs are factored into your service quote upfront, not added as a surprise line item.',
-    ],
-  ],
+    ['When should I set up snow removal for the winter?',
+     'In fall, before the first snow. RAH Solutions sets up winter accounts ahead of the season so the property can be looked at while the ground is bare and the details can be agreed without a storm on the way. Snow is possible here from November into April, so October is not too early to call.'],
+    ['What is a trigger depth?',
+     'It is the amount of snowfall at which plowing starts under your agreement. A lower trigger means more visits and a clearer surface; a higher one means fewer. It should be written down. Ask RAH Solutions what trigger applies to your property.'],
+    ['Does RAH Solutions plow commercial lots as well as driveways?',
+     'Yes. RAH Solutions plows residential driveways and commercial lots. A commercial account takes more planning than a driveway: when the lot has to be open, where snow can be stacked, and who handles walks and entrances.'],
+    ['Who is responsible for the public sidewalk in front of my property?',
+     'In most Wisconsin municipalities the property owner is, and the local ordinance sets how soon after a snowfall the walk has to be cleared. Check your own city or village ordinance. If you want walks included, raise it when the account is set up so it is clear who does them.'],
+    ['Will plowing damage my lawn or driveway?',
+     'A plow follows the edge it can see, so the best protection is marking driveway and bed edges with stakes before the ground freezes. Some turf damage along the edge is still common. It is repaired in a <a href="/services/spring-yard-cleanup/">spring yard cleanup</a>, and larger areas through <a href="/services/lawn-restoration/">lawn restoration</a>.'],
+    ['Can salt be used on a new concrete driveway?',
+     'It should be avoided the first winter. Deicing salt is hard on young concrete, so sand is the better choice for traction on a slab poured that year. The <a href="/services/concrete-services/">concrete services page</a> explains why.'],
 ];
 
-$schemaMarkup = json_encode([
-  '@context' => 'https://schema.org',
-  '@graph'   => [
-    [
-      '@type'           => 'BreadcrumbList',
-      'itemListElement' => [
-        ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home',     'item' => 'https://rahsolutionsllc.com'],
-        ['@type' => 'ListItem', 'position' => 2, 'name' => 'Services', 'item' => 'https://rahsolutionsllc.com/services'],
-        ['@type' => 'ListItem', 'position' => 3, 'name' => 'Snow Removal', 'item' => 'https://rahsolutionsllc.com/services/snow-removal'],
-      ],
-    ],
-    [
-      '@type'       => 'Service',
-      '@id'         => 'https://rahsolutionsllc.com/services/snow-removal/#service',
-      'name'        => 'Snow Removal',
-      'description' => 'Residential and commercial snow plowing, shoveling, and de-icing in Edgerton, Stoughton, Janesville, and Madison, WI. Seasonal contracts and per-event service available.',
-      'provider'    => ['@type' => 'LocalBusiness', '@id' => 'https://rahsolutionsllc.com/#business'],
-      'areaServed'  => [
-        ['@type' => 'City', 'name' => 'Edgerton'],
-        ['@type' => 'City', 'name' => 'Stoughton'],
-        ['@type' => 'City', 'name' => 'Janesville'],
-        ['@type' => 'City', 'name' => 'Madison'],
-      ],
-      'serviceType' => 'Snow Removal',
-    ],
-    [
-      '@type'      => 'FAQPage',
-      'mainEntity' => $faqs,
-    ],
-    [
-      '@type'           => 'LocalBusiness',
-      '@id'             => 'https://rahsolutionsllc.com/#aggregate',
-      'name'            => 'R.A.H. Solutions, LLC',
-    ],
-  ],
-], JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+$steps = [
+    ['Look at the property', 'Before winter, Robert sees the driveway or lot with the ground bare and notes edges, obstacles, drains and where snow can go.'],
+    ['Agree the details', 'Trigger depth, where snow is piled, whether walks are included and how salt or sand is handled are settled and written down.'],
+    ['Mark the site', 'Driveway edges, curbs and anything that will be hidden under snow are marked so they can be seen from the truck.'],
+    ['Plow through the season', 'When snowfall reaches the agreed trigger, the driveway or lot is plowed and snow is placed where the agreement says it goes.'],
+];
+
+$schemaNodes = [
+    webPageNode(),
+    breadcrumbNode([['Home', '/'], ['Services', '/services/'], ['Snow Removal', '/services/snow-removal/']]),
+    serviceSchemaNode('Snow Removal', 'Snow plowing in Edgerton, WI and nearby Rock and Dane County towns for residential driveways and commercial lots, with winter accounts set up before the season.', $canonicalUrl),
+    ['@type' => 'HowTo', 'name' => 'How RAH Solutions LLC sets up and runs a snow removal account', 'step' => array_map(fn($s, $i) => ['@type' => 'HowToStep', 'position' => $i + 1, 'name' => $s[0], 'text' => $s[1]], $steps, array_keys($steps))],
+    faqSchemaNode($faqs),
+];
 
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
+<div class="page-snow-removal">
 
-<style>
-/* ============================================================
-   Snow Removal — Page-Specific Styles (.sr-)
-   ============================================================ */
-
-/* ── Breadcrumb ───────────────────────────────────────────── */
-.svc-breadcrumb {
-  background: var(--color-bg-dark);
-  padding: var(--space-sm) 0;
-  position: relative;
-  z-index: 10;
-}
-.svc-breadcrumb .container { display: flex; align-items: center; gap: var(--space-xs); }
-.breadcrumb-list { display: flex; align-items: center; gap: var(--space-xs); list-style: none; flex-wrap: wrap; }
-.breadcrumb-list li {
-  display: flex; align-items: center; gap: var(--space-xs);
-  font-size: var(--font-size-sm); color: rgba(255,255,255,0.55);
-}
-.breadcrumb-list li a { color: rgba(255,255,255,0.7); transition: color var(--transition-fast); }
-.breadcrumb-list li a:hover { color: var(--color-accent); }
-.breadcrumb-list li.current { color: var(--color-accent); font-weight: 600; }
-.breadcrumb-sep { color: rgba(255,255,255,0.3); font-size: var(--font-size-xs); }
-
-/* ── Inner Hero ───────────────────────────────────────────── */
-.sr-hero {
-  position: relative;
-  min-height: 60vh;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963903365-fqbeu8-470859907_122202491636208320_4879251461866482528_n.jpg');
-  background-size: cover;
-  background-position: center;
-  animation: sr-kenburns 22s ease-in-out infinite alternate;
-}
-@keyframes sr-kenburns {
-  from { background-size: 112%; background-position: center 50%; }
-  to   { background-size: 126%; background-position: center 40%; }
-}
-.sr-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    120deg,
-    rgba(var(--color-primary-rgb), 0.93) 0%,
-    rgba(var(--color-primary-rgb), 0.62) 55%,
-    rgba(var(--color-accent-rgb), 0.16) 100%
-  );
-  z-index: 1;
-}
-.sr-hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  z-index: 2;
-  pointer-events: none;
-}
-.sr-hero-inner { position: relative; z-index: 3; padding: var(--space-4xl) 0 var(--space-3xl); }
-.sr-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  font-family: var(--font-body);
-  font-size: var(--font-size-sm);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: var(--space-md);
-}
-.sr-eyebrow::before {
-  content: '';
-  display: block;
-  width: 28px; height: 2px;
-  background: var(--color-accent);
-  flex-shrink: 0;
-}
-.sr-hero h1 {
-  font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 5vw, 3.8rem);
-  font-weight: 700;
-  line-height: 1.1;
-  text-wrap: balance;
-  letter-spacing: -0.02em;
-  margin-bottom: var(--space-md);
-  background: linear-gradient(135deg, #ffffff 0%, rgba(var(--color-accent-rgb), 0.9) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.sr-hero-sub {
-  font-size: var(--font-size-lg);
-  color: rgba(255,255,255,0.82);
-  max-width: 52ch;
-  line-height: 1.6;
-  margin-bottom: var(--space-xl);
-}
-.sr-hero-ctas { display: flex; gap: var(--space-md); flex-wrap: wrap; align-items: center; }
-.sr-btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: var(--color-accent);
-  color: var(--color-bg-dark);
-  font-family: var(--font-heading);
-  font-size: var(--font-size-base);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: var(--space-md) var(--space-xl);
-  border-radius: var(--radius-md);
-  box-shadow: 0 4px 0 var(--color-accent-dark);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  overflow: hidden;
-  position: relative;
-}
-.sr-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--color-accent-dark); }
-.sr-btn-primary:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--color-accent-dark); }
-.sr-btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: transparent;
-  color: #ffffff;
-  font-family: var(--font-heading);
-  font-size: var(--font-size-base);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: var(--space-md) var(--space-xl);
-  border-radius: var(--radius-md);
-  border: 2px solid rgba(255,255,255,0.5);
-  transition: background var(--transition-base), border-color var(--transition-base);
-}
-.sr-btn-secondary:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.8); }
-.sr-hero-trust { display: flex; align-items: center; gap: var(--space-lg); margin-top: var(--space-xl); flex-wrap: wrap; }
-.sr-trust-item {
-  display: flex; align-items: center; gap: var(--space-xs);
-  font-size: var(--font-size-sm); color: rgba(255,255,255,0.75); font-weight: 600;
-}
-.sr-trust-item i { color: var(--color-accent); width: 16px; height: 16px; }
-
-/* ── Ticker ───────────────────────────────────────────────── */
-.ticker-strip {
-  background: var(--color-primary);
-  padding: var(--space-sm) 0;
-  overflow: hidden;
-  position: relative;
-}
-.ticker-strip::before,
-.ticker-strip::after {
-  content: '';
-  position: absolute;
-  top: 0; bottom: 0;
-  width: 80px;
-  z-index: 2;
-  pointer-events: none;
-}
-.ticker-strip::before { left: 0; background: linear-gradient(to right, var(--color-primary), transparent); }
-.ticker-strip::after  { right: 0; background: linear-gradient(to left, var(--color-primary), transparent); }
-.ticker-track { display: flex; width: max-content; animation: ticker-scroll 30s linear infinite; }
-.ticker-track:hover { animation-play-state: paused; }
-@keyframes ticker-scroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-.ticker-item {
-  display: inline-flex; align-items: center; gap: var(--space-md);
-  white-space: nowrap; font-family: var(--font-body);
-  font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em;
-  text-transform: uppercase; color: #ffffff; padding: 0 var(--space-xl);
-}
-.ticker-sep { color: var(--color-accent); font-size: 1.2rem; line-height: 1; }
-
-/* ── Dividers ─────────────────────────────────────────────── */
-.divider-wrap { display: block; line-height: 0; overflow: hidden; }
-.divider-wrap svg { display: block; width: 100%; }
-
-/* ── Section Eyebrow ──────────────────────────────────────── */
-.section-eyebrow {
-  display: inline-flex; align-items: center; gap: var(--space-sm);
-  font-family: var(--font-body); font-size: var(--font-size-xs);
-  font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--color-accent); margin-bottom: var(--space-sm);
-}
-.section-eyebrow::after { content: ''; display: block; width: 24px; height: 2px; background: var(--color-accent); }
-
-/* ── Service Detail ───────────────────────────────────────── */
-.sr-detail { padding: var(--space-4xl) 0 var(--space-3xl); background: var(--color-bg); }
-.sr-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3xl); align-items: center; }
-.sr-detail-content { order: 1; }
-.sr-detail-image   { order: 2; }
-.sr-detail h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700; line-height: 1.15; text-wrap: balance;
-  letter-spacing: -0.02em; color: var(--color-primary); margin-bottom: var(--space-lg);
-}
-.sr-detail p { font-size: var(--font-size-base); color: var(--color-text-light); line-height: 1.7; max-width: 65ch; margin-bottom: var(--space-md); }
-.sr-detail p:last-of-type { margin-bottom: var(--space-xl); }
-.sr-updated { font-size: var(--font-size-sm); color: var(--color-gray); font-style: italic; }
-.sr-image-frame { position: relative; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-xl); }
-.sr-image-frame::before {
-  content: '';
-  position: absolute; inset: 0;
-  border: 3px solid rgba(var(--color-accent-rgb), 0.25);
-  border-radius: var(--radius-lg); z-index: 2; pointer-events: none;
-}
-.sr-image-frame picture img {
-  width: 100%; height: 420px; object-fit: cover; display: block;
-  transition: transform var(--transition-slow);
-}
-.sr-image-frame:hover picture img { transform: scale(1.03); }
-.sr-image-badge {
-  position: absolute; bottom: var(--space-lg); left: var(--space-lg);
-  background: var(--color-accent); color: var(--color-bg-dark);
-  font-family: var(--font-heading); font-size: var(--font-size-sm);
-  font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
-  padding: var(--space-xs) var(--space-md); border-radius: var(--radius-sm);
-  z-index: 3; box-shadow: var(--shadow-md);
-}
-.sr-btn-detail {
-  display: inline-flex; align-items: center; gap: var(--space-sm);
-  background: var(--color-primary); color: #ffffff;
-  font-family: var(--font-heading); font-size: var(--font-size-base);
-  font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
-  padding: var(--space-md) var(--space-xl); border-radius: var(--radius-md);
-  box-shadow: 0 4px 0 var(--color-primary-dark);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  overflow: hidden; position: relative;
-}
-.sr-btn-detail:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--color-primary-dark); }
-.sr-btn-detail:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--color-primary-dark); }
-
-/* ── SIGNATURE: Stats Band ────────────────────────────────── */
-.sr-stats { background: var(--color-bg-dark); padding: var(--space-3xl) 0; position: relative; overflow: hidden; }
-.sr-stats::before {
-  content: '';
-  position: absolute; top: -60px; left: -60px;
-  width: 320px; height: 320px; border-radius: 50%;
-  background: rgba(var(--color-accent-rgb), 0.06); pointer-events: none;
-}
-.sr-stats::after {
-  content: '';
-  position: absolute; bottom: -80px; right: -40px;
-  width: 400px; height: 400px; border-radius: 50%;
-  background: rgba(var(--color-accent-rgb), 0.04); pointer-events: none;
-}
-.sr-stats-inner { position: relative; z-index: 1; }
-.sr-stats-label {
-  text-align: center; font-family: var(--font-body); font-size: var(--font-size-sm);
-  font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--color-accent); margin-bottom: var(--space-2xl);
-}
-.sr-stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-xl); }
-.sr-stat-item {
-  text-align: center; padding: var(--space-xl);
-  border: 1px solid rgba(var(--color-accent-rgb), 0.15);
-  border-radius: var(--radius-lg); background: rgba(255,255,255,0.03);
-  transition: border-color var(--transition-base), background var(--transition-base);
-}
-.sr-stat-item:hover { border-color: rgba(var(--color-accent-rgb), 0.35); background: rgba(var(--color-accent-rgb), 0.05); }
-.sr-stat-number {
-  font-family: var(--font-heading); font-size: clamp(2.2rem, 4vw, 3.2rem);
-  font-weight: 700; color: var(--color-accent); line-height: 1;
-  margin-bottom: var(--space-xs); letter-spacing: -0.02em;
-}
-.sr-stat-label { font-size: var(--font-size-sm); color: rgba(255,255,255,0.65); line-height: 1.4; max-width: 18ch; margin: 0 auto; }
-
-/* ── Mid CTA ──────────────────────────────────────────────── */
-.sr-cta-mid {
-  position: relative; padding: var(--space-3xl) 0;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-  overflow: hidden;
-}
-.sr-cta-mid::after {
-  content: ''; position: absolute; inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none; z-index: 0;
-}
-.sr-cta-mid .container { position: relative; z-index: 1; text-align: center; }
-.sr-cta-eyebrow {
-  display: inline-block; font-family: var(--font-body); font-size: var(--font-size-sm);
-  font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--color-accent); margin-bottom: var(--space-sm);
-}
-.sr-cta-mid h2 {
-  font-family: var(--font-heading); font-size: clamp(1.8rem, 4vw, 2.8rem);
-  font-weight: 700; text-wrap: balance; letter-spacing: -0.02em;
-  color: #ffffff; margin-bottom: var(--space-md);
-}
-.sr-cta-mid > .container > p {
-  font-size: var(--font-size-lg); color: rgba(255,255,255,0.8);
-  max-width: 55ch; margin: 0 auto var(--space-xl); line-height: 1.6;
-}
-.sr-cta-actions { display: flex; justify-content: center; align-items: center; gap: var(--space-md); flex-wrap: wrap; }
-.sr-btn-phone {
-  display: inline-flex; align-items: center; gap: var(--space-sm);
-  background: #ffffff; color: var(--color-primary-dark);
-  font-family: var(--font-heading); font-size: clamp(1.1rem, 2vw, 1.4rem);
-  font-weight: 700; padding: var(--space-md) var(--space-xl);
-  border-radius: var(--radius-md); box-shadow: var(--shadow-lg);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  overflow: hidden; position: relative;
-}
-.sr-btn-phone:hover { transform: translateY(-2px); box-shadow: var(--shadow-xl); }
-.sr-btn-cta {
-  display: inline-flex; align-items: center; gap: var(--space-sm);
-  background: var(--color-accent); color: var(--color-bg-dark);
-  font-family: var(--font-heading); font-size: var(--font-size-base);
-  font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
-  padding: var(--space-md) var(--space-xl); border-radius: var(--radius-md);
-  box-shadow: 0 4px 0 var(--color-accent-dark);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  overflow: hidden; position: relative;
-}
-.sr-btn-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--color-accent-dark); }
-.sr-btn-cta:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--color-accent-dark); }
-
-/* ── Why Choose ───────────────────────────────────────────── */
-.sr-why { padding: var(--space-4xl) 0; background: var(--color-bg-alt); }
-.sr-why-header { text-align: center; margin-bottom: var(--space-3xl); }
-.sr-why h2 {
-  font-family: var(--font-heading); font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700; text-wrap: balance; letter-spacing: -0.02em;
-  color: var(--color-primary); margin-bottom: var(--space-sm);
-}
-.sr-why .sub { font-size: var(--font-size-lg); color: var(--color-text-light); max-width: 55ch; margin: 0 auto; }
-.sr-why-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-lg); }
-.sr-why-card {
-  background: var(--color-bg); border-radius: var(--radius-lg);
-  padding: var(--space-xl) var(--space-lg); box-shadow: var(--shadow-card);
-  transition: transform var(--transition-base), box-shadow var(--transition-base), background var(--transition-base);
-  position: relative; overflow: hidden;
-}
-.sr-why-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0;
-  height: 3px; background: var(--color-accent);
-  transform: scaleX(0); transform-origin: left; transition: transform var(--transition-base);
-}
-.sr-why-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-xl); background: var(--color-primary); }
-.sr-why-card:hover::before { transform: scaleX(1); }
-.sr-why-card:hover .sr-why-title,
-.sr-why-card:hover .sr-why-text { color: rgba(255,255,255,0.9); }
-.sr-why-card:hover .sr-why-icon { background: rgba(var(--color-accent-rgb), 0.2); color: var(--color-accent); }
-.sr-why-icon {
-  width: 52px; height: 52px; border-radius: var(--radius-md);
-  background: rgba(var(--color-accent-rgb), 0.1);
-  display: flex; align-items: center; justify-content: center;
-  color: var(--color-accent); margin-bottom: var(--space-md);
-  transition: background var(--transition-base), color var(--transition-base);
-}
-.sr-why-title {
-  font-family: var(--font-heading); font-size: var(--font-size-xl);
-  font-weight: 600; text-wrap: balance; color: var(--color-primary);
-  margin-bottom: var(--space-sm); transition: color var(--transition-base);
-}
-.sr-why-text { font-size: var(--font-size-sm); color: var(--color-text-light); line-height: 1.6; transition: color var(--transition-base); }
-
-/* ── Process Section ──────────────────────────────────────── */
-.sr-process { padding: var(--space-4xl) 0; background: var(--color-bg); }
-.sr-process-header { text-align: center; margin-bottom: var(--space-3xl); }
-.sr-process h2 {
-  font-family: var(--font-heading); font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700; text-wrap: balance; letter-spacing: -0.02em;
-  color: var(--color-primary); margin-bottom: var(--space-sm);
-}
-.sr-process .sub { font-size: var(--font-size-lg); color: var(--color-text-light); max-width: 55ch; margin: 0 auto; }
-.sr-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-lg); position: relative; }
-.sr-steps::before {
-  content: ''; position: absolute; top: 32px;
-  left: calc(12.5% + 26px); right: calc(12.5% + 26px);
-  height: 2px;
-  background: linear-gradient(to right, var(--color-accent), rgba(var(--color-accent-rgb), 0.2));
-  pointer-events: none;
-}
-.sr-step { text-align: center; padding: var(--space-lg); }
-.sr-step-num {
-  width: 64px; height: 64px; border-radius: 50%;
-  background: var(--color-primary); color: #ffffff;
-  font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700;
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto var(--space-md); position: relative; z-index: 1;
-  border: 3px solid rgba(var(--color-accent-rgb), 0.3);
-  transition: background var(--transition-base), border-color var(--transition-base);
-}
-.sr-step:hover .sr-step-num { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-bg-dark); }
-.sr-step-title { font-family: var(--font-heading); font-size: var(--font-size-lg); font-weight: 600; text-wrap: balance; color: var(--color-primary); margin-bottom: var(--space-sm); }
-.sr-step-desc { font-size: var(--font-size-sm); color: var(--color-text-light); line-height: 1.6; max-width: 22ch; margin: 0 auto; }
-
-/* ── FAQ Section ──────────────────────────────────────────── */
-.sr-faq { padding: var(--space-4xl) 0; background: var(--color-bg-alt); }
-.sr-faq-header { text-align: center; margin-bottom: var(--space-3xl); }
-.sr-faq h2 {
-  font-family: var(--font-heading); font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700; text-wrap: balance; letter-spacing: -0.02em;
-  color: var(--color-primary); margin-bottom: var(--space-sm);
-}
-.sr-faq .sub { font-size: var(--font-size-lg); color: var(--color-text-light); max-width: 55ch; margin: 0 auto; }
-.sr-faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--space-md); }
-.sr-faq-item {
-  background: var(--color-bg); border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm); border: 1px solid rgba(var(--color-primary-rgb), 0.08); overflow: hidden;
-}
-.sr-faq-item summary {
-  padding: var(--space-lg) var(--space-xl);
-  font-family: var(--font-heading); font-size: var(--font-size-lg);
-  font-weight: 600; text-wrap: balance; color: var(--color-primary);
-  cursor: pointer; display: flex; justify-content: space-between;
-  align-items: center; gap: var(--space-md); list-style: none;
-  transition: color var(--transition-fast);
-}
-.sr-faq-item summary::-webkit-details-marker { display: none; }
-.sr-faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--color-accent); flex-shrink: 0; transition: transform var(--transition-base); }
-.sr-faq-item[open] summary::after { transform: rotate(45deg); }
-.sr-faq-item[open] summary { color: var(--color-accent); }
-.sr-faq-answer { padding: 0 var(--space-xl) var(--space-lg); font-size: var(--font-size-base); color: var(--color-text-light); line-height: 1.7; max-width: 65ch; }
-
-/* ── Closing CTA ──────────────────────────────────────────── */
-.sr-closing { padding: var(--space-4xl) 0; background: var(--color-bg); text-align: center; }
-.sr-closing h2 {
-  font-family: var(--font-heading); font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700; text-wrap: balance; letter-spacing: -0.02em;
-  color: var(--color-primary); margin-bottom: var(--space-md);
-}
-.sr-closing p { font-size: var(--font-size-lg); color: var(--color-text-light); max-width: 55ch; margin: 0 auto var(--space-xl); line-height: 1.6; }
-.sr-closing-actions { display: flex; justify-content: center; gap: var(--space-md); flex-wrap: wrap; }
-.sr-btn-closing-accent {
-  display: inline-flex; align-items: center; gap: var(--space-sm);
-  background: var(--color-accent); color: var(--color-bg-dark);
-  font-family: var(--font-heading); font-size: var(--font-size-lg);
-  font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
-  padding: var(--space-md) var(--space-2xl); border-radius: var(--radius-md);
-  box-shadow: 0 4px 0 var(--color-accent-dark);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  overflow: hidden; position: relative;
-}
-.sr-btn-closing-accent:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--color-accent-dark); }
-.sr-btn-closing-primary {
-  display: inline-flex; align-items: center; gap: var(--space-sm);
-  background: var(--color-primary); color: #ffffff;
-  font-family: var(--font-heading); font-size: var(--font-size-lg);
-  font-weight: 700; padding: var(--space-md) var(--space-2xl);
-  border-radius: var(--radius-md); box-shadow: 0 4px 0 var(--color-primary-dark);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  overflow: hidden; position: relative;
-}
-.sr-btn-closing-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--color-primary-dark); }
-
-/* ── Responsive ───────────────────────────────────────────── */
-@media (max-width: 1023px) {
-  .sr-stats-grid  { grid-template-columns: repeat(2, 1fr); }
-  .sr-why-cards   { grid-template-columns: repeat(2, 1fr); }
-  .sr-steps       { grid-template-columns: repeat(2, 1fr); }
-  .sr-steps::before { display: none; }
-}
-@media (max-width: 767px) {
-  .sr-detail-grid { grid-template-columns: 1fr; }
-  .sr-detail-image { order: -1; }
-  .sr-image-frame picture img { height: 280px; }
-  .sr-stats-grid  { grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
-  .sr-why-cards   { grid-template-columns: 1fr; }
-  .sr-steps       { grid-template-columns: 1fr; }
-  .sr-hero-ctas   { flex-direction: column; align-items: flex-start; }
-}
-</style>
-
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php'; ?>
-
-  <!-- ── Breadcrumb ─────────────────────────────────────────── -->
-  <nav class="svc-breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol class="breadcrumb-list">
-        <li><a href="/">Home</a></li>
-        <li aria-hidden="true"><span class="breadcrumb-sep">›</span></li>
-        <li><a href="/services">Services</a></li>
-        <li aria-hidden="true"><span class="breadcrumb-sep">›</span></li>
-        <li class="current" aria-current="page">Snow Removal</li>
-      </ol>
-    </div>
-  </nav>
-
-  <!-- ── Inner Hero ─────────────────────────────────────────── -->
-  <section class="sr-hero" aria-label="Snow Removal Services">
-    <div class="container sr-hero-inner">
-      <span class="sr-eyebrow">
-        <i data-lucide="snowflake" aria-hidden="true" style="width:14px;height:14px;"></i>
-        Winter Property Safety
-      </span>
-      <h1>Snow Removal Services in Edgerton, WI</h1>
-      <p class="sr-hero-sub">Residential and commercial snow plowing, shoveling, and de-icing — available 24/7 during storms, with seasonal contracts and per-event options throughout Rock County.</p>
-      <div class="sr-hero-ctas">
-        <a href="tel:6085015123" class="sr-btn-primary">
-          <i data-lucide="phone" aria-hidden="true" style="width:18px;height:18px;"></i>
-          Call (608) 501-5123
-        </a>
-        <a href="/contact" class="sr-btn-secondary">Get a Free Estimate</a>
+<section class="hero hero--photo svc-hero" aria-label="Snow removal in Edgerton, WI">
+  <div class="hero-bg"><?php echo picture('plow-trucks-ready-snow', 'Two company pickup trucks with snow plows mounted, parked on a snowy lot', '100vw', ['eager' => true, 'class' => 'hero-img']); ?></div>
+  <div class="hero-overlay"></div>
+  <span class="grain" aria-hidden="true"></span>
+  <div class="container hero-grid hero-grid--form">
+    <div class="hero-text">
+      <?php echo breadcrumbs([['Home', '/'], ['Services', '/services/'], ['Snow Removal', '/services/snow-removal/']]); ?>
+      <span class="eyebrow">Driveways · Commercial lots · Winter accounts</span>
+      <h1 class="hero-title">Snow Removal in Edgerton, WI</h1>
+      <p class="page-answer">RAH Solutions LLC plows residential driveways and commercial lots in Edgerton and nearby towns with its own plow trucks and equipment. Winter accounts are set up before the season, so the details are agreed before the first snow.</p>
+      <div class="hero-actions">
+        <button type="button" class="btn btn-accent btn-lg hero-form-open" data-open-estimate>Ask about a winter account</button>
+        <a class="link-call" href="<?php echo telHref(); ?>"><?php echo icon('phone', 18); ?> or call <?php echo e($phone); ?></a>
       </div>
-      <div class="sr-hero-trust">
-        <span class="sr-trust-item">
-          <i data-lucide="shield-check" aria-hidden="true"></i> Licensed &amp; Insured
-        </span>
-        <span class="sr-trust-item">
-          <i data-lucide="clock" aria-hidden="true"></i> 24/7 During Storms
-        </span>
-        <span class="sr-trust-item">
-          <i data-lucide="star" aria-hidden="true"></i> 4.9-Star Rated
-        </span>
-      </div>
+      <p class="last-updated">Last updated: <?php echo date('F Y'); ?></p>
     </div>
-  </section>
+    <?php $heroFormId = 'hero-snow-removal'; $heroFormService = 'snow-removal'; $heroFormHeading = 'Ask about snow removal'; include $_SERVER['DOCUMENT_ROOT'] . '/includes/hero-form.php'; ?>
+  </div>
+</section>
 
-  <!-- ── Proof Ticker Strip ─────────────────────────────────── -->
-  <div class="ticker-strip" aria-hidden="true">
-    <div class="ticker-track">
-      <span class="ticker-item">Residential &amp; Commercial<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Plowing &amp; Shoveling<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">De-Icing After Every Plow<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Seasonal Contracts Available<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">24/7 Storm Response<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Edgerton · Janesville · Rock County<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Free Estimates<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Licensed &amp; Insured<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Residential &amp; Commercial<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Plowing &amp; Shoveling<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">De-Icing After Every Plow<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Seasonal Contracts Available<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">24/7 Storm Response<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Edgerton · Janesville · Rock County<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Free Estimates<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Licensed &amp; Insured<span class="ticker-sep">✦</span></span>
+<section class="section svc-intro" aria-labelledby="intro-h2">
+  <div class="container svc-layout">
+    <div class="svc-body">
+      <p class="identity-line"><strong>RAH Solutions LLC</strong> is a licensed and insured, family-owned landscaper based in Edgerton, Wisconsin. Started by Robert Harried in 2023, it serves Rock and Dane County homes and businesses.</p>
+      <h2 id="intro-h2">What snow removal does RAH Solutions offer?</h2>
+      <div class="answer-block">
+        <h3>Short answer</h3>
+        <p>RAH Solutions LLC plows and clears snow from residential driveways and commercial lots. The company uses its own pickup trucks with plows, a UTV with a blade and a skid steer with a snow pusher. Accounts are arranged before winter, and estimates are free.</p>
+      </div>
+      <p>The time to look for snow removal near me in Edgerton is before it snows. An arrangement made in October is made calmly: someone looks at the driveway or lot with the ground bare, and both sides know what to expect when the first storm arrives. One made in the middle of a January storm is made in a hurry.</p>
+      <p>RAH Solutions is the same company that mows, landscapes and pours concrete around Edgerton the rest of the year. That means one contact across all four seasons. Plowing pairs well with a <a href="/services/fall-yard-cleanup/">fall yard cleanup</a>, so the property is cleared and marked before the ground freezes.</p>
+      <p>Office hours are Monday through Friday, 8:00 AM to 5:00 PM, and that is when calls about new accounts are answered. How and when your property is plowed during a storm is part of the agreement, so ask about it directly. The questions worth asking any contractor are collected in <a href="/blog/snow-removal-contract-questions/">what to ask before signing a snow removal contract</a>.</p>
+    </div>
+    <aside class="svc-rail" aria-label="On this page">
+      <nav class="svc-toc" aria-label="Page sections">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#types-h2">What we plow</a></li>
+          <li><a href="#cond-h2">What to agree on</a></li>
+          <li><a href="#walks-h2">Sidewalk rules</a></li>
+          <li><a href="#steps-h2">How an account works</a></li>
+          <li><a href="#gallery-h2">The equipment</a></li>
+          <li><a href="#faq-h2">Snow removal FAQ</a></li>
+        </ol>
+      </nav>
+      <div class="svc-callcard">
+        <strong>Set up plowing before it snows</strong>
+        <p><?php echo e($hoursLong); ?></p>
+        <a class="btn btn-accent" href="<?php echo telHref(); ?>"><?php echo icon('phone', 18); ?> <?php echo e($phone); ?></a>
+        <button type="button" class="btn btn-outline-white" data-open-estimate>Request an estimate</button>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section svc-types" aria-labelledby="types-h2">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <span class="eyebrow-label">What we plow</span>
+      <h2 id="types-h2">What does RAH Solutions plow, and with what equipment?</h2>
+      <p>RAH Solutions LLC plows home driveways and commercial lots around Edgerton with three kinds of machine, each suited to a different space.</p>
+    </div>
+    <div class="type-grid" data-p1-dynamic>
+      <article class="type-card reveal-up reveal-delay-1">
+        <span class="type-card__icon"><?php echo icon('home', 22); ?></span>
+        <h3>Residential driveways</h3>
+        <p>Town driveways, subdivision drives and longer rural lanes. Snow is pushed to the places agreed in advance, clear of the garage door and the mailbox.</p>
+      </article>
+      <article class="type-card reveal-up reveal-delay-2">
+        <span class="type-card__icon"><?php echo icon('building-2', 22); ?></span>
+        <h3>Commercial lots</h3>
+        <p>Parking lots, drive lanes and loading areas at businesses. Stacking spots are chosen so piles do not take the best stalls or block the view at the exit.</p>
+      </article>
+      <article class="type-card reveal-up reveal-delay-3">
+        <span class="type-card__icon"><?php echo icon('truck', 22); ?></span>
+        <h3>Plow trucks</h3>
+        <p>Pickup trucks with front-mounted plows do most of the work on driveways and open lots. The one in this photo is clearing a subdivision driveway at dusk.</p>
+      </article>
+      <div class="type-card type-card--photo reveal-scale reveal-delay-1">
+        <?php echo picture('plow-truck-driveway-dusk', 'Plow truck with its lights on clearing a driveway in a new subdivision at dusk', '(max-width: 560px) 100vw, 33vw'); ?>
+      </div>
+      <article class="type-card reveal-up reveal-delay-2">
+        <span class="type-card__icon"><?php echo icon('route', 22); ?></span>
+        <h3>UTV with a blade</h3>
+        <p>A utility vehicle with a plow blade is narrower and lighter than a truck, which suits tight spots where a full-size truck cannot turn around.</p>
+      </article>
+      <article class="type-card reveal-up reveal-delay-3">
+        <span class="type-card__icon"><?php echo icon('tractor', 22); ?></span>
+        <h3>Skid steer with a snow pusher</h3>
+        <p>A snow pusher is a wide box blade that moves a large volume of snow in a straight line. On a skid steer it clears lots and can stack snow higher than a truck plow.</p>
+      </article>
     </div>
   </div>
+</section>
 
-  <!-- ── Divider ────────────────────────────────────────────── -->
-  <div class="divider-wrap" aria-hidden="true">
-    <svg viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="0,0 1200,40 1200,40 0,40" fill="#ffffff"/>
-    </svg>
+<section class="section svc-conditions texture-grain edge-facet-top" aria-labelledby="cond-h2">
+  <span class="grain-layer" aria-hidden="true"></span>
+  <div class="container">
+    <div class="cond-head reveal-left">
+      <span class="eyebrow-label">Before the first storm</span>
+      <h2 id="cond-h2">What should you agree on before a plowing season starts?</h2>
+      <p>Four things, in writing. RAH Solutions LLC goes through each of them with the property owner when a winter account is set up, because they are where misunderstandings start.</p>
+    </div>
+    <ul class="cond-list">
+      <li class="reveal-up"><span><?php echo icon('ruler', 22); ?></span><b>Trigger depth</b><p>How much snow has to fall before plowing starts. It sets how often the plow comes.</p></li>
+      <li class="reveal-up"><span><?php echo icon('map-pin', 22); ?></span><b>Where the snow goes</b><p>Piles should not block sight lines, bury shrubs, sit on a drain or melt back across the pavement and refreeze. Choose the spots while the ground is bare.</p></li>
+      <li class="reveal-up"><span><?php echo icon('footprints', 22); ?></span><b>Walks and entrances</b><p>Plowing a driveway or lot is not the same as clearing sidewalks, steps and doorways. Decide who does those and say so in the agreement.</p></li>
+      <li class="reveal-up"><span><?php echo icon('snowflake', 22); ?></span><b>Salt and sand</b><p>Whether deicer or sand is applied, where, and on what surfaces. New concrete may call for sand instead of salt.</p></li>
+    </ul>
   </div>
+</section>
 
-  <!-- ── Service Detail ─────────────────────────────────────── -->
-  <section class="sr-detail" data-animate="fade-up">
-    <div class="container">
-      <div class="sr-detail-grid">
-
-        <div class="sr-detail-content">
-          <span class="section-eyebrow">What We Provide</span>
-          <h2>What <span class="text-accent">Snow Removal</span> Is Built for Rock County's Winter Reality?</h2>
-
-          <p>R.A.H. Solutions provides residential and commercial snow removal throughout Edgerton and Rock County — including driveway and parking lot plowing, sidewalk shoveling, de-icing and salting, and push-back service for heavy accumulation events. We monitor weather and dispatch during active storms so service happens when properties need it cleared, not the next morning.</p>
-
-          <p>Rock County averages 40–50 inches of snowfall annually. January and February see the highest accumulation months, and lake-effect events off Lake Michigan occasionally drop 6–10 inches overnight. Under a seasonal contract, contracted properties dispatch first when crews are stretched across a large storm event — before per-event requests come in. If you operate a commercial property with slip-and-fall liability exposure, contract status matters most on your worst weather nights.</p>
-
-          <p>Per-event pricing is available for homeowners who prefer paying only after storms rather than committing to a full-season rate. The tradeoff is straightforward: contracted properties get first dispatch priority. We're transparent about this so you can choose the structure that fits your actual risk tolerance and budget.</p>
-
-          <p>De-icing is included with every plow pass — not separated as an optional add-on. Salt and ice melt are applied to driveways, walkways, and entry points after service. Costs are built into the service quote upfront. For commercial properties, consistent post-plow de-icing is a non-negotiable layer of liability protection in Wisconsin winters.</p>
-
-          <div class="answer-block">
-            <h3>How much does snow removal cost in Edgerton, WI?</h3>
-            <p>Snow removal pricing in Edgerton depends on your service structure. Per-event residential plowing typically runs $45–$125 per push depending on driveway size, with de-icing included. Seasonal contracts offer a fixed monthly rate covering all events from November through March — most residential contracts fall in the $75–$200/month range. Service triggers at 2 inches of accumulation. Commercial lots are quoted individually after a property walkthrough.</p>
-          </div>
-
-          <p class="sr-updated">Last Updated: May 2026 · Serving Edgerton, WI and surrounding Rock County communities.</p>
-
-          <a href="/contact" class="sr-btn-detail">
-            <i data-lucide="clipboard-list" aria-hidden="true" style="width:18px;height:18px;"></i>
-            Get a Winter Contract Quote
-          </a>
-        </div>
-
-        <div class="sr-detail-image">
-          <div class="sr-image-frame">
-            <picture>
-              <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963902399-ex8uz9-470815796_122202491606208320_6104297074012647116_n.jpg" type="image/webp">
-              <img
-                src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963902399-ex8uz9-470815796_122202491606208320_6104297074012647116_n.jpg"
-                alt="Snow removal plowing residential driveway Edgerton Wisconsin winter service"
-                width="600"
-                height="420"
-                loading="lazy"
-              >
-            </picture>
-            <span class="sr-image-badge">Edgerton, WI</span>
-          </div>
-        </div>
-
+<section class="section section--tight" aria-labelledby="walks-h2">
+  <div class="container">
+    <div class="svc-callout reveal-up">
+      <span><?php echo icon('landmark', 26); ?></span>
+      <div>
+        <h2 id="walks-h2">Do property owners have to clear public sidewalks in Wisconsin?</h2>
+        <p>In most places, yes. RAH Solutions reminds customers that most Wisconsin municipalities require owners to clear the public sidewalk along their property within a set time after snowfall. The time limit and the penalty are set locally, so check your city or village ordinance or call the municipal office.</p>
+        <p>A plow truck clears the driveway, not the walk. Corner lots and commercial properties can have a long run of public sidewalk, so settle who clears it before winter.</p>
       </div>
     </div>
-  </section>
-
-  <!-- ── Divider: bg → bg-dark (wave) ──────────────────────── -->
-  <div class="divider-wrap" aria-hidden="true">
-    <svg viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,40 C300,80 900,0 1200,40 L1200,80 L0,80 Z" fill="#0f1e2d"/>
-    </svg>
   </div>
+</section>
 
-  <!-- ── SIGNATURE: Stats Band ──────────────────────────────── -->
-  <section class="sr-stats" aria-label="Snow removal service statistics">
-    <div class="container sr-stats-inner">
-      <p class="sr-stats-label">Snow Removal — By the Numbers</p>
-      <div class="sr-stats-grid">
-        <div class="sr-stat-item" data-animate="fade-up">
-          <div class="sr-stat-number">24/7</div>
-          <div class="sr-stat-label">Available during active storm events</div>
-        </div>
-        <div class="sr-stat-item" data-animate="fade-up">
-          <div class="sr-stat-number">40–50"</div>
-          <div class="sr-stat-label">Average annual snowfall in Rock County</div>
-        </div>
-        <div class="sr-stat-item" data-animate="fade-up">
-          <div class="sr-stat-number">Both</div>
-          <div class="sr-stat-label">Residential &amp; commercial service available</div>
-        </div>
-        <div class="sr-stat-item" data-animate="fade-up">
-          <div class="sr-stat-number">4.9★</div>
-          <div class="sr-stat-label">Average customer rating across 47 reviews</div>
-        </div>
-      </div>
+<section class="section svc-steps" aria-labelledby="steps-h2">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <span class="eyebrow-label">The process</span>
+      <h2 id="steps-h2">How is a winter account with RAH Solutions set up?</h2>
+      <p>RAH Solutions LLC sets up a driveway and a commercial lot the same way, in four steps that start before the snow does.</p>
     </div>
-  </section>
-
-  <!-- ── Divider: bg-dark → primary ────────────────────────── -->
-  <div class="divider-wrap" aria-hidden="true">
-    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="0,60 1200,0 1200,60" fill="#1a2b3c"/>
-    </svg>
+    <ol class="step-track">
+      <?php foreach ($steps as $i => $s): ?>
+      <li class="reveal-up reveal-delay-<?php echo $i + 1; ?>"><h3><?php echo e($s[0]); ?></h3><p><?php echo e($s[1]); ?></p></li>
+      <?php endforeach; ?>
+    </ol>
   </div>
+</section>
 
-  <!-- ── Mid CTA ────────────────────────────────────────────── -->
-  <section class="sr-cta-mid" aria-label="Schedule snow removal service">
-    <div class="container">
-      <p class="sr-cta-eyebrow">Seasonal Contracts — Lock In Before First Snowfall</p>
-      <h2>Why Shouldn't You Wait Until the First Storm to Figure Out Plowing?</h2>
-      <p>Seasonal contracts in Rock County fill before November. Get a quote now and enter winter with your property already covered — R.A.H. Solutions serves Edgerton, Stoughton, Janesville &amp; Madison.</p>
-      <div class="sr-cta-actions">
-        <a href="tel:6085015123" class="sr-btn-phone">
-          <i data-lucide="phone" aria-hidden="true" style="width:20px;height:20px;"></i>
-          (608) 501-5123
-        </a>
-        <a href="/contact" class="sr-btn-cta">Get a Free Estimate</a>
-      </div>
+<section class="section svc-gallery" aria-labelledby="gallery-h2">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <span class="eyebrow-label">The winter fleet</span>
+      <h2 id="gallery-h2">What snow equipment does RAH Solutions run?</h2>
+      <p>These are RAH Solutions photos of its own equipment: plow trucks, a UTV with a blade and a skid steer with a snow pusher, lined up and ready.</p>
     </div>
-  </section>
-
-  <!-- ── Divider: primary → bg-alt ─────────────────────────── -->
-  <div class="divider-wrap" aria-hidden="true">
-    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="0,0 1200,60 1200,60 0,60" fill="#f4f7f9"/>
-    </svg>
+    <div class="sp-gallery-grid sp-gallery-grid--two" data-p1-dynamic>
+      <figure class="sp-gallery-item reveal-scale"><?php echo picture('snow-plow-fleet-trucks', 'Plow trucks, a UTV with a blade and a skid steer with a snow pusher lined up', '(max-width: 700px) 100vw, 55vw'); ?><figcaption>Plow trucks, UTV and skid steer with snow pusher</figcaption></figure>
+      <figure class="sp-gallery-item reveal-scale reveal-delay-1"><?php echo picture('snow-fleet-lineup-lot', 'Snow removal trucks and equipment lined up on a lot', '(max-width: 700px) 100vw, 40vw'); ?><figcaption>The snow equipment lined up on the lot</figcaption></figure>
+    </div>
   </div>
+</section>
 
-  <!-- ── Why Choose ─────────────────────────────────────────── -->
-  <section class="sr-why" data-animate="fade-up">
-    <div class="container">
-      <div class="sr-why-header">
-        <span class="section-eyebrow">Why R.A.H. Solutions</span>
-        <h2>What Snow Removal Actually <span class="text-accent">Shows Up</span> When It Matters?</h2>
-        <p class="sub">Reliability during a Wisconsin winter storm is the only metric that counts. Here's how we deliver it for Edgerton and Rock County properties.</p>
-      </div>
-      <div class="sr-why-cards">
-        <div class="sr-why-card" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.12">
-          <div class="sr-why-icon">
-            <i data-lucide="file-text" aria-hidden="true" style="width:24px;height:24px;"></i>
-          </div>
-          <h3 class="sr-why-title">Per-Event &amp; Seasonal Contract Options</h3>
-          <p class="sr-why-text">Seasonal contracts offer priority dispatch and predictable billing. Per-event pricing offers flexibility. We explain the tradeoffs clearly so you choose what actually fits your property.</p>
-        </div>
-        <div class="sr-why-card" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.12">
-          <div class="sr-why-icon">
-            <i data-lucide="building-2" aria-hidden="true" style="width:24px;height:24px;"></i>
-          </div>
-          <h3 class="sr-why-title">Commercial &amp; Residential Service</h3>
-          <p class="sr-why-text">We handle driveways, parking lots, loading areas, and storefront walkways — from single-family homes to small businesses throughout Edgerton and Rock County.</p>
-        </div>
-        <div class="sr-why-card" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.12">
-          <div class="sr-why-icon">
-            <i data-lucide="droplets" aria-hidden="true" style="width:24px;height:24px;"></i>
-          </div>
-          <h3 class="sr-why-title">De-Icing Included After Every Plow</h3>
-          <p class="sr-why-text">Salt and ice melt application is part of every service call — not a line item added after the fact. Entry points, walks, and driveway aprons are treated after every plow pass.</p>
-        </div>
-        <div class="sr-why-card" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.12">
-          <div class="sr-why-icon">
-            <i data-lucide="map-pin" aria-hidden="true" style="width:24px;height:24px;"></i>
-          </div>
-          <h3 class="sr-why-title">Rock County Weather Familiarity</h3>
-          <p class="sr-why-text">We operate in Edgerton's actual conditions — lake-effect events, freeze-thaw icing cycles, and January–February heavy accumulation — not a generic Midwest response plan.</p>
-        </div>
-      </div>
+<section class="section svc-faq" aria-labelledby="faq-h2">
+  <div class="container faq-wrap">
+    <div class="section-head reveal-left">
+      <span class="eyebrow-label">FAQ</span>
+      <h2 id="faq-h2">What do people ask about snow removal in Edgerton?</h2>
+      <p>Call <?php echo e($phone); ?> during office hours and Robert will tell you how RAH Solutions would handle your driveway or lot.</p>
     </div>
-  </section>
-
-  <!-- ── Divider: bg-alt → bg ───────────────────────────────── -->
-  <div class="divider-wrap" aria-hidden="true">
-    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="0,0 1200,60 1200,0" fill="#ffffff"/>
-    </svg>
+    <div><?php echo faqList($faqs, 2); ?></div>
   </div>
+</section>
 
-  <!-- ── Process Steps ──────────────────────────────────────── -->
-  <section class="sr-process" data-animate="fade-up">
-    <div class="container">
-      <div class="sr-process-header">
-        <span class="section-eyebrow">How It Works</span>
-        <h2>What Are the 4 Steps from Property Walkthrough to Storm-Ready?</h2>
-        <p class="sub">Simple setup. Reliable execution when the storms hit. No scrambling last-minute to find a plow.</p>
-      </div>
-      <div class="sr-steps">
-        <div class="sr-step">
-          <div class="sr-step-num">1</div>
-          <h3 class="sr-step-title">Property Walkthrough &amp; Contract Setup</h3>
-          <p class="sr-step-desc">We assess driveway layout, access points, and obstacles before winter starts to plan equipment approach.</p>
-        </div>
-        <div class="sr-step">
-          <div class="sr-step-num">2</div>
-          <h3 class="sr-step-title">Storm Monitoring &amp; Dispatch</h3>
-          <p class="sr-step-desc">We track weather throughout winter and dispatch crews as storms develop — no waiting for your call when there's 6 inches down.</p>
-        </div>
-        <div class="sr-step">
-          <div class="sr-step-num">3</div>
-          <h3 class="sr-step-title">Snow Event Service</h3>
-          <p class="sr-step-desc">Plowing, shoveling, and de-icing as a single service call. Contracted clients dispatched before per-event requests during high-demand storms.</p>
-        </div>
-        <div class="sr-step">
-          <div class="sr-step-num">4</div>
-          <h3 class="sr-step-title">Follow-Up Salting &amp; Re-Inspection</h3>
-          <p class="sr-step-desc">After heavy events or freeze-thaw cycles, high-traffic areas are re-checked and additional ice melt applied as needed.</p>
-        </div>
-      </div>
+<section class="section svc-related" aria-labelledby="related-h2">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <span class="eyebrow-label">More from RAH Solutions</span>
+      <h2 id="related-h2">Other Services You May Need</h2>
     </div>
-  </section>
-
-  <!-- ── Divider: bg → bg-alt ──────────────────────────────── -->
-  <div class="divider-wrap" aria-hidden="true">
-    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="0,0 1200,60 1200,60 0,60" fill="#f4f7f9"/>
-    </svg>
+    <div class="services-grid" data-p1-dynamic>
+      <?php echo serviceCards(relatedServices(['fall-yard-cleanup', 'concrete-services', 'lawn-maintenance']), '(max-width: 560px) 100vw, 33vw'); ?>
+    </div>
+    <div class="town-links">
+      <h3>Snow removal near you</h3>
+      <ul>
+        <?php foreach (['edgerton-wi', 'milton-wi', 'janesville-wi', 'stoughton-wi', 'fort-atkinson-wi', 'whitewater-wi'] as $tl): $ta = areaBySlug($tl); ?>
+        <li><a href="<?php echo areaHref($ta); ?>"><?php echo icon('map-pin', 14); ?> Snow removal in <?php echo e($ta['name']); ?></a></li>
+        <?php endforeach; ?>
+      </ul>
+    </div>
   </div>
+</section>
 
-  <!-- ── FAQ Section ────────────────────────────────────────── -->
-  <section class="sr-faq" data-animate="fade-up">
-    <div class="container">
-      <div class="sr-faq-header">
-        <span class="section-eyebrow">Common Questions</span>
-        <h2>What Are Your Snow Removal Questions?</h2>
-        <p class="sub">Contracts, response times, commercial coverage, and what de-icing costs — direct answers for Edgerton property owners and business managers.</p>
-      </div>
-      <div class="sr-faq-list">
-        <details class="sr-faq-item">
-          <summary>Do you offer seasonal snow removal contracts in Edgerton?</summary>
-          <div class="sr-faq-answer">
-            <p>Yes. We offer both seasonal contracts and per-event pricing in Edgerton and Rock County. Seasonal contracts provide a fixed monthly rate for the winter regardless of storm count — predictable budgeting for homeowners and commercial properties. Per-event pricing offers flexibility without a season-long commitment.</p>
-          </div>
-        </details>
-        <details class="sr-faq-item">
-          <summary>How quickly do you respond after a snowfall?</summary>
-          <div class="sr-faq-answer">
-            <p>We monitor weather and dispatch as storms develop — most properties are serviced within a few hours of snowfall stopping for standard accumulation events. Heavy events of 6+ inches may extend response time. Contracted clients are dispatched first during high-demand storm periods before per-event requests are addressed.</p>
-          </div>
-        </details>
-        <details class="sr-faq-item">
-          <summary>Do you service commercial parking lots in Edgerton?</summary>
-          <div class="sr-faq-answer">
-            <p>Yes. R.A.H. Solutions handles commercial parking lots, loading docks, storefront walkways, and commercial driveways throughout Edgerton and surrounding Rock County. Commercial clients receive priority scheduling under seasonal contracts and monthly invoicing for easy budget management.</p>
-          </div>
-        </details>
-        <details class="sr-faq-item">
-          <summary>Is de-icing included with snow removal?</summary>
-          <div class="sr-faq-answer">
-            <p>Yes — de-icing and salting are included as part of our standard service after each plow pass. We apply ice melt to driveways, walkways, and entry points. Material costs are factored into your quote upfront — no surprise line items after the storm is over.</p>
-          </div>
-        </details>
-      </div>
-    </div>
-  </section>
+<?php $ctaBandId = 'band-snow-removal'; $ctaBandHeading = 'Set up your winter plowing account'; include $_SERVER['DOCUMENT_ROOT'] . '/includes/cta-band.php'; ?>
 
-  <!-- ── Divider: bg-alt → bg ───────────────────────────────── -->
-  <div class="divider-wrap" aria-hidden="true">
-    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="0,60 1200,0 1200,60" fill="#ffffff"/>
-    </svg>
-  </div>
-
-  <!-- ── Closing CTA ────────────────────────────────────────── -->
-  <section class="sr-closing" data-animate="fade-up">
-    <div class="container">
-      <span class="section-eyebrow" style="justify-content:center;">Lock In Before First Snow</span>
-      <h2>How Do You Enter Winter With Your <span class="text-accent">Plowing</span> Already Handled?</h2>
-      <p>Seasonal contracts fill before the first storm hits. Call now or request a free estimate online — R.A.H. Solutions has been keeping Rock County properties safe through Wisconsin winters since 2023.</p>
-      <div class="sr-closing-actions">
-        <a href="tel:6085015123" class="sr-btn-closing-primary">
-          <i data-lucide="phone" aria-hidden="true" style="width:20px;height:20px;"></i>
-          (608) 501-5123
-        </a>
-        <a href="/contact" class="sr-btn-closing-accent">
-          <i data-lucide="clipboard-list" aria-hidden="true" style="width:20px;height:20px;"></i>
-          Get a Free Estimate
-        </a>
-      </div>
-    </div>
-  </section>
-
+</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>

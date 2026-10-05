@@ -1,1239 +1,251 @@
 <?php
-// ============================================================
-// Mulching Services — R.A.H. Solutions, LLC
-// ============================================================
-$pageTitle       = 'Mulching Services in Edgerton, WI';
-$pageDescription = 'Mulch installation in Edgerton, WI — moisture retention, weed suppression & root protection through Wisconsin winters. Free estimates. Call (608) 501-5123.';
-$canonicalUrl    = 'https://rahsolutionsllc.com/services/mulching-services';
-// SEO: {"@context":"https://schema.org"} — schema and <link rel="canonical"> rendered via head.php
-$ogImage         = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963882024-ohn2g8-474446326_122209560260208320_53140490767559634_n.jpg';
-$currentPage     = 'service-mulching-services';
-$heroPreload     = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963882024-ohn2g8-474446326_122209560260208320_53140490767559634_n.jpg';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+?>
+<?php
+$svc             = serviceBySlug('mulching-services');
+$currentPage     = 'services';
+$pageType        = 'service';
+$serviceSlug     = 'mulching-services';
+$pageTitle       = 'Mulching Services in Edgerton, WI | RAH Solutions LLC';
+$pageDescription = 'Mulch installation in Edgerton, WI: beds weeded and edged, then mulch spread 2 to 4 inches deep and kept off trunks. RAH Solutions LLC gives free estimates.';
+$canonicalUrl    = $siteUrl . '/services/mulching-services/';
+$heroPreload     = heroPreload('mulched-bed-edging-lawn-border', '100vw');
+$ogImage         = 'mulched-bed-edging-lawn-border.jpg';
+$pageCss         = ['service'];
+$pageStyle       = <<<CSS
+/* mulching-services: warm paper cards with a deep-green side rule, calculator-style callout */
+.page-mulching-services .svc-hero .hero-bg img { object-position: 50% 60%; }
+.page-mulching-services .type-card { background: var(--color-paper-2); border-left: 4px solid var(--color-secondary); }
+.page-mulching-services .type-card__icon { background: var(--color-secondary); color: var(--color-white); }
+.page-mulching-services .svc-callout { background: color-mix(in srgb, var(--color-secondary) 8%, var(--color-surface)); border-radius: var(--radius-lg); box-shadow: var(--shadow); }
+.page-mulching-services .svc-callout > span { color: var(--color-secondary); }
+.page-mulching-services .svc-callout strong { color: var(--color-ink); font-family: var(--font-accent); }
+CSS;
 
 $faqs = [
-  [
-    '@type'          => 'Question',
-    'name'           => 'How much mulch do I need for my beds?',
-    'acceptedAnswer' => [
-      '@type' => 'Answer',
-      'text'  => 'To apply mulch at the correct 2–3 inch depth, you need approximately 1 cubic yard of mulch per 100 square feet of bed area. A typical residential property with 400–600 sq ft of bed area requires 4–6 yards of mulch per application. R.A.H. Solutions measures your beds during the estimate visit and calculates the exact quantity — no guessing and no waste.',
-    ],
-  ],
-  [
-    '@type'          => 'Question',
-    'name'           => 'What type of mulch is best for Wisconsin winters?',
-    'acceptedAnswer' => [
-      '@type' => 'Answer',
-      'text'  => 'Shredded hardwood mulch is the most widely used option in Rock County — it breaks down slowly, insulates well, and doesn\'t blow around during winter winds. Cedar mulch is a premium option that breaks down more slowly, resists moisture, and has natural pest-deterrent properties. Dyed mulches (black, red) look sharp but the colorant fades within one season and the wood base doesn\'t provide better performance than undyed material. For winter root protection in Edgerton\'s -20°F lows, any of these materials at 2–3 inch depth is effective.',
-    ],
-  ],
-  [
-    '@type'          => 'Question',
-    'name'           => 'How often should mulch be refreshed?',
-    'acceptedAnswer' => [
-      '@type' => 'Answer',
-      'text'  => 'Most landscape beds in Edgerton benefit from a fresh mulch application once per year — spring is the optimal timing, after soil has warmed and before weed germination peaks. Annual refresh maintains the 2–3 inch protective depth as the previous year\'s mulch decomposes and compresses. If your existing mulch is still at adequate depth from last year, a lighter top-dress of 1–1.5 inches may be sufficient.',
-    ],
-  ],
-  [
-    '@type'          => 'Question',
-    'name'           => 'Do you install weed barrier fabric under mulch?',
-    'acceptedAnswer' => [
-      '@type' => 'Answer',
-      'text'  => 'We offer weed barrier installation as an optional add-on, but we\'re honest about its limitations: landscape fabric works well in low-maintenance areas around trees and in hardscape borders, but breaks down over 3–5 years in active planting beds and eventually creates more problems than it solves as it tears and allows weed roots to grow through. For most ornamental beds, proper mulch depth (2–3 inches) refreshed annually provides better long-term weed suppression without the issues landscape fabric creates.',
-    ],
-  ],
+    ['How deep should mulch be?',
+     'Two to four inches. Less than two inches lets light through and weeds come up. More than four inches can keep water and air from reaching roots. Beds that already hold some mulch only need enough to bring them back into that range.'],
+    ['How often does mulch need to be replaced?',
+     'Wood mulch breaks down and fades, so most beds get a top-up every year or two. You rarely need to remove the old layer. If it has matted into a crust, it is loosened first so water can get through.'],
+    ['When is the best time to mulch in southern Wisconsin?',
+     'Mid to late spring is the usual time, after beds are cleaned up and the soil has started to warm. Mulch can go down any time the ground is not frozen. A fall layer protects the roots of new plantings from freezing and thawing.'],
+    ['Does mulch stop weeds?',
+     'It stops most of them. A layer two to four inches deep blocks the light weed seeds need. Weeds that are already growing must be pulled first, and a few will still seed into the top of the mulch. <a href="/services/garden-maintenance/">Garden maintenance</a> visits keep those from spreading.'],
+    ['How much mulch does my yard need?',
+     'Measure each bed in square feet. One cubic yard covers about 108 square feet at three inches deep. The <a href="/blog/how-much-mulch-do-i-need/">mulch guide</a> shows the math, and RAH Solutions measures the beds during the estimate so you do not have to.'],
+    ['Is it bad to pile mulch against a tree?',
+     'Yes. Mulch heaped against a trunk, often called a mulch volcano, holds moisture on the bark and invites rot and rodents. Mulch around a tree should be a flat ring pulled back a few inches so the base of the trunk stays visible.'],
 ];
 
-$schemaMarkup = json_encode([
-  '@context' => 'https://schema.org',
-  '@graph'   => [
-    [
-      '@type'           => 'BreadcrumbList',
-      'itemListElement' => [
-        ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home',     'item' => 'https://rahsolutionsllc.com'],
-        ['@type' => 'ListItem', 'position' => 2, 'name' => 'Services', 'item' => 'https://rahsolutionsllc.com/services'],
-        ['@type' => 'ListItem', 'position' => 3, 'name' => 'Mulching Services', 'item' => 'https://rahsolutionsllc.com/services/mulching-services'],
-      ],
-    ],
-    [
-      '@type'       => 'Service',
-      '@id'         => 'https://rahsolutionsllc.com/services/mulching-services/#service',
-      'name'        => 'Mulching Services',
-      'description' => 'Professional mulch delivery and installation for residential landscape beds in Edgerton, Stoughton, Janesville, and Madison, WI. Correct depth application — 2–3 inches — for weed suppression, moisture retention, and winter root protection.',
-      'provider'    => ['@type' => 'LocalBusiness', '@id' => 'https://rahsolutionsllc.com/#business'],
-      'areaServed'  => [
-        ['@type' => 'City', 'name' => 'Edgerton'],
-        ['@type' => 'City', 'name' => 'Stoughton'],
-        ['@type' => 'City', 'name' => 'Janesville'],
-        ['@type' => 'City', 'name' => 'Madison'],
-      ],
-      'serviceType' => 'Mulching Services',
-    ],
-    [
-      '@type'      => 'FAQPage',
-      'mainEntity' => $faqs,
-    ],
-    [
-      '@type'           => 'LocalBusiness',
-      '@id'             => 'https://rahsolutionsllc.com/#aggregate',
-      'name'            => 'R.A.H. Solutions, LLC',
-    ],
-  ],
-], JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+$steps = [
+    ['Look at the property', 'Robert walks the beds, measures them, checks how much old mulch is there and looks at the edges.'],
+    ['Written estimate', 'You receive a written estimate that lists the bed prep, any edging and the amount and type of mulch.'],
+    ['Prepare and spread', 'Beds are weeded, debris is cleared, edges are cut or edging is set, and mulch is spread to an even depth.'],
+    ['Clean up and walk the job', 'Mulch is pulled back from trunks, stems and siding, walks and drives are blown off, and Robert walks the beds with you.'],
+];
+
+$schemaNodes = [
+    webPageNode(),
+    breadcrumbNode([['Home', '/'], ['Services', '/services/'], ['Mulching Services', '/services/mulching-services/']]),
+    serviceSchemaNode('Mulching Services', 'Mulch installation for planting beds and tree rings in Edgerton, WI and nearby Rock and Dane County towns: weeding, bed edging and mulch spread 2 to 4 inches deep.', $canonicalUrl),
+    ['@type' => 'HowTo', 'name' => 'How RAH Solutions LLC mulches a planting bed', 'step' => array_map(fn($s, $i) => ['@type' => 'HowToStep', 'position' => $i + 1, 'name' => $s[0], 'text' => $s[1]], $steps, array_keys($steps))],
+    faqSchemaNode($faqs),
+];
 
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
+<div class="page-mulching-services">
 
-<style>
-/* ============================================================
-   Mulching Services — Page-Specific Styles (ms-)
-   ============================================================ */
-
-/* ── Breadcrumb ───────────────────────────────────────────── */
-.svc-breadcrumb {
-  background: var(--color-bg-dark);
-  padding: var(--space-sm) 0;
-  position: relative;
-  z-index: 10;
-}
-.svc-breadcrumb .container {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-}
-.breadcrumb-list {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-  list-style: none;
-  flex-wrap: wrap;
-}
-.breadcrumb-list li {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-  font-size: var(--font-size-sm);
-  color: rgba(255,255,255,0.55);
-}
-.breadcrumb-list li a {
-  color: rgba(255,255,255,0.7);
-  transition: color var(--transition-fast);
-}
-.breadcrumb-list li a:hover { color: var(--color-accent); }
-.breadcrumb-list li.current {
-  color: var(--color-accent);
-  font-weight: 600;
-}
-.breadcrumb-sep {
-  color: rgba(255,255,255,0.3);
-  font-size: var(--font-size-xs);
-}
-
-/* ── Inner Hero ───────────────────────────────────────────── */
-.ms-hero {
-  position: relative;
-  min-height: 60vh;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963882024-ohn2g8-474446326_122209560260208320_53140490767559634_n.jpg');
-  background-size: cover;
-  background-position: center;
-  animation: ms-kenburns 20s ease-in-out infinite alternate;
-}
-@keyframes ms-kenburns {
-  from { background-size: 110%; background-position: center 45%; }
-  to   { background-size: 121%; background-position: center 55%; }
-}
-.ms-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(var(--color-primary-rgb), 0.91) 0%,
-    rgba(var(--color-primary-rgb), 0.56) 60%,
-    rgba(var(--color-accent-rgb), 0.16) 100%
-  );
-  z-index: 1;
-}
-.ms-hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  z-index: 2;
-  pointer-events: none;
-}
-.ms-hero-inner {
-  position: relative;
-  z-index: 3;
-  padding: var(--space-4xl) 0 var(--space-3xl);
-}
-.ms-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  font-family: var(--font-body);
-  font-size: var(--font-size-sm);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: var(--space-md);
-}
-.ms-eyebrow::before {
-  content: '';
-  display: block;
-  width: 28px;
-  height: 2px;
-  background: var(--color-accent);
-  flex-shrink: 0;
-}
-.ms-hero h1 {
-  font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 5vw, 3.8rem);
-  font-weight: 700;
-  line-height: 1.1;
-  text-wrap: balance;
-  letter-spacing: -0.02em;
-  margin-bottom: var(--space-md);
-  background: linear-gradient(135deg, #ffffff 0%, rgba(var(--color-accent-rgb), 0.9) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.ms-hero-sub {
-  font-size: var(--font-size-lg);
-  color: rgba(255,255,255,0.82);
-  max-width: 52ch;
-  line-height: 1.6;
-  margin-bottom: var(--space-xl);
-}
-.ms-hero-ctas {
-  display: flex;
-  gap: var(--space-md);
-  flex-wrap: wrap;
-  align-items: center;
-}
-.ms-btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: var(--color-accent);
-  color: var(--color-bg-dark);
-  font-family: var(--font-heading);
-  font-size: var(--font-size-base);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: var(--space-md) var(--space-xl);
-  border-radius: var(--radius-md);
-  box-shadow: 0 4px 0 var(--color-accent-dark);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  overflow: hidden;
-  position: relative;
-}
-.ms-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--color-accent-dark); }
-.ms-btn-primary:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--color-accent-dark); }
-.ms-btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: transparent;
-  color: #ffffff;
-  font-family: var(--font-heading);
-  font-size: var(--font-size-base);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: var(--space-md) var(--space-xl);
-  border-radius: var(--radius-md);
-  border: 2px solid rgba(255,255,255,0.5);
-  transition: background var(--transition-base), border-color var(--transition-base);
-}
-.ms-btn-secondary:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.8); }
-.ms-hero-trust {
-  display: flex;
-  align-items: center;
-  gap: var(--space-lg);
-  margin-top: var(--space-xl);
-  flex-wrap: wrap;
-}
-.ms-trust-item {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-  font-size: var(--font-size-sm);
-  color: rgba(255,255,255,0.75);
-  font-weight: 600;
-}
-.ms-trust-item i { color: var(--color-accent); }
-
-/* ── Ticker ───────────────────────────────────────────────── */
-.ticker-strip {
-  background: var(--color-primary);
-  padding: var(--space-sm) 0;
-  overflow: hidden;
-  position: relative;
-}
-.ticker-strip::before,
-.ticker-strip::after {
-  content: '';
-  position: absolute;
-  top: 0; bottom: 0;
-  width: 80px;
-  z-index: 2;
-  pointer-events: none;
-}
-.ticker-strip::before { left: 0; background: linear-gradient(to right, var(--color-primary), transparent); }
-.ticker-strip::after  { right: 0; background: linear-gradient(to left,  var(--color-primary), transparent); }
-.ticker-track {
-  display: flex;
-  width: max-content;
-  animation: ticker-scroll 30s linear infinite;
-}
-.ticker-track:hover { animation-play-state: paused; }
-@keyframes ticker-scroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-.ticker-item {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-md);
-  white-space: nowrap;
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #ffffff;
-  padding: 0 var(--space-xl);
-}
-.ticker-sep { color: var(--color-accent); font-size: 1.2rem; line-height: 1; }
-
-/* ── Dividers ─────────────────────────────────────────────── */
-.divider-wrap { display: block; line-height: 0; overflow: hidden; }
-.divider-wrap svg { display: block; width: 100%; }
-
-/* ── Section Eyebrow ──────────────────────────────────────── */
-.ms-section-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  font-family: var(--font-body);
-  font-size: var(--font-size-xs);
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: var(--space-sm);
-}
-.ms-section-eyebrow::after {
-  content: '';
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--color-accent);
-}
-
-/* ── Service Detail ───────────────────────────────────────── */
-.ms-detail {
-  padding: var(--space-4xl) 0 var(--space-3xl);
-  background: var(--color-bg);
-}
-.ms-detail-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-3xl);
-  align-items: center;
-}
-.ms-detail-content { order: 1; }
-.ms-detail-image   { order: 2; }
-.ms-detail h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700;
-  line-height: 1.15;
-  text-wrap: balance;
-  letter-spacing: -0.02em;
-  color: var(--color-primary);
-  margin-bottom: var(--space-lg);
-}
-.ms-detail p {
-  font-size: var(--font-size-base);
-  color: var(--color-text-light);
-  line-height: 1.7;
-  max-width: 65ch;
-  margin-bottom: var(--space-md);
-}
-.ms-detail p:last-of-type { margin-bottom: var(--space-xl); }
-.ms-updated {
-  font-size: var(--font-size-sm);
-  color: var(--color-gray);
-  font-style: italic;
-}
-.ms-image-frame {
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-xl);
-}
-.ms-image-frame::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border: 3px solid rgba(var(--color-accent-rgb), 0.25);
-  border-radius: var(--radius-lg);
-  z-index: 2;
-  pointer-events: none;
-}
-.ms-image-frame picture img {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  display: block;
-  transition: transform var(--transition-slow);
-}
-.ms-image-frame:hover picture img { transform: scale(1.03); }
-.ms-image-badge {
-  position: absolute;
-  bottom: var(--space-lg);
-  left: var(--space-lg);
-  background: var(--color-accent);
-  color: var(--color-bg-dark);
-  font-family: var(--font-heading);
-  font-size: var(--font-size-sm);
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: var(--space-xs) var(--space-md);
-  border-radius: var(--radius-sm);
-  z-index: 3;
-  box-shadow: var(--shadow-md);
-}
-.ms-btn-detail {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: var(--color-primary);
-  color: #ffffff;
-  font-family: var(--font-heading);
-  font-size: var(--font-size-base);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: var(--space-md) var(--space-xl);
-  border-radius: var(--radius-md);
-  box-shadow: 0 4px 0 var(--color-primary-dark);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  overflow: hidden;
-  position: relative;
-}
-.ms-btn-detail:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--color-primary-dark); }
-.ms-btn-detail:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--color-primary-dark); }
-
-/* ── SIGNATURE: Stats Band ────────────────────────────────── */
-.ms-stats-band {
-  background: var(--color-bg-dark);
-  padding: var(--space-3xl) 0;
-  position: relative;
-  overflow: hidden;
-}
-.ms-stats-band::before {
-  content: '';
-  position: absolute;
-  top: -60px; left: -60px;
-  width: 320px; height: 320px;
-  border-radius: 50%;
-  background: rgba(var(--color-accent-rgb), 0.06);
-  pointer-events: none;
-}
-.ms-stats-band::after {
-  content: '';
-  position: absolute;
-  bottom: -80px; right: -40px;
-  width: 400px; height: 400px;
-  border-radius: 50%;
-  background: rgba(var(--color-accent-rgb), 0.04);
-  pointer-events: none;
-}
-.ms-stats-inner { position: relative; z-index: 1; }
-.ms-stats-label {
-  text-align: center;
-  font-family: var(--font-body);
-  font-size: var(--font-size-sm);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: var(--space-2xl);
-}
-.ms-stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-xl);
-}
-.ms-stat-item {
-  text-align: center;
-  padding: var(--space-xl);
-  border: 1px solid rgba(var(--color-accent-rgb), 0.15);
-  border-radius: var(--radius-lg);
-  background: rgba(255,255,255,0.03);
-  transition: border-color var(--transition-base), background var(--transition-base);
-}
-.ms-stat-item:hover {
-  border-color: rgba(var(--color-accent-rgb), 0.35);
-  background: rgba(var(--color-accent-rgb), 0.05);
-}
-.ms-stat-number {
-  font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
-  font-weight: 700;
-  color: var(--color-accent);
-  line-height: 1;
-  margin-bottom: var(--space-xs);
-  letter-spacing: -0.02em;
-}
-.ms-stat-label {
-  font-size: var(--font-size-sm);
-  color: rgba(255,255,255,0.65);
-  line-height: 1.4;
-  max-width: 18ch;
-  margin: 0 auto;
-}
-
-/* ── Mid CTA Banner ───────────────────────────────────────── */
-.ms-cta-mid {
-  position: relative;
-  padding: var(--space-3xl) 0;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-  overflow: hidden;
-}
-.ms-cta-mid::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 0;
-}
-.ms-cta-mid .container { position: relative; z-index: 1; text-align: center; }
-.ms-cta-eyebrow {
-  display: inline-block;
-  font-family: var(--font-body);
-  font-size: var(--font-size-sm);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: var(--space-sm);
-}
-.ms-cta-mid h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
-  font-weight: 700;
-  text-wrap: balance;
-  letter-spacing: -0.02em;
-  color: #ffffff;
-  margin-bottom: var(--space-md);
-}
-.ms-cta-mid > .container > p {
-  font-size: var(--font-size-lg);
-  color: rgba(255,255,255,0.8);
-  max-width: 55ch;
-  margin: 0 auto var(--space-xl);
-  line-height: 1.6;
-}
-.ms-cta-actions {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: var(--space-md);
-  flex-wrap: wrap;
-}
-.ms-btn-cta-phone {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: #ffffff;
-  color: var(--color-primary-dark);
-  font-family: var(--font-heading);
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
-  font-weight: 700;
-  padding: var(--space-md) var(--space-xl);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  overflow: hidden;
-  position: relative;
-}
-.ms-btn-cta-phone:hover { transform: translateY(-2px); box-shadow: var(--shadow-xl); }
-.ms-btn-cta-est {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: var(--color-accent);
-  color: var(--color-bg-dark);
-  font-family: var(--font-heading);
-  font-size: var(--font-size-base);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: var(--space-md) var(--space-xl);
-  border-radius: var(--radius-md);
-  box-shadow: 0 4px 0 var(--color-accent-dark);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  overflow: hidden;
-  position: relative;
-}
-.ms-btn-cta-est:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--color-accent-dark); }
-.ms-btn-cta-est:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--color-accent-dark); }
-
-/* ── Why Choose ───────────────────────────────────────────── */
-.ms-why {
-  padding: var(--space-4xl) 0;
-  background: var(--color-bg-alt);
-}
-.ms-why-header { text-align: center; margin-bottom: var(--space-3xl); }
-.ms-why h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700;
-  text-wrap: balance;
-  letter-spacing: -0.02em;
-  color: var(--color-primary);
-  margin-bottom: var(--space-sm);
-}
-.ms-why .sub {
-  font-size: var(--font-size-lg);
-  color: var(--color-text-light);
-  max-width: 55ch;
-  margin: 0 auto;
-}
-.ms-why-cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-lg);
-}
-.ms-why-card {
-  background: var(--color-bg);
-  border-radius: var(--radius-lg);
-  padding: var(--space-xl) var(--space-lg);
-  box-shadow: var(--shadow-card);
-  transition: transform var(--transition-base), box-shadow var(--transition-base), background var(--transition-base);
-  position: relative;
-  overflow: hidden;
-}
-.ms-why-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: var(--color-accent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--transition-base);
-}
-.ms-why-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-xl); background: var(--color-primary); }
-.ms-why-card:hover::before { transform: scaleX(1); }
-.ms-why-card:hover .ms-why-title,
-.ms-why-card:hover .ms-why-text { color: rgba(255,255,255,0.9); }
-.ms-why-card:hover .ms-why-icon {
-  background: rgba(var(--color-accent-rgb), 0.2);
-  color: var(--color-accent);
-}
-.ms-why-icon {
-  width: 52px; height: 52px;
-  border-radius: var(--radius-md);
-  background: rgba(var(--color-accent-rgb), 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-accent);
-  margin-bottom: var(--space-md);
-  transition: background var(--transition-base), color var(--transition-base);
-}
-.ms-why-title {
-  font-family: var(--font-heading);
-  font-size: var(--font-size-xl);
-  font-weight: 600;
-  text-wrap: balance;
-  color: var(--color-primary);
-  margin-bottom: var(--space-sm);
-  transition: color var(--transition-base);
-}
-.ms-why-text {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-light);
-  line-height: 1.6;
-  transition: color var(--transition-base);
-}
-
-/* ── Process ──────────────────────────────────────────────── */
-.ms-process {
-  padding: var(--space-4xl) 0;
-  background: var(--color-bg);
-}
-.ms-process-header { text-align: center; margin-bottom: var(--space-3xl); }
-.ms-process h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700;
-  text-wrap: balance;
-  letter-spacing: -0.02em;
-  color: var(--color-primary);
-  margin-bottom: var(--space-sm);
-}
-.ms-process .sub {
-  font-size: var(--font-size-lg);
-  color: var(--color-text-light);
-  max-width: 55ch;
-  margin: 0 auto;
-}
-.ms-process-steps {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-lg);
-  position: relative;
-}
-.ms-process-steps::before {
-  content: '';
-  position: absolute;
-  top: 32px;
-  left: calc(12.5% + 26px);
-  right: calc(12.5% + 26px);
-  height: 2px;
-  background: linear-gradient(to right, var(--color-accent), rgba(var(--color-accent-rgb), 0.2));
-  pointer-events: none;
-}
-.ms-step { text-align: center; padding: var(--space-lg); }
-.ms-step-num {
-  width: 64px; height: 64px;
-  border-radius: 50%;
-  background: var(--color-primary);
-  color: #ffffff;
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto var(--space-md);
-  position: relative;
-  z-index: 1;
-  border: 3px solid rgba(var(--color-accent-rgb), 0.3);
-  transition: background var(--transition-base), border-color var(--transition-base);
-}
-.ms-step:hover .ms-step-num {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
-  color: var(--color-bg-dark);
-}
-.ms-step-title {
-  font-family: var(--font-heading);
-  font-size: var(--font-size-lg);
-  font-weight: 600;
-  text-wrap: balance;
-  color: var(--color-primary);
-  margin-bottom: var(--space-sm);
-}
-.ms-step-desc {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-light);
-  line-height: 1.6;
-  max-width: 22ch;
-  margin: 0 auto;
-}
-
-/* ── FAQ ──────────────────────────────────────────────────── */
-.ms-faq {
-  padding: var(--space-4xl) 0;
-  background: var(--color-bg-alt);
-}
-.ms-faq-header { text-align: center; margin-bottom: var(--space-3xl); }
-.ms-faq h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700;
-  text-wrap: balance;
-  letter-spacing: -0.02em;
-  color: var(--color-primary);
-  margin-bottom: var(--space-sm);
-}
-.ms-faq .sub {
-  font-size: var(--font-size-lg);
-  color: var(--color-text-light);
-  max-width: 55ch;
-  margin: 0 auto;
-}
-.ms-faq-list {
-  max-width: 800px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-}
-.ms-faq-item {
-  background: var(--color-bg);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(var(--color-primary-rgb), 0.08);
-  overflow: hidden;
-}
-.ms-faq-item summary {
-  padding: var(--space-lg) var(--space-xl);
-  font-family: var(--font-heading);
-  font-size: var(--font-size-lg);
-  font-weight: 600;
-  text-wrap: balance;
-  color: var(--color-primary);
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--space-md);
-  list-style: none;
-  transition: color var(--transition-fast);
-}
-.ms-faq-item summary::-webkit-details-marker { display: none; }
-.ms-faq-item summary::after {
-  content: '+';
-  font-size: 1.4rem;
-  color: var(--color-accent);
-  flex-shrink: 0;
-  transition: transform var(--transition-base);
-}
-.ms-faq-item[open] summary::after { transform: rotate(45deg); }
-.ms-faq-item[open] summary { color: var(--color-accent); }
-.ms-faq-answer {
-  padding: 0 var(--space-xl) var(--space-lg);
-  font-size: var(--font-size-base);
-  color: var(--color-text-light);
-  line-height: 1.7;
-  max-width: 65ch;
-}
-
-/* ── Closing CTA ──────────────────────────────────────────── */
-.ms-closing {
-  padding: var(--space-4xl) 0;
-  background: var(--color-bg);
-  text-align: center;
-}
-.ms-closing h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700;
-  text-wrap: balance;
-  letter-spacing: -0.02em;
-  color: var(--color-primary);
-  margin-bottom: var(--space-md);
-}
-.ms-closing p {
-  font-size: var(--font-size-lg);
-  color: var(--color-text-light);
-  max-width: 55ch;
-  margin: 0 auto var(--space-xl);
-  line-height: 1.6;
-}
-.ms-closing-actions {
-  display: flex;
-  justify-content: center;
-  gap: var(--space-md);
-  flex-wrap: wrap;
-}
-.ms-btn-closing-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: var(--color-accent);
-  color: var(--color-bg-dark);
-  font-family: var(--font-heading);
-  font-size: var(--font-size-lg);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: var(--space-md) var(--space-2xl);
-  border-radius: var(--radius-md);
-  box-shadow: 0 4px 0 var(--color-accent-dark);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  overflow: hidden;
-  position: relative;
-}
-.ms-btn-closing-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--color-accent-dark); }
-.ms-btn-closing-phone {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  background: var(--color-primary);
-  color: #ffffff;
-  font-family: var(--font-heading);
-  font-size: var(--font-size-lg);
-  font-weight: 700;
-  padding: var(--space-md) var(--space-2xl);
-  border-radius: var(--radius-md);
-  box-shadow: 0 4px 0 var(--color-primary-dark);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  overflow: hidden;
-  position: relative;
-}
-.ms-btn-closing-phone:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--color-primary-dark); }
-
-/* ── Responsive ───────────────────────────────────────────── */
-@media (max-width: 1023px) {
-  .ms-stats-grid    { grid-template-columns: repeat(2, 1fr); }
-  .ms-why-cards     { grid-template-columns: repeat(2, 1fr); }
-  .ms-process-steps { grid-template-columns: repeat(2, 1fr); }
-  .ms-process-steps::before { display: none; }
-}
-@media (max-width: 767px) {
-  .ms-detail-grid   { grid-template-columns: 1fr; }
-  .ms-detail-image  { order: -1; }
-  .ms-image-frame picture img { height: 280px; }
-  .ms-stats-grid    { grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
-  .ms-why-cards     { grid-template-columns: 1fr; }
-  .ms-process-steps { grid-template-columns: 1fr; }
-  .ms-hero-ctas     { flex-direction: column; align-items: flex-start; }
-}
-</style>
-
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php'; ?>
-
-  <!-- ── Breadcrumb ─────────────────────────────────────────── -->
-  <nav class="svc-breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol class="breadcrumb-list">
-        <li><a href="/">Home</a></li>
-        <li aria-hidden="true"><span class="breadcrumb-sep">›</span></li>
-        <li><a href="/services">Services</a></li>
-        <li aria-hidden="true"><span class="breadcrumb-sep">›</span></li>
-        <li class="current" aria-current="page">Mulching Services</li>
-      </ol>
-    </div>
-  </nav>
-
-  <!-- ── Inner Hero ─────────────────────────────────────────── -->
-  <section class="ms-hero" aria-label="Mulching Services">
-    <div class="container ms-hero-inner">
-      <span class="ms-eyebrow">
-        <i data-lucide="layers" aria-hidden="true" style="width:14px;height:14px;"></i>
-        Mulch Installation &amp; Bed Refresh
-      </span>
-      <h1>Mulching Services in Edgerton, WI — Professional Mulch Installation</h1>
-      <p class="ms-hero-sub">Mulch installed at the correct 2–3 inch depth from $65/yard — delivery and spreading in one visit, no volcano mulching, debris removed same day. Serving Edgerton and Rock County since 2021.</p>
-      <div class="ms-hero-ctas">
-        <a href="tel:6085015123" class="ms-btn-primary">
-          <i data-lucide="phone" aria-hidden="true" style="width:18px;height:18px;"></i>
-          Call (608) 501-5123
-        </a>
-        <a href="/contact" class="ms-btn-secondary">Get a Free Estimate</a>
+<section class="hero hero--photo svc-hero" aria-label="Mulching services in Edgerton, WI">
+  <div class="hero-bg"><?php echo picture('mulched-bed-edging-lawn-border', 'Long mulched garden bed with new edging running along a mowed lawn and a line of trees', '100vw', ['eager' => true, 'class' => 'hero-img']); ?></div>
+  <div class="hero-overlay"></div>
+  <span class="grain" aria-hidden="true"></span>
+  <div class="container hero-grid hero-grid--form">
+    <div class="hero-text">
+      <?php echo breadcrumbs([['Home', '/'], ['Services', '/services/'], ['Mulching Services', '/services/mulching-services/']]); ?>
+      <span class="eyebrow">Bed Prep · Edging · Fresh Mulch</span>
+      <h1 class="hero-title">Mulching Services in Edgerton, WI</h1>
+      <p class="page-answer">RAH Solutions LLC weeds and edges planting beds, then spreads fresh mulch 2 to 4 inches deep and keeps it off trunks, stems and siding. The crew serves Edgerton and nearby towns, with free on-site estimates.</p>
+      <div class="hero-actions">
+        <button type="button" class="btn btn-accent btn-lg hero-form-open" data-open-estimate>Get a free mulch estimate</button>
+        <a class="link-call" href="<?php echo telHref(); ?>"><?php echo icon('phone', 18); ?> or call <?php echo e($phone); ?></a>
       </div>
-      <div class="ms-hero-trust">
-        <span class="ms-trust-item">
-          <i data-lucide="shield-check" aria-hidden="true"></i> Licensed &amp; Insured
-        </span>
-        <span class="ms-trust-item">
-          <i data-lucide="star" aria-hidden="true"></i> 4.9-Star Rated
-        </span>
-        <span class="ms-trust-item">
-          <i data-lucide="truck" aria-hidden="true"></i> Delivery + Install Same Visit
-        </span>
-      </div>
+      <p class="last-updated">Last updated: <?php echo date('F Y'); ?></p>
     </div>
-  </section>
+    <?php $heroFormId = 'hero-mulching-services'; $heroFormService = 'mulching-services'; $heroFormHeading = 'Get a free mulch estimate'; include $_SERVER['DOCUMENT_ROOT'] . '/includes/hero-form.php'; ?>
+  </div>
+</section>
 
-  <!-- ── Proof Ticker Strip ─────────────────────────────────── -->
-  <div class="ticker-strip" aria-hidden="true">
-    <div class="ticker-track">
-      <span class="ticker-item">Hardwood &amp; Cedar Mulch<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">2–3" Correct Depth Every Time<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Delivery + Install Same Day<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Licensed &amp; Insured<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Free Estimates<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Edgerton · Stoughton · Madison · Janesville<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">60–75% Weed Reduction<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">No Volcano Mulching<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Hardwood &amp; Cedar Mulch<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">2–3" Correct Depth Every Time<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Delivery + Install Same Day<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Licensed &amp; Insured<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Free Estimates<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">Edgerton · Stoughton · Madison · Janesville<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">60–75% Weed Reduction<span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">No Volcano Mulching<span class="ticker-sep">✦</span></span>
+<section class="section svc-intro" aria-labelledby="intro-h2">
+  <div class="container svc-layout">
+    <div class="svc-body">
+      <p class="identity-line"><strong>RAH Solutions LLC</strong> is a licensed and insured, family-owned landscaper based in Edgerton, Wisconsin. Started by Robert Harried in 2023, it serves Rock and Dane County homes and businesses.</p>
+      <h2 id="intro-h2">What does a mulching visit from RAH Solutions include?</h2>
+      <div class="answer-block">
+        <h3>Short answer</h3>
+        <p>RAH Solutions LLC prepares the bed before any mulch goes down: weeds pulled, leaves and sticks cleared, and the edge cut or set. Mulch is then spread to an even 2 to 4 inches, pulled back from trunks and stems, and the lawn and hard surfaces are cleaned up. Estimates are free.</p>
+      </div>
+      <p>Mulch does three jobs. It shades the soil so fewer weed seeds sprout. It slows evaporation, so beds need less watering in July. And it evens out soil temperature, which matters in a climate where the ground freezes and thaws many times each winter.</p>
+      <p>Most calls for mulching near me in Edgerton come in spring, when last year’s layer has faded and thinned and weeds are starting. Fresh mulch on top of weeds does not fix that. The weeds grow through within weeks. That is why the visit starts with bed preparation and why the estimate lists it separately from the mulch itself.</p>
+      <p>Mulching is often the last step of a larger job. It follows a <a href="/services/spring-yard-cleanup/">spring yard cleanup</a>, or it finishes a new bed built under <a href="/services/landscape-installation/">landscape installation</a>. It can also be booked on its own.</p>
+    </div>
+    <aside class="svc-rail" aria-label="On this page">
+      <nav class="svc-toc" aria-label="Page sections">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#types-h2">What we mulch</a></li>
+          <li><a href="#cond-h2">Depth and timing</a></li>
+          <li><a href="#amount-h2">How much mulch?</a></li>
+          <li><a href="#steps-h2">How a visit works</a></li>
+          <li><a href="#gallery-h2">Job photos</a></li>
+          <li><a href="#faq-h2">Mulch FAQ</a></li>
+        </ol>
+      </nav>
+      <div class="svc-callcard">
+        <strong>Beds ready for fresh mulch?</strong>
+        <p><?php echo e($hoursLong); ?></p>
+        <a class="btn btn-accent" href="<?php echo telHref(); ?>"><?php echo icon('phone', 18); ?> <?php echo e($phone); ?></a>
+        <button type="button" class="btn btn-outline-white" data-open-estimate>Request an estimate</button>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section svc-types" aria-labelledby="types-h2">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <span class="eyebrow-label">What we mulch</span>
+      <h2 id="types-h2">Which mulching work does RAH Solutions do?</h2>
+      <p>RAH Solutions LLC mulches home and commercial planting beds around Edgerton, and does the preparation that makes the mulch work.</p>
+    </div>
+    <div class="type-grid" data-p1-dynamic>
+      <article class="type-card reveal-up reveal-delay-1">
+        <span class="type-card__icon"><?php echo icon('leaf', 22); ?></span>
+        <h3>Bed preparation</h3>
+        <p>Weeds are pulled with their roots, and leaves, sticks and dead stems are cleared. Old mulch that has matted into a crust is broken up.</p>
+      </article>
+      <article class="type-card reveal-up reveal-delay-2">
+        <span class="type-card__icon"><?php echo icon('ruler', 22); ?></span>
+        <h3>Edging</h3>
+        <p>A fresh spade-cut edge or installed edging gives the mulch something to stop against, so it stays in the bed and the grass stays out.</p>
+      </article>
+      <article class="type-card reveal-up reveal-delay-3">
+        <span class="type-card__icon"><?php echo icon('paint-bucket', 22); ?></span>
+        <h3>Shredded wood mulch</h3>
+        <p>The usual choice for planted beds. Shredded hardwood and bark knit together and stay put on a slope, in natural or dyed colors.</p>
+      </article>
+      <article class="type-card reveal-up reveal-delay-1">
+        <span class="type-card__icon"><?php echo icon('trees', 22); ?></span>
+        <h3>Tree rings</h3>
+        <p>A flat ring of mulch around a tree keeps mowers and string trimmers away from the bark. It is spread wide and kept off the trunk.</p>
+      </article>
+      <article class="type-card reveal-up reveal-delay-2">
+        <span class="type-card__icon"><?php echo icon('mountain', 22); ?></span>
+        <h3>Decorative stone</h3>
+        <p>Stone does not break down or need a yearly top-up. It suits foundation strips, drip lines and beds beside a driveway more than beds full of perennials.</p>
+      </article>
+      <article class="type-card reveal-up reveal-delay-3">
+        <span class="type-card__icon"><?php echo icon('building-2', 22); ?></span>
+        <h3>Commercial beds</h3>
+        <p>Entrance beds, sign plantings and parking lot islands at businesses, refreshed so the front of the property looks cared for.</p>
+      </article>
     </div>
   </div>
+</section>
 
-  <!-- ── Divider ────────────────────────────────────────────── -->
-  <div class="divider-wrap" aria-hidden="true">
-    <svg viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="0,0 1200,40 1200,40 0,40" fill="#ffffff"/>
-    </svg>
+<section class="section svc-conditions texture-grain edge-facet-top" aria-labelledby="cond-h2">
+  <span class="grain-layer" aria-hidden="true"></span>
+  <div class="container">
+    <div class="cond-head reveal-left">
+      <span class="eyebrow-label">Getting it right</span>
+      <h2 id="cond-h2">How deep should mulch go, and when should it be spread?</h2>
+      <p>Mulch belongs 2 to 4 inches deep, and it can be spread whenever the ground is not frozen. RAH Solutions LLC checks four things on every bed.</p>
+    </div>
+    <ul class="cond-list">
+      <li class="reveal-up"><span><?php echo icon('layers', 22); ?></span><b>Total depth, old and new</b><p>The 2 to 4 inches includes what is already in the bed. A bed that still has an inch or two only needs a thin layer on top.</p></li>
+      <li class="reveal-up"><span><?php echo icon('trees', 22); ?></span><b>Clear of trunks and stems</b><p>Mulch is pulled back from tree trunks, shrub stems and perennial crowns. Piled against bark, it holds moisture where the plant needs to stay dry.</p></li>
+      <li class="reveal-up"><span><?php echo icon('droplets', 22); ?></span><b>Wet soil underneath</b><p>Many local yards have silt loam over clay that drains slowly. In beds that stay wet, mulch goes on thinner so the soil can dry between rains.</p></li>
+      <li class="reveal-up"><span><?php echo icon('calendar', 22); ?></span><b>Season</b><p>Spring mulch works best after cleanup and once the soil has begun to warm. Fall mulch protects new plantings through winter freezing and thawing.</p></li>
+    </ul>
   </div>
+</section>
 
-  <!-- ── Service Detail Section ─────────────────────────────── -->
-  <section class="ms-detail" data-animate="fade-up">
-    <div class="container">
-      <div class="ms-detail-grid">
-        <div class="ms-detail-content">
-          <span class="ms-section-eyebrow">What We Do</span>
-          <h2>What Is Mulch Applied at the <span class="text-accent">Right Depth</span> to Protect Your Beds?</h2>
-
-          <p>Mulch installation in Edgerton starts at $65 per yard installed, which includes delivery and spreading — no separate delivery charge, no drop-and-go bags left for you to spread. A typical residential property with 400–600 sq ft of bed area needs 4–6 yards, totaling $260–$390 for the full install. We measure your beds during the estimate visit and calculate the exact quantity needed.</p>
-
-          <p>The 2–3 inch depth is not arbitrary — it's where mulch performs its three main functions simultaneously. Below 2 inches, weed seeds germinate through and light suppression fails. Above 3 inches, mulch holds moisture against plant crowns and can cause crown rot, particularly on perennials and shrubs. Proper mulch cuts weed emergence by 60–75% compared to unmulched beds and reduces supplemental watering needs by 25–30% during dry summer stretches — measurable results that protect both your plants and your time.</p>
-
-          <p>Mulch type matters for Wisconsin properties. Shredded hardwood is the standard choice — it knits together over the season, locks in place during wind events, and decomposes into soil amendment over 12–18 months. Cedar mulch is the premium option: slower decomposition, natural moisture resistance, and natural pest-deterrent properties that are worth the cost increase in areas with higher slug or grub pressure. Dyed black and red mulch look sharp on installation day but fade within one season; we're upfront about that so you can make an informed decision on aesthetics vs. longevity.</p>
-
-          <p>One of the most common and damaging mistakes we see in Edgerton yards is volcano mulching — piling mulch up against tree trunks in a mound shape. This practice traps moisture against bark tissue that evolved to be exposed to air, causes slow decay of the cambium layer, invites fungal disease, and kills trees over 5–10 years. We always maintain a 2–3 inch gap around all tree bases and explain why to every client.</p>
-
-          <p>Spring is the optimal refresh window — after soil has warmed and before weed germination peaks in May. Annual refresh is all most beds need, topping up the previous year's decomposed layer back to the 2–3 inch ideal. We include edge cleanup before spreading so your beds look sharp and finished, not just covered in fresh mulch over ragged edges.</p>
-
-          <div class="answer-block">
-            <h3>How much does mulching cost in Edgerton, WI?</h3>
-            <p>Mulch installation in Edgerton starts at $65 per cubic yard installed, including delivery and spreading. Most residential properties need 4–6 yards applied at the correct 2–3 inch depth for effective moisture retention and weed suppression. Annual replenishment each spring maintains that protective layer as last year's mulch decomposes.</p>
-          </div>
-
-          <p class="ms-updated">Last Updated: May 2026 · Serving Edgerton, WI and surrounding Rock &amp; Dane County communities.</p>
-
-          <a href="/contact" class="ms-btn-detail">
-            <i data-lucide="clipboard-list" aria-hidden="true" style="width:18px;height:18px;"></i>
-            Request a Mulch Estimate
-          </a>
-        </div>
-
-        <div class="ms-detail-image">
-          <div class="ms-image-frame">
-            <picture>
-              <source srcset="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963880884-qw46fr-474382241_122209560170208320_4796638395126825561_n.jpg" type="image/webp">
-              <img
-                src="https://db.pageone.cloud/storage/v1/object/public/client-assets/r-a-h-solutions-llc/photos/1776963880884-qw46fr-474382241_122209560170208320_4796638395126825561_n.jpg"
-                alt="Professional mulch installation in landscape beds Edgerton Wisconsin Rock County"
-                width="600"
-                height="420"
-                loading="lazy"
-              >
-            </picture>
-            <span class="ms-image-badge">Edgerton, WI</span>
-          </div>
-        </div>
+<section class="section section--tight" aria-labelledby="amount-h2">
+  <div class="container">
+    <div class="svc-callout reveal-up">
+      <span><?php echo icon('pencil-ruler', 26); ?></span>
+      <div>
+        <h2 id="amount-h2">How much mulch does a bed need?</h2>
+        <p>RAH Solutions measures every bed during the estimate, but the rule is simple. <strong>One cubic yard of mulch covers about 108 square feet at 3 inches deep.</strong> Multiply the length of a bed by its width to get square feet, then divide by 108.</p>
+        <p>A bed 30 feet long and 6 feet wide is 180 square feet, which takes a little under two cubic yards for a full new layer. A top-up over existing mulch takes less. The <a href="/blog/how-much-mulch-do-i-need/">how much mulch do I need guide</a> covers curved beds, tree rings and bags versus bulk.</p>
       </div>
     </div>
-  </section>
-
-  <!-- ── Divider: bg → bg-dark (wave) ──────────────────────── -->
-  <div class="divider-wrap" aria-hidden="true">
-    <svg viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,40 C300,80 900,0 1200,40 L1200,80 L0,80 Z" fill="#0f1e2d"/>
-    </svg>
   </div>
+</section>
 
-  <!-- ── SIGNATURE: Stats Band ──────────────────────────────── -->
-  <section class="ms-stats-band" aria-label="Mulching service statistics">
-    <div class="container ms-stats-inner">
-      <p class="ms-stats-label">R.A.H. Solutions — Mulching by the Numbers</p>
-      <div class="ms-stats-grid">
-        <div class="ms-stat-item" data-animate="fade-up">
-          <div class="ms-stat-number">$65<span style="font-size:1.5rem;">/yd</span></div>
-          <div class="ms-stat-label">Installed price per yard, delivery included</div>
-        </div>
-        <div class="ms-stat-item" data-animate="fade-up">
-          <div class="ms-stat-number">2–3"</div>
-          <div class="ms-stat-label">Ideal depth on every installation</div>
-        </div>
-        <div class="ms-stat-item" data-animate="fade-up">
-          <div class="ms-stat-number">3+</div>
-          <div class="ms-stat-label">Years serving Edgerton and Rock County</div>
-        </div>
-        <div class="ms-stat-item" data-animate="fade-up">
-          <div class="ms-stat-number">4.9★</div>
-          <div class="ms-stat-label">Average rating across 47 customer reviews</div>
-        </div>
-      </div>
+<section class="section svc-steps" aria-labelledby="steps-h2">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <span class="eyebrow-label">The process</span>
+      <h2 id="steps-h2">How does a mulching job with RAH Solutions work?</h2>
+      <p>RAH Solutions LLC follows the same four steps on one front bed and on a whole property.</p>
     </div>
-  </section>
-
-  <!-- ── Divider: bg-dark → bg-alt (diagonal up) ───────────── -->
-  <div class="divider-wrap" aria-hidden="true">
-    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="0,60 1200,0 1200,60" fill="#f4f7f9"/>
-    </svg>
+    <ol class="step-track">
+      <?php foreach ($steps as $i => $s): ?>
+      <li class="reveal-up reveal-delay-<?php echo $i + 1; ?>"><h3><?php echo e($s[0]); ?></h3><p><?php echo e($s[1]); ?></p></li>
+      <?php endforeach; ?>
+    </ol>
   </div>
+</section>
 
-  <!-- ── Mid-Page CTA Banner ────────────────────────────────── -->
-  <section class="ms-cta-mid" aria-label="Schedule mulch installation">
-    <div class="container">
-      <p class="ms-cta-eyebrow">Spring Installs · Delivery + Spreading Same Day</p>
-      <h2>Why Does Spring Mulch Season Fill Up Quickly Around Edgerton?</h2>
-      <p>Don't wait until late May when spring schedules are maxed out. Book your mulch installation now — R.A.H. Solutions handles delivery and spreading in a single visit so your beds are done right and ready for the season.</p>
-      <div class="ms-cta-actions">
-        <a href="tel:6085015123" class="ms-btn-cta-phone">
-          <i data-lucide="phone" aria-hidden="true" style="width:20px;height:20px;"></i>
-          (608) 501-5123
-        </a>
-        <a href="/contact" class="ms-btn-cta-est">Get a Free Estimate</a>
-      </div>
+<section class="section svc-gallery" aria-labelledby="gallery-h2">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <span class="eyebrow-label">Recent mulch work</span>
+      <h2 id="gallery-h2">What does a bed mulched by RAH Solutions look like?</h2>
+      <p>These are RAH Solutions job photos: a long bed with mulch down and the edge set, and a perennial bed with edging laid out before the mulch goes on.</p>
     </div>
-  </section>
-
-  <!-- ── Divider: primary → bg-alt ─────────────────────────── -->
-  <div class="divider-wrap" aria-hidden="true">
-    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="0,0 1200,60 1200,60 0,60" fill="#f4f7f9"/>
-    </svg>
+    <div class="sp-gallery-grid sp-gallery-grid--two" data-p1-dynamic>
+      <figure class="sp-gallery-item reveal-scale"><?php echo picture('mulched-bed-edging-lawn-border', 'Freshly mulched bed with daylilies and a clean edging line beside a mowed lawn', '(max-width: 700px) 100vw, 55vw'); ?><figcaption>Mulch spread evenly up to a new edge</figcaption></figure>
+      <figure class="sp-gallery-item reveal-scale reveal-delay-1"><?php echo picture('perennial-bed-edging-layout', 'Perennial bed with daylilies and shrubs, a string line and edging laid along the lawn before mulching', '(max-width: 700px) 100vw, 40vw'); ?><figcaption>Before mulch: string line set, edging laid out</figcaption></figure>
+    </div>
   </div>
+</section>
 
-  <!-- ── Why Choose Section ─────────────────────────────────── -->
-  <section class="ms-why" data-animate="fade-up">
-    <div class="container">
-      <div class="ms-why-header">
-        <span class="ms-section-eyebrow">Why R.A.H. Solutions</span>
-        <h2>How Are Depth, Material, and <span class="text-accent">Method</span> All Done Correctly?</h2>
-        <p class="sub">Most mulch jobs fail on depth or technique. We bring all three factors to every install so your beds get the full protection mulch is supposed to provide.</p>
-      </div>
-      <div class="ms-why-cards">
-        <div class="ms-why-card" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.12">
-          <div class="ms-why-icon">
-            <i data-lucide="ruler" aria-hidden="true" style="width:24px;height:24px;"></i>
-          </div>
-          <h3 class="ms-why-title">Correct Depth Every Time</h3>
-          <p class="ms-why-text">2–3 inches, not approximate. Too thin and weeds push through. Too thick and plant crowns rot. We measure, not guess.</p>
-        </div>
-        <div class="ms-why-card" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.12">
-          <div class="ms-why-icon">
-            <i data-lucide="tree-pine" aria-hidden="true" style="width:24px;height:24px;"></i>
-          </div>
-          <h3 class="ms-why-title">Proper Volcano-Free Installation</h3>
-          <p class="ms-why-text">We never pile mulch against tree trunks. Every tree on your property gets a proper 2–3 inch gap to protect bark health and prevent slow crown decay.</p>
-        </div>
-        <div class="ms-why-card" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.12">
-          <div class="ms-why-icon">
-            <i data-lucide="shield" aria-hidden="true" style="width:24px;height:24px;"></i>
-          </div>
-          <h3 class="ms-why-title">Weed Barrier Prep Available</h3>
-          <p class="ms-why-text">We offer landscape fabric as an option where it makes sense — around trees, hardscape borders — with honest guidance on where it doesn't.</p>
-        </div>
-        <div class="ms-why-card" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.12">
-          <div class="ms-why-icon">
-            <i data-lucide="truck" aria-hidden="true" style="width:24px;height:24px;"></i>
-          </div>
-          <h3 class="ms-why-title">Delivery + Installation Same Visit</h3>
-          <p class="ms-why-text">No separate delivery fee and no bags piled at your curb. We arrive with the right material, spread it to the right depth, and leave your yard clean.</p>
-        </div>
-      </div>
+<section class="section svc-faq" aria-labelledby="faq-h2">
+  <div class="container faq-wrap">
+    <div class="section-head reveal-left">
+      <span class="eyebrow-label">FAQ</span>
+      <h2 id="faq-h2">What do people ask about mulching in Edgerton?</h2>
+      <p>Describe the beds on a call to <?php echo e($phone); ?> and Robert will tell you what to expect.</p>
     </div>
-  </section>
-
-  <!-- ── Divider: bg-alt → bg ───────────────────────────────── -->
-  <div class="divider-wrap" aria-hidden="true">
-    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="0,0 1200,60 1200,0" fill="#ffffff"/>
-    </svg>
+    <div><?php echo faqList($faqs, 2); ?></div>
   </div>
+</section>
 
-  <!-- ── Process Steps ──────────────────────────────────────── -->
-  <section class="ms-process" data-animate="fade-up">
-    <div class="container">
-      <div class="ms-process-header">
-        <span class="ms-section-eyebrow">How It Works</span>
-        <h2>What Are the Four Steps: Measured, Delivered, <span class="text-accent">Spread</span>, and Done?</h2>
-        <p class="sub">A fast, clean process that gets your beds mulched correctly and your property looking sharp — typically completed in a single visit.</p>
-      </div>
-      <div class="ms-process-steps">
-        <div class="ms-step">
-          <div class="ms-step-num">1</div>
-          <h3 class="ms-step-title">Bed Measurement &amp; Mulch Type Selection</h3>
-          <p class="ms-step-desc">We measure your beds, calculate exact yardage needed, and walk through material options — hardwood, cedar, or dyed.</p>
-        </div>
-        <div class="ms-step">
-          <div class="ms-step-num">2</div>
-          <h3 class="ms-step-title">Edge Cleanup Before Installation</h3>
-          <p class="ms-step-desc">We re-cut bed edges before mulching so the finished look is clean and sharp, not just covered over ragged borders.</p>
-        </div>
-        <div class="ms-step">
-          <div class="ms-step-num">3</div>
-          <h3 class="ms-step-title">Mulch Delivery &amp; Spreading</h3>
-          <p class="ms-step-desc">Material delivered and spread to 2–3 inch depth with proper technique — no volcano piling, no gaps along edges, even coverage throughout.</p>
-        </div>
-        <div class="ms-step">
-          <div class="ms-step-num">4</div>
-          <h3 class="ms-step-title">Final Raking &amp; Edging</h3>
-          <p class="ms-step-desc">Final rake pass for uniform depth, tuck-in along all bed borders, and cleanup of any mulch on lawn or hardscape surfaces.</p>
-        </div>
-      </div>
+<section class="section svc-related" aria-labelledby="related-h2">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <span class="eyebrow-label">More from RAH Solutions</span>
+      <h2 id="related-h2">Other Services You May Need</h2>
     </div>
-  </section>
-
-  <!-- ── Divider: bg → bg-alt (diagonal down) ──────────────── -->
-  <div class="divider-wrap" aria-hidden="true">
-    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="0,0 1200,60 1200,60 0,60" fill="#f4f7f9"/>
-    </svg>
+    <div class="services-grid" data-p1-dynamic>
+      <?php echo serviceCards(relatedServices(['spring-yard-cleanup', 'garden-maintenance', 'landscape-installation']), '(max-width: 560px) 100vw, 33vw'); ?>
+    </div>
+    <div class="town-links">
+      <h3>Mulching services near you</h3>
+      <ul>
+        <?php foreach (['edgerton-wi', 'milton-wi', 'janesville-wi', 'stoughton-wi', 'beloit-wi', 'fort-atkinson-wi'] as $tl): $ta = areaBySlug($tl); ?>
+        <li><a href="<?php echo areaHref($ta); ?>"><?php echo icon('map-pin', 14); ?> Mulching in <?php echo e($ta['name']); ?></a></li>
+        <?php endforeach; ?>
+      </ul>
+    </div>
   </div>
+</section>
 
-  <!-- ── FAQ Section ────────────────────────────────────────── -->
-  <section class="ms-faq" data-animate="fade-up">
-    <div class="container">
-      <div class="ms-faq-header">
-        <span class="ms-section-eyebrow">Common Questions</span>
-        <h2>What Are Mulching Questions Edgerton Homeowners Ask?</h2>
-        <p class="sub">Straight answers on quantity, material selection, timing, and what actually works in Wisconsin landscape beds.</p>
-      </div>
-      <div class="ms-faq-list">
-        <details class="ms-faq-item">
-          <summary>How much mulch do I need for my beds?</summary>
-          <div class="ms-faq-answer">
-            <p>To apply mulch at the correct 2–3 inch depth, you need approximately 1 cubic yard of mulch per 100 square feet of bed area. A typical residential property with 400–600 sq ft of bed area requires 4–6 yards of mulch per application. R.A.H. Solutions measures your beds during the estimate visit and calculates the exact quantity — no guessing and no waste.</p>
-          </div>
-        </details>
-        <details class="ms-faq-item">
-          <summary>What type of mulch is best for Wisconsin winters?</summary>
-          <div class="ms-faq-answer">
-            <p>Shredded hardwood mulch is the most widely used option in Rock County — it breaks down slowly, insulates well, and doesn't blow around during winter winds. Cedar mulch is a premium option that breaks down more slowly, resists moisture, and has natural pest-deterrent properties. Dyed mulches (black, red) look sharp but the colorant fades within one season. For winter root protection through Edgerton's -20°F lows, any of these materials at 2–3 inch depth is effective.</p>
-          </div>
-        </details>
-        <details class="ms-faq-item">
-          <summary>How often should mulch be refreshed?</summary>
-          <div class="ms-faq-answer">
-            <p>Most landscape beds in Edgerton benefit from a fresh mulch application once per year — spring is the optimal timing, after soil has warmed and before weed germination peaks. Annual refresh maintains the 2–3 inch protective depth as the previous year's mulch decomposes and compresses. If your existing mulch is still at adequate depth from last year, a lighter top-dress of 1–1.5 inches may be sufficient.</p>
-          </div>
-        </details>
-        <details class="ms-faq-item">
-          <summary>Do you install weed barrier fabric under mulch?</summary>
-          <div class="ms-faq-answer">
-            <p>We offer weed barrier installation as an optional add-on, but we're honest about its limitations: landscape fabric works well in low-maintenance areas around trees and in hardscape borders, but breaks down over 3–5 years in active planting beds and eventually creates more problems than it solves. For most ornamental beds, proper mulch depth (2–3 inches) refreshed annually provides better long-term weed suppression without the issues landscape fabric creates.</p>
-          </div>
-        </details>
-      </div>
-    </div>
-  </section>
+<?php $ctaBandId = 'band-mulching-services'; $ctaBandHeading = 'Get a written price for fresh mulch'; include $_SERVER['DOCUMENT_ROOT'] . '/includes/cta-band.php'; ?>
 
-  <!-- ── Divider: bg-alt → bg (diagonal up) ────────────────── -->
-  <div class="divider-wrap" aria-hidden="true">
-    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="0,60 1200,0 1200,60" fill="#ffffff"/>
-    </svg>
-  </div>
-
-  <!-- ── Closing CTA ────────────────────────────────────────── -->
-  <section class="ms-closing" data-animate="fade-up">
-    <div class="container">
-      <span class="ms-section-eyebrow" style="justify-content:center;">Book Your Spring Mulch Install</span>
-      <h2>How Do You Get Fresh Mulch at Correct Depth Done Right?</h2>
-      <p>Spring mulch slots fill up fast in Edgerton and Rock County. Call R.A.H. Solutions now — we'll measure your beds, give you a written estimate, and get you on the schedule before peak spring books out.</p>
-      <div class="ms-closing-actions">
-        <a href="tel:6085015123" class="ms-btn-closing-phone">
-          <i data-lucide="phone" aria-hidden="true" style="width:20px;height:20px;"></i>
-          (608) 501-5123
-        </a>
-        <a href="/contact" class="ms-btn-closing-primary">
-          <i data-lucide="clipboard-list" aria-hidden="true" style="width:20px;height:20px;"></i>
-          Get a Free Estimate
-        </a>
-      </div>
-    </div>
-  </section>
-
+</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>
