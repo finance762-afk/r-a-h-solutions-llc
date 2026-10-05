@@ -1,0 +1,329 @@
+/* ==========================================================================
+   post.css — blog posts (/blog/{slug}/).
+   Compact dark header with category + meta, featured photo, article
+   column + sticky TOC/CTA rail, answer-first lede, comparison tables,
+   callouts, FAQ, related services, related articles. Tokens only.
+   ========================================================================== */
+
+/* --- Header ------------------------------------------------------------------ */
+.post-hero {
+  padding-bottom: clamp(4.5rem, 9vw, 7rem);
+}
+.post-hero .breadcrumb {
+  color: color-mix(in srgb, var(--color-white) 72%, transparent);
+}
+.post-hero .container {
+  display: grid;
+  gap: .9rem;
+  max-width: 900px;
+}
+.post-hero h1 {
+  max-width: 24ch;
+}
+.post-cat {
+  display: inline-flex;
+  width: max-content;
+  padding: .3rem .75rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-accent);
+  font-size: .76rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--color-dark);
+  background: var(--color-accent);
+  text-decoration: none;
+}
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem 1.2rem;
+  font-size: .88rem;
+  color: color-mix(in srgb, var(--color-white) 76%, transparent);
+}
+.post-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+}
+.post-meta svg {
+  color: var(--color-accent-bright);
+}
+
+/* --- Featured image (overlaps the header) ---------------------------------- */
+.post-feature {
+  margin-top: clamp(-4rem, -7vw, -2.5rem);
+  position: relative;
+  z-index: 2;
+}
+.post-feature figure {
+  margin: 0;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 21 / 9;
+  background: var(--color-paper-2);
+}
+.post-feature picture,
+.post-feature img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 700px) {
+  .post-feature figure {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* --- Article layout ----------------------------------------------------------- */
+.post-wrap {
+  padding-block: clamp(2rem, 5vw, 3.5rem) var(--section-pad);
+}
+.post-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 290px);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+.post-body {
+  max-width: var(--measure);
+  font-size: 1.06rem;
+  line-height: 1.72;
+}
+.post-body > p {
+  margin: 0 0 1.1rem;
+  color: var(--color-ink-2);
+}
+.post-body h2 {
+  margin: 2.4rem 0 .8rem;
+  scroll-margin-top: calc(var(--nav-height) + 1rem);
+}
+.post-body h3 {
+  margin: 1.6rem 0 .5rem;
+  font-size: 1.12rem;
+}
+.post-body ul,
+.post-body ol {
+  margin: 0 0 1.2rem;
+  color: var(--color-ink-2);
+}
+.post-body li {
+  margin-bottom: .4rem;
+}
+.post-body a {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .15em;
+}
+.post-lede {
+  font-size: var(--fs-lead);
+  line-height: 1.6;
+  color: var(--color-ink);
+  padding: 1.1rem 1.3rem;
+  border-radius: var(--radius-lg);
+  background: var(--color-card-tint-1);
+  border-left: 4px solid var(--color-primary);
+  margin: 0 0 1.6rem;
+}
+.post-lede strong {
+  color: var(--color-secondary);
+}
+.post-callout {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: .9rem;
+  padding: 1.1rem 1.2rem;
+  margin: 1.4rem 0;
+  border-radius: var(--radius-lg);
+  background: var(--color-card-tint-3);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 35%, var(--color-line));
+  font-size: .98rem;
+}
+.post-callout > span {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: var(--color-accent);
+  color: var(--color-ink);
+}
+.post-callout p {
+  margin: 0;
+  color: var(--color-ink-2);
+}
+.post-table-wrap {
+  overflow-x: auto;
+  margin: 1.2rem 0 1.6rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-line);
+}
+.post-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .94rem;
+  min-width: 520px;
+}
+.post-table th,
+.post-table td {
+  text-align: left;
+  padding: .75rem .9rem;
+  border-bottom: 1px solid var(--color-line);
+  vertical-align: top;
+}
+.post-table thead th {
+  font-family: var(--font-accent);
+  font-size: .8rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  background: var(--color-secondary);
+}
+.post-table tbody tr:nth-child(even) {
+  background: var(--color-paper);
+}
+.post-table tbody th {
+  color: var(--color-ink);
+  font-weight: 700;
+}
+.post-checklist {
+  list-style: none;
+  padding: 0;
+}
+.post-checklist li {
+  position: relative;
+  padding-left: 1.8rem;
+}
+.post-checklist li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .45em;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 4px;
+  border: 2px solid var(--color-primary);
+  background: var(--color-card-tint-1);
+}
+
+/* --- Sidebar rail ------------------------------------------------------------ */
+.post-rail {
+  position: sticky;
+  top: calc(var(--nav-height) + 1.25rem);
+  display: grid;
+  gap: 1rem;
+}
+.post-toc {
+  padding: 1.1rem 1.2rem;
+  border-radius: var(--radius-lg);
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+}
+.post-toc h2 {
+  font-family: var(--font-accent);
+  font-size: .8rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--color-accent-dark);
+  margin-bottom: .5rem;
+}
+.post-toc ol {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: .35rem;
+  font-size: .9rem;
+}
+.post-toc a {
+  color: var(--color-ink-2);
+  text-decoration: none;
+}
+.post-toc a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+.post-cta {
+  display: grid;
+  gap: .6rem;
+  padding: 1.25rem;
+  border-radius: var(--radius-lg);
+  color: var(--color-white);
+  background: linear-gradient(150deg, var(--color-secondary), var(--color-primary-deep));
+}
+.post-cta p {
+  margin: 0;
+  font-size: .92rem;
+  color: color-mix(in srgb, var(--color-white) 85%, transparent);
+}
+.post-cta .btn {
+  width: 100%;
+}
+@media (max-width: 900px) {
+  .post-layout {
+    grid-template-columns: 1fr;
+  }
+  .post-rail {
+    position: static;
+    order: -1;
+  }
+  .post-toc {
+    display: none;
+  }
+}
+
+/* --- FAQ in posts ------------------------------------------------------------ */
+.post-faq {
+  margin-top: 2.6rem;
+}
+.post-faq .faq-answer a {
+  color: var(--color-primary);
+}
+
+/* --- Related services + articles ------------------------------------------ */
+.post-related {
+  background: var(--color-paper-2);
+}
+.related-svc {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: .8rem;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+.related-svc a {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  color: var(--color-ink);
+  font-weight: 700;
+  text-decoration: none;
+  transition: border-color .2s var(--ease), transform .2s var(--ease);
+}
+.related-svc a:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+.related-svc a svg {
+  color: var(--color-primary);
+  flex: 0 0 auto;
+}
+.post-related .blog-grid .blog-card {
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.post-related .blog-grid .blog-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+.post-related .blog-card__image picture {
+  height: 100%;
+}
+
+/* --- RAH: sources line, leaf-green category, teal links ------------------------------- */
+.post-sources { font-size: .85rem; color: var(--color-muted); border-top: 1px solid var(--color-line); padding-top: 1rem; margin-top: 2rem; }
+.post-body a { color: var(--color-primary); }
+.post-feature figure picture, .post-feature figure img { width: 100%; }
+.post-feature figure img { aspect-ratio: 21 / 9; object-fit: cover; }

@@ -13,7 +13,7 @@
  * owner gets in the "profile claimed" email). Variables are $pp-prefixed (shared-include variable rule).
  */
 $ppSlug = isset($partnerProfileSlug) && $partnerProfileSlug !== '' ? (string) $partnerProfileSlug : 'r-a-h-solutions-llc-edgerton-wi';
-$ppName = isset($partnerProfileName) && $partnerProfileName !== '' ? (string) $partnerProfileName : 'R.A.H. Solutions, LLC';
+$ppName = isset($partnerProfileName) && $partnerProfileName !== '' ? (string) $partnerProfileName : 'RAH Solutions LLC';
 if (strpos($ppSlug, '__') === false && preg_match('/^[a-z0-9-]{3,160}$/', $ppSlug)):
   $ppNameEsc = htmlspecialchars(strpos($ppName, '__') === false ? $ppName : 'This business', ENT_QUOTES, 'UTF-8');
 ?>

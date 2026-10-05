@@ -9,7 +9,7 @@ Calvin (5 Oct): "RAH Solutions website is super old and we need to bring it up t
 standards including improving the logo."
 
 Client: Robert Harried, owner. Landscaper in Edgerton, WI (lawn care, landscaping, hardscape, concrete,
-excavating, snow removal). Deal is active at $199/mo. Keep the brand, the facts and every existing URL;
+excavating, snow removal). Client pays $399/mo (Calvin, 5 Oct: "we want to give him the highest quality possible with included blogs"): treat this as a top-tier account, no shortcuts on design polish, copy depth or the blog. Keep the brand, the facts and every existing URL;
 raise the design, the content depth and the technical standard.
 
 ## What to build
@@ -143,11 +143,11 @@ class is fine). Inline `width`/`height`. Generate `favicon.svg`, `favicon.png` (
   review stop in `build-phases.md` is waived for this run: build Edgerton first, check it yourself
   against the rule, then do the rest.
 - `/about/`, `/contact/`, `/faq/` (new), `/thank-you/`, the four legal pages (same slugs), `404.php`.
-- `/blog/` with `includes/blog-data.php` registry + 6 posts (≥ 900 words, answer-first, FAQ, Related
+- `/blog/` with `includes/blog-data.php` registry + 8 posts (≥ 1,000 words, answer-first, FAQ, Related
   Services/Articles) on what a homeowner here searches before hiring: when to aerate and overseed in
   southern Wisconsin, spring yard cleanup checklist, how much mulch you need and when to lay it, sod vs
   seed for a new lawn, concrete steps: repair or replace after freeze–thaw, what to ask before signing a
-  snow removal contract. No invented prices or statistics; cite UW–Madison Extension or other primary
+  snow removal contract, a month-by-month lawn care calendar for southern Wisconsin (pillar post, links to the others), and paver patio vs poured concrete in a freeze–thaw climate. No invented prices or statistics; cite UW–Madison Extension or other primary
   sources where a fact needs one.
 - `sitemap.php` (dynamic, images included) + `.htaccess` rewrite for `/sitemap.xml`; delete the static
   `sitemap.xml` and `sitemap-images.xml` once the rewrite is in place; `robots.txt` with the Sitemap
