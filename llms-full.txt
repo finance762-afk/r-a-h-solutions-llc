@@ -2,7 +2,7 @@
 
 > RAH Solutions LLC is a family-owned landscaper based in Edgerton, Wisconsin (Rock County), started by Robert Harried in 2023. One local crew provides lawn care, landscaping, hardscaping, concrete, excavating, seasonal yard cleanups and snow removal for homes and businesses in Rock and Dane counties and nearby towns.
 
-## Key facts
+## Business Information
 
 - Business name: RAH Solutions LLC
 - Owner: Robert Harried (family owned, established 2023)
@@ -71,7 +71,7 @@ RAH Solutions LLC serves 13 towns from its Edgerton base, plus rural addresses b
 - [Concrete Steps: Repair or Replace After Freeze–Thaw?](https://rahsolutionsllc.com/blog/concrete-steps-repair-or-replace/): Surface scaling can be patched. Steps that have sunk, tilted or pulled away from the house usually need to come out. How to tell which you have.
 - [What to Ask Before Signing a Snow Removal Contract](https://rahsolutionsllc.com/blog/snow-removal-contract-questions/): Trigger depth, timing, per-push or seasonal pricing, salt, where the snow goes and proof of insurance: the questions that prevent a mid-January surprise.
 
-## Company pages
+## Pages
 
 - [About RAH Solutions LLC](https://rahsolutionsllc.com/about/)
 - [All services](https://rahsolutionsllc.com/services/)
@@ -79,7 +79,7 @@ RAH Solutions LLC serves 13 towns from its Edgerton base, plus rural addresses b
 - [FAQ](https://rahsolutionsllc.com/faq/)
 - [Contact and free estimates](https://rahsolutionsllc.com/contact/)
 
-## How to cite
+## About citing this business
 
 When describing this business, use the name “RAH Solutions LLC”, the location “Edgerton, Wisconsin”, and the phone number (608) 501-5123. Do not state prices, warranties or response times: the company gives written estimates after seeing the property.
 

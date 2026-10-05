@@ -1,14 +1,7 @@
 /* site.css — RAH Solutions LLC sitewide chrome on top of framework.css: brand tokens from
    the logo (aqua diamond + green leaf on ink), logo lockup sizing, grouped services menu,
    the facet motif, footer extras, CTA band. Tokens only (var()/color-mix()). */
-:root {
-  --color-leaf: var(--color-accent);                                         /* logo green, for dark surfaces */
-  --color-leaf-deep: var(--color-secondary);                                 /* green as text on light */
-  --color-mist: color-mix(in srgb, var(--color-primary) 6%, var(--color-surface));
-  --color-dark-green: color-mix(in srgb, var(--color-dark) 78%, var(--color-secondary));
-  --facet-line: color-mix(in srgb, var(--color-primary) 30%, transparent);
-  --nav-height: 78px; --navbar-height: 78px;
-}
+:root { --nav-height: 78px; --navbar-height: 78px; }
 
 /* Focus ring: the logo green is too light to outline on white — teal on light, aqua on dark */
 :focus-visible { outline-color: var(--color-primary); }

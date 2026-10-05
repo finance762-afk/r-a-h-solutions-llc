@@ -17,7 +17,7 @@ machine-written alts were wrong in several places and have been replaced by what
 
 | name | source px | subject (what is in the photo) | service match | orientation | quality | suits | max_uses | used_on | suggested_alt |
 |---|---|---|---|---|---|---|---|---|---|
-| lawn-striped-yard-mature-trees | 2048x922 | Large mowed lawn with mowing stripes, mature shade trees, ranch house behind | lawn maintenance / residential | wide | 9 | hero, split | 2 | `/` (hero), `/about/` | Large residential lawn mowed in even stripes under mature shade trees |
+| hero-lawn-striped-yard | 2048x922 | Large mowed lawn with mowing stripes, mature shade trees, ranch house behind | lawn maintenance / residential | wide | 9 | hero, split | 2 | `/` (hero), `/about/` | Large residential lawn mowed in even stripes under mature shade trees |
 | lawn-mowed-stripes-corner-lot | 2048x922 | Corner lot lawn, fresh stripes, single-story house, scattered leaves | lawn maintenance | wide | 8 | hero, card, gallery | 2 | `/services/lawn-maintenance/` (hero), `/` (gallery) | Freshly mowed corner-lot lawn with mowing stripes in front of a single-story home |
 | backyard-mowed-green-house | 2048x922 | Mowed backyard, green house, push mower, patio, shrubs | residential lawn care | wide | 7 | hero, card | 2 | `/services/residential-lawn-care/` (hero) | Freshly mowed backyard behind a green house with a patio and shrubs |
 | rural-yard-mowed-white-house | 2048x922 | Rural yard mowed, white house, riding mower, equipment at right edge | residential / lawn maintenance | wide | 5 | gallery | 2 | `/services/residential-lawn-care/` | Mowed rural yard in front of a white farmhouse |

@@ -7,6 +7,17 @@
  */
 $blogPosts = [
     [
+        'slug'     => 'lawn-care-calendar-southern-wisconsin',
+        'title'    => 'Month-by-Month Lawn Care Calendar for Southern Wisconsin',
+        'excerpt'  => 'What to do for a cool-season lawn in Rock and Dane counties from March through November: mowing, watering, seeding, aeration, cleanup and what to leave alone.',
+        'image'    => 'backyard-mowed-green-house',
+        'alt'      => 'Freshly mowed backyard behind a green house with a patio and shrubs',
+        'date'     => 'October 5, 2026',
+        'dateISO'  => '2026-10-05',
+        'category' => 'Lawn Care',
+        'readtime' => '9 min read',
+    ],
+    [
         'slug'     => 'when-to-aerate-and-overseed-southern-wisconsin',
         'title'    => 'When to Aerate and Overseed in Southern Wisconsin',
         'excerpt'  => 'Late August through mid-September is the window for cool-season lawns in Rock and Dane counties. Here is why, how to prepare, and what to do if you miss it.',
@@ -71,5 +82,16 @@ $blogPosts = [
         'dateISO'  => '2026-10-05',
         'category' => 'Snow Removal',
         'readtime' => '6 min read',
+    ],
+    [
+        'slug'     => 'paver-patio-vs-poured-concrete',
+        'title'    => 'Paver Patio vs. Poured Concrete in a Freeze–Thaw Climate',
+        'excerpt'  => 'Both work in Wisconsin if the base is right. How pavers and poured concrete compare on frost movement, repairs, upkeep, drainage and relative cost.',
+        'image'    => 'concrete-patio-steps-stone-ranch',
+        'alt'      => 'New concrete patio with a rounded corner and steps behind a stone ranch house',
+        'date'     => 'October 5, 2026',
+        'dateISO'  => '2026-10-05',
+        'category' => 'Concrete',
+        'readtime' => '8 min read',
     ],
 ];

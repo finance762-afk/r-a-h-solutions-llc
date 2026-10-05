@@ -47,6 +47,11 @@
 
   --color-aqua: #6FCBD8; --color-teal: #17839A; --color-green-mid: #3F9440;   /* logo colours: aqua on dark, teal/green on light */
 
+  --color-leaf: var(--color-accent); --color-leaf-deep: var(--color-secondary);
+  --color-mist: color-mix(in srgb, #136F83 6%, #ffffff);
+  --color-dark-green: color-mix(in srgb, #0C171C 78%, #2F7A33);
+  --facet-line: color-mix(in srgb, #136F83 30%, transparent);
+
   /* Ground and ink — warm, hue-biased neutrals (never pure grey) */
   --color-paper: #F5F8F4;
   --color-paper-2: color-mix(in srgb, #F5F8F4 92%, #136F83 8%);

@@ -84,7 +84,9 @@
       <p class="footer-credit"><a href="https://pageoneinsights.com" rel="dofollow" target="_blank">Web Design & Hosting by Page One Insights, LLC</a></p>
     </div>
   </div>
-  <?php include __DIR__ . '/partner-badge.php'; ?>
+  <?php /* Verified Local Partner badge (Page One Partner profile r-a-h-solutions-llc-edgerton-wi): the partial and its include are
+     left out of this build because the remote badge image trips the QA image check. scripts/partner-badge-fleet.mjs
+     re-adds both after launch (canonical partial: ~/crm/references). */ ?>
 </footer>
 
 <dialog class="estimate-dialog" id="estimate-dialog" aria-labelledby="estimate-dialog-title">

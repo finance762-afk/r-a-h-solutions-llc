@@ -70,13 +70,13 @@ if ($gscVerification === '') $gscVerification = 'yj34ANvKZYQ57N1XIaa0Nj0fqvaUpWw
 
 /* ── Brand (from the logo: aqua + green on ink) ───────────────────────────── */
 $colors = ['primary' => '#136F83', 'secondary' => '#3F9440', 'accent' => '#72C267', 'ink' => '#0F1D24', 'dark' => '#0C171C'];
-$logoLight = '/assets/images/rah-logo-on-light-v2.svg';   // for light surfaces
-$logoDark  = '/assets/images/rah-logo-on-dark-v2.svg';    // for dark surfaces
-$logoPng   = '/assets/images/rah-logo-on-light-v2.png';   // schema logo
-$heroImage = 'lawn-striped-yard-mature-trees';
+$logoLight = '/assets/svg/logo-rah-on-light-v2.svg';   // for light surfaces
+$logoDark  = '/assets/svg/logo-rah-on-dark-v2.svg';    // for dark surfaces
+$logoPng   = '/assets/images/logo-rah-on-light-v2.png';   // schema logo
+$heroImage = 'hero-lawn-striped-yard';
 
 /* ── CSS / JS cache-bust — the ONLY place this is set ─────────────────────── */
-$cssVersion = '20261005a';
+$cssVersion = '20261005b';
 
 /* ── Lead form ────────────────────────────────────────────────────────────── */
 $formAction = 'https://db.pageone.cloud/functions/v1/leads/r-a-h-solutions-llc';

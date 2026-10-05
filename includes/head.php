@@ -32,9 +32,9 @@ $ogImageUrl = $siteUrl . '/assets/images/' . ($ogImage ?? 'rah-social-v2.jpg');
 <meta property="og:image" content="<?php echo e($ogImageUrl); ?>">
 <meta property="og:site_name" content="<?php echo e($siteName); ?>">
 <meta property="og:locale" content="en_US">
-<link rel="icon" type="image/svg+xml" href="/assets/images/favicon-v2.svg">
-<link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-v2.png">
-<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon-v2.png">
+<link rel="icon" type="image/svg+xml" href="/assets/svg/favicon-v2.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/favicon-v2.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon-v2.png">
 <link rel="manifest" href="/site.webmanifest">
 <!-- Self-hosted fonts (no font CDN) — preload only the heading face -->
 <link rel="preload" href="/assets/fonts/plus-jakarta-sans.woff2" as="font" type="font/woff2" crossorigin>
