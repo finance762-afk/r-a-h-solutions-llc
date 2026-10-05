@@ -1,9 +1,9 @@
 {
-  "tier": "premium",
+  "tier": "standard",
   "tier_config": {
     "min_css_per_page": 0,
-    "min_techniques": 6,
-    "requires_blog": true
+    "min_techniques": 4,
+    "requires_blog": false
   },
   "site": "r-a-h-solutions-llc",
   "expected_slug": null,
@@ -11,8 +11,8 @@
   "grade": "A",
   "score_pct": 95,
   "summary": {
-    "total": 330,
-    "passed": 286,
+    "total": 321,
+    "passed": 277,
     "failed": 39,
     "warn": 5,
     "blockers_failed": 0,
@@ -788,7 +788,7 @@
     },
     {
       "status": "pass",
-      "check": "Premium tier CSS bar",
+      "check": "Standard tier CSS bar",
       "detail": "579 lines (0 inline + 579 external, need \u22650)",
       "file": "index.php",
       "severity": "blocker",
@@ -799,7 +799,7 @@
     },
     {
       "status": "pass",
-      "check": "Premium tier CSS bar",
+      "check": "Standard tier CSS bar",
       "detail": "579 lines (0 inline + 579 external, need \u22650)",
       "file": "about/index.php",
       "severity": "blocker",
@@ -810,7 +810,7 @@
     },
     {
       "status": "pass",
-      "check": "Premium tier CSS bar",
+      "check": "Standard tier CSS bar",
       "detail": "579 lines (0 inline + 579 external, need \u22650)",
       "file": "services/index.php",
       "severity": "blocker",
@@ -821,7 +821,7 @@
     },
     {
       "status": "pass",
-      "check": "Premium tier CSS bar",
+      "check": "Standard tier CSS bar",
       "detail": "579 lines (0 inline + 579 external, need \u22650)",
       "file": "contact/index.php",
       "severity": "blocker",
@@ -832,11 +832,11 @@
     },
     {
       "status": "pass",
-      "check": "Premium tier techniques",
-      "detail": "10 distinct techniques detected (need \u22656)",
+      "check": "Standard tier techniques",
+      "detail": "10 distinct techniques detected (need \u22654)",
       "file": "",
       "severity": "blocker",
-      "expected": "6",
+      "expected": "4",
       "actual": "10",
       "fix_hint": "",
       "section": "PHP STANDARDS"
@@ -3087,28 +3087,6 @@
     },
     {
       "status": "pass",
-      "check": "Legal page: /cookie-policy/",
-      "detail": "",
-      "file": "",
-      "severity": "blocker",
-      "expected": null,
-      "actual": null,
-      "fix_hint": "",
-      "section": "COMPLIANCE & TRUST"
-    },
-    {
-      "status": "pass",
-      "check": "Legal page: /accessibility/",
-      "detail": "",
-      "file": "",
-      "severity": "blocker",
-      "expected": null,
-      "actual": null,
-      "fix_hint": "",
-      "section": "COMPLIANCE & TRUST"
-    },
-    {
-      "status": "pass",
       "check": "Footer legal links",
       "detail": "",
       "file": "",
@@ -3172,39 +3150,6 @@
       "actual": null,
       "fix_hint": "",
       "section": "COMPLIANCE & TRUST"
-    },
-    {
-      "status": "pass",
-      "check": "Premium: blog posts",
-      "detail": "8 post(s)",
-      "file": "",
-      "severity": "blocker",
-      "expected": null,
-      "actual": null,
-      "fix_hint": "",
-      "section": "PREMIUM TIER EXTRAS"
-    },
-    {
-      "status": "pass",
-      "check": "Premium: blog index registry-driven",
-      "detail": "",
-      "file": "",
-      "severity": "blocker",
-      "expected": null,
-      "actual": null,
-      "fix_hint": "",
-      "section": "PREMIUM TIER EXTRAS"
-    },
-    {
-      "status": "pass",
-      "check": "Premium: FAQ linked from chrome",
-      "detail": "",
-      "file": "",
-      "severity": "blocker",
-      "expected": null,
-      "actual": null,
-      "fix_hint": "",
-      "section": "PREMIUM TIER EXTRAS"
     },
     {
       "status": "pass",
@@ -3592,20 +3537,9 @@
       "section": "PERFORMANCE v6.3"
     },
     {
-      "status": "pass",
-      "check": "sitemap.xml reachable",
-      "detail": "/sitemap.xml \u2192 404 on the preview host (no rewrite there), but /sitemap.php serves 47 <loc> entries \u2014 fine on Hostinger",
-      "file": "",
-      "severity": "blocker",
-      "expected": null,
-      "actual": null,
-      "fix_hint": "",
-      "section": "PERFORMANCE v6.3"
-    },
-    {
       "status": "warn",
-      "check": "Preview host lacks the /sitemap.xml rewrite",
-      "detail": "Add to /etc/nginx/sites-available/preview: location = /sitemap.xml { try_files /sitemap.xml /sitemap.php; }",
+      "check": "sitemap.xml reachable (needs --url)",
+      "detail": "Pass --url https://preview-<slug>.pageone.cloud (or the live domain) to fetch /sitemap.xml",
       "file": "",
       "severity": "info",
       "expected": null,
@@ -3658,42 +3592,9 @@
       "section": "PERFORMANCE v6.3"
     },
     {
-      "status": "pass",
-      "check": "Lighthouse mobile Performance \u226590",
-      "detail": "92 (runs [91, 92, 95]) \u2014 LCP 3.0s \u00b7 CLS 0.048 \u00b7 TBT 158ms \u00b7 549KB",
-      "file": "",
-      "severity": "blocker",
-      "expected": null,
-      "actual": null,
-      "fix_hint": "",
-      "section": "PERFORMANCE v6.3"
-    },
-    {
-      "status": "pass",
-      "check": "Lighthouse mobile Accessibility \u226595",
-      "detail": "100",
-      "file": "",
-      "severity": "warning",
-      "expected": null,
-      "actual": null,
-      "fix_hint": "",
-      "section": "PERFORMANCE v6.3"
-    },
-    {
-      "status": "pass",
-      "check": "Lighthouse mobile Best Practices \u226595",
-      "detail": "100",
-      "file": "",
-      "severity": "warning",
-      "expected": null,
-      "actual": null,
-      "fix_hint": "",
-      "section": "PERFORMANCE v6.3"
-    },
-    {
       "status": "warn",
-      "check": "Lighthouse mobile SEO \u226595",
-      "detail": "69 on a preview host (X-Robots noindex + robots block depress the SEO category by design) \u2014 re-check on the live domain",
+      "check": "Lighthouse mobile (needs --url)",
+      "detail": "Pass --url to run qa/lighthouse-mobile.mjs (Performance \u226590 FAIL, other categories \u226595 WARN)",
       "file": "",
       "severity": "info",
       "expected": null,
@@ -4169,8 +4070,8 @@
     },
     {
       "status": "warn",
-      "check": "Preview host lacks the /sitemap.xml rewrite",
-      "detail": "Add to /etc/nginx/sites-available/preview: location = /sitemap.xml { try_files /sitemap.xml /sitemap.php; }",
+      "check": "sitemap.xml reachable (needs --url)",
+      "detail": "Pass --url https://preview-<slug>.pageone.cloud (or the live domain) to fetch /sitemap.xml",
       "file": "",
       "severity": "info",
       "expected": null,
@@ -4180,8 +4081,8 @@
     },
     {
       "status": "warn",
-      "check": "Lighthouse mobile SEO \u226595",
-      "detail": "69 on a preview host (X-Robots noindex + robots block depress the SEO category by design) \u2014 re-check on the live domain",
+      "check": "Lighthouse mobile (needs --url)",
+      "detail": "Pass --url to run qa/lighthouse-mobile.mjs (Performance \u226590 FAIL, other categories \u226595 WARN)",
       "file": "",
       "severity": "info",
       "expected": null,
