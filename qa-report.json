@@ -8,15 +8,15 @@
   "site": "r-a-h-solutions-llc",
   "expected_slug": null,
   "passed": true,
-  "grade": "B",
-  "score_pct": 94,
+  "grade": "A",
+  "score_pct": 95,
   "summary": {
-    "total": 332,
+    "total": 330,
     "passed": 286,
-    "failed": 41,
+    "failed": 39,
     "warn": 5,
     "blockers_failed": 0,
-    "warnings_failed": 42
+    "warnings_failed": 40
   },
   "techniques_detected": [
     {
@@ -2604,17 +2604,6 @@
     {
       "status": "fail",
       "check": "Image resolution",
-      "detail": "zero-turn-spring-lawn-redbud.jpg is 510x510, recommend at least 800x500 for section",
-      "file": "assets/images/zero-turn-spring-lawn-redbud.jpg",
-      "severity": "warning",
-      "expected": null,
-      "actual": null,
-      "fix_hint": "Replace with higher-resolution version or remove from primary placement",
-      "section": "IMAGES"
-    },
-    {
-      "status": "fail",
-      "check": "Image resolution",
       "detail": "plow-truck-driveway-dusk-480.webp is 480x480, recommend at least 800x500 for section",
       "file": "assets/images/plow-truck-driveway-dusk-480.webp",
       "severity": "warning",
@@ -2936,17 +2925,6 @@
       "check": "Image resolution",
       "detail": "excavator-skid-steer-culvert-480.webp is 480x663, recommend at least 800x500 for section",
       "file": "assets/images/excavator-skid-steer-culvert-480.webp",
-      "severity": "warning",
-      "expected": null,
-      "actual": null,
-      "fix_hint": "Replace with higher-resolution version or remove from primary placement",
-      "section": "IMAGES"
-    },
-    {
-      "status": "fail",
-      "check": "Image resolution",
-      "detail": "zero-turn-spring-lawn-redbud-480.webp is 480x480, recommend at least 800x500 for section",
-      "file": "assets/images/zero-turn-spring-lawn-redbud-480.webp",
       "severity": "warning",
       "expected": null,
       "actual": null,
@@ -3682,7 +3660,7 @@
     {
       "status": "pass",
       "check": "Lighthouse mobile Performance \u226590",
-      "detail": "92 (runs [90, 92, 92]) \u2014 LCP 2.7s \u00b7 CLS 0 \u00b7 TBT 206ms \u00b7 473KB",
+      "detail": "92 (runs [91, 92, 95]) \u2014 LCP 3.0s \u00b7 CLS 0.048 \u00b7 TBT 158ms \u00b7 549KB",
       "file": "",
       "severity": "blocker",
       "expected": null,
@@ -3725,17 +3703,6 @@
     }
   ],
   "failures": [
-    {
-      "status": "fail",
-      "check": "Image resolution",
-      "detail": "zero-turn-spring-lawn-redbud.jpg is 510x510, recommend at least 800x500 for section",
-      "file": "assets/images/zero-turn-spring-lawn-redbud.jpg",
-      "severity": "warning",
-      "expected": null,
-      "actual": null,
-      "fix_hint": "Replace with higher-resolution version or remove from primary placement",
-      "section": "IMAGES"
-    },
     {
       "status": "fail",
       "check": "Image resolution",
@@ -4060,17 +4027,6 @@
       "check": "Image resolution",
       "detail": "excavator-skid-steer-culvert-480.webp is 480x663, recommend at least 800x500 for section",
       "file": "assets/images/excavator-skid-steer-culvert-480.webp",
-      "severity": "warning",
-      "expected": null,
-      "actual": null,
-      "fix_hint": "Replace with higher-resolution version or remove from primary placement",
-      "section": "IMAGES"
-    },
-    {
-      "status": "fail",
-      "check": "Image resolution",
-      "detail": "zero-turn-spring-lawn-redbud-480.webp is 480x480, recommend at least 800x500 for section",
-      "file": "assets/images/zero-turn-spring-lawn-redbud-480.webp",
       "severity": "warning",
       "expected": null,
       "actual": null,

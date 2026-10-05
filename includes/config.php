@@ -76,7 +76,7 @@ $logoPng   = '/assets/images/logo-rah-on-light-v2.png';   // schema logo
 $heroImage = 'hero-lawn-striped-yard';
 
 /* ── CSS / JS cache-bust — the ONLY place this is set ─────────────────────── */
-$cssVersion = '20261005d';
+$cssVersion = '20261005e';
 
 /* ── Lead form ────────────────────────────────────────────────────────────── */
 $formAction = 'https://db.pageone.cloud/functions/v1/leads/r-a-h-solutions-llc';
