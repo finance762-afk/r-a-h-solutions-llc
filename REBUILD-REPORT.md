@@ -265,7 +265,7 @@ Facebook downloads) with the job town noted, so town pages can show local work. 
 - **Logo swap on scroll** not needed: the header is a light bar in every state.
 - **Hero paragraph is 39 words**, not 30 or fewer: `qa_audit.py` blocks under 35. On a 390 px screen it runs six lines,
   so the "no paragraph above the CTA past two lines" line of the mobile contract is not met; the CTA still sits at
-  about 310 px and the chips are inside the first 700 px.
+  about 430 px and the chips are inside the first 700 px.
 - **No lead test submission** and **no `.htaccess` test** (preview is nginx): do both at launch.
 - **Lighthouse SEO** reads 69 on the preview because of its noindex header; re-check on the live domain.
 - Content was written by parallel sub-agents from a shared fact sheet and two templates I built first; I reviewed
